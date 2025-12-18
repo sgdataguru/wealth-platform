@@ -1,26 +1,174 @@
 @import "tailwindcss";
 
+/* UHNW Liquidity Intelligence Platform - Design System */
+/* Inspired by Nuvama Wealth - Premium Aesthetic */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --primary-deep-blue: #0A1628;
+  --primary-royal-blue: #1E3A5F;
+  --primary-accent: #C9A227;
+  --primary-gold: #D4AF37;
+  
+  /* Secondary Colors */
+  --secondary-slate: #2C3E50;
+  --secondary-charcoal: #1A1A2E;
+  --secondary-silver: #C0C0C0;
+  --secondary-platinum: #E5E4E2;
+  
+  /* Background & Surface */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-dark: #0A1628;
+  --bg-card: #FFFFFF;
+  --bg-overlay: rgba(10, 22, 40, 0.95);
+  
+  /* Text Colors */
+  --text-primary: #1A1A2E;
+  --text-secondary: #5A6C7D;
+  --text-light: #FFFFFF;
+  --text-accent: #C9A227;
+  --text-muted: #8E99A4;
+  
+  /* Semantic Colors */
+  --success: #28A745;
+  --success-light: #D4EDDA;
+  --warning: #FFC107;
+  --warning-light: #FFF3CD;
+  --error: #DC3545;
+  --error-light: #F8D7DA;
+  --info: #17A2B8;
+  
+  /* Signal Colors */
+  --signal-critical: #DC3545;
+  --signal-critical-bg: #F8D7DA;
+  --signal-critical-text: #721C24;
+  --signal-high: #FF8C00;
+  --signal-high-bg: #FFE5CC;
+  --signal-high-text: #8B4513;
+  --signal-medium: #FFC107;
+  --signal-medium-bg: #FFF3CD;
+  --signal-medium-text: #856404;
+  --signal-low: #28A745;
+  --signal-low-bg: #D4EDDA;
+  --signal-low-text: #155724;
+  
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12), 0 16px 48px rgba(0, 0, 0, 0.15);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary-deep-blue: var(--primary-deep-blue);
+  --color-primary-royal-blue: var(--primary-royal-blue);
+  --color-primary-accent: var(--primary-accent);
+  --color-primary-gold: var(--primary-gold);
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-dark: var(--bg-dark);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-slate);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-royal-blue);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes goldGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--primary-accent), 0 0 10px var(--primary-accent);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--primary-accent), 0 0 20px var(--primary-accent), 0 0 30px var(--primary-accent);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Focus States */
+*:focus-visible {
+  outline: 2px solid var(--primary-royal-blue);
+  outline-offset: 2px;
 }
