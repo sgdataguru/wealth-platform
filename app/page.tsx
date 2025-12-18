@@ -80,7 +80,7 @@ const mockProspects: Prospect[] = [
 ];
 
 const mockRecentSignals: Signal[] = [
-  { id: 'rs1', type: 'ipo', severity: 'critical', title: 'IPO Filing', description: 'Tech Innovations', source: 'Exchange', createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000), isActioned: false },
+  { id: 'rs1', type: 'ipo', severity: 'critical', title: 'IPO Filing', description: 'Tech Innovations', source: 'Exchange Data', createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000), isActioned: false },
   { id: 'rs2', type: 'funding', severity: 'medium', title: 'Funding Round', description: 'GreenEnergy Ltd', source: 'PrivateCircle', createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000), isActioned: false },
   { id: 'rs3', type: 'acquisition', severity: 'high', title: 'Acquisition', description: 'FinServ Holdings', source: 'VCCircle', createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000), isActioned: false },
 ];
@@ -272,7 +272,7 @@ export default function Dashboard() {
               </div>
               
               <Button variant="ghost" className="w-full mt-4">
-                View All Signals →
+                <a href="/signals" className="block w-full">View All Signals →</a>
               </Button>
             </Card>
           </div>
