@@ -52,11 +52,43 @@ export interface Signal {
 // Lead score category
 export type LeadScoreCategory = 'excellent' | 'good' | 'fair' | 'low';
 
+// Score category for HOT/WARM/COLD classification
+export type ScoreCategory = 'HOT' | 'WARM' | 'COLD';
+
+// Score trend indicator
+export type ScoreTrend = 'up' | 'down' | 'stable';
+
 // Lead score breakdown item
 export interface ScoreBreakdown {
   label: string;
   points: number;
   description: string;
+}
+
+// Score factor with detailed signal contribution
+export interface ScoreFactor {
+  signal_id: string;
+  signal_type: SignalType;
+  signal_description: string;
+  weight: number; // 0-1 (normalized contribution)
+  points_contributed: number; // Actual points added to score
+  recency_days: number; // How recent is this signal
+  confidence: number; // 0-1 (signal reliability)
+  source: DataSource;
+}
+
+// Enhanced lead score with explanation
+export interface LeadScore {
+  id: string;
+  client_id: string;
+  score: number; // 0-100
+  score_category: ScoreCategory; // HOT/WARM/COLD
+  trend: ScoreTrend; // up/down/stable
+  calculated_at: Date;
+  expires_at: Date; // Scores valid for 24 hours
+  factors: ScoreFactor[];
+  explanation: string; // AI-generated summary
+  previous_score?: number; // For trend calculation
 }
 
 // Prospect type
