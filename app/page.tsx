@@ -3,8 +3,10 @@
  * @description Main dashboard page for UHNW Liquidity Intelligence Platform
  */
 
+'use client';
+
 import { Header, Sidebar } from './components/layout';
-import { ProspectCard, AIChatbot } from './components/features';
+import { ProspectCard, AIChatbot, ProspectDetailPanel } from './components/features';
 import { Card, Button, SignalBadge } from './components/ui';
 import SuggestionsSection from './components/suggestions/SuggestionsSection';
 import type { Prospect, Signal, ActivityItem, DashboardMetrics } from '@/types';
@@ -103,11 +105,15 @@ function formatTimeAgo(date: Date): string {
 }
 
 export default function Dashboard() {
+  const { openPanel, selectedProspectId } = usePanelStore();
   const currentDate = new Date().toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
   });
+
+  // Find selected prospect for panel
+  const selectedProspect = mockProspects.find(p => p.id === selectedProspectId);
 
   return (
     <div className="min-h-screen bg-[#F8F9FA]">
@@ -220,6 +226,7 @@ export default function Dashboard() {
                   <div
                     key={prospect.id}
                     className="flex items-center justify-between p-4 bg-[#F8F9FA] rounded-lg hover:bg-[#EFF1F3] transition-colors cursor-pointer"
+                    onClick={() => openPanel(prospect.id)}
                   >
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-[#0A1628] text-white flex items-center justify-center font-semibold text-sm">
@@ -313,6 +320,9 @@ export default function Dashboard() {
 
       {/* AI Chatbot */}
       <AIChatbot />
+
+      {/* Prospect Detail Panel */}
+      {selectedProspect && <ProspectDetailPanel prospect={selectedProspect} />}
     </div>
   );
 }
