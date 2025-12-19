@@ -10,6 +10,7 @@ interface CardProps {
   className?: string;
   hover?: boolean;
   padding?: 'none' | 'sm' | 'md' | 'lg';
+  onClick?: () => void;
 }
 
 export default function Card({
@@ -17,6 +18,7 @@ export default function Card({
   className = '',
   hover = true,
   padding = 'md',
+  onClick,
 }: CardProps) {
   const paddingStyles = {
     none: '',
@@ -34,6 +36,7 @@ export default function Card({
         ${paddingStyles[padding]}
         ${className}
       `}
+      onClick={onClick}
     >
       {children}
     </div>

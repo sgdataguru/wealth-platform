@@ -3,3 +3,5 @@ export { default as Card } from './Card';
 export { default as Avatar } from './Avatar';
 export { default as SignalBadge } from './SignalBadge';
 export { default as LeadScore } from './LeadScore';
+export { default as ScoreBadge } from './ScoreBadge';
+export { default as Modal } from './Modal';
