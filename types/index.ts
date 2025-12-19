@@ -160,6 +160,51 @@ export interface SignalFilterOptions {
   sortOrder?: 'asc' | 'desc';
 }
 
+// Action types for prospects
+export type ActionType = 'call' | 'meeting' | 'email' | 'note' | 'review-portfolio' | 'custom';
+
+// Priority levels for actions
+export type ActionPriority = 'high' | 'medium' | 'low';
+
+// Estimated impact levels
+export type ActionImpact = 'high' | 'medium' | 'low';
+
+// Action suggestion source
+export type ActionSource = 'ai' | 'rule-based' | 'manual';
+
+// Suggested action interface
+export interface SuggestedAction {
+  id: string;
+  type: ActionType;
+  label: string;
+  description: string;
+  priority: ActionPriority;
+  reasoning: string;
+  estimatedImpact: ActionImpact;
+  suggestedBy: ActionSource;
+  metadata?: {
+    talking_points?: string[];
+    context_notes?: string[];
+    best_time?: string;
+  };
+}
+
+// Prospect filters
+export interface ProspectFilters {
+  signalTypes?: SignalType[];
+  dateRange?: {
+    start: Date;
+    end: Date;
+  };
+  minScore?: number;
+  maxScore?: number;
+  cities?: string[];
+  sectors?: string[];
+}
+
+// Sort options for prospects
+export type ProspectSortOption = 'score' | 'recent' | 'signal-strength';
+
 // API Response types
 export interface ApiResponse<T> {
   success: boolean;
