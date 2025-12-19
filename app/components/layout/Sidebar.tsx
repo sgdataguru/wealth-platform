@@ -7,25 +7,38 @@
 
 import { useState } from 'react';
 import Button from '../ui/Button';
+import { useUserRole } from '@/app/hooks/useUserRole';
 
 interface SidebarProps {
   activePage?: string;
 }
 
-const navItems = [
-  { id: 'home', label: 'Home', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', href: '/' },
-  { id: 'prospects', label: 'Prospects', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', href: '/prospects' },
-  { id: 'signals', label: 'Signals', icon: 'M13 10V3L4 14h7v7l9-11h-7z', href: '/signals' },
-  { id: 'network', label: 'Network', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', href: '/network' },
-  { id: 'analytics', label: 'Analytics', icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', href: '/analytics' },
-];
-
-const cities = ['All', 'Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad'];
-const sectors = ['All', 'Technology', 'Finance', 'Healthcare', 'Real Estate', 'Manufacturing'];
-
 export default function Sidebar({ activePage = 'home' }: SidebarProps) {
+  const { role } = useUserRole();
   const [selectedCity, setSelectedCity] = useState('All');
   const [selectedSector, setSelectedSector] = useState('All');
+
+  // Role-aware navigation items
+  const navItems = [
+    {
+      id: 'home',
+      label: 'Home',
+      icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+      href: role === 'executive' ? '/executive' : '/rm'
+    },
+    { id: 'prospects', label: 'Prospects', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', href: '/prospects' },
+    { id: 'signals', label: 'Signals', icon: 'M13 10V3L4 14h7v7l9-11h-7z', href: '/signals' },
+    { id: 'network', label: 'Network', icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', href: '/network' },
+    {
+      id: 'analytics',
+      label: 'Analytics',
+      icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+      href: role === 'executive' ? '/executive/analytics' : '/rm/analytics'
+    },
+  ];
+
+  const cities = ['All', 'Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad'];
+  const sectors = ['All', 'Technology', 'Finance', 'Healthcare', 'Real Estate', 'Manufacturing'];
 
   return (
     <aside className="w-64 bg-white border-r border-gray-200 flex flex-col h-[calc(100vh-64px)] sticky top-16">

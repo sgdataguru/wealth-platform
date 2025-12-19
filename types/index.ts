@@ -7,7 +7,7 @@
 export type SignalSeverity = 'critical' | 'high' | 'medium' | 'low';
 
 // Signal types
-export type SignalType = 
+export type SignalType =
   | 'ipo'
   | 'funding'
   | 'acquisition'
@@ -19,7 +19,7 @@ export type SignalType =
   | 'early_exit';
 
 // Data sources for signals
-export type DataSource = 
+export type DataSource =
   | 'PrivateCircle'
   | 'Zauba Corp'
   | 'Exchange Data'
@@ -225,7 +225,7 @@ export interface FollowUp {
 }
 
 // Activity type definitions
-export type ActivityType = 
+export type ActivityType =
   | 'signal_viewed'
   | 'signal_actioned'
   | 'lead_created'
@@ -274,21 +274,21 @@ export interface EnhancedDashboardMetrics extends DashboardMetrics {
   // Lead metrics
   leadsThisWeek: number;
   leadsChange: number; // % change from previous period
-  
+
   // Signal metrics  
   signalsThisWeek: number;
-  
+
   // Follow-up metrics
   totalFollowUps: number;
   completedFollowUps: number;
   pendingFollowUps: number;
   overdueFollowUps: number;
   followUpCompletionRate: number; // %
-  
+
   // Conversion metrics
   conversions: number;
   conversionRate: number; // %
-  
+
   // Activity metrics
   totalActivities: number;
   activitiesToday: number;
@@ -320,14 +320,14 @@ export interface PaginatedResponse<T> {
 // ============================================
 
 // Suggestion priority levels
-export type SuggestionPriority = 
+export type SuggestionPriority =
   | 'critical'    // Act within 24 hours
   | 'high'        // Act within 3 days
   | 'medium'      // Act within 1 week
   | 'low';        // Monitor
 
 // Suggestion categories
-export type SuggestionCategory = 
+export type SuggestionCategory =
   | 'liquidity_event'
   | 'relationship_opportunity'
   | 'risk_alert'
@@ -335,7 +335,7 @@ export type SuggestionCategory =
   | 'retention';
 
 // Suggestion status
-export type SuggestionStatus = 
+export type SuggestionStatus =
   | 'new'
   | 'viewed'
   | 'contacted'
@@ -369,29 +369,29 @@ export interface EngagementSuggestion {
   rmId: string;
   clientId: string;
   signalId: string;
-  
+
   // Content
   title: string;
   context: string;
   recommendedAction: string;
-  
+
   // Metadata
   priority: SuggestionPriority;
   category: SuggestionCategory;
   generatedAt: Date;
   expiresAt?: Date;
-  
+
   // Client & Signal Info
   client: SuggestionClient;
   signal: SuggestionSignal;
-  
+
   // Status
   status: SuggestionStatus;
   viewedAt?: Date;
   actionedAt?: Date;
   snoozedUntil?: Date;
   dismissedAt?: Date;
-  
+
   // Engagement
   contactedAt?: Date;
   outcome?: string;
@@ -405,3 +405,271 @@ export interface SuggestionFilters {
   status?: SuggestionStatus[];
   dateRange?: { start: Date; end: Date };
 }
+
+// ============================================
+// PROSPECT ACTIONS & FILTERING
+// ============================================
+
+// Suggested action types
+export type SuggestedActionType = 'call' | 'meeting' | 'email' | 'review-portfolio' | 'custom' | 'note';
+
+// Suggested action priority
+export type SuggestedActionPriority = 'high' | 'medium' | 'low';
+
+// Suggested action estimated impact
+export type SuggestedActionImpact = 'high' | 'medium' | 'low';
+
+// Who suggested the action
+export type ActionSuggestor = 'ai' | 'rule-based' | 'manual';
+
+// Suggested action for prospects
+export interface SuggestedAction {
+  id: string;
+  type: SuggestedActionType;
+  label: string;
+  description: string;
+  priority: SuggestedActionPriority;
+  reasoning: string;
+  estimatedImpact: SuggestedActionImpact;
+  suggestedBy: ActionSuggestor;
+  metadata?: {
+    talking_points?: string[];
+    context_notes?: string[];
+    best_time?: string;
+  };
+}
+
+// Prospect filter options
+export interface ProspectFilters {
+  signalTypes?: SignalType[];
+  dateRange?: { start: Date; end: Date };
+  minScore?: number;
+  maxScore?: number;
+  cities?: string[];
+  sectors?: string[];
+}
+
+// Prospect sort options
+export type ProspectSortOption = 'score' | 'recent' | 'signal-strength';
+
+// Suggested actions API response
+export interface SuggestedActionsResponse {
+  success: boolean;
+  data: {
+    actions: SuggestedAction[];
+    reasoning: string;
+  };
+  error?: {
+    code: string;
+    message: string;
+  };
+}
+
+// Prospects API response
+export interface ProspectsResponse {
+  success: boolean;
+  data: {
+    prospects: Prospect[];
+    metadata: {
+      total: number;
+      page: number;
+      pageSize: number;
+      hasMore: boolean;
+      lastUpdated: string;
+    };
+  };
+  error?: {
+    code: string;
+    message: string;
+  };
+}
+
+// ============================================
+// PROSPECT DETAIL PANEL
+// ============================================
+
+// Extended metrics for prospect detail view
+export interface ExtendedMetrics {
+  aum: number;
+  aumCurrency: string;
+  walletShare: number;
+  relationshipStrength: number;
+  lifetimeValue: number;
+  lastInteractionDays: number;
+  upcomingFollowUps: number;
+}
+
+// Connection/relationship information
+export interface Connection {
+  id: string;
+  name: string;
+  relationship: string;
+  strength: number;
+  canIntroduce: boolean;
+  company?: string;
+}
+
+// Engagement event types
+export type EngagementEventType = 'call' | 'email' | 'meeting' | 'note' | 'signal';
+
+// Engagement event for activity timeline
+export interface EngagementEvent {
+  id: string;
+  type: EngagementEventType;
+  description: string;
+  timestamp: Date;
+  outcome?: string;
+}
+
+// ============================================
+// ROLE-BASED DASHBOARD SYSTEM
+// ============================================
+
+// User roles
+export type UserRole = 'rm' | 'executive' | 'admin';
+
+// User profile
+export interface UserProfile {
+  id: string;
+  name: string;
+  email: string;
+  role: UserRole;
+  rmId?: string; // For RMs
+  territories?: string[]; // For executives
+  teamIds?: string[]; // For executives
+  photoUrl?: string;
+}
+
+// RM-specific metrics
+export interface RMMetrics extends DashboardMetrics {
+  // Personal performance
+  myClients: number;
+  myClientsAum: string;
+  myClientsAumGrowth: number; // percentage
+  activeOpps: number;
+  activeOppsValue: string;
+  lastMonthRevenue: string;
+  conversionRate: number; // percentage
+  avgClientValue: string;
+
+  // Activity metrics
+  callsMadeThisWeek: number;
+  emailsSentThisWeek: number;
+  meetingsScheduled: number;
+}
+
+// Executive metrics
+export interface ExecutiveMetrics {
+  // Firm-wide performance
+  totalAum: string;
+  aumGrowth: number; // percentage MoM
+  aumGrowthYoy: number; // percentage YoY
+  netNewMoney: string;
+  operatingMargin: number; // percentage
+  roe: number; // percentage
+
+  // Team metrics
+  totalRMs: number;
+  aumPerRM: string;
+  revenuePerRM: string;
+  avgRMProductivity: number; // score 0-100
+
+  // Client metrics
+  totalClients: number;
+  hniClients: number;
+  uhniClients: number;
+  clientRetentionRate: number; // percentage
+  clientAcquisitionCost: string;
+
+  // Trend data
+  topPerformingRMs: RMPerformance[];
+  underperformingRMs: RMPerformance[];
+  regionalBreakdown: RegionalMetrics[];
+  productMix: ProductMixData[];
+  aumTrend: TrendPoint[];
+}
+
+// RM performance data
+export interface RMPerformance {
+  rmId: string;
+  rmName: string;
+  aum: number;
+  growth: number; // percentage
+  clientCount: number;
+  revenue: number;
+  rank: number;
+  photoUrl?: string;
+}
+
+// Regional metrics
+export interface RegionalMetrics {
+  region: string;
+  aum: string;
+  growth: number;
+  rmCount: number;
+  clientCount: number;
+}
+
+// Product mix data
+export interface ProductMixData {
+  product: string;
+  percentage: number;
+  value: string;
+  color?: string;
+}
+
+// Trend point for charts
+export interface TrendPoint {
+  date: string;
+  value: number;
+  label?: string;
+}
+
+// Pipeline stage for RM
+export interface PipelineStage {
+  stage: string;
+  count: number;
+  value: string;
+  color: string;
+}
+
+// RM Task Assignment System
+export type RMTaskType = 'followup' | 'proposal' | 'review' | 'risk_assessment' | 'cross_sell' | 'prospect_call';
+export type RMTaskPriority = 'high' | 'medium' | 'low';
+export type RMTaskStatus = 'pending' | 'in_progress' | 'completed' | 'overdue';
+
+export interface RMTask {
+  id: string;
+  assignedTo: string; // RM ID
+  assignedToName: string; // RM Name for display
+  assignedBy: string; // Executive ID
+  assignedByName: string; // Executive Name for display
+  prospectId?: string;
+  prospectName?: string;
+  taskType: RMTaskType;
+  priority: RMTaskPriority;
+  dueDate: Date;
+  status: RMTaskStatus;
+  title: string;
+  notes: string;
+  createdAt: Date;
+  completedAt?: Date;
+}
+
+// Executive alerts
+export type ExecutiveAlertType = 'budget_overrun' | 'compliance_risk' | 'client_churn' | 'rm_underperformance' | 'high_value_opportunity';
+export type ExecutiveAlertSeverity = 'critical' | 'warning' | 'info';
+
+export interface ExecutiveAlert {
+  id: string;
+  type: ExecutiveAlertType;
+  severity: ExecutiveAlertSeverity;
+  title: string;
+  description: string;
+  actionRequired: boolean;
+  relatedRMIds?: string[];
+  relatedProspectIds?: string[];
+  createdAt: Date;
+  resolvedAt?: Date;
+}
+
