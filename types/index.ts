@@ -302,3 +302,53 @@ export interface PaginatedResponse<T> {
     hasMore: boolean;
   };
 }
+
+// Extended metrics for prospect detail panel
+export interface ExtendedMetrics {
+  aum: number;                    // Assets under management
+  aumCurrency: string;            // Currency code (e.g., 'INR')
+  walletShare: number;            // % of total wealth with firm
+  relationshipStrength: number;   // 0-100 score
+  lifetimeValue: number;          // Total revenue generated
+  lastInteractionDays: number;    // Days since last contact
+  upcomingFollowUps: number;      // Scheduled follow-ups count
+}
+
+// Connection/relationship information
+export interface Connection {
+  id: string;
+  name: string;
+  relationship: string;           // e.g., 'board-member', 'investor'
+  strength: number;               // Connection strength score 0-100
+  canIntroduce: boolean;          // Whether warm intro is available
+  company?: string;
+}
+
+// Engagement/activity event
+export interface EngagementEvent {
+  id: string;
+  type: 'call' | 'email' | 'meeting' | 'note' | 'signal';
+  description: string;
+  timestamp: Date;
+  outcome?: string;
+  metadata?: Record<string, unknown>;
+}
+
+// Prospect action DTO
+export interface ProspectActionDto {
+  prospectId: string;
+  action: 'call' | 'email' | 'note' | 'schedule';
+  payload: {
+    note?: string;
+    scheduledDate?: Date;
+    followUpType?: string;
+  };
+}
+
+// Prospect detail response (full data for panel)
+export interface ProspectDetailResponse {
+  prospect: Prospect;
+  extendedMetrics: ExtendedMetrics;
+  recentActivity: EngagementEvent[];
+  relatedConnections: Connection[];
+}
