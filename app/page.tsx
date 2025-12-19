@@ -8,7 +8,7 @@
 import { Header, Sidebar } from './components/layout';
 import { ProspectCard, AIChatbot, ProspectDetailPanel } from './components/features';
 import { Card, Button, SignalBadge } from './components/ui';
-import { usePanelStore } from '@/store/panel-store';
+import SuggestionsSection from './components/suggestions/SuggestionsSection';
 import type { Prospect, Signal, ActivityItem, DashboardMetrics } from '@/types';
 
 // Mock data for demonstration
@@ -203,6 +203,11 @@ export default function Dashboard() {
                 </div>
               </div>
             </Card>
+          </div>
+
+          {/* Engagement Suggestions Section */}
+          <div className="mb-8">
+            <SuggestionsSection limit={2} />
           </div>
 
           {/* Main Content Grid */}

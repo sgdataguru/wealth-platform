@@ -303,5 +303,93 @@ export interface PaginatedResponse<T> {
   };
 }
 
-// Export graph types
-export * from './graph';
+// ============================================
+// ENGAGEMENT SUGGESTIONS
+// ============================================
+
+// Suggestion priority levels
+export type SuggestionPriority = 
+  | 'critical'    // Act within 24 hours
+  | 'high'        // Act within 3 days
+  | 'medium'      // Act within 1 week
+  | 'low';        // Monitor
+
+// Suggestion categories
+export type SuggestionCategory = 
+  | 'liquidity_event'
+  | 'relationship_opportunity'
+  | 'risk_alert'
+  | 'cross_sell'
+  | 'retention';
+
+// Suggestion status
+export type SuggestionStatus = 
+  | 'new'
+  | 'viewed'
+  | 'contacted'
+  | 'snoozed'
+  | 'dismissed';
+
+// Snooze duration options
+export type SnoozeDuration = '1d' | '3d' | '7d';
+
+// Client info embedded in suggestion
+export interface SuggestionClient {
+  id: string;
+  name: string;
+  company: string;
+  estimatedWealth: number;
+  leadScore: number;
+}
+
+// Signal info embedded in suggestion
+export interface SuggestionSignal {
+  id: string;
+  type: SignalType;
+  severity: SignalSeverity;
+  detectedAt: Date;
+  timeline: string;
+}
+
+// Engagement suggestion
+export interface EngagementSuggestion {
+  id: string;
+  rmId: string;
+  clientId: string;
+  signalId: string;
+  
+  // Content
+  title: string;
+  context: string;
+  recommendedAction: string;
+  
+  // Metadata
+  priority: SuggestionPriority;
+  category: SuggestionCategory;
+  generatedAt: Date;
+  expiresAt?: Date;
+  
+  // Client & Signal Info
+  client: SuggestionClient;
+  signal: SuggestionSignal;
+  
+  // Status
+  status: SuggestionStatus;
+  viewedAt?: Date;
+  actionedAt?: Date;
+  snoozedUntil?: Date;
+  dismissedAt?: Date;
+  
+  // Engagement
+  contactedAt?: Date;
+  outcome?: string;
+  dismissReason?: string;
+}
+
+// Suggestion filters
+export interface SuggestionFilters {
+  priority?: SuggestionPriority[];
+  category?: SuggestionCategory[];
+  status?: SuggestionStatus[];
+  dateRange?: { start: Date; end: Date };
+}
