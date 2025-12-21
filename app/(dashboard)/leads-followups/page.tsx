@@ -97,7 +97,7 @@ export default function LeadsFollowupsPage() {
                 onClick={() => setActiveTab('leads')}
                 className={`pb-4 px-1 font-medium transition-colors ${
                   activeTab === 'leads'
-                    ? 'text-[#1E3A5F] border-b-2 border-[#1E3A5F]'
+                    ? 'text-[#2A2447] border-b-2 border-[#2A2447]'
                     : 'text-[#8E99A4] hover:text-[#5A6C7D]'
                 }`}
               >
@@ -107,7 +107,7 @@ export default function LeadsFollowupsPage() {
                 onClick={() => setActiveTab('followups')}
                 className={`pb-4 px-1 font-medium transition-colors ${
                   activeTab === 'followups'
-                    ? 'text-[#1E3A5F] border-b-2 border-[#1E3A5F]'
+                    ? 'text-[#2A2447] border-b-2 border-[#2A2447]'
                     : 'text-[#8E99A4] hover:text-[#5A6C7D]'
                 }`}
               >

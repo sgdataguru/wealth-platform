@@ -71,7 +71,7 @@ export default function GraphControls({
           onClick={() => onLayoutChange('force-directed')}
           className={`w-full px-3 py-2 text-sm rounded transition-colors mb-1 ${
             layout === 'force-directed'
-              ? 'bg-[#0A1628] text-white'
+              ? 'bg-[#1A1332] text-white'
               : 'text-gray-700 hover:bg-gray-50'
           }`}
         >
@@ -82,7 +82,7 @@ export default function GraphControls({
           onClick={() => onLayoutChange('radial')}
           className={`w-full px-3 py-2 text-sm rounded transition-colors mb-1 ${
             layout === 'radial'
-              ? 'bg-[#0A1628] text-white'
+              ? 'bg-[#1A1332] text-white'
               : 'text-gray-700 hover:bg-gray-50'
           }`}
         >
@@ -93,7 +93,7 @@ export default function GraphControls({
           onClick={() => onLayoutChange('circular')}
           className={`w-full px-3 py-2 text-sm rounded transition-colors ${
             layout === 'circular'
-              ? 'bg-[#0A1628] text-white'
+              ? 'bg-[#1A1332] text-white'
               : 'text-gray-700 hover:bg-gray-50'
           }`}
         >

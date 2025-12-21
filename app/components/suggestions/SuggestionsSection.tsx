@@ -40,7 +40,7 @@ export default function SuggestionsSection({
           </h2>
         </div>
         <div className="flex items-center justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#1E3A5F]" />
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#2A2447]" />
         </div>
       </Card>
     );
@@ -91,7 +91,7 @@ export default function SuggestionsSection({
             Engagement Suggestions
           </h2>
           {newCount > 0 && (
-            <span className="px-3 py-1 bg-[#C9A227] text-white text-xs font-semibold rounded-full">
+            <span className="px-3 py-1 bg-[#E85D54] text-white text-xs font-semibold rounded-full">
               {newCount} New
             </span>
           )}
@@ -99,7 +99,7 @@ export default function SuggestionsSection({
         {showViewAll && activeSuggestions.length > 0 && (
           <a
             href="/suggestions"
-            className="text-sm text-[#1E3A5F] hover:text-[#C9A227] font-medium transition-colors"
+            className="text-sm text-[#2A2447] hover:text-[#E85D54] font-medium transition-colors"
           >
             View All ({suggestions.length})
           </a>

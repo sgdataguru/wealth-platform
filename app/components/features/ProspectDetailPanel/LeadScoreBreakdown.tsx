@@ -32,7 +32,7 @@ export default function LeadScoreBreakdown({ prospect }: LeadScoreBreakdownProps
       {/* Expandable Breakdown */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2 text-sm text-[#1E3A5F] hover:text-[#C9A227] transition-colors mb-3"
+        className="flex items-center gap-2 text-sm text-[#2A2447] hover:text-[#E85D54] transition-colors mb-3"
       >
         <svg
           className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-90' : ''}`}
@@ -51,13 +51,13 @@ export default function LeadScoreBreakdown({ prospect }: LeadScoreBreakdownProps
             <div key={index} className="bg-[#F8F9FA] rounded-lg p-3">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium text-[#1A1A2E]">{factor.label}</span>
-                <span className="text-sm font-bold text-[#C9A227]">+{factor.points} pts</span>
+                <span className="text-sm font-bold text-[#E85D54]">+{factor.points} pts</span>
               </div>
               
               {/* Progress Bar */}
               <div className="w-full bg-[#E5E4E2] rounded-full h-2 mb-2">
                 <div
-                  className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] h-2 rounded-full transition-all duration-500"
+                  className="bg-gradient-to-r from-[#E85D54] to-[#F06E66] h-2 rounded-full transition-all duration-500"
                   style={{ width: `${(factor.points / totalPoints) * 100}%` }}
                 />
               </div>

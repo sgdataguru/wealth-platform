@@ -64,7 +64,7 @@ export default function NodeDetailsPanel({ node, onClose, onFindIntro }: NodeDet
             {!node.properties.isClient && onFindIntro && (
               <button
                 onClick={() => onFindIntro(node.id)}
-                className="mt-4 w-full px-4 py-2 bg-[#C9A227] text-white text-sm font-medium rounded hover:bg-[#A68519] transition-colors"
+                className="mt-4 w-full px-4 py-2 bg-[#E85D54] text-white text-sm font-medium rounded hover:bg-[#C73E36] transition-colors"
               >
                 Find Intro Path
               </button>

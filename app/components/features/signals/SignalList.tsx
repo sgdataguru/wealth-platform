@@ -172,7 +172,7 @@ export default function SignalList({ onSignalClick }: SignalListProps) {
           </p>
           <button
             onClick={handleClearFilters}
-            className="px-6 py-2 bg-[#1E3A5F] text-white rounded hover:bg-[#0A1628] transition-colors"
+            className="px-6 py-2 bg-[#2A2447] text-white rounded hover:bg-[#1A1332] transition-colors"
           >
             Clear Filters
           </button>

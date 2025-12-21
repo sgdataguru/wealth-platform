@@ -36,7 +36,7 @@ export default function LeadCard({ lead, onClick }: LeadCardProps) {
       <div className="flex items-start justify-between gap-4">
         {/* Avatar and Info */}
         <div className="flex items-start gap-3 flex-1">
-          <div className="w-12 h-12 rounded-full bg-[#0A1628] text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">
+          <div className="w-12 h-12 rounded-full bg-[#1A1332] text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">
             {initials}
           </div>
           
@@ -66,8 +66,8 @@ export default function LeadCard({ lead, onClick }: LeadCardProps) {
         {/* Lead Score */}
         <div className="flex flex-col items-end flex-shrink-0">
           <div className={`text-2xl font-bold ${
-            lead.leadScore >= 90 ? 'text-[#C9A227]' : 
-            lead.leadScore >= 70 ? 'text-[#1E3A5F]' : 
+            lead.leadScore >= 90 ? 'text-[#E85D54]' : 
+            lead.leadScore >= 70 ? 'text-[#2A2447]' : 
             'text-[#5A6C7D]'
           }`}>
             {lead.leadScore}

@@ -20,15 +20,15 @@ export default function LeadScore({
 }: LeadScoreProps) {
   const categoryStyles = {
     excellent: {
-      color: 'from-[#C9A227] to-[#D4AF37]',
-      textColor: 'text-[#C9A227]',
-      bgColor: 'bg-gradient-to-r from-[#C9A227] to-[#D4AF37]',
+      color: 'from-[#E85D54] to-[#F06E66]',
+      textColor: 'text-[#E85D54]',
+      bgColor: 'bg-gradient-to-r from-[#E85D54] to-[#F06E66]',
       label: 'Excellent',
     },
     good: {
-      color: 'from-[#1E3A5F] to-[#2C4A6F]',
-      textColor: 'text-[#1E3A5F]',
-      bgColor: 'bg-[#1E3A5F]',
+      color: 'from-[#2A2447] to-[#3A3557]',
+      textColor: 'text-[#2A2447]',
+      bgColor: 'bg-[#2A2447]',
       label: 'Good',
     },
     fair: {

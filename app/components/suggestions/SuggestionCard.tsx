@@ -178,7 +178,7 @@ export default function SuggestionCard({ suggestion, onAction }: SuggestionCardP
         </p>
         
         {/* Recommended Action */}
-        <div className="bg-white border border-[#C9A227] rounded-lg p-4 mb-4">
+        <div className="bg-white border border-[#E85D54] rounded-lg p-4 mb-4">
           <div className="flex items-start gap-2">
             <span className="text-xl">💡</span>
             <div className="flex-1">
@@ -205,7 +205,7 @@ export default function SuggestionCard({ suggestion, onAction }: SuggestionCardP
               id={`outcome-${suggestion.id}`}
               value={outcome}
               onChange={(e) => setOutcome(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2A2447] focus:border-transparent"
               rows={3}
               placeholder="E.g., Called and scheduled meeting for next week"
             />

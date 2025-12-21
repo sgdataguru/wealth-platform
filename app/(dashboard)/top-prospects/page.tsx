@@ -105,7 +105,7 @@ export default function TopProspectsPage() {
               >
                 {showFilters ? 'Hide Filters' : 'Show Filters'}
                 {activeFilterCount > 0 && (
-                  <span className="ml-2 bg-[#C9A227] text-white px-2 py-0.5 rounded-full text-xs">
+                  <span className="ml-2 bg-[#E85D54] text-white px-2 py-0.5 rounded-full text-xs">
                     {activeFilterCount}
                   </span>
                 )}
@@ -158,7 +158,7 @@ export default function TopProspectsPage() {
                   <span className="text-3xl font-bold text-[#1A1A2E]">
                     {prospects.filter(p => !p.lastContacted).length}
                   </span>
-                  <span className="text-sm font-medium text-[#C9A227]">
+                  <span className="text-sm font-medium text-[#E85D54]">
                     Due today
                   </span>
                 </div>
@@ -192,8 +192,8 @@ export default function TopProspectsPage() {
                         className={`
                           px-4 py-2 rounded-lg text-sm font-medium transition-all
                           ${filters.signalTypes?.includes(option.value)
-                            ? 'bg-[#1E3A5F] text-white'
-                            : 'bg-white border border-gray-300 text-[#5A6C7D] hover:border-[#1E3A5F]'
+                            ? 'bg-[#2A2447] text-white'
+                            : 'bg-white border border-gray-300 text-[#5A6C7D] hover:border-[#2A2447]'
                           }
                         `}
                       >

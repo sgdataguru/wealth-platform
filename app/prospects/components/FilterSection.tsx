@@ -51,7 +51,7 @@ export function FilterSection({
           {title}
         </h3>
         {selectedCount > 0 && (
-          <span className="px-2 py-0.5 bg-[#1E3A5F] text-white text-xs font-semibold rounded-full">
+          <span className="px-2 py-0.5 bg-[#2A2447] text-white text-xs font-semibold rounded-full">
             {selectedCount}
           </span>
         )}

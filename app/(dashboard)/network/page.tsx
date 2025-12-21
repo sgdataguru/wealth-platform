@@ -13,6 +13,7 @@ import FilterSidebar from './components/FilterSidebar';
 import NodeDetailsPanel from './components/NodeDetailsPanel';
 import IntroPathFinder from './components/IntroPathFinder';
 import Header from '@/app/components/layout/Header';
+import Sidebar from '@/app/components/layout/Sidebar';
 import type {
   GraphNode,
   GraphEdge,
@@ -33,16 +34,16 @@ export default function NetworkPage() {
   const [edges, setEdges] = useState<GraphEdge[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   const [highlightedNodeIds, setHighlightedNodeIds] = useState<string[]>([]);
-  
+
   const [filters, setFilters] = useState<GraphFilters>({
     nodeTypes: [],
     sectors: [],
     onlyClients: false
   });
-  
+
   const [layout, setLayout] = useState<GraphLayout>('force-directed');
   const [viewport, setViewport] = useState<Viewport>({
     x: 0,
@@ -59,8 +60,8 @@ export default function NetworkPage() {
     nodeTypeCounts: {} as Record<string, number>
   });
 
-  // Canvas dimensions
-  const canvasWidth = typeof window !== 'undefined' ? window.innerWidth - 256 : 1200;
+  // Canvas dimensions - account for sidebar
+  const canvasWidth = typeof window !== 'undefined' ? window.innerWidth - 256 - 256 : 1200;
   const canvasHeight = typeof window !== 'undefined' ? window.innerHeight - 64 : 800;
 
   // Fetch graph data
@@ -129,14 +130,14 @@ export default function NetworkPage() {
   // Handle node click
   const handleNodeClick = useCallback((nodeId: string) => {
     setSelectedNodeId(nodeId);
-    
+
     // Highlight connected nodes
     const connectedIds = new Set<string>([nodeId]);
     edges.forEach(edge => {
       if (edge.source === nodeId) connectedIds.add(edge.target);
       if (edge.target === nodeId) connectedIds.add(edge.source);
     });
-    
+
     setHighlightedNodeIds(Array.from(connectedIds));
   }, [edges]);
 
@@ -167,7 +168,7 @@ export default function NetworkPage() {
       const data = await response.json();
       if (data.success) {
         setIntroPath(data.data.recommended);
-        
+
         // Highlight path nodes
         const pathNodeIds = data.data.recommended.path.map((n: GraphNode) => n.id);
         setHighlightedNodeIds(pathNodeIds);
@@ -231,16 +232,19 @@ export default function NetworkPage() {
   if (error) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header userName="Priya Mehta" userInitials="PM" />
-        <div className="flex items-center justify-center h-[calc(100vh-64px)]">
-          <div className="text-center">
-            <p className="text-red-600 mb-4">{error}</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="px-4 py-2 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#0A1628]"
-            >
-              Retry
-            </button>
+        <Header />
+        <div className="flex h-[calc(100vh-64px)]">
+          <Sidebar activePage="network" />
+          <div className="flex-1 flex items-center justify-center">
+            <div className="text-center">
+              <p className="text-red-600 mb-4">{error}</p>
+              <button
+                onClick={() => window.location.reload()}
+                className="px-4 py-2 bg-[#2A2447] text-white rounded-lg hover:bg-[#1A1332]"
+              >
+                Retry
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -249,9 +253,12 @@ export default function NetworkPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header userName="Priya Mehta" userInitials="PM" />
-      
+      <Header />
+
       <div className="flex h-[calc(100vh-64px)]">
+        {/* Sidebar */}
+        <Sidebar activePage="network" />
+
         {/* Filter Sidebar */}
         <FilterSidebar
           filters={filters}
@@ -264,7 +271,7 @@ export default function NetworkPage() {
           {isLoading ? (
             <div className="absolute inset-0 flex items-center justify-center bg-white">
               <div className="text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1E3A5F] mx-auto mb-4"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#2A2447] mx-auto mb-4"></div>
                 <p className="text-gray-600">Loading relationship graph...</p>
               </div>
             </div>

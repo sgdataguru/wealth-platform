@@ -73,7 +73,7 @@ export default function ActivityTimeline({ activities }: ActivityTimelineProps) 
           <div key={activity.id} className="flex gap-3">
             {/* Timeline Icon */}
             <div className="flex flex-col items-center">
-              <div className="w-8 h-8 rounded-full bg-[#1E3A5F] text-white flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 rounded-full bg-[#2A2447] text-white flex items-center justify-center flex-shrink-0">
                 {getActivityIcon(activity.type)}
               </div>
               {activity.id !== activities[activities.length - 1].id && (

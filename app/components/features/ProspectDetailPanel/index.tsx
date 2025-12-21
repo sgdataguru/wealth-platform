@@ -99,14 +99,14 @@ export default function ProspectDetailPanel({ prospect }: ProspectDetailPanelPro
         aria-labelledby="panel-title"
       >
         {/* Panel Header */}
-        <div className="sticky top-0 bg-[#0A1628] text-white px-8 py-6 z-10">
+        <div className="sticky top-0 bg-[#1A1332] text-white px-8 py-6 z-10">
           <div className="flex items-center justify-between">
             <h2 id="panel-title" className="text-xl font-semibold">
               Prospect Details
             </h2>
             <button
               onClick={closePanel}
-              className="p-2 hover:bg-[#1E3A5F] rounded transition-colors"
+              className="p-2 hover:bg-[#2A2447] rounded transition-colors"
               aria-label="Close panel"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,7 +120,7 @@ export default function ProspectDetailPanel({ prospect }: ProspectDetailPanelPro
         <div className="h-[calc(100vh-88px)] overflow-y-auto px-8 py-6 space-y-6">
           {isLoading && (
             <div className="flex items-center justify-center py-12">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#C9A227]" />
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#E85D54]" />
             </div>
           )}
 

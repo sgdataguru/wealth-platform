@@ -70,7 +70,7 @@ export default function FilterSidebar({ filters, onFiltersChange, stats }: Filte
                 type="checkbox"
                 checked={filters.nodeTypes.length === 0 || filters.nodeTypes.includes(value)}
                 onChange={() => toggleNodeType(value)}
-                className="w-4 h-4 text-[#1E3A5F] border-gray-300 rounded focus:ring-[#1E3A5F]"
+                className="w-4 h-4 text-[#2A2447] border-gray-300 rounded focus:ring-[#2A2447]"
               />
               <span className="text-sm text-gray-700">{label}</span>
               <span className="ml-auto text-xs text-gray-500">
@@ -92,7 +92,7 @@ export default function FilterSidebar({ filters, onFiltersChange, stats }: Filte
               sectors: sector === 'All' ? [] : [sector]
             });
           }}
-          className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1E3A5F]"
+          className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#2A2447]"
         >
           {sectorOptions.map(sector => (
             <option key={sector} value={sector}>{sector}</option>
@@ -107,7 +107,7 @@ export default function FilterSidebar({ filters, onFiltersChange, stats }: Filte
             type="checkbox"
             checked={filters.onlyClients || false}
             onChange={(e) => onFiltersChange({ onlyClients: e.target.checked })}
-            className="w-4 h-4 text-[#1E3A5F] border-gray-300 rounded focus:ring-[#1E3A5F]"
+            className="w-4 h-4 text-[#2A2447] border-gray-300 rounded focus:ring-[#2A2447]"
           />
           <span className="text-sm text-gray-700">Show Clients Only</span>
         </label>

@@ -34,7 +34,7 @@ const activityTypeColors: Record<string, string> = {
   follow_up_created: 'bg-indigo-500',
   follow_up_completed: 'bg-green-600',
   follow_up_updated: 'bg-blue-600',
-  lead_converted: 'bg-[#C9A227]',
+  lead_converted: 'bg-[#E85D54]',
   intelligence_added: 'bg-orange-500',
   note_added: 'bg-gray-500',
 };

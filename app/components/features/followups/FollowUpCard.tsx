@@ -81,7 +81,7 @@ export default function FollowUpCard({ followUp, onClick, onComplete }: FollowUp
         {followUp.status !== 'completed' && (
           <button
             onClick={handleComplete}
-            className="flex-shrink-0 px-3 py-1.5 text-sm font-medium text-white bg-[#1E3A5F] rounded hover:bg-[#0A1628] transition-colors"
+            className="flex-shrink-0 px-3 py-1.5 text-sm font-medium text-white bg-[#2A2447] rounded hover:bg-[#1A1332] transition-colors"
           >
             Mark Complete
           </button>

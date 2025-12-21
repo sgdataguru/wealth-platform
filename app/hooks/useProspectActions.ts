@@ -8,8 +8,9 @@
 import { useState, useCallback } from 'react';
 import type { Prospect } from '@/types';
 
-export function useProspectActions(prospect: Prospect | null) {
+export function useProspectActions(prospect?: Prospect | null) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isCreating, setIsCreating] = useState(false);
 
   const handleCall = useCallback(async () => {
     if (!prospect) return;
@@ -96,11 +97,44 @@ export function useProspectActions(prospect: Prospect | null) {
     }
   }, [prospect]);
 
+  // Generic action creator for any prospect
+  const createAction = useCallback(async (
+    prospectId: string,
+    actionData: { actionType: string; description: string }
+  ): Promise<boolean> => {
+    try {
+      setIsCreating(true);
+
+      // In production, this would call the API endpoint
+      const response = await fetch(`/api/prospects/${prospectId}/actions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(actionData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create action');
+      }
+
+      const result = await response.json();
+      return result.success;
+    } catch (error) {
+      console.error('Failed to create action:', error);
+      return false;
+    } finally {
+      setIsCreating(false);
+    }
+  }, []);
+
   return {
     handleCall,
     handleEmail,
     handleAddNote,
     handleScheduleFollowUp,
+    createAction,
     isSubmitting,
+    isCreating,
   };
 }

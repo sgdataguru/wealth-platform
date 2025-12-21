@@ -56,7 +56,7 @@ export default function FactorCard({ factor }: FactorCardProps) {
         
         {/* Points contributed */}
         <div className="flex flex-col items-end gap-1">
-          <span className="text-2xl font-bold text-[#C9A227]">
+          <span className="text-2xl font-bold text-[#E85D54]">
             +{contribution}
           </span>
           <span className="text-xs text-[#8E99A4]">
@@ -68,7 +68,7 @@ export default function FactorCard({ factor }: FactorCardProps) {
       {/* Contribution bar */}
       <div className="mt-3 w-full bg-gray-200 rounded-full h-2">
         <div
-          className="h-2 rounded-full bg-gradient-to-r from-[#C9A227] to-[#D4AF37] transition-all duration-500"
+          className="h-2 rounded-full bg-gradient-to-r from-[#E85D54] to-[#F06E66] transition-all duration-500"
           style={{ width: `${Math.min(100, factor.points_contributed)}%` }}
         />
       </div>

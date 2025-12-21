@@ -98,7 +98,7 @@ export default function SignalFilters({
                 className={`
                   px-4 py-2 rounded text-sm font-medium transition-colors
                   ${timeline === option.value
-                    ? 'bg-[#1E3A5F] text-white'
+                    ? 'bg-[#2A2447] text-white'
                     : 'bg-[#F8F9FA] text-[#5A6C7D] hover:bg-[#EFF1F3]'
                   }
                 `}
@@ -147,7 +147,7 @@ export default function SignalFilters({
                 className={`
                   px-4 py-2 rounded text-sm font-medium transition-colors
                   ${source.includes(option)
-                    ? 'bg-[#C9A227] text-white'
+                    ? 'bg-[#E85D54] text-white'
                     : 'bg-[#F8F9FA] text-[#5A6C7D] hover:bg-[#EFF1F3]'
                   }
                 `}

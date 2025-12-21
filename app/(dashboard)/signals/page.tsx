@@ -89,7 +89,7 @@ export default function SignalsPage() {
                   Unactioned
                 </span>
                 <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-3xl font-bold text-[#C9A227]">8</span>
+                  <span className="text-3xl font-bold text-[#E85D54]">8</span>
                 </div>
               </div>
             </Card>

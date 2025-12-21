@@ -65,7 +65,7 @@ export default function ProspectCard({
 
       {/* Wallet Share (if available) */}
       {prospect.estWealth && prospect.myShare && (
-        <div className="mt-4 p-3 bg-gradient-to-r from-[#0A1628]/5 to-[#1E3A5F]/5 rounded-lg border border-[#1E3A5F]/20">
+        <div className="mt-4 p-3 bg-gradient-to-r from-[#1A1332]/5 to-[#2A2447]/5 rounded-lg border border-[#2A2447]/20">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
@@ -79,7 +79,7 @@ export default function ProspectCard({
               <p className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
                 My Share
               </p>
-              <p className="text-lg font-bold text-[#C9A227] mt-1">
+              <p className="text-lg font-bold text-[#E85D54] mt-1">
                 {prospect.myShare}
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function ProspectCard({
               <p className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
                 % Share
               </p>
-              <p className="text-lg font-bold text-[#1E3A5F] mt-1">
+              <p className="text-lg font-bold text-[#2A2447] mt-1">
                 {prospect.sharePercentage}%
               </p>
             </div>

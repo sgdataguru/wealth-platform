@@ -4,11 +4,11 @@
 /* Inspired by Nuvama Wealth - Premium Aesthetic */
 
 :root {
-  /* Primary Colors */
-  --primary-deep-blue: #0A1628;
-  --primary-royal-blue: #1E3A5F;
-  --primary-accent: #C9A227;
-  --primary-gold: #D4AF37;
+  /* Primary Colors - Nuvama Branding */
+  --primary-deep-blue: #1A1332;
+  --primary-royal-blue: #2A2447;
+  --primary-accent: #E85D54;
+  --primary-coral: #E85D54;
   
   /* Secondary Colors */
   --secondary-slate: #2C3E50;
@@ -19,15 +19,15 @@
   /* Background & Surface */
   --bg-primary: #FFFFFF;
   --bg-secondary: #F8F9FA;
-  --bg-dark: #0A1628;
+  --bg-dark: #1A1332;
   --bg-card: #FFFFFF;
-  --bg-overlay: rgba(10, 22, 40, 0.95);
+  --bg-overlay: rgba(26, 19, 50, 0.95);
   
   /* Text Colors */
   --text-primary: #1A1A2E;
   --text-secondary: #5A6C7D;
   --text-light: #FFFFFF;
-  --text-accent: #C9A227;
+  --text-accent: #E85D54;
   --text-muted: #8E99A4;
   
   /* Semantic Colors */

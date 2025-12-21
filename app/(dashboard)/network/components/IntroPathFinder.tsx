@@ -48,7 +48,7 @@ export default function IntroPathFinder({
           className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-50 transition-colors flex items-center justify-between"
         >
           <div className="flex items-center gap-2">
-            <svg className="w-5 h-5 text-[#1E3A5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-[#2A2447]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <span className="text-sm font-medium text-gray-700">Find Warm Intro</span>
@@ -75,7 +75,7 @@ export default function IntroPathFinder({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search prospects..."
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1E3A5F] mb-3"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#2A2447] mb-3"
           />
 
           {/* People List */}
@@ -135,9 +135,9 @@ export default function IntroPathFinder({
               <div key={node.id}>
                 <div className="flex items-center gap-2">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold ${
-                    idx === 0 ? 'bg-[#0A1628] text-white' : 
+                    idx === 0 ? 'bg-[#1A1332] text-white' : 
                     idx === introPath.path.length - 1 ? 'bg-[#DC3545] text-white' :
-                    'bg-[#1E3A5F] text-white'
+                    'bg-[#2A2447] text-white'
                   }`}>
                     {idx + 1}
                   </div>
@@ -178,7 +178,7 @@ export default function IntroPathFinder({
       {isCalculating && (
         <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-4">
           <div className="flex items-center justify-center gap-2">
-            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#1E3A5F]"></div>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#2A2447]"></div>
             <span className="text-sm text-gray-600">Finding path...</span>
           </div>
         </div>

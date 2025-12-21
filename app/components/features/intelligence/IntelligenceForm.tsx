@@ -76,7 +76,7 @@ export default function IntelligenceForm({
           {...register('clientId')}
           type="text"
           placeholder="Enter client ID (e.g., 1, 2, 3)"
-          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent"
+          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#2A2447] focus:border-transparent"
         />
         {errors.clientId && (
           <p className="mt-1 text-sm text-red-600">{errors.clientId.message}</p>
@@ -108,7 +108,7 @@ export default function IntelligenceForm({
                 {...register('eventType')}
                 type="radio"
                 value={type.value}
-                className="w-4 h-4 text-[#1E3A5F] focus:ring-[#1E3A5F]"
+                className="w-4 h-4 text-[#2A2447] focus:ring-[#2A2447]"
               />
               <span className="text-sm text-[#1A1A2E]">{type.label}</span>
             </label>
@@ -128,7 +128,7 @@ export default function IntelligenceForm({
           {...register('eventDetails')}
           rows={4}
           placeholder="Describe the liquidity event, including any relevant details..."
-          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent resize-none"
+          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#2A2447] focus:border-transparent resize-none"
         />
         {errors.eventDetails && (
           <p className="mt-1 text-sm text-red-600">{errors.eventDetails.message}</p>
@@ -145,7 +145,7 @@ export default function IntelligenceForm({
         </label>
         <select
           {...register('expectedTimeline')}
-          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent"
+          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#2A2447] focus:border-transparent"
         >
           <option value="30_days">0-30 days</option>
           <option value="30_60_days">30-60 days</option>
@@ -171,7 +171,7 @@ export default function IntelligenceForm({
             })}
             type="number"
             placeholder="0"
-            className="w-full pl-8 pr-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent"
+            className="w-full pl-8 pr-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#2A2447] focus:border-transparent"
           />
         </div>
         {errors.estimatedAmount && (
@@ -187,7 +187,7 @@ export default function IntelligenceForm({
         </label>
         <select
           {...register('informationSource')}
-          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent"
+          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#2A2447] focus:border-transparent"
         >
           <option value="client_conversation">Client Conversation</option>
           <option value="network_contact">Network Contact</option>
@@ -210,7 +210,7 @@ export default function IntelligenceForm({
           {...register('additionalNotes')}
           rows={3}
           placeholder="Any additional context or notes..."
-          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] focus:border-transparent resize-none"
+          className="w-full px-4 py-3 bg-[#F8F9FA] border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#2A2447] focus:border-transparent resize-none"
         />
         {errors.additionalNotes && (
           <p className="mt-1 text-sm text-red-600">{errors.additionalNotes.message}</p>
@@ -235,7 +235,7 @@ export default function IntelligenceForm({
                 {...register('severity')}
                 type="radio"
                 value={severity.value}
-                className="w-4 h-4 text-[#1E3A5F] focus:ring-[#1E3A5F]"
+                className="w-4 h-4 text-[#2A2447] focus:ring-[#2A2447]"
               />
               <span className={`w-3 h-3 rounded-full ${severity.color}`}></span>
               <span className="text-sm text-[#1A1A2E]">{severity.label}</span>

@@ -21,7 +21,7 @@ export function FilterPill({ label, onRemove, className = '' }: FilterPillProps)
   return (
     <div
       className={`inline-flex items-center gap-2 px-3 py-1.5
-                  bg-[#EBF4FF] text-[#1E3A5F] text-sm font-medium
+                  bg-[#EBF4FF] text-[#2A2447] text-sm font-medium
                   border border-[#C9D6E8] rounded-full
                   transition-all duration-200
                   hover:bg-[#D6E9FF] hover:shadow-sm

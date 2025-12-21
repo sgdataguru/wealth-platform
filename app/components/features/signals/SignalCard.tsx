@@ -70,7 +70,7 @@ export default function SignalCard({
       onClick={handleClick}
       className={`
         p-5 bg-white rounded-lg border transition-all cursor-pointer
-        ${signal.isRead ? 'border-[#E1E5EB]' : 'border-[#C9A227] border-l-4'}
+        ${signal.isRead ? 'border-[#E1E5EB]' : 'border-[#E85D54] border-l-4'}
         hover:shadow-md hover:-translate-y-0.5
       `}
     >
@@ -80,7 +80,7 @@ export default function SignalCard({
           <div className="flex items-center gap-3 mb-2">
             <SignalBadge severity={signal.severity} label={getSignalTypeLabel(signal.type)} compact />
             {signal.source === 'Manual Intelligence' && (
-              <span className="px-2 py-0.5 text-xs font-semibold bg-[#C9A227] text-white rounded">
+              <span className="px-2 py-0.5 text-xs font-semibold bg-[#E85D54] text-white rounded">
                 MANUAL
               </span>
             )}
@@ -88,7 +88,7 @@ export default function SignalCard({
               {formatTimeAgo(signal.createdAt)}
             </span>
             {!signal.isRead && (
-              <span className="px-2 py-0.5 text-xs font-medium bg-[#C9A227] text-white rounded">
+              <span className="px-2 py-0.5 text-xs font-medium bg-[#E85D54] text-white rounded">
                 NEW
               </span>
             )}
@@ -131,8 +131,8 @@ export default function SignalCard({
             onClick={handleActionClick}
             className="
               px-4 py-2 text-sm font-medium
-              bg-[#1E3A5F] text-white rounded
-              hover:bg-[#0A1628] transition-colors
+              bg-[#2A2447] text-white rounded
+              hover:bg-[#1A1332] transition-colors
               whitespace-nowrap
             "
           >

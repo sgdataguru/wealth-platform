@@ -32,20 +32,20 @@ export default function Button({
 
   const variantStyles = {
     primary: `
-      bg-gradient-to-r from-[#C9A227] to-[#D4AF37]
-      text-[#1A1A2E] hover:shadow-lg
-      focus:ring-[#C9A227]
-      hover:from-[#D4AF37] hover:to-[#E5C448]
+      bg-gradient-to-r from-[#E85D54] to-[#F06E66]
+      text-white hover:shadow-lg
+      focus:ring-[#E85D54]
+      hover:from-[#F06E66] hover:to-[#F88078]
     `,
     secondary: `
-      bg-transparent border-2 border-[#1E3A5F]
-      text-[#1E3A5F] hover:bg-[#1E3A5F] hover:text-white
-      focus:ring-[#1E3A5F]
+      bg-transparent border-2 border-[#1A1332]
+      text-[#1A1332] hover:bg-[#1A1332] hover:text-white
+      focus:ring-[#1A1332]
     `,
     ghost: `
-      bg-transparent text-[#1E3A5F]
+      bg-transparent text-[#1A1332]
       hover:bg-[#F8F9FA] hover:underline
-      focus:ring-[#1E3A5F]
+      focus:ring-[#E85D54]
     `,
   };
 

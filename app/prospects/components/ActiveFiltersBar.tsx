@@ -94,7 +94,7 @@ export function ActiveFiltersBar({
             <div className="w-px h-6 bg-gray-300" />
             <button
               onClick={onClearAll}
-              className="text-sm text-[#5A6C7D] hover:text-[#1E3A5F] font-medium transition-colors"
+              className="text-sm text-[#5A6C7D] hover:text-[#2A2447] font-medium transition-colors"
             >
               Clear all ({totalFilters})
             </button>

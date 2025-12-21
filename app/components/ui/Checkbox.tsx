@@ -45,13 +45,13 @@ export function Checkbox({
         checked={checked}
         onChange={handleChange}
         disabled={disabled}
-        className="w-4 h-4 rounded border-2 border-gray-300 text-[#1E3A5F] 
-                   focus:ring-2 focus:ring-[#1E3A5F] focus:ring-opacity-30
-                   checked:bg-[#1E3A5F] checked:border-[#1E3A5F]
+        className="w-4 h-4 rounded border-2 border-gray-300 text-[#2A2447] 
+                   focus:ring-2 focus:ring-[#2A2447] focus:ring-opacity-30
+                   checked:bg-[#2A2447] checked:border-[#2A2447]
                    transition-all duration-200 cursor-pointer
                    disabled:cursor-not-allowed disabled:opacity-50"
       />
-      <span className="text-sm text-[#1A1A2E] group-hover:text-[#1E3A5F] transition-colors">
+      <span className="text-sm text-[#1A1A2E] group-hover:text-[#2A2447] transition-colors">
         {label}
       </span>
     </label>

@@ -127,7 +127,7 @@ export default function EnhancedProspectCard({
           </p>
           <ScoreExplanation explanation={leadScore.explanation} compact />
           <button
-            className="mt-2 text-sm font-medium text-[#C9A227] hover:text-[#D4AF37] transition-colors"
+            className="mt-2 text-sm font-medium text-[#E85D54] hover:text-[#F06E66] transition-colors"
             onClick={(e) => {
               e.stopPropagation();
               setIsModalOpen(true);

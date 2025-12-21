@@ -159,8 +159,8 @@ export default function NetworkGraph({
             const isHovered = hoveredNodeId === node.id;
             
             const radius = style.radius;
-            const fillColor = isSelected ? '#C9A227' : style.fill;
-            const strokeColor = isSelected ? '#C9A227' : style.stroke;
+            const fillColor = isSelected ? '#E85D54' : style.fill;
+            const strokeColor = isSelected ? '#E85D54' : style.stroke;
             const strokeWidth = isSelected ? 4 : style.strokeWidth;
             
             return (
@@ -232,7 +232,7 @@ export default function NetworkGraph({
                   <circle
                     r={radius + 6}
                     fill="none"
-                    stroke="#C9A227"
+                    stroke="#E85D54"
                     strokeWidth="2"
                     opacity="0.3"
                   />
@@ -243,7 +243,7 @@ export default function NetworkGraph({
                   <circle
                     r={radius + 4}
                     fill="none"
-                    stroke="#1E3A5F"
+                    stroke="#2A2447"
                     strokeWidth="2"
                     opacity="0.5"
                   />

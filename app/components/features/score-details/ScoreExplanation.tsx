@@ -29,7 +29,7 @@ export default function ScoreExplanation({
   return (
     <div className="bg-[#F8F9FA] rounded-lg p-4 border border-gray-200">
       <div className="flex items-start gap-3">
-        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#C9A227] flex items-center justify-center text-white">
+        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#E85D54] flex items-center justify-center text-white">
           <svg
             className="w-5 h-5"
             fill="none"

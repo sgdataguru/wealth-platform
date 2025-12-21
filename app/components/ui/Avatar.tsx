@@ -37,7 +37,7 @@ export default function Avatar({
     <div
       className={`
         ${sizeStyles[size]}
-        rounded-full bg-[#0A1628] text-white
+        rounded-full bg-[#1A1332] text-white
         flex items-center justify-center font-semibold
         ${className}
       `}

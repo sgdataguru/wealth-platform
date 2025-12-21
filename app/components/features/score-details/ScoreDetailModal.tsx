@@ -126,7 +126,7 @@ export default function ScoreDetailModal({
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
                           <div
-                            className="h-2 rounded-full bg-gradient-to-r from-[#1E3A5F] to-[#C9A227]"
+                            className="h-2 rounded-full bg-gradient-to-r from-[#2A2447] to-[#E85D54]"
                             style={{ width: `${percentage}%` }}
                           />
                         </div>

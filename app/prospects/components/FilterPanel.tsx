@@ -82,7 +82,7 @@ export function FilterPanel({ className = '' }: FilterPanelProps) {
           {hasFilters && (
             <button
               onClick={clearAllFilters}
-              className="text-sm text-[#1E3A5F] hover:text-[#0A1628] font-medium transition-colors"
+              className="text-sm text-[#2A2447] hover:text-[#1A1332] font-medium transition-colors"
             >
               Clear All
             </button>

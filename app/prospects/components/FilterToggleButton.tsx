@@ -21,10 +21,10 @@ export function FilterToggleButton({ onClick, filterCount }: FilterToggleButtonP
     <button
       onClick={onClick}
       className="fixed bottom-6 right-6 z-30 md:hidden
-                 bg-[#1E3A5F] text-white
+                 bg-[#2A2447] text-white
                  rounded-full shadow-lg
                  w-14 h-14 flex items-center justify-center
-                 hover:bg-[#0A1628] transition-all duration-200
+                 hover:bg-[#1A1332] transition-all duration-200
                  hover:scale-110 active:scale-95"
       aria-label="Toggle filters"
     >
@@ -41,7 +41,7 @@ export function FilterToggleButton({ onClick, filterCount }: FilterToggleButtonP
       {/* Badge showing active filter count */}
       {filterCount > 0 && (
         <span className="absolute -top-1 -right-1
-                       bg-[#C9A227] text-[#0A1628]
+                       bg-[#E85D54] text-[#1A1332]
                        rounded-full w-6 h-6
                        flex items-center justify-center
                        text-xs font-bold">

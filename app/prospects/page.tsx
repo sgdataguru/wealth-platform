@@ -326,8 +326,8 @@ export default function ProspectsPage() {
         footer={
           <button
             onClick={() => setIsMobileFilterOpen(false)}
-            className="w-full bg-[#1E3A5F] text-white py-3 rounded-lg
-                     hover:bg-[#0A1628] transition-colors font-medium"
+            className="w-full bg-[#2A2447] text-white py-3 rounded-lg
+                     hover:bg-[#1A1332] transition-colors font-medium"
           >
             Apply Filters
           </button>
