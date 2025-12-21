@@ -1,21 +1,22 @@
 /**
- * @file page.tsx
- * @description Main landing page with authentication check
+ * @file login/page.tsx
+ * @description Premium login page with shooting stars animation for Cockpit
+ * @module app/login
  */
 
 'use client';
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useUserRole } from './hooks/useUserRole';
+import ShootingStarsBackground from '../components/ui/ShootingStarsBackground';
+import LoginForm from '../components/features/LoginForm';
 
-export default function LandingPage() {
+export default function LoginPage() {
   const router = useRouter();
-  const { role, isRM, isExecutive } = useUserRole();
   const [isChecking, setIsChecking] = useState(true);
 
   useEffect(() => {
-    // Check if user is authenticated
+    // Check if user is already authenticated
     const checkAuth = () => {
       const authData = localStorage.getItem('nuvama_auth') || sessionStorage.getItem('nuvama_auth');
       
@@ -24,13 +25,8 @@ export default function LandingPage() {
           const auth = JSON.parse(authData);
           if (auth.isAuthenticated) {
             // Redirect to appropriate dashboard based on role
-            if (isRM) {
-              router.push('/rm');
-            } else if (isExecutive) {
-              router.push('/executive');
-            } else {
-              router.push('/rm'); // Default to RM dashboard
-            }
+            const role = localStorage.getItem('nuvama_user_role') || 'rm';
+            router.push(role === 'executive' ? '/executive' : '/rm');
             return;
           }
         } catch (error) {
@@ -40,17 +36,16 @@ export default function LandingPage() {
         }
       }
       
-      // Not authenticated, redirect to login
-      router.push('/login');
+      setIsChecking(false);
     };
 
     checkAuth();
-  }, [router, isRM, isExecutive]);
+  }, [router]);
 
-  // Loading state while checking authentication
-  return (
-    <div className="min-h-screen bg-[#0A1628] flex items-center justify-center">
-      <div className="flex flex-col items-center gap-4">
+  // Show loading state while checking authentication
+  if (isChecking) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#0A1628]">
         <svg className="w-16 h-16 animate-spin text-[#E85D54]" viewBox="0 0 24 24">
           <circle
             className="opacity-25"
@@ -67,7 +62,18 @@ export default function LandingPage() {
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
           />
         </svg>
-        <p className="text-white/70 text-sm">Checking authentication...</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated background */}
+      <ShootingStarsBackground />
+
+      {/* Login form */}
+      <div className="relative z-10 w-full animate-fade-in">
+        <LoginForm />
       </div>
     </div>
   );
