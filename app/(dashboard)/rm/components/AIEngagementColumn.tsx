@@ -22,7 +22,7 @@ export default function AIEngagementColumn({
 }: AIEngagementColumnProps) {
   if (isLoading) {
     return (
-      <ColumnWrapper title="AI Engagement" icon="🤖">
+      <ColumnWrapper title="Prospects - Liquidity Events" icon="💰">
         <div className="space-y-4">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="bg-white rounded-lg p-4 animate-pulse">
@@ -38,8 +38,8 @@ export default function AIEngagementColumn({
 
   return (
     <ColumnWrapper
-      title="AI Engagement"
-      icon="🤖"
+      title="Prospects - Liquidity Events"
+      icon="💰"
       badge={suggestions.filter(s => s.priority === 'high').length}
     >
       {suggestions.length === 0 ? (
