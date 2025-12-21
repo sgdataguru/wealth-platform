@@ -20,9 +20,9 @@ export default function AIAdviceCard({ suggestion, onAction }: AIAdviceCardProps
   };
 
   const priorityLabels = {
-    high: 'HIGH PRIORITY',
-    medium: 'MEDIUM',
-    low: 'LOW',
+    high: 'HOT',
+    medium: 'WARM',
+    low: 'COLD',
   };
 
   const typeIcons = {
@@ -93,8 +93,8 @@ export default function AIAdviceCard({ suggestion, onAction }: AIAdviceCardProps
               ${button.variant === 'primary'
                 ? 'bg-[#E85D54] text-white hover:bg-[#d54d44]'
                 : button.variant === 'secondary'
-                ? 'bg-white text-[#1A1332] border border-[#1A1332] hover:bg-gray-50'
-                : 'text-gray-600 hover:text-gray-800 hover:bg-gray-100'
+                  ? 'bg-white text-[#1A1332] border border-[#1A1332] hover:bg-gray-50'
+                  : 'text-gray-600 hover:text-gray-800 hover:bg-gray-100'
               }
             `}
           >
