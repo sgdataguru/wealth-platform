@@ -13,8 +13,7 @@ import {
 } from './score-utils';
 
 /**
- * Scoring weights for different signal types
- * Total should sum to 1.0
+ * Scoring weights for different signal types (relative importance)
  */
 export const SCORING_WEIGHTS: Record<SignalType, number> = {
   ipo: 0.30, // 30% weight - highest priority
@@ -24,6 +23,11 @@ export const SCORING_WEIGHTS: Record<SignalType, number> = {
   board: 0.10, // 10% weight
   director_change: 0.08, // 8% weight
   corporate_action: 0.12, // 12% weight
+  buyback: 0.18, // 18% weight - tender offer liquidity
+  open_offer: 0.22, // 22% weight - takeover cash-out
+  stock_split: 0.10, // 10% weight - liquidity/volume shift
+  demerger: 0.20, // 20% weight - value unlock
+  rights_call: 0.16, // 16% weight - funding obligation for holders
   margin_pledge: 0.15, // 15% weight
   early_exit: 0.22, // 22% weight
 };

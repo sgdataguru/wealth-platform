@@ -4,59 +4,8 @@
  */
 
 import { NextResponse } from 'next/server';
-import type { Signal, ApiResponse } from '@/types';
-
-// Mock data - reusing the same signals from the main route
-const mockSignals: Signal[] = [
-  {
-    id: 's1',
-    type: 'ipo',
-    severity: 'critical',
-    title: 'IPO Filing Detected',
-    description: 'Tech Innovations Pvt Ltd filed DRHP with SEBI',
-    source: 'Exchange Data',
-    createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000),
-    isActioned: false,
-    isRead: false,
-    expectedTimeline: '30_days',
-    prospectId: '1',
-    prospectName: 'Rajesh Kumar',
-    estimatedLiquidity: 500,
-    confidence: 92,
-  },
-  {
-    id: 's2',
-    type: 'funding',
-    severity: 'high',
-    title: 'Series C Funding Round',
-    description: 'GreenEnergy Ltd raised $50M from Sequoia Capital',
-    source: 'PrivateCircle',
-    createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000),
-    isActioned: false,
-    isRead: false,
-    expectedTimeline: '30_60_days',
-    prospectId: '3',
-    prospectName: 'Vikram Rao',
-    estimatedLiquidity: 250,
-    confidence: 85,
-  },
-  {
-    id: 's3',
-    type: 'acquisition',
-    severity: 'high',
-    title: 'Acquisition Discussions',
-    description: 'FinServ Holdings in talks with PE firms',
-    source: 'VCCircle',
-    createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000),
-    isActioned: false,
-    isRead: true,
-    expectedTimeline: '60_90_days',
-    prospectId: '2',
-    prospectName: 'Anita Patel',
-    estimatedLiquidity: 800,
-    confidence: 78,
-  },
-];
+import type { ApiResponse, Signal } from '@/types';
+import { mockSignals } from '../mock-data';
 
 export async function GET() {
   try {

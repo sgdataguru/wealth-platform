@@ -15,6 +15,11 @@ export type SignalType =
   | 'board'
   | 'director_change'
   | 'corporate_action'
+  | 'buyback'
+  | 'open_offer'
+  | 'stock_split'
+  | 'demerger'
+  | 'rights_call'
   | 'margin_pledge'
   | 'early_exit';
 
@@ -25,7 +30,14 @@ export type DataSource =
   | 'Exchange Data'
   | 'VCCircle'
   | 'NewsAPI'
-  | 'Manual Intelligence';
+  | 'Manual Intelligence'
+  | 'ET Now'
+  | 'NSE Clearing Archive'
+  | 'IPO Central'
+  | 'Securities and Exchange Board of India'
+  | 'Economic Times'
+  | 'Business Standard'
+  | 'Angel One';
 
 // Timeline categories for signals
 export type SignalTimeline = '30_days' | '30_60_days' | '60_90_days' | '3_6_months' | '6_plus_months';
