@@ -157,7 +157,11 @@ export default function NetworkGraph({
             const isSelected = selectedNodeId === node.id;
             const isHighlighted = highlightedNodeIds.includes(node.id);
             const isHovered = hoveredNodeId === node.id;
-            
+
+            const rawDesignation = node.properties.designation;
+            const designation = typeof rawDesignation === 'string' ? rawDesignation : '';
+            const hasDesignation = Boolean(designation);
+
             const radius = style.radius;
             const fillColor = isSelected ? '#E85D54' : style.fill;
             const strokeColor = isSelected ? '#E85D54' : style.stroke;
@@ -215,7 +219,7 @@ export default function NetworkGraph({
                 </text>
                 
                 {/* Node sublabel (designation/role) */}
-                {node.properties.designation && (
+                {hasDesignation && (
                   <text
                     y={radius + 30}
                     textAnchor="middle"
@@ -223,7 +227,7 @@ export default function NetworkGraph({
                     fill="#5A6C7D"
                     className="pointer-events-none"
                   >
-                    {node.properties.designation}
+                    {designation}
                   </text>
                 )}
 

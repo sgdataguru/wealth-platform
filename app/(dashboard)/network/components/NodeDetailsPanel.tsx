@@ -20,39 +20,51 @@ export default function NodeDetailsPanel({ node, onClose, onFindIntro }: NodeDet
   const renderNodeDetails = () => {
     switch (node.type) {
       case 'person':
+        const designation = typeof node.properties.designation === 'string'
+          ? node.properties.designation
+          : 'N/A';
+        const netWorth = typeof node.properties.netWorth === 'number'
+          ? node.properties.netWorth
+          : null;
+        const sector = typeof node.properties.sector === 'string'
+          ? node.properties.sector
+          : null;
+        const isClient = Boolean(node.properties.isClient);
+        const isInfluencer = Boolean(node.properties.isInfluencer);
+
         return (
           <>
             <div className="space-y-2">
               <div>
                 <span className="text-xs font-medium text-gray-500">Designation</span>
-                <p className="text-sm text-gray-900">{node.properties.designation || 'N/A'}</p>
+                <p className="text-sm text-gray-900">{designation}</p>
               </div>
-              
-              {node.properties.netWorth && (
+
+              {netWorth !== null && (
                 <div>
                   <span className="text-xs font-medium text-gray-500">Net Worth</span>
                   <p className="text-sm font-semibold text-gray-900">
-                    {formatCurrency(node.properties.netWorth)}
+                    {formatCurrency(netWorth)}
                   </p>
                 </div>
               )}
-              
-              {node.properties.sector && (
+
+              {sector && (
                 <div>
                   <span className="text-xs font-medium text-gray-500">Sector</span>
-                  <p className="text-sm text-gray-900">{node.properties.sector}</p>
+                  <p className="text-sm text-gray-900">{sector}</p>
                 </div>
               )}
-              
+
               <div>
                 <span className="text-xs font-medium text-gray-500">Status</span>
                 <div className="flex gap-2 mt-1">
-                  {node.properties.isClient && (
+                  {isClient && (
                     <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
                       Client
                     </span>
                   )}
-                  {node.properties.isInfluencer && (
+                  {isInfluencer && (
                     <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">
                       Influencer
                     </span>
@@ -73,106 +85,130 @@ export default function NodeDetailsPanel({ node, onClose, onFindIntro }: NodeDet
         );
 
       case 'company':
+        const cin = typeof node.properties.cin === 'string' ? node.properties.cin : 'N/A';
+        const companySector = typeof node.properties.sector === 'string' ? node.properties.sector : null;
+        const valuation = typeof node.properties.valuation === 'number' ? node.properties.valuation : null;
+        const founded = typeof node.properties.founded === 'string' ? node.properties.founded : null;
+
         return (
           <div className="space-y-2">
             <div>
               <span className="text-xs font-medium text-gray-500">CIN</span>
-              <p className="text-sm text-gray-900 font-mono">{node.properties.cin || 'N/A'}</p>
+              <p className="text-sm text-gray-900 font-mono">{cin}</p>
             </div>
-            
-            {node.properties.sector && (
+
+            {companySector && (
               <div>
                 <span className="text-xs font-medium text-gray-500">Sector</span>
-                <p className="text-sm text-gray-900">{node.properties.sector}</p>
+                <p className="text-sm text-gray-900">{companySector}</p>
               </div>
             )}
-            
-            {node.properties.valuation && (
+
+            {valuation !== null && (
               <div>
                 <span className="text-xs font-medium text-gray-500">Valuation</span>
                 <p className="text-sm font-semibold text-gray-900">
-                  {formatCurrency(node.properties.valuation)}
+                  {formatCurrency(valuation)}
                 </p>
               </div>
             )}
-            
-            {node.properties.founded && (
+
+            {founded && (
               <div>
                 <span className="text-xs font-medium text-gray-500">Founded</span>
-                <p className="text-sm text-gray-900">{node.properties.founded}</p>
+                <p className="text-sm text-gray-900">{founded}</p>
               </div>
             )}
           </div>
         );
 
       case 'liquidity_event':
+        const eventType = typeof node.properties.type === 'string'
+          ? node.properties.type.replace(/_/g, ' ')
+          : 'N/A';
+        const amount = typeof node.properties.amount === 'number'
+          ? node.properties.amount
+          : null;
+        const eventDate = typeof node.properties.date === 'string' ? node.properties.date : null;
+        const source = typeof node.properties.source === 'string' ? node.properties.source : null;
+
         return (
           <div className="space-y-2">
             <div>
               <span className="text-xs font-medium text-gray-500">Type</span>
               <p className="text-sm text-gray-900 capitalize">
-                {node.properties.type?.replace(/_/g, ' ') || 'N/A'}
+                {eventType}
               </p>
             </div>
-            
-            {node.properties.amount && (
+
+            {amount !== null && (
               <div>
                 <span className="text-xs font-medium text-gray-500">Amount</span>
                 <p className="text-sm font-semibold text-gray-900">
-                  {formatCurrency(node.properties.amount)}
+                  {formatCurrency(amount)}
                 </p>
               </div>
             )}
-            
-            {node.properties.date && (
+
+            {eventDate && (
               <div>
                 <span className="text-xs font-medium text-gray-500">Date</span>
-                <p className="text-sm text-gray-900">{node.properties.date}</p>
+                <p className="text-sm text-gray-900">{eventDate}</p>
               </div>
             )}
-            
-            {node.properties.source && (
+
+            {source && (
               <div>
                 <span className="text-xs font-medium text-gray-500">Source</span>
-                <p className="text-sm text-gray-900">{node.properties.source}</p>
+                <p className="text-sm text-gray-900">{source}</p>
               </div>
             )}
           </div>
         );
 
       case 'network':
+        const networkType = typeof node.properties.type === 'string'
+          ? node.properties.type.replace(/_/g, ' ')
+          : 'N/A';
+        const memberCount = typeof node.properties.memberCount === 'number'
+          ? node.properties.memberCount
+          : null;
+
         return (
           <div className="space-y-2">
             <div>
               <span className="text-xs font-medium text-gray-500">Type</span>
               <p className="text-sm text-gray-900 capitalize">
-                {node.properties.type?.replace(/_/g, ' ') || 'N/A'}
+                {networkType}
               </p>
             </div>
-            
-            {node.properties.memberCount && (
+
+            {memberCount !== null && (
               <div>
                 <span className="text-xs font-medium text-gray-500">Members</span>
-                <p className="text-sm text-gray-900">{node.properties.memberCount}</p>
+                <p className="text-sm text-gray-900">{memberCount}</p>
               </div>
             )}
           </div>
         );
 
       case 'rm':
+        const email = typeof node.properties.email === 'string' ? node.properties.email : null;
+        const role = typeof node.properties.role === 'string' ? node.properties.role : null;
+
         return (
           <div className="space-y-2">
-            {node.properties.email && (
+            {email && (
               <div>
                 <span className="text-xs font-medium text-gray-500">Email</span>
-                <p className="text-sm text-gray-900">{node.properties.email}</p>
+                <p className="text-sm text-gray-900">{email}</p>
               </div>
             )}
-            
-            {node.properties.role && (
+
+            {role && (
               <div>
                 <span className="text-xs font-medium text-gray-500">Role</span>
-                <p className="text-sm text-gray-900">{node.properties.role}</p>
+                <p className="text-sm text-gray-900">{role}</p>
               </div>
             )}
           </div>

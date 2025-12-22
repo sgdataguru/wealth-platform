@@ -81,16 +81,22 @@ export default function IntroPathFinder({
           {/* People List */}
           <div className="max-h-60 overflow-y-auto space-y-1">
             {prospects.length > 0 ? (
-              prospects.map(person => (
-                <button
-                  key={person.id}
-                  onClick={() => handleSelectPerson(person.id)}
-                  className="w-full text-left px-3 py-2 rounded hover:bg-gray-50 transition-colors"
-                >
-                  <div className="text-sm font-medium text-gray-900">{person.label}</div>
-                  <div className="text-xs text-gray-500">{person.properties.designation}</div>
-                </button>
-              ))
+              prospects.map(person => {
+                const designation = typeof person.properties.designation === 'string'
+                  ? person.properties.designation
+                  : '';
+
+                return (
+                  <button
+                    key={person.id}
+                    onClick={() => handleSelectPerson(person.id)}
+                    className="w-full text-left px-3 py-2 rounded hover:bg-gray-50 transition-colors"
+                  >
+                    <div className="text-sm font-medium text-gray-900">{person.label}</div>
+                    <div className="text-xs text-gray-500">{designation}</div>
+                  </button>
+                );
+              })
             ) : (
               <p className="text-sm text-gray-500 text-center py-4">
                 {searchQuery ? 'No prospects found' : 'No prospects available'}
@@ -131,33 +137,42 @@ export default function IntroPathFinder({
 
           {/* Path Nodes */}
           <div className="space-y-2 mb-3">
-            {introPath.path.map((node, idx) => (
-              <div key={node.id}>
-                <div className="flex items-center gap-2">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold ${
-                    idx === 0 ? 'bg-[#1A1332] text-white' : 
-                    idx === introPath.path.length - 1 ? 'bg-[#DC3545] text-white' :
-                    'bg-[#2A2447] text-white'
-                  }`}>
-                    {idx + 1}
-                  </div>
-                  <div className="flex-1">
-                    <div className="text-sm font-medium text-gray-900">{node.label}</div>
-                    <div className="text-xs text-gray-500">
-                      {node.properties.designation || node.properties.role}
+            {introPath.path.map((node, idx) => {
+              const designation = typeof node.properties.designation === 'string'
+                ? node.properties.designation
+                : undefined;
+              const role = typeof node.properties.role === 'string'
+                ? node.properties.role
+                : undefined;
+
+              return (
+                <div key={node.id}>
+                  <div className="flex items-center gap-2">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold ${
+                      idx === 0 ? 'bg-[#1A1332] text-white' :
+                      idx === introPath.path.length - 1 ? 'bg-[#DC3545] text-white' :
+                      'bg-[#2A2447] text-white'
+                    }`}>
+                      {idx + 1}
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-medium text-gray-900">{node.label}</div>
+                      <div className="text-xs text-gray-500">
+                        {designation || role || ''}
+                      </div>
                     </div>
                   </div>
+
+                  {idx < introPath.path.length - 1 && (
+                    <div className="ml-4 pl-4 border-l-2 border-gray-200 py-1">
+                      <div className="text-xs text-gray-500">
+                        {introPath.relationships[idx]?.label}
+                      </div>
+                    </div>
+                  )}
                 </div>
-                
-                {idx < introPath.path.length - 1 && (
-                  <div className="ml-4 pl-4 border-l-2 border-gray-200 py-1">
-                    <div className="text-xs text-gray-500">
-                      {introPath.relationships[idx]?.label}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Suggestion */}

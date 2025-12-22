@@ -133,7 +133,7 @@ export default function RMDashboard() {
             {selectedProspect && <ProspectDetailPanel prospect={selectedProspect} />}
 
             {/* Floating AI Chatbot */}
-            <FloatingChatbot userRole="rm" userName="RM User" />
+            <FloatingChatbot userRole="rm" />
         </div>
     );
 }

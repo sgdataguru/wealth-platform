@@ -149,7 +149,7 @@ export default function ExecutiveDashboard() {
             </div>
 
             {/* Floating AI Chatbot */}
-            <FloatingChatbot userRole="executive" userName="Amit Saxena" />
+            <FloatingChatbot userRole="executive" />
         </div>
     );
 }

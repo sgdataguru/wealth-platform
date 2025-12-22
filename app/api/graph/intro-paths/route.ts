@@ -98,7 +98,8 @@ function calculatePathStrength(edges: GraphEdge[], hops: number): number {
     if (edge.type === 'director_of') return acc * 1.15;
     if (edge.type === 'investor_in') return acc * 1.1;
     if (edge.type === 'member_of') return acc * 1.05;
-    if (edge.properties?.strength) return acc * edge.properties.strength;
+    const strength = edge.properties?.strength;
+    if (typeof strength === 'number') return acc * strength;
     return acc;
   }, 1);
 

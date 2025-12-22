@@ -183,6 +183,8 @@ export default function ClientReportsPanel() {
         { id: 'opportunities', label: 'Opportunities', icon: '💎' }
     ];
 
+    const selectableReportTypes = reportTypes.filter((type): type is { id: ReportType; label: string; icon: string } => type.id !== 'all');
+
     const filteredReports = reportFilter === 'all'
         ? mockExecutiveReports
         : mockExecutiveReports.filter(r => r.reportType === reportFilter);
@@ -434,7 +436,7 @@ export default function ClientReportsPanel() {
                             <div>
                                 <label className="block text-sm font-semibold text-[#1A1A2E] mb-2">Report Type</label>
                                 <div className="grid grid-cols-2 gap-2">
-                                    {reportTypes.filter(t => t.id !== 'all').map(type => (
+                                    {selectableReportTypes.map(type => (
                                         <button key={type.id} onClick={() => setSelectedReportType(type.id)} className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border-2 ${selectedReportType === type.id ? 'bg-[#E85D54] text-white border-[#E85D54]' : 'bg-white text-[#5A6C7D] border-gray-300 hover:border-[#E85D54]'}`}>
                                             <div className="text-2xl mb-1">{type.icon}</div>{type.label}
                                         </button>

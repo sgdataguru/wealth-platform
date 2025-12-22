@@ -30,10 +30,12 @@ export async function GET(request: Request) {
     // Apply sector filter
     if (filterSectors && filterSectors !== 'All') {
       const sectors = filterSectors.split(',');
-      filteredNodes = filteredNodes.filter(node => 
+      filteredNodes = filteredNodes.filter(node =>
         node.type === 'rm' ||
-        !node.properties.sector ||
-        sectors.includes(node.properties.sector)
+        (() => {
+          const sector = typeof node.properties.sector === 'string' ? node.properties.sector : null;
+          return !sector || sectors.includes(sector);
+        })()
       );
     }
 
