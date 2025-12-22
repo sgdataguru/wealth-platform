@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Avatar from '../ui/Avatar';
 import { useUserRole } from '@/app/hooks/useUserRole';
+import ThemeToggle from './ThemeToggle';
 import type { UserRole } from '@/types';
 
 interface HeaderProps {
@@ -40,7 +41,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
 
   return (
     <div className="sticky top-0 z-50">
-      <div className="h-11 px-8 flex items-center justify-between bg-[rgba(7,11,21,0.9)] border-b border-[rgba(217,180,114,0.25)] backdrop-blur-[6px]">
+      <div className="h-11 px-8 flex items-center justify-between bg-[var(--header-strip-bg)] border-b border-[var(--header-border)] backdrop-blur-[6px] transition-colors duration-300">
         <div className="flex items-center gap-3 text-[11px] tracking-wide text-[var(--text-secondary)]">
           <span className="flex h-7 items-center gap-2 rounded-full px-3 bg-[rgba(217,180,114,0.08)] text-[var(--text-primary)] border border-[rgba(217,180,114,0.25)] shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
             <span className="h-2 w-2 rounded-full bg-[var(--accent-gold)] shadow-[0_0_12px_rgba(217,180,114,0.85)]" />
@@ -71,7 +72,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
         </div>
       </div>
 
-      <header className="h-20 px-8 flex items-center justify-between bg-gradient-to-r from-[#070b15] via-[#0c1324] to-[#0a0f1e] border-b border-[rgba(217,180,114,0.28)] shadow-[0_18px_40px_rgba(0,0,0,0.45)]">
+      <header className="h-20 px-8 flex items-center justify-between bg-[var(--header-main-bg)] border-b border-[var(--header-border)] shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-colors duration-300">
         {/* Logo */}
         <div className="flex items-center gap-4">
           <img
@@ -84,7 +85,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
           <div className="relative">
             <button
               onClick={() => setShowRoleMenu(!showRoleMenu)}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.04)] border border-[rgba(217,180,114,0.35)] text-[var(--text-primary)] hover:bg-[rgba(217,180,114,0.08)] transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-primary)] hover:bg-[rgba(217,180,114,0.1)] transition-colors"
             >
               <span className="text-xs font-medium text-[var(--text-primary)]">
                 {role === 'rm' ? 'RM' : role === 'executive' ? 'Executive' : 'Admin'}
@@ -96,10 +97,10 @@ export default function Header({ userName, userInitials }: HeaderProps) {
 
             {/* Role Switcher Dropdown */}
             {showRoleMenu && (
-              <div className="absolute top-full left-0 mt-3 w-56 bg-[rgba(12,18,32,0.98)] rounded-xl shadow-[0_18px_38px_rgba(0,0,0,0.55)] border border-[rgba(217,180,114,0.22)] py-3 backdrop-blur-md">
+              <div className="absolute top-full left-0 mt-3 w-56 bg-[var(--surface-card)] rounded-xl shadow-[0_18px_38px_rgba(0,0,0,0.25)] border border-[var(--header-border)] py-3 backdrop-blur-md">
                 <button
                   onClick={() => handleRoleSwitch('rm')}
-                  className={`w-full px-4 py-3 text-left text-sm flex items-center gap-3 transition-colors ${role === 'rm' ? 'bg-[rgba(217,180,114,0.08)] text-[var(--text-primary)] font-medium' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[rgba(255,255,255,0.04)]'}`}
+                  className={`w-full px-4 py-3 text-left text-sm flex items-center gap-3 transition-colors ${role === 'rm' ? 'bg-[rgba(217,180,114,0.14)] text-[var(--text-primary)] font-medium' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[rgba(217,180,114,0.08)]'}`}
                 >
                   <svg className="w-5 h-5 text-[var(--text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M12 20l-8-8 3-3 5 5 7-7 3 3z" />
@@ -108,7 +109,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
                 </button>
                 <button
                   onClick={() => handleRoleSwitch('executive')}
-                  className={`w-full px-4 py-3 text-left text-sm flex items-center gap-3 transition-colors ${role === 'executive' ? 'bg-[rgba(217,180,114,0.08)] text-[var(--text-primary)] font-medium' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[rgba(255,255,255,0.04)]'}`}
+                  className={`w-full px-4 py-3 text-left text-sm flex items-center gap-3 transition-colors ${role === 'executive' ? 'bg-[rgba(217,180,114,0.14)] text-[var(--text-primary)] font-medium' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[rgba(217,180,114,0.08)]'}`}
                 >
                   <svg className="w-5 h-5 text-[var(--text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d="M5 13v5m7-9v9m7-13v13M3 20h18" />
@@ -141,15 +142,17 @@ export default function Header({ userName, userInitials }: HeaderProps) {
               placeholder="Search prospects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-5 py-3 bg-[rgba(255,255,255,0.04)] border border-[rgba(217,180,114,0.25)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[rgba(217,180,114,0.6)] transition-colors shadow-[0_12px_28px_rgba(0,0,0,0.35)]"
+              className="w-full pl-11 pr-5 py-3 bg-[var(--input-surface)] border border-[var(--input-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[rgba(217,180,114,0.6)] transition-colors shadow-[0_12px_28px_rgba(0,0,0,0.2)]"
             />
           </div>
         </div>
 
         {/* Right Actions */}
         <div className="flex items-center gap-5">
+          <ThemeToggle />
+
           {/* Notifications */}
-          <button className="relative p-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(217,180,114,0.2)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[0_10px_28px_rgba(0,0,0,0.4)]">
+          <button className="relative p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[0_10px_28px_rgba(0,0,0,0.25)]">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -162,7 +165,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
           </button>
 
           {/* Settings */}
-          <button className="p-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(217,180,114,0.2)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[0_10px_28px_rgba(0,0,0,0.4)]">
+          <button className="p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[0_10px_28px_rgba(0,0,0,0.25)]">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -180,7 +183,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
           </button>
 
           {/* User Menu */}
-          <div className="flex items-center gap-4 pl-5 border-l border-[rgba(217,180,114,0.3)]">
+          <div className="flex items-center gap-4 pl-5 border-l border-[var(--header-border)]">
             <Avatar initials={displayInitials} size="sm" />
             <div className="hidden md:block">
               <p className="text-[var(--text-primary)] text-sm font-medium">{displayName}</p>
