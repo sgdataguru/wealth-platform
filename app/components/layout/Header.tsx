@@ -44,7 +44,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
     <div className="sticky top-0 z-50">
       <div className="h-11 px-8 flex items-center justify-between bg-[var(--header-strip-bg)] border-b border-[var(--header-border)] backdrop-blur-[6px] transition-colors duration-300">
         <div className="flex items-center gap-3 text-[11px] tracking-wide text-[var(--text-secondary)]">
-          <span className="flex h-7 items-center gap-2 rounded-full px-3 bg-[rgba(217,180,114,0.08)] text-[var(--text-primary)] border border-[rgba(217,180,114,0.25)] shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
+          <span className="flex h-7 items-center gap-2 rounded-full px-3 bg-[rgba(217,180,114,0.08)] text-[var(--text-primary)] border border-[rgba(217,180,114,0.25)] shadow-[var(--shadow-sm)]">
             <span className="h-2 w-2 rounded-full bg-[var(--accent-gold)] shadow-[0_0_12px_rgba(217,180,114,0.85)]" />
             Signals refreshed 2m ago
           </span>
@@ -64,7 +64,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
             aria-label="Toggle silent mode for alerts"
           >
             <span
-              className={`absolute left-1 h-6 w-6 rounded-full bg-gradient-to-br from-white/90 via-[#f7e0b5] to-[#d9b472] shadow-[0_10px_25px_rgba(217,180,114,0.55)] transition-transform duration-200 ease-out ${silentMode ? 'translate-x-6 bg-[rgba(255,255,255,0.7)] shadow-[0_12px_26px_rgba(0,0,0,0.35)]' : ''}`}
+              className={`absolute left-1 h-6 w-6 rounded-full bg-gradient-to-br from-white/90 via-[#f7e0b5] to-[#d9b472] shadow-[0_10px_25px_rgba(217,180,114,0.55)] transition-transform duration-200 ease-out ${silentMode ? 'translate-x-6 bg-[rgba(255,255,255,0.7)] shadow-[var(--shadow-md)]' : ''}`}
             />
             <span className={`ml-auto pr-3 text-[10px] font-semibold ${silentMode ? 'text-[var(--text-muted)]' : 'text-[#0a0f1e]'}`}>
               {silentMode ? 'Off' : 'On'}
@@ -73,7 +73,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
         </div>
       </div>
 
-      <header className="h-20 px-8 flex items-center justify-between bg-[var(--header-main-bg)] border-b border-[var(--header-border)] shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-colors duration-300">
+      <header className="h-20 px-8 flex items-center justify-between bg-[var(--header-main-bg)] border-b border-[var(--header-border)] shadow-[var(--shadow-lg)] transition-colors duration-300">
         {/* Logo */}
         <div className="flex items-center gap-4">
           <Image
@@ -81,7 +81,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
             alt="Nuvama Wealth"
             width={150}
             height={48}
-            className="h-12 w-auto object-contain rounded-lg shadow-[0_12px_32px_rgba(0,0,0,0.35)]"
+            className="h-12 w-auto object-contain rounded-lg shadow-[var(--shadow-md)]"
             priority
           />
 
@@ -101,7 +101,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
 
             {/* Role Switcher Dropdown */}
             {showRoleMenu && (
-              <div className="absolute top-full left-0 mt-3 w-56 bg-[var(--surface-card)] rounded-xl shadow-[0_18px_38px_rgba(0,0,0,0.25)] border border-[var(--header-border)] py-3 backdrop-blur-md">
+              <div className="absolute top-full left-0 mt-3 w-56 bg-[var(--surface-card)] rounded-xl shadow-[var(--shadow-md)] border border-[var(--header-border)] py-3 backdrop-blur-md">
                 <button
                   onClick={() => handleRoleSwitch('rm')}
                   className={`w-full px-4 py-3 text-left text-sm flex items-center gap-3 transition-colors ${role === 'rm' ? 'bg-[rgba(217,180,114,0.14)] text-[var(--text-primary)] font-medium' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[rgba(217,180,114,0.08)]'}`}
@@ -146,7 +146,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
               placeholder="Search prospects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-5 py-3 bg-[var(--input-surface)] border border-[var(--input-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[rgba(217,180,114,0.6)] transition-colors shadow-[0_12px_28px_rgba(0,0,0,0.2)]"
+              className="w-full pl-11 pr-5 py-3 bg-[var(--input-surface)] border border-[var(--input-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[rgba(217,180,114,0.6)] transition-colors shadow-[var(--shadow-sm)]"
             />
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
           <ThemeToggle />
 
           {/* Notifications */}
-          <button className="relative p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[0_10px_28px_rgba(0,0,0,0.25)]">
+          <button className="relative p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[var(--shadow-sm)]">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -169,7 +169,7 @@ export default function Header({ userName, userInitials }: HeaderProps) {
           </button>
 
           {/* Settings */}
-          <button className="p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[0_10px_28px_rgba(0,0,0,0.25)]">
+          <button className="p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[var(--shadow-sm)]">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"

@@ -47,7 +47,7 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
   const sectors = ['All', 'Technology', 'Finance', 'Healthcare', 'Real Estate', 'Manufacturing'];
 
   return (
-    <aside className="w-72 bg-[rgba(10,15,30,0.92)] border-r border-[rgba(217,180,114,0.22)] flex flex-col h-[calc(100vh-80px)] sticky top-20 backdrop-blur-md shadow-[0_18px_42px_rgba(0,0,0,0.45)]">
+    <aside className="w-72 bg-[var(--surface-card)] border-r border-[var(--header-border)] flex flex-col h-[calc(100vh-80px)] sticky top-20 backdrop-blur-md shadow-[var(--shadow-lg)]">
       {/* Navigation */}
       <nav className="p-5 space-y-2">
         {navItems.map((item) => (
@@ -57,8 +57,8 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
             className={`
               flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200
               ${activePage === item.id
-                ? 'bg-[rgba(217,180,114,0.1)] text-[var(--text-primary)] border border-[rgba(217,180,114,0.35)] shadow-[0_12px_32px_rgba(0,0,0,0.45)]'
-                : 'text-[var(--text-secondary)] hover:bg-[rgba(255,255,255,0.05)] hover:text-[var(--text-primary)]'
+                ? 'bg-[rgba(217,180,114,0.1)] text-[var(--text-primary)] border border-[rgba(217,180,114,0.35)] shadow-[var(--shadow-md)]'
+                : 'text-[var(--text-secondary)] hover:bg-[var(--control-surface)] hover:text-[var(--text-primary)]'
               }
             `}
           >
@@ -87,7 +87,7 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
           <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
-            className="w-full px-4 py-3 bg-[rgba(255,255,255,0.03)] border border-[rgba(217,180,114,0.25)] rounded-lg text-[var(--text-primary)] focus:outline-none focus:border-[rgba(217,180,114,0.55)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--input-surface)] border border-[var(--input-border)] rounded-lg text-[var(--text-primary)] focus:outline-none focus:border-[rgba(217,180,114,0.55)] transition-colors"
           >
             {cities.map((city) => (
               <option key={city} value={city}>{city}</option>
@@ -103,7 +103,7 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
           <select
             value={selectedSector}
             onChange={(e) => setSelectedSector(e.target.value)}
-            className="w-full px-4 py-3 bg-[rgba(255,255,255,0.03)] border border-[rgba(217,180,114,0.25)] rounded-lg text-[var(--text-primary)] focus:outline-none focus:border-[rgba(217,180,114,0.55)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--input-surface)] border border-[var(--input-border)] rounded-lg text-[var(--text-primary)] focus:outline-none focus:border-[rgba(217,180,114,0.55)] transition-colors"
           >
             {sectors.map((sector) => (
               <option key={sector} value={sector}>{sector}</option>
@@ -112,7 +112,7 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
         </div>
 
         {/* Apply Button */}
-        <Button variant="primary" size="sm" className="w-full shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
+        <Button variant="primary" size="sm" className="w-full shadow-[var(--shadow-md)]">
           Apply Filters
         </Button>
       </div>

@@ -16,7 +16,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-pressed={isDark}
       aria-label={label}
-      className="relative p-3 rounded-xl border transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent bg-[var(--control-surface)] border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] shadow-[0_10px_28px_rgba(0,0,0,0.25)]"
+      className="relative p-3 rounded-xl border transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent bg-[var(--control-surface)] border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] shadow-[var(--shadow-sm)]"
       disabled={!initialized}
     >
       <span className="sr-only">{label}</span>
