@@ -4,11 +4,9 @@ import { useEffect } from 'react';
 import { useThemeStore } from '@/store/theme-store';
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const { theme, initializeTheme, initialized } = useThemeStore((state) => ({
-    theme: state.theme,
-    initializeTheme: state.initializeTheme,
-    initialized: state.initialized,
-  }));
+  const theme = useThemeStore((state) => state.theme);
+  const initializeTheme = useThemeStore((state) => state.initializeTheme);
+  const initialized = useThemeStore((state) => state.initialized);
 
   useEffect(() => {
     initializeTheme();
