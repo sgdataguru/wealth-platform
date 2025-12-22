@@ -30,9 +30,10 @@ export default function Card({
   return (
     <div
       className={`
-        bg-white rounded-lg border border-gray-100
-        shadow-[0_2px_8px_rgba(0,0,0,0.04),0_4px_24px_rgba(0,0,0,0.06)]
-        ${hover ? 'transition-all duration-300 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08),0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-0.5' : ''}
+        bg-gradient-to-br from-[rgba(17,25,42,0.92)] via-[rgba(14,21,35,0.92)] to-[rgba(10,15,26,0.96)]
+        rounded-2xl border border-[rgba(217,180,114,0.25)] backdrop-blur-md
+        shadow-[0_14px_40px_rgba(0,0,0,0.45)] text-[var(--text-primary)]
+        ${hover ? 'transition-all duration-300 hover:shadow-[0_20px_52px_rgba(0,0,0,0.55)] hover:-translate-y-1' : ''}
         ${paddingStyles[padding]}
         ${className}
       `}

@@ -4,90 +4,79 @@
 /* Inspired by Nuvama Wealth - Premium Aesthetic */
 
 :root {
-  /* Primary Colors - Nuvama Branding */
-  --primary-deep-blue: #1A1332;
-  --primary-royal-blue: #2A2447;
-  --primary-accent: #E85D54;
-  --primary-coral: #E85D54;
-  
-  /* Secondary Colors */
-  --secondary-slate: #2C3E50;
-  --secondary-charcoal: #1A1A2E;
-  --secondary-silver: #C0C0C0;
-  --secondary-platinum: #E5E4E2;
-  
-  /* Background & Surface */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F8F9FA;
-  --bg-dark: #1A1332;
-  --bg-card: #FFFFFF;
-  --bg-overlay: rgba(26, 19, 50, 0.95);
-  
+  /* Obsidian Core Palette */
+  --obsidian-900: #05070e;
+  --obsidian-800: #0a0f1d;
+  --obsidian-700: #0f1626;
+  --obsidian-600: #1a2336;
+
+  /* Champagne / Gold Accents */
+  --accent-gold: #d9b472;
+  --accent-gold-soft: #caa164;
+  --accent-amber: #f1e3c2;
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-playfair);
+
+  /* Surfaces */
+  --bg-primary: var(--obsidian-900);
+  --bg-secondary: var(--obsidian-800);
+  --bg-dark: var(--obsidian-700);
+  --bg-card: #11192a;
+  --bg-overlay: rgba(5, 7, 14, 0.7);
+
   /* Text Colors */
-  --text-primary: #1A1A2E;
-  --text-secondary: #5A6C7D;
-  --text-light: #FFFFFF;
-  --text-accent: #E85D54;
-  --text-muted: #8E99A4;
-  
+  --text-primary: #e8ecf5;
+  --text-secondary: #b6c2d6;
+  --text-light: #ffffff;
+  --text-accent: var(--accent-gold);
+  --text-muted: #8fa0b8;
+
   /* Semantic Colors */
-  --success: #28A745;
-  --success-light: #D4EDDA;
-  --warning: #FFC107;
-  --warning-light: #FFF3CD;
-  --error: #DC3545;
-  --error-light: #F8D7DA;
-  --info: #17A2B8;
-  
-  /* Signal Colors */
-  --signal-critical: #DC3545;
-  --signal-critical-bg: #F8D7DA;
-  --signal-critical-text: #721C24;
-  --signal-high: #FF8C00;
-  --signal-high-bg: #FFE5CC;
-  --signal-high-text: #8B4513;
-  --signal-medium: #FFC107;
-  --signal-medium-bg: #FFF3CD;
-  --signal-medium-text: #856404;
-  --signal-low: #28A745;
-  --signal-low-bg: #D4EDDA;
-  --signal-low-text: #155724;
-  
+  --success: #6bd59a;
+  --success-light: rgba(107, 213, 154, 0.12);
+  --warning: #f6c553;
+  --warning-light: rgba(246, 197, 83, 0.14);
+  --error: #ff7b86;
+  --error-light: rgba(255, 123, 134, 0.14);
+  --info: #7cc7ff;
+
   /* Spacing */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-8: 3rem;
-  --space-10: 4rem;
-  --space-12: 6rem;
-  
+  --space-1: 0.4rem;
+  --space-2: 0.8rem;
+  --space-3: 1.2rem;
+  --space-4: 1.6rem;
+  --space-5: 2.4rem;
+  --space-6: 3.2rem;
+  --space-8: 4.8rem;
+  --space-10: 6.4rem;
+  --space-12: 8rem;
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 300ms ease;
   --transition-slow: 500ms ease;
-  
+
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 24px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 8px 32px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12), 0 16px 48px rgba(0, 0, 0, 0.15);
+  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
-  --color-primary-deep-blue: var(--primary-deep-blue);
-  --color-primary-royal-blue: var(--primary-royal-blue);
-  --color-primary-accent: var(--primary-accent);
-  --color-primary-gold: var(--primary-gold);
+  --color-primary-deep-blue: var(--obsidian-900);
+  --color-primary-royal-blue: var(--obsidian-700);
+  --color-primary-accent: var(--accent-gold);
+  --color-primary-gold: var(--accent-gold);
   --color-bg-primary: var(--bg-primary);
   --color-bg-secondary: var(--bg-secondary);
   --color-bg-dark: var(--bg-dark);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-playfair);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
 }
 
 * {
@@ -95,17 +84,24 @@
 }
 
 body {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(217, 180, 114, 0.08), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgba(106, 142, 194, 0.08), transparent 22%),
+    linear-gradient(135deg, rgba(13, 18, 32, 0.95), rgba(8, 12, 22, 0.95)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" /></filter><rect width="160" height="160" filter="url(%23n)" opacity="0.05"/></svg>');
   color: var(--text-primary);
-  font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-sans), "Helvetica Neue", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-heading), 'Playfair Display', Georgia, serif;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
   margin: 0;
 }
@@ -117,16 +113,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: var(--obsidian-800);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary-slate);
+  background: #1f2a3f;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-royal-blue);
+  background: var(--accent-gold);
 }
 
 /* Animations */
@@ -152,10 +148,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes goldGlow {
   0%, 100% {
-    box-shadow: 0 0 5px var(--primary-accent), 0 0 10px var(--primary-accent);
+    box-shadow: 0 0 5px var(--accent-gold), 0 0 10px var(--accent-gold);
   }
   50% {
-    box-shadow: 0 0 10px var(--primary-accent), 0 0 20px var(--primary-accent), 0 0 30px var(--primary-accent);
+    box-shadow: 0 0 10px var(--accent-gold), 0 0 20px var(--accent-gold), 0 0 30px var(--accent-gold);
   }
 }
 
@@ -184,6 +180,38 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Focus States */
 *:focus-visible {
-  outline: 2px solid var(--primary-royal-blue);
-  outline-offset: 2px;
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+/* Legacy color overrides for unified dark theme */
+.text-\[\#1A1A2E\],
+.text-\[\#1a1a2e\] {
+  color: var(--text-primary) !important;
+}
+
+.text-\[\#5A6C7D\],
+.text-\[\#5a6c7d\] {
+  color: var(--text-secondary) !important;
+}
+
+.text-\[\#8E99A4\],
+.text-\[\#8e99a4\] {
+  color: var(--text-muted) !important;
+}
+
+.bg-\[\#F8F9FA\],
+.bg-\[\#f8f9fa\],
+.bg-white {
+  background-color: var(--bg-card) !important;
+}
+
+.border-gray-200,
+.border-gray-100,
+.border-\[\#3A3557\] {
+  border-color: rgba(217, 180, 114, 0.26) !important;
+}
+
+.shadow-\[0_2px_8px_rgba\(0,0,0,0\.04\),0_4px_24px_rgba\(0,0,0,0\.06\)\] {
+  box-shadow: var(--shadow-sm) !important;
 }

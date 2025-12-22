@@ -47,18 +47,18 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
   const sectors = ['All', 'Technology', 'Finance', 'Healthcare', 'Real Estate', 'Manufacturing'];
 
   return (
-    <aside className="w-64 bg-white border-r border-gray-200 flex flex-col h-[calc(100vh-64px)] sticky top-16">
+    <aside className="w-72 bg-[rgba(10,15,30,0.92)] border-r border-[rgba(217,180,114,0.22)] flex flex-col h-[calc(100vh-80px)] sticky top-20 backdrop-blur-md shadow-[0_18px_42px_rgba(0,0,0,0.45)]">
       {/* Navigation */}
-      <nav className="p-4 space-y-1">
+      <nav className="p-5 space-y-2">
         {navItems.map((item) => (
           <a
             key={item.id}
             href={item.href}
             className={`
-              flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200
+              flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200
               ${activePage === item.id
-                ? 'bg-[#1A1332] text-white'
-                : 'text-[#5A6C7D] hover:bg-[#F8F9FA] hover:text-[#1A1A2E]'
+                ? 'bg-[rgba(217,180,114,0.1)] text-[var(--text-primary)] border border-[rgba(217,180,114,0.35)] shadow-[0_12px_32px_rgba(0,0,0,0.45)]'
+                : 'text-[var(--text-secondary)] hover:bg-[rgba(255,255,255,0.05)] hover:text-[var(--text-primary)]'
               }
             `}
           >
@@ -71,23 +71,23 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
       </nav>
 
       {/* Divider */}
-      <div className="mx-4 border-t border-gray-200" />
+      <div className="mx-5 border-t border-[rgba(217,180,114,0.25)]" />
 
       {/* Filters */}
-      <div className="p-4 flex-1 overflow-y-auto">
-        <h3 className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider mb-4">
+      <div className="p-5 flex-1 overflow-y-auto">
+        <h3 className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-4">
           Filters
         </h3>
 
         {/* City Filter */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-[#5A6C7D] mb-2">
+        <div className="mb-5">
+          <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
             City
           </label>
           <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
-            className="w-full px-3 py-2 bg-[#F8F9FA] border border-gray-200 rounded-lg text-[#1A1A2E] focus:outline-none focus:border-[#2A2447] transition-colors"
+            className="w-full px-4 py-3 bg-[rgba(255,255,255,0.03)] border border-[rgba(217,180,114,0.25)] rounded-lg text-[var(--text-primary)] focus:outline-none focus:border-[rgba(217,180,114,0.55)] transition-colors"
           >
             {cities.map((city) => (
               <option key={city} value={city}>{city}</option>
@@ -96,14 +96,14 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
         </div>
 
         {/* Sector Filter */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-[#5A6C7D] mb-2">
+        <div className="mb-5">
+          <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
             Sector
           </label>
           <select
             value={selectedSector}
             onChange={(e) => setSelectedSector(e.target.value)}
-            className="w-full px-3 py-2 bg-[#F8F9FA] border border-gray-200 rounded-lg text-[#1A1A2E] focus:outline-none focus:border-[#2A2447] transition-colors"
+            className="w-full px-4 py-3 bg-[rgba(255,255,255,0.03)] border border-[rgba(217,180,114,0.25)] rounded-lg text-[var(--text-primary)] focus:outline-none focus:border-[rgba(217,180,114,0.55)] transition-colors"
           >
             {sectors.map((sector) => (
               <option key={sector} value={sector}>{sector}</option>
@@ -112,7 +112,7 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
         </div>
 
         {/* Apply Button */}
-        <Button variant="primary" size="sm" className="w-full">
+        <Button variant="primary" size="sm" className="w-full shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
           Apply Filters
         </Button>
       </div>
