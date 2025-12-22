@@ -3,7 +3,7 @@
  * @description Utility functions for graph operations and layout
  */
 
-import type { GraphNode, GraphEdge, GraphLayout, NodeStyle, EdgeStyle, NodeType, EdgeType } from '@/types/graph';
+import type { GraphNode, GraphEdge, NodeStyle, EdgeStyle, NodeType, EdgeType } from '@/types/graph';
 
 /**
  * Get style configuration for node based on type

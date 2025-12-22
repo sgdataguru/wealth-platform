@@ -35,7 +35,7 @@ export interface GraphNode {
   id: string;
   type: NodeType;
   label: string;
-  properties: Record<string, any>;
+  properties: Record<string, unknown>;
   position?: { x: number; y: number };
   metadata?: {
     clientId?: string;
@@ -52,7 +52,7 @@ export interface GraphEdge {
   target: string;
   type: EdgeType;
   label: string;
-  properties?: Record<string, any>;
+  properties?: Record<string, unknown>;
 }
 
 // Warm introduction path

@@ -3,11 +3,9 @@
 import { useThemeStore } from '@/store/theme-store';
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme, initialized } = useThemeStore((state) => ({
-    theme: state.theme,
-    toggleTheme: state.toggleTheme,
-    initialized: state.initialized,
-  }));
+  const theme = useThemeStore((state) => state.theme);
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
+  const initialized = useThemeStore((state) => state.initialized);
 
   const isDark = theme === 'dark';
   const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';

@@ -79,11 +79,6 @@ Would you like me to provide more details on any of these prospects?`,
     }, 1500);
   };
 
-  const handleQuickQuestion = (question: string) => {
-    setInput(question);
-    handleSend();
-  };
-
   if (!isOpen) {
     return (
       <button

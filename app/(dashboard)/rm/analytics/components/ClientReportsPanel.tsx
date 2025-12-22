@@ -136,12 +136,14 @@ const mockExecutiveReports: ClientReport[] = [
     }
 ];
 
+type ReportType = ClientReport['reportType'];
+
 export default function ClientReportsPanel() {
     const [selectedReport, setSelectedReport] = useState<ClientReport | null>(null);
-    const [reportFilter, setReportFilter] = useState<string>('all');
+    const [reportFilter, setReportFilter] = useState<ReportType | 'all'>('all');
     const [showGenerateModal, setShowGenerateModal] = useState(false);
     const [selectedClient, setSelectedClient] = useState('');
-    const [selectedReportType, setSelectedReportType] = useState<'portfolio' | 'performance' | 'risk' | 'opportunities'>('portfolio');
+    const [selectedReportType, setSelectedReportType] = useState<ReportType>('portfolio');
     const [isGenerating, setIsGenerating] = useState(false);
 
     // Mock client list
@@ -173,7 +175,7 @@ export default function ClientReportsPanel() {
         }, 2000);
     };
 
-    const reportTypes = [
+    const reportTypes: { id: ReportType | 'all'; label: string; icon: string }[] = [
         { id: 'all', label: 'All Reports', icon: '📊' },
         { id: 'portfolio', label: 'Portfolio', icon: '💼' },
         { id: 'performance', label: 'Performance', icon: '📈' },
@@ -185,7 +187,7 @@ export default function ClientReportsPanel() {
         ? mockExecutiveReports
         : mockExecutiveReports.filter(r => r.reportType === reportFilter);
 
-    const getReportTypeColor = (type: string) => {
+    const getReportTypeColor = (type: ReportType | 'all') => {
         switch (type) {
             case 'portfolio': return 'bg-[#1A1332] text-white';
             case 'performance': return 'bg-[#28A745] text-white';
@@ -433,7 +435,7 @@ export default function ClientReportsPanel() {
                                 <label className="block text-sm font-semibold text-[#1A1A2E] mb-2">Report Type</label>
                                 <div className="grid grid-cols-2 gap-2">
                                     {reportTypes.filter(t => t.id !== 'all').map(type => (
-                                        <button key={type.id} onClick={() => setSelectedReportType(type.id as any)} className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border-2 ${selectedReportType === type.id ? 'bg-[#E85D54] text-white border-[#E85D54]' : 'bg-white text-[#5A6C7D] border-gray-300 hover:border-[#E85D54]'}`}>
+                                        <button key={type.id} onClick={() => setSelectedReportType(type.id)} className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border-2 ${selectedReportType === type.id ? 'bg-[#E85D54] text-white border-[#E85D54]' : 'bg-white text-[#5A6C7D] border-gray-300 hover:border-[#E85D54]'}`}>
                                             <div className="text-2xl mb-1">{type.icon}</div>{type.label}
                                         </button>
                                     ))}

@@ -33,7 +33,6 @@ export default function LiquidityTriggersPanel({ triggers, isLoading }: Liquidit
 
     // Calculate summary stats
     const totalInPlay = filteredTriggers.reduce((sum, t) => sum + t.amount, 0);
-    const highProbability = filteredTriggers.filter(t => t.probability >= 70).length;
 
     const handleExport = () => {
         // Export to CSV

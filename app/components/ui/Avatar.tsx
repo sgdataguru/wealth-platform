@@ -3,6 +3,8 @@
  * @description User avatar component with initials fallback
  */
 
+import Image from 'next/image';
+
 interface AvatarProps {
   initials: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -23,11 +25,20 @@ export default function Avatar({
     xl: 'w-16 h-16 text-lg',
   };
 
+  const sizeDimensions: Record<NonNullable<AvatarProps['size']>, number> = {
+    sm: 32,
+    md: 40,
+    lg: 48,
+    xl: 64,
+  };
+
   if (src) {
     return (
-      <img
+      <Image
         src={src}
         alt={initials}
+        width={sizeDimensions[size]}
+        height={sizeDimensions[size]}
         className={`${sizeStyles[size]} rounded-full object-cover ${className}`}
       />
     );

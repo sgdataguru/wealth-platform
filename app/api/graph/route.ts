@@ -5,12 +5,11 @@
 
 import { NextResponse } from 'next/server';
 import { mockNodes, mockEdges } from '@/lib/mock-data/graphData';
-import type { GraphNode, GraphEdge, GraphFilters, NodeType } from '@/types/graph';
+import type { NodeType } from '@/types/graph';
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const rmId = searchParams.get('rmId') || 'rm-001';
     
     // Parse filters from query params
     const filterNodeTypes = searchParams.get('nodeTypes');

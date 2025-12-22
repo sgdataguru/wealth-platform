@@ -86,7 +86,6 @@ export function useExecutiveMetrics() {
 
     useEffect(() => {
         // Simulate API call
-        setIsLoading(true);
         setTimeout(() => {
             setMetrics(MOCK_EXECUTIVE_METRICS);
             setIsLoading(false);

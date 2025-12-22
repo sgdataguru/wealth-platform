@@ -4,7 +4,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import type { ProspectsResponse, Prospect, Signal, SignalType } from '@/types';
+import type { ProspectsResponse, Prospect, SignalType } from '@/types';
 
 // Mock prospect data - in production, this would come from database
 const mockProspects: Prospect[] = [

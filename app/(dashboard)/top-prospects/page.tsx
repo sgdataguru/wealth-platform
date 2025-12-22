@@ -31,7 +31,7 @@ export default function TopProspectsPage() {
     pageSize: 20,
   });
   
-  const { createAction, isCreating } = useProspectActions();
+  const { createAction } = useProspectActions();
 
   const handleActionClick = async (prospect: Prospect, action: SuggestedAction) => {
     console.log('Action clicked:', action.type, 'for', prospect.firstName, prospect.lastName);

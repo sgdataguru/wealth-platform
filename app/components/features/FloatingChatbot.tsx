@@ -17,10 +17,9 @@ interface Message {
 
 interface FloatingChatbotProps {
     userRole?: UserRole;
-    userName?: string;
 }
 
-export default function FloatingChatbot({ userRole = 'rm', userName = 'User' }: FloatingChatbotProps) {
+export default function FloatingChatbot({ userRole = 'rm' }: FloatingChatbotProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState('');
@@ -32,21 +31,19 @@ export default function FloatingChatbot({ userRole = 'rm', userName = 'User' }: 
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages]);
 
-    // Initial greeting when opened
-    useEffect(() => {
-        if (isOpen && messages.length === 0) {
-            const greeting = userRole === 'executive'
-                ? `Hello! I'm your AI assistant for Nuvama's Executive Dashboard. I can help you with AUM insights, liquidity triggers, team performance, and strategic analysis. What would you like to know?`
-                : `Hi! I'm your AI assistant for relationship management. I can help you with client insights, lead scoring, portfolio recommendations, and action items. How can I assist you today?`;
+    const openChat = () => {
+        const greeting = userRole === 'executive'
+            ? `Hello! I'm your AI assistant for Nuvama's Executive Dashboard. I can help you with AUM insights, liquidity triggers, team performance, and strategic analysis. What would you like to know?`
+            : `Hi! I'm your AI assistant for relationship management. I can help you with client insights, lead scoring, portfolio recommendations, and action items. How can I assist you today?`;
 
-            setMessages([{
-                id: '1',
-                role: 'assistant',
-                content: greeting,
-                timestamp: new Date(),
-            }]);
-        }
-    }, [isOpen, userRole, messages.length]);
+        setMessages(prev => (prev.length === 0 ? [{
+            id: '1',
+            role: 'assistant',
+            content: greeting,
+            timestamp: new Date(),
+        }] : prev));
+        setIsOpen(true);
+    };
 
     const getMockResponse = (userMessage: string): string => {
         const lowerMessage = userMessage.toLowerCase();
@@ -134,7 +131,7 @@ export default function FloatingChatbot({ userRole = 'rm', userName = 'User' }: 
             {/* Floating Button */}
             {!isOpen && (
                 <button
-                    onClick={() => setIsOpen(true)}
+                    onClick={openChat}
                     className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-[#E85D54] to-[#F06E66] rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center z-50 group"
                     aria-label="Open AI Assistant"
                 >

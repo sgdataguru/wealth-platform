@@ -50,7 +50,7 @@ const mockRMProspects: Prospect[] = [
 
 export default function RMDashboard() {
     const { metrics, isLoading } = useRMMetrics();
-    const { openPanel, selectedProspectId } = usePanelStore();
+    const { selectedProspectId } = usePanelStore();
     const selectedProspect = mockRMProspects.find(p => p.id === selectedProspectId);
 
     return (
@@ -85,7 +85,7 @@ export default function RMDashboard() {
                     {/* Recent Activity */}
                     <Card padding="lg">
                         <h2 className="text-xl font-semibold text-[#1A1A2E] mb-6 font-[family-name:var(--font-playfair)]">
-                            This Week's Activity
+                            This Week&apos;s Activity
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

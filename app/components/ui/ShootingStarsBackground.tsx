@@ -6,7 +6,7 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 interface Star {
   id: number;
@@ -17,40 +17,43 @@ interface Star {
 }
 
 export default function ShootingStarsBackground() {
-  const [stars, setStars] = useState<Star[]>([]);
+  // Generate deterministic star positions on the client to avoid hydration mismatches
+  const [staticStars] = useState<Star[]>(() => Array.from({ length: 100 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    animationDelay: `${Math.random() * 3}s`,
+    animationDuration: `${2 + Math.random() * 3}s`,
+  })));
 
-  useEffect(() => {
-    // Generate 15 shooting stars with random positions and timings
-    const generatedStars: Star[] = Array.from({ length: 15 }, (_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      animationDelay: `${Math.random() * 15}s`,
-      animationDuration: `${3 + Math.random() * 4}s`, // 3-7 seconds
-    }));
-    setStars(generatedStars);
-  }, []);
+  const [shootingStars] = useState<Star[]>(() => Array.from({ length: 15 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    animationDelay: `${Math.random() * 15}s`,
+    animationDuration: `${3 + Math.random() * 4}s`,
+  })));
 
   return (
     <div className="fixed inset-0 overflow-hidden bg-gradient-to-br from-[#0A1628] via-[#1A1332] to-[#0A0A1A]">
       {/* Static stars background */}
       <div className="absolute inset-0">
-        {Array.from({ length: 100 }).map((_, i) => (
+        {staticStars.map((star) => (
           <div
-            key={`static-${i}`}
+            key={`static-${star.id}`}
             className="absolute w-1 h-1 bg-white rounded-full opacity-40 animate-pulse"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
+              left: star.left,
+              top: star.top,
+              animationDelay: star.animationDelay,
+              animationDuration: star.animationDuration,
             }}
           />
         ))}
       </div>
 
       {/* Shooting stars */}
-      {stars.map((star) => (
+      {shootingStars.map((star) => (
         <div
           key={star.id}
           className="absolute shooting-star"

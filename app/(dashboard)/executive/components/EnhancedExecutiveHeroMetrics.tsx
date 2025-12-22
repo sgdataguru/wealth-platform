@@ -193,7 +193,7 @@ export default function EnhancedExecutiveHeroMetrics({ metrics, isLoading }: Enh
                     subtitle={getModalSubtitle(activeModal)}
                     dataSource="Nuvama CRM + Portfolio Management System"
                 >
-                    {renderModalContent(activeModal, metrics)}
+                    {renderModalContent(activeModal)}
                 </DrillDownModal>
             )}
         </>
@@ -228,7 +228,7 @@ function getModalSubtitle(view: DrillDownView): string {
     }
 }
 
-function renderModalContent(view: DrillDownView, metrics: EnhancedExecutiveMetrics) {
+function renderModalContent(view: DrillDownView) {
     // Simplified placeholder content - in real implementation, these would fetch actual data
     return (
         <div className="space-y-4">

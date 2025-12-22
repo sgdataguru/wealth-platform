@@ -122,10 +122,10 @@ export default function RMMetricsBar({ metrics, isLoading }: RMMetricsBarProps) 
           </div>
         </div>
 
-        {/* Today's Meetings */}
+        {/* Today&apos;s Meetings */}
         <div className="flex flex-col">
           <span className="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">
-            Today's Meetings
+            Today&apos;s Meetings
           </span>
           <div className="flex items-baseline gap-2">
             <span className="text-2xl font-bold text-white">

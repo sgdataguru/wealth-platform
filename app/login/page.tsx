@@ -29,7 +29,7 @@ export default function LoginPage() {
             router.push(role === 'executive' ? '/executive' : '/rm');
             return;
           }
-        } catch (error) {
+        } catch {
           // Invalid auth data, clear it
           localStorage.removeItem('nuvama_auth');
           sessionStorage.removeItem('nuvama_auth');

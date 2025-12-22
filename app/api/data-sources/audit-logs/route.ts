@@ -4,7 +4,7 @@
  */
 
 import { NextResponse } from 'next/server';
-import { mockAuditLogs, getRecentAuditLogs, getAuditLogsBySource } from '@/lib/mock-data/data-sources-mock';
+import { mockAuditLogs, getAuditLogsBySource } from '@/lib/mock-data/data-sources-mock';
 
 /**
  * GET /api/data-sources/audit-logs

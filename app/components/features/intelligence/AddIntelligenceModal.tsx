@@ -5,7 +5,6 @@
 
 'use client';
 
-import { useState } from 'react';
 import Modal from '@/app/components/ui/Modal';
 import IntelligenceForm from './IntelligenceForm';
 

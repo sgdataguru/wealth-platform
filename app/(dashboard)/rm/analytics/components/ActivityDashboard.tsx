@@ -80,7 +80,7 @@ export default function ActivityDashboard() {
 
             {/* Best Practices */}
             <div className="mt-6 pt-6 border-t border-gray-200">
-                <h4 className="font-semibold text-[#1A1A2E] mb-3 text-sm">🎯 What's Working</h4>
+                <h4 className="font-semibold text-[#1A1A2E] mb-3 text-sm">🎯 What&apos;s Working</h4>
                 <div className="space-y-2 text-xs text-[#5A6C7D]">
                     <p className="flex items-start gap-2">
                         <span className="text-[#28A745]">✓</span>

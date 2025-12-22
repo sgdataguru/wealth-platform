@@ -5,14 +5,13 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUserRole } from './hooks/useUserRole';
 
 export default function LandingPage() {
   const router = useRouter();
-  const { role, isRM, isExecutive } = useUserRole();
-  const [isChecking, setIsChecking] = useState(true);
+  const { isRM, isExecutive } = useUserRole();
 
   useEffect(() => {
     // Check if user is authenticated
@@ -33,7 +32,7 @@ export default function LandingPage() {
             }
             return;
           }
-        } catch (error) {
+        } catch {
           // Invalid auth data, clear it
           localStorage.removeItem('nuvama_auth');
           sessionStorage.removeItem('nuvama_auth');

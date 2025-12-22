@@ -6,7 +6,6 @@
 'use client';
 
 import type { SuggestedAction } from '@/types';
-import Button from '../ui/Button';
 
 interface SuggestedActionsProps {
   actions: SuggestedAction[];

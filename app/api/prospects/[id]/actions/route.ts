@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import type { SuggestedActionsResponse, SuggestedAction, ApiResponse } from '@/types';
 
 // Mock function to generate AI-suggested actions based on prospect signals
-function generateSuggestedActions(prospectId: string): SuggestedAction[] {
+function generateSuggestedActions(): SuggestedAction[] {
   // In production, this would use OpenAI or other AI service
   // For now, return mock data based on prospect ID
   
@@ -84,7 +84,7 @@ export async function GET(
     }
     
     // Generate suggested actions
-    const actions = generateSuggestedActions(prospectId);
+    const actions = generateSuggestedActions();
     
     const response: SuggestedActionsResponse = {
       success: true,
@@ -116,10 +116,8 @@ export async function GET(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id: prospectId } = await params;
     const body = await request.json();
     
     // Validate request body

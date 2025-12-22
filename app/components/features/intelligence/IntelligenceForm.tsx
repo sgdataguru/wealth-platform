@@ -28,7 +28,6 @@ export default function IntelligenceForm({
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm<IntelligenceFormInput>({
     resolver: zodResolver(intelligenceFormSchema),
     defaultValues: {

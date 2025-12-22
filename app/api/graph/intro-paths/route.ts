@@ -5,7 +5,7 @@
 
 import { NextResponse } from 'next/server';
 import { mockNodes, mockEdges } from '@/lib/mock-data/graphData';
-import type { GraphNode, GraphEdge, IntroPath } from '@/types/graph';
+import type { GraphEdge, IntroPath } from '@/types/graph';
 
 /**
  * Breadth-first search to find shortest paths between two nodes

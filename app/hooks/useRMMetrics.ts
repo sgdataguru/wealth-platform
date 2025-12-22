@@ -41,7 +41,6 @@ export function useRMMetrics(rmId?: string) {
 
     useEffect(() => {
         // Simulate API call
-        setIsLoading(true);
         setTimeout(() => {
             setMetrics(MOCK_RM_METRICS);
             setIsLoading(false);

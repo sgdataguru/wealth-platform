@@ -3,17 +3,14 @@
  * @description API routes for dashboard metrics
  */
 
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import type { EnhancedDashboardMetrics, ApiResponse } from '@/types';
 
 /**
  * GET /api/metrics - Get dashboard metrics for an RM
  */
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    const searchParams = request.nextUrl.searchParams;
-    const rmId = searchParams.get('rmId') || 'rm-1';
-
     // In a real app, these would be calculated from database queries
     // For now, using mock data
     const metrics: EnhancedDashboardMetrics = {

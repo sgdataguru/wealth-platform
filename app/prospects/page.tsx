@@ -183,8 +183,6 @@ const mockProspects: Prospect[] = [
 export default function ProspectsPage() {
   const {
     appliedFilters,
-    isFilterPanelOpen,
-    setFilterPanelOpen,
     removeFilterValue,
     clearAllFilters,
     setFilteredCount,

@@ -157,7 +157,6 @@ export function useEnhancedExecutiveMetrics() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        setIsLoading(true);
         setTimeout(() => {
             setMetrics(MOCK_ENHANCED_METRICS);
             setIsLoading(false);

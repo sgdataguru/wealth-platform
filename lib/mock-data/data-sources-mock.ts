@@ -39,12 +39,12 @@ export interface DataConflict {
   field: string;
   conflictingValues: {
     source: string;
-    value: any;
+    value: unknown;
     confidence: number;
     timestamp: Date;
   }[];
   suggestedResolution: {
-    value: any;
+    value: unknown;
     reasoning: string;
   };
   status: 'pending' | 'resolved' | 'escalated';

@@ -13,6 +13,8 @@ interface ProductMixByClientProps {
     isLoading?: boolean;
 }
 
+const RENDER_REFERENCE_TIMESTAMP = Date.now();
+
 // Mock data for current clients
 const MOCK_CLIENT_PRODUCT_MIX: ClientProductMix[] = [
     {
@@ -164,7 +166,7 @@ export default function ProductMixByClient({ data = MOCK_CLIENT_PRODUCT_MIX, isL
                                     ₹{(client.totalAUM / 10000000).toFixed(2)} Cr
                                 </p>
                                 <p className="text-xs text-[#8E99A4]">
-                                    Last review: {Math.floor((Date.now() - client.lastReviewDate.getTime()) / (1000 * 60 * 60 * 24))}d ago
+                                    Last review: {Math.floor((RENDER_REFERENCE_TIMESTAMP - client.lastReviewDate.getTime()) / (1000 * 60 * 60 * 24))}d ago
                                 </p>
                             </div>
                         </div>

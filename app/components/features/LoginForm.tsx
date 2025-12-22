@@ -64,7 +64,6 @@ export default function LoginForm() {
           name: 'Demo User',
           role: 'rm',
         },
-        timestamp: Date.now(),
       };
 
       // Store in localStorage if remember me is checked

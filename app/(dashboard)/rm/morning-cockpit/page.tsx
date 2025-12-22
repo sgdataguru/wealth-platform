@@ -6,7 +6,6 @@
 
 'use client';
 
-import { useState } from 'react';
 import { Header, Sidebar } from '@/app/components/layout';
 import RMMetricsBar from '../components/RMMetricsBar';
 import DashboardGrid from '../components/DashboardGrid';

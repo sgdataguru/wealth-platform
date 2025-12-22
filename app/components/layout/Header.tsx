@@ -6,6 +6,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Avatar from '../ui/Avatar';
 import { useUserRole } from '@/app/hooks/useUserRole';
@@ -75,10 +76,13 @@ export default function Header({ userName, userInitials }: HeaderProps) {
       <header className="h-20 px-8 flex items-center justify-between bg-[var(--header-main-bg)] border-b border-[var(--header-border)] shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-colors duration-300">
         {/* Logo */}
         <div className="flex items-center gap-4">
-          <img
+          <Image
             src="/nuvamalogo.jpg"
             alt="Nuvama Wealth"
-            className="h-12 object-contain rounded-lg shadow-[0_12px_32px_rgba(0,0,0,0.35)]"
+            width={150}
+            height={48}
+            className="h-12 w-auto object-contain rounded-lg shadow-[0_12px_32px_rgba(0,0,0,0.35)]"
+            priority
           />
 
           {/* Role Badge */}

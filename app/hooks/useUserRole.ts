@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import type { UserRole, UserProfile } from '@/types';
 
 // Mock user profiles for POC
@@ -29,19 +29,22 @@ const MOCK_EXECUTIVE_PROFILE: UserProfile = {
 };
 
 export function useUserRole() {
-    // Start with RM role as default
-    const [currentRole, setCurrentRole] = useState<UserRole>('rm');
-    const [userProfile, setUserProfile] = useState<UserProfile>(MOCK_RM_PROFILE);
-
-    // Load role from localStorage on mount
-    useEffect(() => {
+    const getInitialRole = () => {
+        if (typeof window === 'undefined') return 'rm';
         const savedRole = localStorage.getItem('nuvama_user_role') as UserRole;
-        if (savedRole && (savedRole === 'rm' || savedRole === 'executive' || savedRole === 'admin')) {
-            switchRole(savedRole);
-        }
-    }, []);
+        return savedRole && (savedRole === 'rm' || savedRole === 'executive' || savedRole === 'admin')
+            ? savedRole
+            : 'rm';
+    };
 
-    const switchRole = (newRole: UserRole) => {
+    const initialRole = getInitialRole();
+
+    const [currentRole, setCurrentRole] = useState<UserRole>(initialRole);
+    const [userProfile, setUserProfile] = useState<UserProfile>(
+        initialRole === 'executive' ? MOCK_EXECUTIVE_PROFILE : MOCK_RM_PROFILE,
+    );
+
+    const switchRole = useCallback((newRole: UserRole) => {
         setCurrentRole(newRole);
 
         // Update profile based on role
@@ -53,7 +56,7 @@ export function useUserRole() {
 
         // Save to localStorage
         localStorage.setItem('nuvama_user_role', newRole);
-    };
+    }, []);
 
     return {
         role: currentRole,
