@@ -16,8 +16,8 @@
   --accent-amber: #f1e3c2;
 
   /* Typography */
-  --font-sans: var(--font-sans);
-  --font-heading: var(--font-playfair);
+  --font-sans: "Work Sans", "Inter", "Helvetica Neue", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Playfair Display", "Times New Roman", Georgia, serif;
 
   /* Surfaces */
   --bg-primary: var(--obsidian-900);
