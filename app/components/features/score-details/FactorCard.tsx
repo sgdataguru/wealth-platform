@@ -5,7 +5,7 @@
 
 'use client';
 
-import type { ScoreFactor } from '@/types';
+import type { ScoreFactor, SignalType } from '@/types';
 
 interface FactorCardProps {
   factor: ScoreFactor;
@@ -16,7 +16,7 @@ export default function FactorCard({ factor }: FactorCardProps) {
   const contribution = factor.points_contributed.toFixed(1);
   
   // Get signal type color
-  const signalColors = {
+  const signalColors: Record<SignalType, string> = {
     ipo: 'bg-purple-100 text-purple-700',
     funding: 'bg-blue-100 text-blue-700',
     acquisition: 'bg-green-100 text-green-700',
@@ -24,6 +24,11 @@ export default function FactorCard({ factor }: FactorCardProps) {
     board: 'bg-orange-100 text-orange-700',
     director_change: 'bg-amber-100 text-amber-700',
     corporate_action: 'bg-indigo-100 text-indigo-700',
+    buyback: 'bg-emerald-100 text-emerald-700',
+    open_offer: 'bg-lime-100 text-lime-700',
+    stock_split: 'bg-sky-100 text-sky-700',
+    demerger: 'bg-rose-100 text-rose-700',
+    rights_call: 'bg-yellow-100 text-yellow-700',
     margin_pledge: 'bg-pink-100 text-pink-700',
     early_exit: 'bg-cyan-100 text-cyan-700',
   };
