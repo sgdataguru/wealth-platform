@@ -7,7 +7,78 @@
 'use client';
 
 import { SignalBadge } from '@/app/components/ui';
-import type { Signal } from '@/types';
+import type { DataSource, Signal } from '@/types';
+
+const SOURCE_DETAILS: Record<
+  DataSource,
+  { label: string; tier: string; icon: string; bg: string; ring: string; text: string; description: string }
+> = {
+  'Exchange Data': {
+    label: 'Exchange Data',
+    tier: 'Exchange — verified',
+    icon: '🏛️',
+    bg: 'bg-[#EEF5FF]',
+    ring: 'ring-[#A5C4FF]',
+    text: 'text-[#1A1A2E]',
+    description: 'Filed via exchange feed; reconciled against symbol master.',
+  },
+  PrivateCircle: {
+    label: 'PrivateCircle',
+    tier: 'Data partner — curated',
+    icon: '🛰️',
+    bg: 'bg-[#F5F0FF]',
+    ring: 'ring-[#C3B3FF]',
+    text: 'text-[#2A2447]',
+    description: 'Privately sourced event with human curation and enrichment.',
+  },
+  'Zauba Corp': {
+    label: 'Zauba Corp',
+    tier: 'Filings — corroborated',
+    icon: '📑',
+    bg: 'bg-[#FFF6EB]',
+    ring: 'ring-[#F6C28B]',
+    text: 'text-[#5A3B10]',
+    description: 'Company filings matched to entity metadata.',
+  },
+  VCCircle: {
+    label: 'VCCircle',
+    tier: 'Media — curated',
+    icon: '📰',
+    bg: 'bg-[#F0F7F4]',
+    ring: 'ring-[#A4D4C3]',
+    text: 'text-[#1C4B35]',
+    description: 'Vetted editorial coverage with corroboration checks.',
+  },
+  NewsAPI: {
+    label: 'NewsAPI',
+    tier: 'News — aggregated',
+    icon: '🌐',
+    bg: 'bg-[#F4F6F8]',
+    ring: 'ring-[#CBD2D9]',
+    text: 'text-[#243B53]',
+    description: 'Aggregated signals scored for relevance and confidence.',
+  },
+  'Manual Intelligence': {
+    label: 'RM Intelligence',
+    tier: 'Manual — RM note',
+    icon: '✍️',
+    bg: 'bg-[#FFF0F0]',
+    ring: 'ring-[#F4A4A4]',
+    text: 'text-[#8B1E1E]',
+    description: 'Relationship manager captured intelligence with context.',
+  },
+};
+
+function formatTooltipDate(date: Date | string): string {
+  const dateObj = typeof date === 'string' ? new Date(date) : date;
+  return dateObj.toLocaleString('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  });
+}
 
 interface SignalCardProps {
   signal: Signal;
@@ -51,6 +122,8 @@ export default function SignalCard({
   onMarkAsRead,
   onMarkAsActioned,
 }: SignalCardProps) {
+  const sourceDetail = SOURCE_DETAILS[signal.source];
+
   const handleClick = () => {
     if (!signal.isRead && onMarkAsRead) {
       onMarkAsRead(signal.id);
@@ -79,10 +152,34 @@ export default function SignalCard({
           {/* Header with badge and time */}
           <div className="flex items-center gap-3 mb-2">
             <SignalBadge severity={signal.severity} label={getSignalTypeLabel(signal.type)} compact />
-            {signal.source === 'Manual Intelligence' && (
-              <span className="px-2 py-0.5 text-xs font-semibold bg-[#E85D54] text-white rounded">
-                MANUAL
-              </span>
+            {sourceDetail && (
+              <div className="relative group">
+                <div
+                  className={`flex items-center gap-2 px-3 py-1 rounded-full ring-1 ${sourceDetail.bg} ${sourceDetail.ring}`}
+                >
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/80 text-base">
+                    {sourceDetail.icon}
+                  </span>
+                  <div className="leading-tight">
+                    <div className={`text-xs font-semibold ${sourceDetail.text}`}>{sourceDetail.label}</div>
+                    <div className="text-[11px] text-[#5A6C7D]">{sourceDetail.tier}</div>
+                  </div>
+                </div>
+                <div className="absolute z-20 mt-2 hidden w-64 rounded-lg bg-[#1A1A2E] px-3 py-2 text-xs text-white shadow-lg group-hover:flex">
+                  <div className="space-y-1">
+                    <div className="font-semibold">Provenance</div>
+                    <div className="flex items-center justify-between text-[11px] text-white/80">
+                      <span>Ingested</span>
+                      <span>{formatTooltipDate(signal.createdAt)}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-[11px] text-white/80">
+                      <span>Confidence</span>
+                      <span>{signal.confidence ? `${signal.confidence}%` : 'Not rated'}</span>
+                    </div>
+                    <p className="text-[11px] text-white/70">{sourceDetail.description}</p>
+                  </div>
+                </div>
+              </div>
             )}
             <span className="text-xs text-[#8E99A4]">
               {formatTimeAgo(signal.createdAt)}
@@ -103,7 +200,7 @@ export default function SignalCard({
           </p>
 
           {/* Metadata row */}
-          <div className="flex items-center gap-4 text-xs text-[#8E99A4]">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-[#8E99A4]">
             <span className="flex items-center gap-1">
               <span className="font-medium">Source:</span> {signal.source}
             </span>
