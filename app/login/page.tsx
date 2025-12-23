@@ -1,6 +1,6 @@
 /**
  * @file login/page.tsx
- * @description Premium login page with shooting stars animation for Cockpit
+ * @description Premium login page for Wealth Intelligence Hub — Cockpit
  * @module app/login
  */
 
@@ -8,7 +8,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import ShootingStarsBackground from '../components/ui/ShootingStarsBackground';
+import LoginShell from '../components/auth/LoginShell';
 import LoginForm from '../components/features/LoginForm';
 
 export default function LoginPage() {
@@ -45,8 +45,15 @@ export default function LoginPage() {
   // Show loading state while checking authentication
   if (isChecking) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0A1628]">
-        <svg className="w-16 h-16 animate-spin text-[#E85D54]" viewBox="0 0 24 24">
+      <div 
+        className="min-h-screen flex items-center justify-center"
+        style={{ backgroundColor: 'var(--bg-primary)' }}
+      >
+        <svg 
+          className="w-16 h-16 animate-spin" 
+          viewBox="0 0 24 24"
+          style={{ color: 'var(--accent-gold)' }}
+        >
           <circle
             className="opacity-25"
             cx="12"
@@ -67,14 +74,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background */}
-      <ShootingStarsBackground />
-
-      {/* Login form */}
-      <div className="relative z-10 w-full animate-fade-in">
-        <LoginForm />
-      </div>
-    </div>
+    <LoginShell>
+      <LoginForm />
+    </LoginShell>
   );
 }

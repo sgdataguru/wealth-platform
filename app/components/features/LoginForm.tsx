@@ -1,6 +1,6 @@
 /**
  * @file LoginForm.tsx
- * @description Premium login form with glass-morphism styling for Cockpit
+ * @description Premium login form with Nuvama branding for Cockpit
  * @module components/features
  */
 
@@ -86,40 +86,33 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto px-4">
-      {/* Glass-morphism card */}
-      <div className="relative backdrop-blur-xl bg-white/10 rounded-2xl shadow-2xl border border-white/20 p-8 md:p-10">
-        {/* Gradient border effect */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#E85D54]/20 via-transparent to-[#C9A227]/20 -z-10" />
+    <div className="w-full">
+      {/* Header */}
+      <div className="mb-8 text-center lg:text-left">
+        <h1 className="text-3xl font-bold mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}>
+          Welcome to Cockpit
+        </h1>
+        <p className="text-base" style={{ color: 'var(--text-muted)' }}>
+          Your command center for revenue triggers and relationship timing.
+        </p>
+      </div>
 
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#E85D54] to-[#C9A227] mb-4">
-            <svg
-              className="w-10 h-10 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-              />
-            </svg>
-          </div>
-          <h1 className="text-3xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
-            Nuvama Wealth
-          </h1>
-          <p className="text-white/70 text-sm">Relationship Manager Cockpit</p>
-        </div>
-
-        {/* Form */}
+      {/* Form Card */}
+      <div 
+        className="p-8 rounded-2xl shadow-lg border transition-all duration-300"
+        style={{
+          backgroundColor: 'var(--bg-card)',
+          borderColor: 'rgba(217, 180, 114, 0.2)',
+        }}
+      >
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Email field */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-white/90 mb-2">
+            <label 
+              htmlFor="email" 
+              className="block text-sm font-medium mb-2"
+              style={{ color: 'var(--text-primary)' }}
+            >
               Email Address
             </label>
             <input
@@ -127,17 +120,26 @@ export default function LoginForm() {
               id="email"
               type="email"
               autoComplete="email"
-              className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#E85D54] focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none focus:ring-2"
+              style={{
+                backgroundColor: 'var(--input-surface)',
+                borderColor: 'var(--input-border)',
+                color: 'var(--text-primary)',
+              }}
               placeholder="demo@nuvama.com"
             />
             {errors.email && (
-              <p className="mt-2 text-sm text-red-300">{errors.email.message}</p>
+              <p className="mt-2 text-sm text-red-500 dark:text-red-400">{errors.email.message}</p>
             )}
           </div>
 
           {/* Password field */}
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-white/90 mb-2">
+            <label 
+              htmlFor="password" 
+              className="block text-sm font-medium mb-2"
+              style={{ color: 'var(--text-primary)' }}
+            >
               Password
             </label>
             <div className="relative">
@@ -146,13 +148,19 @@ export default function LoginForm() {
                 id="password"
                 type={showPassword ? 'text' : 'password'}
                 autoComplete="current-password"
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#E85D54] focus:border-transparent transition-all pr-12"
+                className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none focus:ring-2 pr-12"
+                style={{
+                  backgroundColor: 'var(--input-surface)',
+                  borderColor: 'var(--input-border)',
+                  color: 'var(--text-primary)',
+                }}
                 placeholder="••••••••"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors"
+                className="absolute right-3 top-1/2 -translate-y-1/2 transition-colors"
+                style={{ color: 'var(--text-muted)' }}
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
               >
                 {showPassword ? (
@@ -168,7 +176,7 @@ export default function LoginForm() {
               </button>
             </div>
             {errors.password && (
-              <p className="mt-2 text-sm text-red-300">{errors.password.message}</p>
+              <p className="mt-2 text-sm text-red-500 dark:text-red-400">{errors.password.message}</p>
             )}
           </div>
 
@@ -178,13 +186,19 @@ export default function LoginForm() {
               <input
                 {...register('rememberMe')}
                 type="checkbox"
-                className="w-4 h-4 rounded border-white/20 bg-white/10 text-[#E85D54] focus:ring-[#E85D54] focus:ring-offset-0 cursor-pointer"
+                className="w-4 h-4 rounded cursor-pointer"
+                style={{
+                  accentColor: 'var(--accent-gold)',
+                }}
               />
-              <span className="ml-2 text-sm text-white/90">Remember me</span>
+              <span className="ml-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                Remember me
+              </span>
             </label>
             <a
               href="#"
-              className="text-sm text-[#E85D54] hover:text-[#C9A227] transition-colors"
+              className="text-sm transition-colors"
+              style={{ color: 'var(--accent-gold)' }}
               onClick={(e) => {
                 e.preventDefault();
                 alert('Password reset functionality will be available in production.');
@@ -196,7 +210,14 @@ export default function LoginForm() {
 
           {/* Error message */}
           {errorMessage && (
-            <div className="bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-lg text-sm">
+            <div 
+              className="px-4 py-3 rounded-lg text-sm border"
+              style={{
+                backgroundColor: 'var(--error-light)',
+                borderColor: 'var(--error)',
+                color: 'var(--error)',
+              }}
+            >
               {errorMessage}
             </div>
           )}
@@ -205,27 +226,40 @@ export default function LoginForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-[#E85D54] to-[#C9A227] text-white font-semibold py-3 px-4 rounded-lg hover:shadow-lg hover:shadow-[#E85D54]/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full font-semibold py-3 px-4 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{
+              background: 'linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-soft) 100%)',
+              color: '#0A1628',
+              boxShadow: '0 4px 12px rgba(217, 180, 114, 0.3)',
+            }}
           >
             {isLoading ? (
               <span className="flex items-center justify-center">
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
                 Signing in...
               </span>
             ) : (
-              'Sign In'
+              'Sign in'
             )}
           </button>
 
           {/* Demo credentials hint */}
-          <div className="mt-6 p-4 bg-white/5 border border-white/10 rounded-lg">
-            <p className="text-xs text-white/60 text-center mb-2">Demo Credentials</p>
-            <div className="text-xs text-white/80 space-y-1 text-center">
-              <p><span className="text-white/60">Email:</span> demo@nuvama.com</p>
-              <p><span className="text-white/60">Password:</span> cockpit2025</p>
+          <div 
+            className="mt-6 p-4 border rounded-lg"
+            style={{
+              backgroundColor: 'var(--control-surface)',
+              borderColor: 'var(--control-border)',
+            }}
+          >
+            <p className="text-xs text-center mb-2" style={{ color: 'var(--text-muted)' }}>
+              Demo Credentials
+            </p>
+            <div className="text-xs space-y-1 text-center" style={{ color: 'var(--text-secondary)' }}>
+              <p><span style={{ color: 'var(--text-muted)' }}>Email:</span> demo@nuvama.com</p>
+              <p><span style={{ color: 'var(--text-muted)' }}>Password:</span> cockpit2025</p>
             </div>
           </div>
         </form>
