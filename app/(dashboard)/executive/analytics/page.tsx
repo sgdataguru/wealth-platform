@@ -14,7 +14,7 @@ import MarketShareTrends from './components/MarketShareTrends';
 
 export default function ExecutiveAnalyticsPage() {
     return (
-        <div className="min-h-screen bg-[#F8F9FA]">
+        <div className="min-h-screen bg-[var(--bg-primary)]">
             <Header />
 
             <div className="flex">
@@ -23,10 +23,10 @@ export default function ExecutiveAnalyticsPage() {
                 <main className="flex-1 p-8">
                     {/* Header */}
                     <div className="mb-8">
-                        <h1 className="text-3xl font-bold text-[#1A1A2E] font-[family-name:var(--font-playfair)]">
+                        <h1 className="text-3xl font-bold text-[var(--text-primary)] font-[family-name:var(--font-playfair)]">
                             Analytics
                         </h1>
-                        <p className="text-[#5A6C7D] mt-1">
+                        <p className="text-[var(--text-secondary)] mt-1">
                             Strategic insights for firm-wide performance management
                         </p>
                     </div>
@@ -35,50 +35,50 @@ export default function ExecutiveAnalyticsPage() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                         <Card>
                             <div className="flex flex-col">
-                                <span className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
+                                <span className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">
                                     Firm Conversion Rate
                                 </span>
                                 <div className="flex items-baseline gap-2 mt-2">
-                                    <span className="text-3xl font-bold text-[#1A1A2E]">24.2%</span>
-                                    <span className="text-sm text-[#28A745]">↑ 2.1%</span>
+                                    <span className="text-3xl font-bold text-[var(--text-primary)]">24.2%</span>
+                                    <span className="text-sm text-[var(--success)]">↑ 2.1%</span>
                                 </div>
-                                <span className="text-xs text-[#5A6C7D] mt-2">YoY improvement</span>
+                                <span className="text-xs text-[var(--text-secondary)] mt-2">YoY improvement</span>
                             </div>
                         </Card>
 
                         <Card>
                             <div className="flex flex-col">
-                                <span className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
+                                <span className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">
                                     Cost Per Acquisition
                                 </span>
                                 <div className="flex items-baseline gap-2 mt-2">
-                                    <span className="text-3xl font-bold text-[#1A1A2E]">₹12L</span>
+                                    <span className="text-3xl font-bold text-[var(--text-primary)]">₹12L</span>
                                 </div>
-                                <span className="text-xs text-[#28A745] mt-2">↓ ₹3L vs last quarter</span>
+                                <span className="text-xs text-[var(--success)] mt-2">↓ ₹3L vs last quarter</span>
                             </div>
                         </Card>
 
                         <Card>
                             <div className="flex flex-col">
-                                <span className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
+                                <span className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">
                                     Avg Client LTV
                                 </span>
                                 <div className="flex items-baseline gap-2 mt-2">
-                                    <span className="text-3xl font-bold text-[#1A1A2E]">₹45 Cr</span>
+                                    <span className="text-3xl font-bold text-[var(--text-primary)]">₹45 Cr</span>
                                 </div>
-                                <span className="text-xs text-[#5A6C7D] mt-2">Over 5 years</span>
+                                <span className="text-xs text-[var(--text-secondary)] mt-2">Over 5 years</span>
                             </div>
                         </Card>
 
                         <Card>
                             <div className="flex flex-col">
-                                <span className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
+                                <span className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">
                                     Market Share (Mumbai)
                                 </span>
                                 <div className="flex items-baseline gap-2 mt-2">
-                                    <span className="text-3xl font-bold text-[#E85D54]">18.5%</span>
+                                    <span className="text-3xl font-bold text-[var(--accent-coral)]">18.5%</span>
                                 </div>
-                                <span className="text-xs text-[#28A745] mt-2">↑ 1.2% vs last year</span>
+                                <span className="text-xs text-[var(--success)] mt-2">↑ 1.2% vs last year</span>
                             </div>
                         </Card>
                     </div>
@@ -92,47 +92,47 @@ export default function ExecutiveAnalyticsPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                         <RevenueAttributionChart />
                         <Card padding="lg">
-                            <h3 className="text-xl font-semibold text-[#1A1A2E] mb-6 font-[family-name:var(--font-playfair)]">
+                            <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6 font-[family-name:var(--font-playfair)]">
                                 Product Penetration
                             </h3>
 
                             <div className="space-y-4">
                                 <div>
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-medium text-[#1A1A2E]">Multi-Product Clients</span>
-                                        <span className="text-sm font-semibold text-[#1A1A2E]">68%</span>
+                                        <span className="text-sm font-medium text-[var(--text-primary)]">Multi-Product Clients</span>
+                                        <span className="text-sm font-semibold text-[var(--text-primary)]">68%</span>
                                     </div>
-                                    <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
-                                        <div className="h-full bg-gradient-to-r from-[#E85D54] to-[#F06E66]" style={{ width: '68%' }} />
+                                    <div className="h-3 bg-[var(--bg-dark)] rounded-full overflow-hidden">
+                                        <div className="h-full bg-gradient-to-r from-[var(--accent-coral)] to-[var(--accent-coral-light)]" style={{ width: '68%' }} />
                                     </div>
-                                    <p className="text-xs text-[#28A745] mt-1">↑ 5% vs last quarter</p>
+                                    <p className="text-xs text-[var(--success)] mt-1">↑ 5% vs last quarter</p>
                                 </div>
 
                                 <div>
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-medium text-[#1A1A2E]">Average Products per Client</span>
-                                        <span className="text-sm font-semibold text-[#1A1A2E]">2.4</span>
+                                        <span className="text-sm font-medium text-[var(--text-primary)]">Average Products per Client</span>
+                                        <span className="text-sm font-semibold text-[var(--text-primary)]">2.4</span>
                                     </div>
-                                    <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
-                                        <div className="h-full bg-gradient-to-r from-[#2A2447] to-[#5A6C7D]" style={{ width: '48%' }} />
+                                    <div className="h-3 bg-[var(--bg-dark)] rounded-full overflow-hidden">
+                                        <div className="h-full bg-gradient-to-r from-[var(--obsidian-800)] to-[var(--text-secondary)]" style={{ width: '48%' }} />
                                     </div>
-                                    <p className="text-xs text-[#5A6C7D] mt-1">Target: 3.0 products</p>
+                                    <p className="text-xs text-[var(--text-secondary)] mt-1">Target: 3.0 products</p>
                                 </div>
 
-                                <div className="pt-4 border-t border-gray-200">
-                                    <h4 className="font-semibold text-[#1A1A2E] mb-3 text-sm">Top Cross-Sell Combinations</h4>
+                                <div className="pt-4 border-t border-[var(--header-border)]">
+                                    <h4 className="font-semibold text-[var(--text-primary)] mb-3 text-sm">Top Cross-Sell Combinations</h4>
                                     <div className="space-y-2 text-sm">
                                         <div className="flex items-center justify-between">
-                                            <span className="text-[#5A6C7D]">PMS + Mutual Funds</span>
-                                            <span className="font-semibold text-[#1A1A2E]">45%</span>
+                                            <span className="text-[var(--text-secondary)]">PMS + Mutual Funds</span>
+                                            <span className="font-semibold text-[var(--text-primary)]">45%</span>
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <span className="text-[#5A6C7D]">PMS + Alternative Inv</span>
-                                            <span className="font-semibold text-[#1A1A2E]">32%</span>
+                                            <span className="text-[var(--text-secondary)]">PMS + Alternative Inv</span>
+                                            <span className="font-semibold text-[var(--text-primary)]">32%</span>
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <span className="text-[#5A6C7D]">Fixed Income + PMS</span>
-                                            <span className="font-semibold text-[#1A1A2E]">28%</span>
+                                            <span className="text-[var(--text-secondary)]">Fixed Income + PMS</span>
+                                            <span className="font-semibold text-[var(--text-primary)]">28%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -149,46 +149,46 @@ export default function ExecutiveAnalyticsPage() {
 
                     {/* Risk Indicators */}
                     <Card padding="lg">
-                        <h3 className="text-xl font-semibold text-[#1A1A2E] mb-6 font-[family-name:var(--font-playfair)]">
+                        <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6 font-[family-name:var(--font-playfair)]">
                             Risk Indicators
                         </h3>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div className="border-l-4 border-[#28A745] pl-4">
-                                <p className="text-xs text-[#8E99A4] uppercase font-semibold mb-2">Client Concentration</p>
-                                <p className="text-2xl font-bold text-[#28A745]">Low Risk</p>
-                                <p className="text-sm text-[#5A6C7D] mt-2">Top 10 clients: 22% of AUM</p>
-                                <p className="text-xs text-[#5A6C7D] mt-1">Well-diversified portfolio</p>
+                            <div className="border-l-4 border-[var(--success)] pl-4">
+                                <p className="text-xs text-[var(--text-muted)] uppercase font-semibold mb-2">Client Concentration</p>
+                                <p className="text-2xl font-bold text-[var(--success)]">Low Risk</p>
+                                <p className="text-sm text-[var(--text-secondary)] mt-2">Top 10 clients: 22% of AUM</p>
+                                <p className="text-xs text-[var(--text-secondary)] mt-1">Well-diversified portfolio</p>
                             </div>
 
-                            <div className="border-l-4 border-[#FFC107] pl-4">
-                                <p className="text-xs text-[#8E99A4] uppercase font-semibold mb-2">RM Turnover Risk</p>
-                                <p className="text-2xl font-bold text-[#FFC107]">Medium</p>
-                                <p className="text-sm text-[#5A6C7D] mt-2">12-month turnover: 8%</p>
-                                <p className="text-xs text-[#5A6C7D] mt-1">Industry avg: 6%</p>
+                            <div className="border-l-4 border-[var(--warning)] pl-4">
+                                <p className="text-xs text-[var(--text-muted)] uppercase font-semibold mb-2">RM Turnover Risk</p>
+                                <p className="text-2xl font-bold text-[var(--warning)]">Medium</p>
+                                <p className="text-sm text-[var(--text-secondary)] mt-2">12-month turnover: 8%</p>
+                                <p className="text-xs text-[var(--text-secondary)] mt-1">Industry avg: 6%</p>
                             </div>
 
-                            <div className="border-l-4 border-[#28A745] pl-4">
-                                <p className="text-xs text-[#8E99A4] uppercase font-semibold mb-2">Pipeline Coverage</p>
-                                <p className="text-2xl font-bold text-[#28A745]">Healthy</p>
-                                <p className="text-sm text-[#5A6C7D] mt-2">3.2x quarterly target</p>
-                                <p className="text-xs text-[#5A6C7D] mt-1">Adequate coverage</p>
+                            <div className="border-l-4 border-[var(--success)] pl-4">
+                                <p className="text-xs text-[var(--text-muted)] uppercase font-semibold mb-2">Pipeline Coverage</p>
+                                <p className="text-2xl font-bold text-[var(--success)]">Healthy</p>
+                                <p className="text-sm text-[var(--text-secondary)] mt-2">3.2x quarterly target</p>
+                                <p className="text-xs text-[var(--text-secondary)] mt-1">Adequate coverage</p>
                             </div>
                         </div>
 
-                        <div className="mt-6 pt-6 border-t border-gray-200">
-                            <h4 className="font-semibold text-[#1A1A2E] mb-3">🎯 Strategic Actions</h4>
-                            <ul className="space-y-2 text-sm text-[#5A6C7D]">
+                        <div className="mt-6 pt-6 border-t border-[var(--header-border)]">
+                            <h4 className="font-semibold text-[var(--text-primary)] mb-3">🎯 Strategic Actions</h4>
+                            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                                 <li className="flex items-start gap-2">
-                                    <span className="text-[#28A745]">✓</span>
+                                    <span className="text-[var(--success)]">✓</span>
                                     <span>Client concentration is healthy - no immediate action needed</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-[#FFC107]">→</span>
+                                    <span className="text-[var(--warning)]">→</span>
                                     <span>Monitor RM satisfaction scores - consider retention bonuses for top performers</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-[#2A2447]">📊</span>
+                                    <span className="text-[var(--text-primary)]">📊</span>
                                     <span>Pipeline coverage strong - maintain current lead generation investment</span>
                                 </li>
                             </ul>

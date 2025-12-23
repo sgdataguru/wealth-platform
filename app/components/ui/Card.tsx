@@ -30,10 +30,9 @@ export default function Card({
   return (
     <div
       className={`
-        bg-gradient-to-br from-[rgba(17,25,42,0.92)] via-[rgba(14,21,35,0.92)] to-[rgba(10,15,26,0.96)]
-        rounded-2xl border border-[rgba(217,180,114,0.25)] backdrop-blur-md
-        shadow-[0_14px_40px_rgba(0,0,0,0.45)] text-[var(--text-primary)]
-        ${hover ? 'transition-all duration-300 hover:shadow-[0_20px_52px_rgba(0,0,0,0.55)] hover:-translate-y-1' : ''}
+        bg-[var(--surface-card)] rounded-2xl border border-[var(--header-border)] backdrop-blur-md
+        shadow-[var(--shadow-md)] text-[var(--text-primary)]
+        ${hover ? 'transition-all duration-300 hover:shadow-[var(--shadow-lg)] hover:-translate-y-1' : ''}
         ${paddingStyles[padding]}
         ${className}
       `}
