@@ -70,16 +70,20 @@ export default function RMDashboard() {
     } = useDashboardData();
 
     // Action handlers
+    // TODO: Implement proper business logic with API calls
     const handleSuggestionAction = (suggestionId: string, action: string) => {
         console.log('Suggestion action:', { suggestionId, action });
+        // TODO: Call API to record action and update suggestion state
     };
 
     const handleAlertDismiss = (alertId: string) => {
         console.log('Alert dismissed:', alertId);
+        // TODO: Call API to dismiss alert
     };
 
     const handleAlertAcknowledge = (alertId: string) => {
         console.log('Alert acknowledged:', alertId);
+        // TODO: Call API to acknowledge alert
     };
 
     return (
@@ -109,14 +113,14 @@ export default function RMDashboard() {
                     {/* Visual Pipeline & Action Dashboard Grid */}
                     <div className="mb-8">
                         <DashboardGrid>
-                            {/* Column 1: Prospects - Liquidity Events */}
+                            {/* Column 1: AI Engagement Suggestions (Prospects - Liquidity Events) */}
                             <AIEngagementColumn
                                 suggestions={suggestions}
                                 isLoading={dashboardLoading}
                                 onAction={handleSuggestionAction}
                             />
 
-                            {/* Column 2: Immediate Actions & Alerts */}
+                            {/* Column 2: Immediate Actions (Critical & Warning Alerts) */}
                             <ImmediateActionsColumn
                                 alerts={alerts}
                                 isLoading={dashboardLoading}
@@ -124,14 +128,14 @@ export default function RMDashboard() {
                                 onAcknowledge={handleAlertAcknowledge}
                             />
 
-                            {/* Column 3: Today's Agenda & Life Events */}
+                            {/* Column 3: Today's Agenda (Meetings & Life Events) */}
                             <TodayAgendaColumn
                                 meetings={agenda}
                                 lifeEvents={lifeEvents}
                                 isLoading={dashboardLoading}
                             />
 
-                            {/* Column 4: Market Insights & Opportunities */}
+                            {/* Column 4: Market Insights (Asset Class Updates & Opportunities) */}
                             <MarketInsightsColumn
                                 insights={marketInsights}
                                 isLoading={dashboardLoading}
