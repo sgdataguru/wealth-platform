@@ -5,9 +5,8 @@
 
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import Avatar from '../ui/Avatar';
 import NotificationPopup from '../ui/NotificationPopup';
 import { useUserRole } from '@/app/hooks/useUserRole';
@@ -24,35 +23,11 @@ interface HeaderProps {
 export default function Header({ userName, userInitials, showNotification = false, notificationMessage, onNotificationDismiss }: HeaderProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [silentMode, setSilentMode] = useState(false);
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { role, userProfile } = useUserRole();
   const notificationButtonRef = useRef<HTMLButtonElement>(null);
-  const userMenuRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
 
   const displayName = userName || userProfile.name;
   const displayInitials = userInitials || userProfile.name.split(' ').map(n => n[0]).join('');
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
-        setIsUserMenuOpen(false);
-      }
-    }
-
-    if (isUserMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isUserMenuOpen]);
-
-  function handleLogout() {
-    setIsUserMenuOpen(false);
-    router.push('/login');
-  }
 
   return (
     <div className="sticky top-0 z-50">
@@ -174,39 +149,15 @@ export default function Header({ userName, userInitials, showNotification = fals
           </button>
 
           {/* User Menu */}
-          <div className="relative pl-5 border-l border-[var(--header-border)]" ref={userMenuRef}>
-            <button
-              type="button"
-              onClick={() => setIsUserMenuOpen((open) => !open)}
-              className="flex items-center gap-4"
-              aria-haspopup="menu"
-              aria-expanded={isUserMenuOpen}
-            >
-              <Avatar initials={displayInitials} size="sm" />
-              <div className="hidden md:block text-left">
-                <p className="text-[var(--text-primary)] text-sm font-medium">{displayName}</p>
-                <p className="text-[var(--text-muted)] text-xs">{userProfile.role === 'rm' ? 'Relationship Manager' : 'Executive'}</p>
-              </div>
-              <svg className="w-4 h-4 text-[var(--text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            {isUserMenuOpen && (
-              <div
-                className="absolute right-0 top-full mt-3 w-44 rounded-xl border border-[var(--control-border)] bg-[var(--control-surface)] shadow-[var(--shadow-lg)] py-2 text-sm text-[var(--text-primary)]"
-                role="menu"
-              >
-                <button
-                  type="button"
-                  onClick={handleLogout}
-                  className="w-full px-4 py-2 text-left hover:bg-[var(--control-hover)] transition-colors"
-                  role="menuitem"
-                >
-                  Logout
-                </button>
-              </div>
-            )}
+          <div className="flex items-center gap-4 pl-5 border-l border-[var(--header-border)]">
+            <Avatar initials={displayInitials} size="sm" />
+            <div className="hidden md:block">
+              <p className="text-[var(--text-primary)] text-sm font-medium">{displayName}</p>
+              <p className="text-[var(--text-muted)] text-xs">{userProfile.role === 'rm' ? 'Relationship Manager' : 'Executive'}</p>
+            </div>
+            <svg className="w-4 h-4 text-[var(--text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
         </div>
       </header>
