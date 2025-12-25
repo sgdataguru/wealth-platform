@@ -12,6 +12,7 @@ import { Card } from '@/app/components/ui';
 import { ProspectDetailPanel } from '@/app/components/features';
 import { usePanelStore } from '@/store/panel-store';
 import { useRMMetrics } from '@/app/hooks/useRMMetrics';
+import { useLoginNotification } from '@/app/hooks/useLoginNotification';
 import SuggestionsSection from '@/app/components/suggestions/SuggestionsSection';
 import FloatingChatbot from '@/app/components/features/FloatingChatbot';
 import DashboardGrid from './components/DashboardGrid';
@@ -58,6 +59,13 @@ export default function RMDashboard() {
     const { metrics, isLoading } = useRMMetrics();
     const { selectedProspectId } = usePanelStore();
     const selectedProspect = mockRMProspects.find(p => p.id === selectedProspectId);
+    
+    // Login notification hook - shows notification 15 seconds after dashboard loads
+    const {
+        showNotification,
+        message: notificationMessage,
+        dismissNotification,
+    } = useLoginNotification('rm');
 
     // Dashboard data for action grid
     const {
@@ -88,7 +96,11 @@ export default function RMDashboard() {
 
     return (
         <div className="min-h-screen bg-[#F8F9FA]">
-            <Header />
+            <Header 
+                showNotification={showNotification}
+                notificationMessage={notificationMessage}
+                onNotificationDismiss={dismissNotification}
+            />
 
             <div className="flex">
                 <Sidebar activePage="rm-dashboard" />

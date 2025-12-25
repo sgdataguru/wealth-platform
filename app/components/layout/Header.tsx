@@ -5,21 +5,26 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 import Avatar from '../ui/Avatar';
+import NotificationPopup from '../ui/NotificationPopup';
 import { useUserRole } from '@/app/hooks/useUserRole';
 import ThemeToggle from './ThemeToggle';
 
 interface HeaderProps {
   userName?: string;
   userInitials?: string;
+  showNotification?: boolean;
+  notificationMessage?: string;
+  onNotificationDismiss?: () => void;
 }
 
-export default function Header({ userName, userInitials }: HeaderProps) {
+export default function Header({ userName, userInitials, showNotification = false, notificationMessage, onNotificationDismiss }: HeaderProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [silentMode, setSilentMode] = useState(false);
   const { role, userProfile } = useUserRole();
+  const notificationButtonRef = useRef<HTMLButtonElement>(null);
 
   const displayName = userName || userProfile.name;
   const displayInitials = userInitials || userProfile.name.split(' ').map(n => n[0]).join('');
@@ -109,7 +114,11 @@ export default function Header({ userName, userInitials }: HeaderProps) {
           <ThemeToggle />
 
           {/* Notifications */}
-          <button className="relative p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[var(--shadow-sm)]">
+          <button 
+            ref={notificationButtonRef}
+            className="relative p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[var(--shadow-sm)]"
+            aria-label="Notifications"
+          >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -152,6 +161,16 @@ export default function Header({ userName, userInitials }: HeaderProps) {
           </div>
         </div>
       </header>
+
+      {/* Notification Popup */}
+      {showNotification && notificationMessage && (
+        <NotificationPopup
+          message={notificationMessage}
+          visible={showNotification}
+          onDismiss={onNotificationDismiss}
+          anchorElement={notificationButtonRef.current}
+        />
+      )}
     </div>
   );
 }

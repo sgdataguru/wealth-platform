@@ -16,6 +16,7 @@ import ExecutiveActionCenter from './components/ExecutiveActionCenter';
 import LiquidityTriggersPanel from './components/LiquidityTriggersPanel';
 import FloatingChatbot from '@/app/components/features/FloatingChatbot';
 import { useEnhancedExecutiveMetrics } from '@/app/hooks/useEnhancedExecutiveMetrics';
+import { useLoginNotification } from '@/app/hooks/useLoginNotification';
 import type { RMTask } from '@/types';
 
 // Mock recent RM tasks
@@ -97,10 +98,21 @@ const mockRMTasks: RMTask[] = [
 
 export default function ExecutiveDashboard() {
     const { metrics, isLoading, liquidityTriggers } = useEnhancedExecutiveMetrics();
+    
+    // Login notification hook - shows notification 15 seconds after dashboard loads
+    const {
+        showNotification,
+        message: notificationMessage,
+        dismissNotification,
+    } = useLoginNotification('executive');
 
     return (
         <div className="min-h-screen bg-[#F8F9FA]">
-            <Header />
+            <Header 
+                showNotification={showNotification}
+                notificationMessage={notificationMessage}
+                onNotificationDismiss={dismissNotification}
+            />
 
             <div className="flex">
                 <Sidebar activePage="executive-dashboard" />

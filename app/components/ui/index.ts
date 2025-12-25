@@ -7,3 +7,4 @@ export { default as ScoreBadge } from './ScoreBadge';
 export { default as Modal } from './Modal';
 export { default as StatusPill } from './StatusPill';
 export { default as PriorityBadge } from './PriorityBadge';
+export { default as NotificationPopup } from './NotificationPopup';
