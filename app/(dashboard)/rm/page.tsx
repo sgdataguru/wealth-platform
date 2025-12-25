@@ -14,6 +14,12 @@ import { usePanelStore } from '@/store/panel-store';
 import { useRMMetrics } from '@/app/hooks/useRMMetrics';
 import SuggestionsSection from '@/app/components/suggestions/SuggestionsSection';
 import FloatingChatbot from '@/app/components/features/FloatingChatbot';
+import DashboardGrid from './components/DashboardGrid';
+import AIEngagementColumn from './components/AIEngagementColumn';
+import ImmediateActionsColumn from './components/ImmediateActionsColumn';
+import TodayAgendaColumn from './components/TodayAgendaColumn';
+import MarketInsightsColumn from './components/MarketInsightsColumn';
+import { useDashboardData } from '@/app/hooks/useDashboardData';
 import type { Prospect } from '@/types';
 
 // Mock prospects for RM's book
@@ -53,6 +59,33 @@ export default function RMDashboard() {
     const { selectedProspectId } = usePanelStore();
     const selectedProspect = mockRMProspects.find(p => p.id === selectedProspectId);
 
+    // Dashboard data for action grid
+    const {
+        suggestions,
+        alerts,
+        agenda,
+        lifeEvents,
+        marketInsights,
+        isLoading: dashboardLoading,
+    } = useDashboardData();
+
+    // Action handlers
+    // TODO: Implement proper business logic with API calls
+    const handleSuggestionAction = (suggestionId: string, action: string) => {
+        console.log('Suggestion action:', { suggestionId, action });
+        // TODO: Call API to record action and update suggestion state
+    };
+
+    const handleAlertDismiss = (alertId: string) => {
+        console.log('Alert dismissed:', alertId);
+        // TODO: Call API to dismiss alert
+    };
+
+    const handleAlertAcknowledge = (alertId: string) => {
+        console.log('Alert acknowledged:', alertId);
+        // TODO: Call API to acknowledge alert
+    };
+
     return (
         <div className="min-h-screen bg-[#F8F9FA]">
             <Header />
@@ -76,6 +109,39 @@ export default function RMDashboard() {
 
                     {/* My Pipeline */}
                     <MyPipeline />
+
+                    {/* Visual Pipeline & Action Dashboard Grid */}
+                    <div className="mb-8">
+                        <DashboardGrid>
+                            {/* Column 1: AI Engagement Suggestions (Prospects - Liquidity Events) */}
+                            <AIEngagementColumn
+                                suggestions={suggestions}
+                                isLoading={dashboardLoading}
+                                onAction={handleSuggestionAction}
+                            />
+
+                            {/* Column 2: Immediate Actions (Critical & Warning Alerts) */}
+                            <ImmediateActionsColumn
+                                alerts={alerts}
+                                isLoading={dashboardLoading}
+                                onDismiss={handleAlertDismiss}
+                                onAcknowledge={handleAlertAcknowledge}
+                            />
+
+                            {/* Column 3: Today's Agenda (Meetings & Life Events) */}
+                            <TodayAgendaColumn
+                                meetings={agenda}
+                                lifeEvents={lifeEvents}
+                                isLoading={dashboardLoading}
+                            />
+
+                            {/* Column 4: Market Insights (Asset Class Updates & Opportunities) */}
+                            <MarketInsightsColumn
+                                insights={marketInsights}
+                                isLoading={dashboardLoading}
+                            />
+                        </DashboardGrid>
+                    </div>
 
                     {/* Engagement Suggestions */}
                     <div className="mb-8">
