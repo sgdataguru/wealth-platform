@@ -722,6 +722,9 @@ export type LiquidityTriggerStatus =
   | 'closed'
   | 'missed';
 
+// Liquidity Urgency Levels
+export type LiquidityUrgency = 'high' | 'medium' | 'early';
+
 // Liquidity Trigger Event
 export interface LiquidityTrigger {
   id: string;
@@ -735,6 +738,7 @@ export interface LiquidityTrigger {
   dataSource: string;
   probability: number; // 0-100
   confidenceLevel: 'high' | 'medium' | 'low';
+  urgency?: LiquidityUrgency; // Urgency level for UI display
   recommendedActions: string[];
   recommendedProducts: NuvamaProduct[];
   assignedRM: string;

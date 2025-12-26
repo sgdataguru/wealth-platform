@@ -6,15 +6,122 @@
 'use client';
 
 import { useState } from 'react';
-import type { LiquidityTrigger, LiquidityTimelineFilter } from '@/types';
+import type { LiquidityTrigger, LiquidityTimelineFilter, LiquidityUrgency } from '@/types';
+
+// Urgency configuration with symbols and labels
+const URGENCY_CONFIG = {
+    high: {
+        symbol: '🔴',
+        label: 'High Urgency / High Impact',
+        description: 'Immediate RM Action Required',
+        bgColor: 'bg-red-50',
+        borderColor: 'border-red-200',
+        textColor: 'text-red-700'
+    },
+    medium: {
+        symbol: '🟡',
+        label: 'Medium Urgency',
+        description: 'Monitor Closely',
+        bgColor: 'bg-yellow-50',
+        borderColor: 'border-yellow-200',
+        textColor: 'text-yellow-700'
+    },
+    early: {
+        symbol: '🟢',
+        label: 'Early Signal',
+        description: 'Opportunity Radar',
+        bgColor: 'bg-green-50',
+        borderColor: 'border-green-200',
+        textColor: 'text-green-700'
+    }
+} as const;
 
 interface LiquidityTriggersPanelProps {
     triggers: LiquidityTrigger[];
     isLoading?: boolean;
 }
 
+// Helper function to determine urgency from days until event
+function determineUrgency(daysUntil: number): LiquidityUrgency {
+    if (daysUntil <= 30) return 'high';
+    if (daysUntil <= 90) return 'medium';
+    return 'early';
+}
+
+// Liquidity Card Component
+interface LiquidityCardProps {
+    trigger: LiquidityTrigger;
+    onAssignRM: (trigger: LiquidityTrigger) => void;
+}
+
+function LiquidityCard({ trigger, onAssignRM }: LiquidityCardProps) {
+    const urgency = trigger.urgency || determineUrgency(trigger.daysUntilEvent);
+    const config = URGENCY_CONFIG[urgency];
+    
+    return (
+        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer bg-white">
+            <div className="space-y-3">
+                <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1 space-y-2">
+                        {/* Urgency Symbol with tooltip */}
+                        <div className="flex items-center gap-2">
+                            <span 
+                                className="text-2xl leading-none" 
+                                role="img" 
+                                aria-label={`${config.label}: ${config.description}`}
+                                title={`${config.label}: ${config.description}`}
+                            >
+                                {config.symbol}
+                            </span>
+                            <span className={`text-xs font-semibold uppercase tracking-wide ${config.textColor}`}>
+                                {config.label}
+                            </span>
+                        </div>
+                        
+                        <h4 className="font-semibold text-[#1A1A2E]">
+                            {trigger.clientName} <span className="text-gray-500 text-sm">({trigger.clientCode})</span>
+                        </h4>
+                        <p className="text-sm text-[#5A6C7D]">
+                            Mapped UHNW: {trigger.assignedRMName} (#{trigger.assignedRM})
+                        </p>
+                        <p className="text-sm text-[#5A6C7D]">
+                            {trigger.eventType.replace(/_/g, ' ').toUpperCase()}
+                            {trigger.probability >= 80 && (
+                                <span className="font-semibold text-[#E85D54]"> | IMPORTANT SIGNAL</span>
+                            )}
+                        </p>
+                    </div>
+                    
+                    {/* Assign to RM Button */}
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onAssignRM(trigger);
+                        }}
+                        className="flex items-center gap-2 px-3 py-2 bg-[#1E3A5F] text-white rounded-lg hover:bg-[#0A1628] transition-colors text-sm font-medium whitespace-nowrap"
+                        aria-label="Assign to RM"
+                        title="Assign to Relationship Manager"
+                    >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        Assign RM
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 export default function LiquidityTriggersPanel({ triggers, isLoading }: LiquidityTriggersPanelProps) {
     const [timelineFilter, setTimelineFilter] = useState<LiquidityTimelineFilter>('0-30');
+
+    // Handle RM assignment
+    const handleAssignRM = (trigger: LiquidityTrigger) => {
+        // TODO: Implement RM assignment modal/flow
+        console.log('Assign RM for trigger:', trigger.id, trigger.clientName);
+        alert(`Assign RM feature: Opening assignment dialog for ${trigger.clientName}`);
+    };
 
     // Filter triggers by timeline
     const filteredTriggers = triggers.filter(trigger => {
@@ -32,6 +139,13 @@ export default function LiquidityTriggersPanel({ triggers, isLoading }: Liquidit
 
     // Calculate summary stats
     const totalInPlay = filteredTriggers.reduce((sum, t) => sum + t.amount, 0);
+
+    // Group triggers by urgency
+    const groupedTriggers = {
+        high: filteredTriggers.filter(t => (t.urgency || determineUrgency(t.daysUntilEvent)) === 'high'),
+        medium: filteredTriggers.filter(t => (t.urgency || determineUrgency(t.daysUntilEvent)) === 'medium'),
+        early: filteredTriggers.filter(t => (t.urgency || determineUrgency(t.daysUntilEvent)) === 'early')
+    };
 
     const handleExport = () => {
         // Export to CSV
@@ -126,96 +240,83 @@ export default function LiquidityTriggersPanel({ triggers, isLoading }: Liquidit
 
             {/* Triggers List */}
             <div className="p-6 space-y-4 max-h-[600px] overflow-y-auto">
-                <div className="space-y-3 rounded-lg border border-red-200 bg-red-50 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-red-700">
-                        RED — High Urgency / High Impact (Immediate RM Action)
-                    </p>
-                    <div className="space-y-3">
-                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
-                            <div className="space-y-2">
-                                <h4 className="font-semibold text-[#1A1A2E]">
-                                    Nectar Lifesciences Ltd <span className="text-gray-500 text-sm">(#NSE:NECLIFE)</span>
-                                </h4>
-                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Ramesh Gupta (#HC001)</p>
-                                <p className="text-sm text-[#5A6C7D]">
-                                    Buyback — Record Date Liquidity <span className="font-semibold text-[#E85D54]">| IMPORTANT SIGNAL</span>
-                                </p>
-                            </div>
+                {/* High Urgency Section */}
+                {groupedTriggers.high.length > 0 && (
+                    <div className={`space-y-3 rounded-lg border ${URGENCY_CONFIG.high.borderColor} ${URGENCY_CONFIG.high.bgColor} p-4`}>
+                        <div className="flex items-center gap-2">
+                            <span 
+                                className="text-2xl leading-none" 
+                                role="img" 
+                                aria-label={`${URGENCY_CONFIG.high.label}: ${URGENCY_CONFIG.high.description}`}
+                                title={`${URGENCY_CONFIG.high.label}: ${URGENCY_CONFIG.high.description}`}
+                            >
+                                {URGENCY_CONFIG.high.symbol}
+                            </span>
+                            <p className={`text-xs font-semibold uppercase tracking-wide ${URGENCY_CONFIG.high.textColor}`}>
+                                {URGENCY_CONFIG.high.label} — {URGENCY_CONFIG.high.description}
+                            </p>
                         </div>
-                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
-                            <div className="space-y-2">
-                                <h4 className="font-semibold text-[#1A1A2E]">
-                                    VLS Finance Ltd <span className="text-gray-500 text-sm">(#NSE:VLSFINANCE)</span>
-                                </h4>
-                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Sanjay Malhotra (#HC128)</p>
-                                <p className="text-sm text-[#5A6C7D]">
-                                    Buyback — Tender Window Live <span className="font-semibold text-[#E85D54]">| IMPORTANT SIGNAL</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
-                            <div className="space-y-2">
-                                <h4 className="font-semibold text-[#1A1A2E]">
-                                    Covidh Technologies Ltd <span className="text-gray-500 text-sm">(#NSE:COVIDH)</span>
-                                </h4>
-                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Ramesh Gupta (#HC001)</p>
-                                <p className="text-sm text-[#5A6C7D]">Open Offer — Tender Window Live</p>
-                            </div>
+                        <div className="space-y-3">
+                            {groupedTriggers.high.map(trigger => (
+                                <LiquidityCard key={trigger.id} trigger={trigger} onAssignRM={handleAssignRM} />
+                            ))}
                         </div>
                     </div>
-                </div>
+                )}
 
-                <div className="space-y-3 rounded-lg border border-yellow-200 bg-yellow-50 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-yellow-700">
-                        YELLOW — Medium Urgency / Watch Closely
-                    </p>
-                    <div className="space-y-3">
-                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
-                            <div className="space-y-2">
-                                <h4 className="font-semibold text-[#1A1A2E]">
-                                    Aurobindo Pharma Ltd <span className="text-gray-500 text-sm">(#NSE:AUROPHARMA)</span>
-                                </h4>
-                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Megha Iyer (#HC084)</p>
-                                <p className="text-sm text-[#5A6C7D]">Block Deal — Promoter Stake Sale</p>
-                            </div>
+                {/* Medium Urgency Section */}
+                {groupedTriggers.medium.length > 0 && (
+                    <div className={`space-y-3 rounded-lg border ${URGENCY_CONFIG.medium.borderColor} ${URGENCY_CONFIG.medium.bgColor} p-4`}>
+                        <div className="flex items-center gap-2">
+                            <span 
+                                className="text-2xl leading-none" 
+                                role="img" 
+                                aria-label={`${URGENCY_CONFIG.medium.label}: ${URGENCY_CONFIG.medium.description}`}
+                                title={`${URGENCY_CONFIG.medium.label}: ${URGENCY_CONFIG.medium.description}`}
+                            >
+                                {URGENCY_CONFIG.medium.symbol}
+                            </span>
+                            <p className={`text-xs font-semibold uppercase tracking-wide ${URGENCY_CONFIG.medium.textColor}`}>
+                                {URGENCY_CONFIG.medium.label} — {URGENCY_CONFIG.medium.description}
+                            </p>
                         </div>
-                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
-                            <div className="space-y-2">
-                                <h4 className="font-semibold text-[#1A1A2E]">
-                                    Glenmark Life Sciences <span className="text-gray-500 text-sm">(#NSE:GLENMARKL)</span>
-                                </h4>
-                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Rohit Khanna (#HC142)</p>
-                                <p className="text-sm text-[#5A6C7D]">Demergers — Board Resolution Expected</p>
-                            </div>
+                        <div className="space-y-3">
+                            {groupedTriggers.medium.map(trigger => (
+                                <LiquidityCard key={trigger.id} trigger={trigger} onAssignRM={handleAssignRM} />
+                            ))}
                         </div>
                     </div>
-                </div>
+                )}
 
-                <div className="space-y-3 rounded-lg border border-green-200 bg-green-50 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-green-700">
-                        GREEN — Early Signal / Opportunity Radar
-                    </p>
-                    <div className="space-y-3">
-                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
-                            <div className="space-y-2">
-                                <h4 className="font-semibold text-[#1A1A2E]">
-                                    CMS Info Systems <span className="text-gray-500 text-sm">(#NSE:CMSINFO)</span>
-                                </h4>
-                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Neelam Chopra (#HC109)</p>
-                                <p className="text-sm text-[#5A6C7D]">ESOP Vesting — 6 Month Window</p>
-                            </div>
+                {/* Early Signal Section */}
+                {groupedTriggers.early.length > 0 && (
+                    <div className={`space-y-3 rounded-lg border ${URGENCY_CONFIG.early.borderColor} ${URGENCY_CONFIG.early.bgColor} p-4`}>
+                        <div className="flex items-center gap-2">
+                            <span 
+                                className="text-2xl leading-none" 
+                                role="img" 
+                                aria-label={`${URGENCY_CONFIG.early.label}: ${URGENCY_CONFIG.early.description}`}
+                                title={`${URGENCY_CONFIG.early.label}: ${URGENCY_CONFIG.early.description}`}
+                            >
+                                {URGENCY_CONFIG.early.symbol}
+                            </span>
+                            <p className={`text-xs font-semibold uppercase tracking-wide ${URGENCY_CONFIG.early.textColor}`}>
+                                {URGENCY_CONFIG.early.label} — {URGENCY_CONFIG.early.description}
+                            </p>
                         </div>
-                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
-                            <div className="space-y-2">
-                                <h4 className="font-semibold text-[#1A1A2E]">
-                                    L&T Technology Services <span className="text-gray-500 text-sm">(#NSE:LTTS)</span>
-                                </h4>
-                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Harish Batra (#HC062)</p>
-                                <p className="text-sm text-[#5A6C7D]">Dividend Signal — Capital Allocation Review</p>
-                            </div>
+                        <div className="space-y-3">
+                            {groupedTriggers.early.map(trigger => (
+                                <LiquidityCard key={trigger.id} trigger={trigger} onAssignRM={handleAssignRM} />
+                            ))}
                         </div>
                     </div>
-                </div>
+                )}
+
+                {filteredTriggers.length === 0 && (
+                    <div className="text-center py-12 text-gray-500">
+                        No liquidity triggers found for the selected time period.
+                    </div>
+                )}
             </div>
         </div>
     );
