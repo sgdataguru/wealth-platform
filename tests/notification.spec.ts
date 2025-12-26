@@ -7,7 +7,7 @@ const PASSWORD = 'cockpit2025';
 const loginAs = async (page: Page, email: string) => {
   await page.goto('/login');
   await page.getByLabel('Email Address').fill(email);
-  await page.getByLabel('Password').fill(PASSWORD);
+  await page.getByRole('textbox', { name: 'Password' }).fill(PASSWORD);
   await page.getByRole('button', { name: 'Sign in' }).click();
 };
 
@@ -26,7 +26,7 @@ test.describe('Login Notification for RM and Executive', () => {
     await expect(page).toHaveURL(/\/rm$/);
 
     // Wait for dashboard to load
-    await expect(page.getByText('Your Dashboard')).toBeVisible();
+    await expect(page.getByText('Morning Rajesh, Welcome to Cockpit')).toBeVisible();
 
     // Notification should NOT be visible immediately
     await expect(page.getByTestId('notification-popup')).not.toBeVisible();

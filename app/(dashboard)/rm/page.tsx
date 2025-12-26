@@ -109,10 +109,10 @@ export default function RMDashboard() {
                     {/* Welcome Section */}
                     <div className="mb-8">
                         <h1 className="text-3xl font-bold text-[#1A1A2E] font-[family-name:var(--font-playfair)]">
-                            Your Dashboard
+                            Morning Rajesh, Welcome to Cockpit
                         </h1>
                         <p className="text-[#5A6C7D] mt-1">
-                            Individual performance and active opportunities
+                            Below are your triggers. There are 7 Actions for the day. If you have any questions, happy to chat. Have a Great Day.
                         </p>
                     </div>
 
