@@ -15,7 +15,6 @@ interface LiquidityTriggersPanelProps {
 
 export default function LiquidityTriggersPanel({ triggers, isLoading }: LiquidityTriggersPanelProps) {
     const [timelineFilter, setTimelineFilter] = useState<LiquidityTimelineFilter>('0-30');
-    const [selectedTrigger, setSelectedTrigger] = useState<string | null>(null);
 
     // Filter triggers by timeline
     const filteredTriggers = triggers.filter(trigger => {
@@ -60,30 +59,6 @@ export default function LiquidityTriggersPanel({ triggers, isLoading }: Liquidit
         a.href = url;
         a.download = `liquidity-triggers-${timelineFilter}.csv`;
         a.click();
-    };
-
-    const getEventIcon = (type: string) => {
-        switch (type) {
-            case 'lock_in_expiry':
-                return '🔓';
-            case 'bond_maturity':
-                return '💰';
-            case 'ipo_listing':
-                return '📈';
-            case 'esop_vesting':
-                return '💼';
-            default:
-                return '📊';
-        }
-    };
-
-    const getConfidenceBadge = (level: string) => {
-        const colors = {
-            high: 'bg-green-100 text-green-700',
-            medium: 'bg-yellow-100 text-yellow-700',
-            low: 'bg-gray-100 text-gray-700'
-        };
-        return colors[level as keyof typeof colors] || colors.medium;
     };
 
     if (isLoading) {
@@ -151,92 +126,96 @@ export default function LiquidityTriggersPanel({ triggers, isLoading }: Liquidit
 
             {/* Triggers List */}
             <div className="p-6 space-y-4 max-h-[600px] overflow-y-auto">
-                {filteredTriggers.length === 0 ? (
-                    <div className="text-center py-12">
-                        <p className="text-gray-500">No liquidity triggers for this timeline</p>
-                    </div>
-                ) : (
-                    filteredTriggers.slice(0, 10).map(trigger => (
-                        <div
-                            key={trigger.id}
-                            className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer"
-                            onClick={() => setSelectedTrigger(selectedTrigger === trigger.id ? null : trigger.id)}
-                        >
-                            {/* Header Row */}
-                            <div className="flex items-start justify-between mb-3">
-                                <div className="flex items-start gap-3 flex-1">
-                                    <span className="text-2xl">{getEventIcon(trigger.eventType)}</span>
-                                    <div>
-                                        <h4 className="font-semibold text-[#1A1A2E]">
-                                            {trigger.clientName} <span className="text-gray-500 text-sm">({trigger.clientCode})</span>
-                                        </h4>
-                                        <p className="text-sm text-[#5A6C7D] capitalize">
-                                            {trigger.eventType.replace(/_/g, ' ')}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="text-right">
-                                    <p className="text-lg font-bold text-[#E85D54]">
-                                        ₹{(trigger.amount / 10000000).toFixed(2)} Cr
-                                    </p>
-                                    <p className="text-sm text-[#5A6C7D]">
-                                        {new Date(trigger.eventDate).toLocaleDateString()} ({trigger.daysUntilEvent}d)
-                                    </p>
-                                </div>
+                <div className="space-y-3 rounded-lg border border-red-200 bg-red-50 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-red-700">
+                        RED — High Urgency / High Impact (Immediate RM Action)
+                    </p>
+                    <div className="space-y-3">
+                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
+                            <div className="space-y-2">
+                                <h4 className="font-semibold text-[#1A1A2E]">
+                                    Nectar Lifesciences Ltd <span className="text-gray-500 text-sm">(#NSE:NECLIFE)</span>
+                                </h4>
+                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Ramesh Gupta (#HC001)</p>
+                                <p className="text-sm text-[#5A6C7D]">
+                                    Buyback — Record Date Liquidity <span className="font-semibold text-[#E85D54]">| IMPORTANT SIGNAL</span>
+                                </p>
                             </div>
-
-                            {/* Metadata Row */}
-                            <div className="flex items-center gap-4 mb-3 flex-wrap">
-                                <span className={`px-2 py-1 rounded text-xs font-medium ${getConfidenceBadge(trigger.confidenceLevel)}`}>
-                                    {trigger.confidenceLevel.toUpperCase()} - {trigger.probability}%
-                                </span>
-                                <span className="text-xs text-gray-600">
-                                    📊 {trigger.dataSource}
-                                </span>
-                                <span className="text-xs text-gray-600">
-                                    👤 RM: {trigger.assignedRMName}
-                                </span>
-                            </div>
-
-                            {/* Expandable Details */}
-                            {selectedTrigger === trigger.id && (
-                                <div className="mt-4 pt-4 border-t border-gray-200 space-y-3">
-                                    <div>
-                                        <h5 className="text-sm font-semibold text-[#1A1A2E] mb-2">Recommended Actions:</h5>
-                                        <ul className="list-disc list-inside space-y-1">
-                                            {trigger.recommendedActions.map((action, idx) => (
-                                                <li key={idx} className="text-sm text-[#5A6C7D]">{action}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    <div>
-                                        <h5 className="text-sm font-semibold text-[#1A1A2E] mb-2">Recommended Products:</h5>
-                                        <div className="flex flex-wrap gap-2">
-                                            {trigger.recommendedProducts.map((product, idx) => (
-                                                <span
-                                                    key={idx}
-                                                    className="px-3 py-1 bg-[#F8F9FA] text-[#1A1A2E] rounded-full text-xs font-medium"
-                                                >
-                                                    {product}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
                         </div>
-                    ))
-                )}
-
-                {filteredTriggers.length > 10 && (
-                    <div className="text-center pt-4">
-                        <button className="text-sm text-[#E85D54] font-medium hover:underline">
-                            View All {filteredTriggers.length} Triggers →
-                        </button>
+                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
+                            <div className="space-y-2">
+                                <h4 className="font-semibold text-[#1A1A2E]">
+                                    VLS Finance Ltd <span className="text-gray-500 text-sm">(#NSE:VLSFINANCE)</span>
+                                </h4>
+                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Sanjay Malhotra (#HC128)</p>
+                                <p className="text-sm text-[#5A6C7D]">
+                                    Buyback — Tender Window Live <span className="font-semibold text-[#E85D54]">| IMPORTANT SIGNAL</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
+                            <div className="space-y-2">
+                                <h4 className="font-semibold text-[#1A1A2E]">
+                                    Covidh Technologies Ltd <span className="text-gray-500 text-sm">(#NSE:COVIDH)</span>
+                                </h4>
+                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Ramesh Gupta (#HC001)</p>
+                                <p className="text-sm text-[#5A6C7D]">Open Offer — Tender Window Live</p>
+                            </div>
+                        </div>
                     </div>
-                )}
+                </div>
+
+                <div className="space-y-3 rounded-lg border border-yellow-200 bg-yellow-50 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-yellow-700">
+                        YELLOW — Medium Urgency / Watch Closely
+                    </p>
+                    <div className="space-y-3">
+                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
+                            <div className="space-y-2">
+                                <h4 className="font-semibold text-[#1A1A2E]">
+                                    Aurobindo Pharma Ltd <span className="text-gray-500 text-sm">(#NSE:AUROPHARMA)</span>
+                                </h4>
+                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Megha Iyer (#HC084)</p>
+                                <p className="text-sm text-[#5A6C7D]">Block Deal — Promoter Stake Sale</p>
+                            </div>
+                        </div>
+                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
+                            <div className="space-y-2">
+                                <h4 className="font-semibold text-[#1A1A2E]">
+                                    Glenmark Life Sciences <span className="text-gray-500 text-sm">(#NSE:GLENMARKL)</span>
+                                </h4>
+                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Rohit Khanna (#HC142)</p>
+                                <p className="text-sm text-[#5A6C7D]">Demergers — Board Resolution Expected</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="space-y-3 rounded-lg border border-green-200 bg-green-50 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-green-700">
+                        GREEN — Early Signal / Opportunity Radar
+                    </p>
+                    <div className="space-y-3">
+                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
+                            <div className="space-y-2">
+                                <h4 className="font-semibold text-[#1A1A2E]">
+                                    CMS Info Systems <span className="text-gray-500 text-sm">(#NSE:CMSINFO)</span>
+                                </h4>
+                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Neelam Chopra (#HC109)</p>
+                                <p className="text-sm text-[#5A6C7D]">ESOP Vesting — 6 Month Window</p>
+                            </div>
+                        </div>
+                        <div className="border border-gray-200 rounded-lg p-5 hover:border-[#E85D54] transition-colors cursor-pointer">
+                            <div className="space-y-2">
+                                <h4 className="font-semibold text-[#1A1A2E]">
+                                    L&T Technology Services <span className="text-gray-500 text-sm">(#NSE:LTTS)</span>
+                                </h4>
+                                <p className="text-sm text-[#5A6C7D]">Mapped UHNW: Harish Batra (#HC062)</p>
+                                <p className="text-sm text-[#5A6C7D]">Dividend Signal — Capital Allocation Review</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
