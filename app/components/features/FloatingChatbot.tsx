@@ -33,7 +33,7 @@ export default function FloatingChatbot({ userRole = 'rm' }: FloatingChatbotProp
 
     const openChat = () => {
         const greeting = userRole === 'executive'
-            ? `Hello! I'm your AI assistant for Nuvama's Executive Dashboard. I can help you with AUM insights, liquidity triggers, team performance, and strategic analysis. What would you like to know?`
+            ? `Hello! I'm your AI assistant for Kairos Capital's Executive Dashboard. I can help you with AUM insights, liquidity triggers, team performance, and strategic analysis. What would you like to know?`
             : `Hi! I'm your AI assistant for relationship management. I can help you with client insights, lead scoring, portfolio recommendations, and action items. How can I assist you today?`;
 
         setMessages(prev => (prev.length === 0 ? [{
@@ -154,7 +154,7 @@ export default function FloatingChatbot({ userRole = 'rm' }: FloatingChatbotProp
                                 </svg>
                             </div>
                             <div>
-                                <h3 className="font-bold">Nuvama AI Assistant</h3>
+                                <h3 className="font-bold">Kairos Capital AI Assistant</h3>
                                 <p className="text-xs text-gray-300">{userRole === 'executive' ? 'Executive Support' : 'RM Support'}</p>
                             </div>
                         </div>

@@ -1,116 +1,97 @@
 @import "tailwindcss";
 
 /* UHNW Liquidity Intelligence Platform - Design System */
-/* Inspired by Nuvama Wealth - Premium Aesthetic */
+/* Inspired by Kairos Capital - Premium Aesthetic */
+
+/* Kairos Capital - Bespoke Investment House Design System */
 
 :root {
-  /* Obsidian Core Palette */
-  --obsidian-900: #05070e;
-  --obsidian-800: #0a0f1d;
-  --obsidian-700: #0f1626;
-  --obsidian-600: #1a2336;
-
-  /* Champagne / Gold Accents */
-  --accent-gold: #d9b472;
-  --accent-gold-soft: #caa164;
-  --accent-amber: #f1e3c2;
-  --accent-coral: #e85d54;
-  --accent-coral-light: #f06e66;
+  /* Kairos Core Palette */
+  --primary-deep-blue: #0A1628;
+  --primary-royal-blue: #1E3A5F;
+  --primary-accent: #C9A227;
+  --primary-gold: #D4AF37;
+  
+  /* Secondary Palette */
+  --secondary-slate: #2C3E50;
+  --secondary-charcoal: #1A1A2E;
+  --secondary-silver: #C0C0C0;
+  --secondary-platinum: #E5E4E2;
 
   /* Typography */
-  --font-sans: "Work Sans", "Inter", "Helvetica Neue", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: "Playfair Display", "Times New Roman", Georgia, serif;
+  --font-sans: "Inter", "Helvetica Neue", sans-serif;
+  --font-heading: "Playfair Display", "Georgia", serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
-  /* Light Surfaces */
-  --bg-primary: #f8f9fa;
-  --bg-secondary: #ffffff;
-  --bg-dark: #e7ecf5;
-  --bg-card: #ffffff;
-  --bg-overlay: rgba(255, 255, 255, 0.9);
+  /* Surfaces */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-dark: #0A1628;
+  --bg-card: #FFFFFF;
+  --bg-overlay: rgba(10, 22, 40, 0.95);
 
   /* Text Colors */
-  --text-primary: #0a1628;
-  --text-secondary: #1f2a3f;
-  --text-light: #1a202c;
-  --text-accent: var(--accent-gold);
-  --text-muted: #5a6c7d;
-
-  /* Controls & Containers */
-  --header-strip-bg: rgba(255, 255, 255, 0.9);
-  --header-main-bg: linear-gradient(135deg, #ffffff, #eef1f6);
-  --header-border: rgba(31, 42, 63, 0.16);
-  --control-surface: rgba(10, 22, 40, 0.06);
-  --control-border: rgba(26, 32, 44, 0.2);
-  --input-surface: rgba(255, 255, 255, 0.95);
-  --input-border: rgba(31, 42, 63, 0.18);
-  --surface-card: rgba(255, 255, 255, 0.94);
-
-  /* Decorative backgrounds */
-  --body-radial-1: radial-gradient(circle at 20% 20%, rgba(13, 97, 160, 0.08), transparent 28%);
-  --body-radial-2: radial-gradient(circle at 80% 0%, rgba(217, 180, 114, 0.12), transparent 22%);
-  --body-gradient: linear-gradient(135deg, #f8f9fa, #e9edf5);
-  --body-noise: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" /></filter><rect width="160" height="160" filter="url(%23n)" opacity="0.04"/></svg>');
+  --text-primary: #1A1A2E;
+  --text-secondary: #5A6C7D;
+  --text-light: #FFFFFF;
+  --text-accent: #C9A227;
+  --text-muted: #8E99A4;
 
   /* Semantic Colors */
-  --success: #2f855a;
-  --success-light: rgba(47, 133, 90, 0.12);
-  --warning: #c05621;
-  --warning-light: rgba(192, 86, 33, 0.14);
-  --error: #c53030;
-  --error-light: rgba(197, 48, 48, 0.14);
-  --info: #2b6cb0;
+  --success: #28A745;
+  --success-light: #D4EDDA;
+  --warning: #FFC107;
+  --warning-light: #FFF3CD;
+  --error: #DC3545;
+  --error-light: #F8D7DA;
+  --info: #17A2B8;
 
   /* Spacing */
-  --space-1: 0.4rem;
-  --space-2: 0.8rem;
-  --space-3: 1.2rem;
-  --space-4: 1.6rem;
-  --space-5: 2.4rem;
-  --space-6: 3.2rem;
-  --space-8: 4.8rem;
-  --space-10: 6.4rem;
-  --space-12: 8rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 300ms ease;
-  --transition-slow: 500ms ease;
-
-  /* Shadows */
-  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.16);
+  /* Global Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  
+  /* Legacy Variable Mappings for Backward Compatibility */
+  --obsidian-900: var(--primary-deep-blue);
+  --obsidian-800: var(--primary-royal-blue);
+  --accent-gold: var(--primary-accent);
+  --header-strip-bg: rgba(255, 255, 255, 0.95);
+  --header-main-bg: #FFFFFF;
+  --header-border: rgba(0, 0, 0, 0.05);
+  --control-surface: #F8F9FA;
+  --control-border: #E1E5EB;
+  --input-surface: #FFFFFF;
+  --input-border: #E1E5EB;
 }
 
 .dark {
-  --bg-primary: var(--obsidian-900);
-  --bg-secondary: var(--obsidian-800);
-  --bg-dark: var(--obsidian-700);
-  --bg-card: #11192a;
-  --bg-overlay: rgba(5, 7, 14, 0.7);
-
-  --text-primary: #e8ecf5;
-  --text-secondary: #b6c2d6;
-  --text-light: #ffffff;
-  --text-muted: #8fa0b8;
-
-  --header-strip-bg: rgba(7, 11, 21, 0.9);
-  --header-main-bg: linear-gradient(135deg, #070b15, #0c1324, #0a0f1e);
-  --header-border: rgba(217, 180, 114, 0.28);
-  --control-surface: rgba(255, 255, 255, 0.04);
-  --control-border: rgba(217, 180, 114, 0.2);
-  --input-surface: rgba(255, 255, 255, 0.04);
-  --input-border: rgba(217, 180, 114, 0.25);
-  --surface-card: rgba(12, 18, 32, 0.96);
-
-  --body-radial-1: radial-gradient(circle at 20% 20%, rgba(217, 180, 114, 0.08), transparent 28%);
-  --body-radial-2: radial-gradient(circle at 80% 0%, rgba(106, 142, 194, 0.08), transparent 22%);
-  --body-gradient: linear-gradient(135deg, rgba(13, 18, 32, 0.95), rgba(8, 12, 22, 0.95));
-  --body-noise: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" /></filter><rect width="160" height="160" filter="url(%23n)" opacity="0.05"/></svg>');
-
-  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.5);
+  --bg-primary: #0A1628;
+  --bg-secondary: #1E3A5F;
+  --bg-card: #152238;
+  --bg-overlay: rgba(0, 0, 0, 0.8);
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #E5E4E2;
+  --text-muted: #8E99A4;
+  
+  --header-strip-bg: rgba(10, 22, 40, 0.95);
+  --header-main-bg: #0A1628;
+  --header-border: rgba(255, 255, 255, 0.1);
+  --control-surface: rgba(255, 255, 255, 0.05);
+  --control-border: rgba(255, 255, 255, 0.1);
+  --input-surface: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
 }
 
 @theme inline {

@@ -191,7 +191,7 @@ export default function EnhancedExecutiveHeroMetrics({ metrics, isLoading }: Enh
                     view={activeModal}
                     title={getModalTitle(activeModal)}
                     subtitle={getModalSubtitle(activeModal)}
-                    dataSource="Nuvama CRM + Portfolio Management System"
+                    dataSource="Kairos Capital CRM + Portfolio Management System"
                 >
                     {renderModalContent(activeModal)}
                 </DrillDownModal>

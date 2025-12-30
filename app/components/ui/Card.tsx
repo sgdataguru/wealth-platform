@@ -30,9 +30,9 @@ export default function Card({
   return (
     <div
       className={`
-        bg-[var(--surface-card)] rounded-2xl border border-[var(--header-border)] backdrop-blur-md
-        shadow-[var(--shadow-md)] text-[var(--text-primary)]
-        ${hover ? 'transition-all duration-300 hover:shadow-[var(--shadow-lg)] hover:-translate-y-1' : ''}
+        bg-[var(--bg-card)] rounded-lg border border-[var(--header-border)]
+        shadow-[var(--shadow-sm)] text-[var(--text-primary)]
+        ${hover ? 'transition-all duration-300 hover:shadow-[var(--shadow-md)] hover:-translate-y-0.5' : ''}
         ${paddingStyles[padding]}
         ${className}
       `}

@@ -103,7 +103,7 @@ const {
 
 ## Styling
 
-Follows Nuvama Wealth design system:
+Follows Kairos Capital design system:
 - Navy header: `#0A1628`
 - Gold accents: `#C9A227`
 - White surface: `#FFFFFF`

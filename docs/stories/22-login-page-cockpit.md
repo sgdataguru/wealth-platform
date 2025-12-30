@@ -17,7 +17,7 @@
 
 - [ ] **Background**: Live, animated "Shooting Stars" effect on a deep space gradient (Deep Blue `#0A1628` → Black).
 - [ ] **Glassmorphism**: Login form container should use a glass effect (blur + translucency) to float above the stars.
-- [ ] **Branding**: Prominent "Nuvama Wealth" or "UHNW Cockpit" logo in Gold/White.
+- [ ] **Branding**: Prominent "Kairos Capital" or "UHNW Cockpit" logo in Gold/White.
 - [ ] **Typography**: Use `Playfair Display` for headings and `Inter` for input fields.
 - [ ] **Animations**: Smooth fade-in of the form upon page load.
 

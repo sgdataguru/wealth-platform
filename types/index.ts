@@ -689,8 +689,8 @@ export interface ExecutiveAlert {
 // ENHANCED EXECUTIVE DASHBOARD - NUVAMA
 // ============================================
 
-// Nuvama Product Categories
-export type NuvamaProduct =
+// Kairos Capital Product Categories
+export type KairosCapitalProduct =
   | 'PMS'
   | 'Equities'
   | 'Fixed Income'
@@ -740,7 +740,7 @@ export interface LiquidityTrigger {
   confidenceLevel: 'high' | 'medium' | 'low';
   urgency?: LiquidityUrgency; // Urgency level for UI display
   recommendedActions: string[];
-  recommendedProducts: NuvamaProduct[];
+  recommendedProducts: KairosCapitalProduct[];
   assignedRM: string;
   assignedRMName: string;
   status: LiquidityTriggerStatus;
@@ -779,7 +779,7 @@ export interface ClientProductMix {
   assignedRM: string;
   assignedRMEmail?: string;
   products: {
-    category: NuvamaProduct;
+    category: KairosCapitalProduct;
     aum: number;
     percentage: number;
     lastUpdated: Date;
@@ -794,7 +794,7 @@ export interface ProspectiveProductMix {
   estimatedNetWorth: number;
   riskProfile: 'conservative' | 'moderate' | 'aggressive';
   recommendedProducts: {
-    category: NuvamaProduct;
+    category: KairosCapitalProduct;
     recommendationScore: number; // 0-100
     expectedAllocation: number; // Amount
     probability: number; // 0-100
@@ -848,7 +848,7 @@ export interface RMPerformanceDetail extends RMPerformance {
   avgLeadTimeToClose: number; // days
   churnRate: number; // percentage
   region: string;
-  productsOffered: NuvamaProduct[];
+  productsOffered: KairosCapitalProduct[];
 }
 
 // Churn Score Data

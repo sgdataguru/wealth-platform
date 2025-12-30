@@ -217,7 +217,7 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
             {/* Data Source Footer */}
             <div className="mt-4 pt-4 border-t border-gray-200">
                 <p className="text-xs text-[#8E99A4]">
-                    📊 Data Source: Nuvama CRM + Portfolio Management System | Updated: Real-time
+                    📊 Data Source: Kairos Capital CRM + Portfolio Management System | Updated: Real-time
                 </p>
             </div>
         </Card>

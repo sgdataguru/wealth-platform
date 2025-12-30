@@ -1,6 +1,6 @@
 /**
  * @file LoginForm.tsx
- * @description Premium login form with Nuvama branding for Cockpit
+ * @description Premium login form with Kairos Capital branding for Cockpit
  * @module components/features
  */
 

@@ -1,4 +1,4 @@
-# User Story: 20 - View Nuvama Influencer Network Mapping
+# User Story: 20 - View Kairos Capital Influencer Network Mapping
 
 **As a** Relationship Manager,
 **I want** to see a visual network map of influencers and their connections,
@@ -15,6 +15,6 @@
 
 ## Notes
 
-* Page 2 additions: "Nuvama influencer mapping (visual network)"
+* Page 2 additions: "Kairos Capital influencer mapping (visual network)"
 * Leverages graph database for relationship intelligence
 * Helps RMs understand how to reach prospects through warm introductions

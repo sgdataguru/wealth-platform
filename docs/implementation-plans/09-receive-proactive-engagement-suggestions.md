@@ -719,7 +719,7 @@ function calculateSuggestionPriority(
 
 ```typescript
 export const SUGGESTION_SYSTEM_PROMPT = `
-You are an AI assistant for Relationship Managers at Nuvama Wealth.
+You are an AI assistant for Relationship Managers at Kairos Capital.
 Your role is to generate proactive engagement suggestions when liquidity signals are detected.
 
 Each suggestion should include:

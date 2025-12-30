@@ -15,5 +15,5 @@
 
 ## Notes
 
-* Filters should be intuitive and follow Nuvama's branding guidelines
+* Filters should be intuitive and follow Kairos Capital's branding guidelines
 * The main panel displays filters alongside top prospects and suggested actions

@@ -4,7 +4,7 @@
 **Technical Stack**: Next.js 16 (App Router), React 19, TypeScript 5, TailwindCSS 4
 **Backend**: Mock Auth (MVP), Supabase Auth (Future)
 **Infrastructure**: Render (Hosting)
-**Design System**: Nuvama Wealth Aesthetic (Premium UHNW)
+**Design System**: Kairos Capital Aesthetic (Premium UHNW)
 
 ---
 
@@ -71,7 +71,7 @@ Password: cockpit2025
 [Full Screen Background - Shooting Stars Animation]
 │
 ├── [Centered Glass Card Container]
-│   ├── Logo (Nuvama Wealth)
+│   ├── Logo (Kairos Capital)
 │   ├── Welcome Text
 │   ├── Email Input
 │   ├── Password Input (with toggle)

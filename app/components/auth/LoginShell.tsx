@@ -1,6 +1,6 @@
 /**
  * @file LoginShell.tsx
- * @description Premium two-column login layout with Nuvama branding and live cockpit preview
+ * @description Premium two-column login layout with Kairos Capital branding and live cockpit preview
  * @module components/auth
  */
 
@@ -61,8 +61,8 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
             <div className="flex items-center gap-4">
               <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
                 <Image
-                  src="/brand/nuvama-logo.jpg"
-                  alt="Nuvama Wealth"
+                  src="/brand/kairos-logo.png"
+                  alt="Kairos Capital"
                   width={48}
                   height={48}
                   className="object-contain"
@@ -70,7 +70,7 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
               </div>
               <div>
                 <h1 className="text-2xl font-bold !text-white font-[family-name:var(--font-playfair)]">
-                  Nuvama Wealth
+                  Kairos Capital
                 </h1>
                 <p className="text-sm text-white/90 font-medium">Wealth Intelligence Hub — Cockpit</p>
               </div>
@@ -163,8 +163,8 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
         <div className="lg:hidden absolute top-8 left-8 flex items-center gap-3">
           <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
             <Image
-              src="/brand/nuvama-logo.jpg"
-              alt="Nuvama Wealth"
+              src="/brand/kairos-logo.png"
+              alt="Kairos Capital"
               width={40}
               height={40}
               className="object-contain"
@@ -172,7 +172,7 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
           </div>
           <div>
             <div className="text-lg font-bold text-[var(--text-primary)] font-[family-name:var(--font-playfair)]">
-              Nuvama Wealth
+              Kairos Capital
             </div>
             <div className="text-xs text-[var(--text-muted)]">Wealth Intelligence Hub — Cockpit</div>
           </div>

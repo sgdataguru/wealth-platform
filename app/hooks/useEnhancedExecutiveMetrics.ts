@@ -123,7 +123,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         recommendedActions: [
             'Build relationship',
             'Understand wealth management goals',
-            'Present Nuvama wealth suite'
+            'Present Kairos Capital wealth suite'
         ],
         recommendedProducts: ['PMS', 'Alternative Investments', 'Real Estate'],
         assignedRM: 'RM-002',

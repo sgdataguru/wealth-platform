@@ -15,4 +15,4 @@
 ## Notes
 
 * The experience should remain simple, transparent, and actionable
-* Design should follow Nuvama's branding guidelines for familiarity and ease of adoption
+* Design should follow Kairos Capital's branding guidelines for familiarity and ease of adoption

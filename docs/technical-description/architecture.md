@@ -17,7 +17,7 @@ A web application designed exclusively for **Relationship Managers (RMs)** handl
 
 ### Target Market
 
-- **Organization:** Nuvama Wealth (30-35 RMs)
+- **Organization:** Kairos Capital (30-35 RMs)
 - **Total Addressable Market:** ~4,400 UHNW individuals in India
 - **Client Threshold:** ₹100 Crore+ estimated wealth
 
@@ -93,7 +93,7 @@ Next.js 15 App Router with Server-First Architecture, leveraging Server Componen
 |-------|------------|-----------|
 | **Framework** | Next.js 15 | Server components, App Router, built-in API routes, streaming |
 | **Language** | TypeScript 5.x | Type safety, better developer experience, reduced runtime errors |
-| **Styling** | Tailwind CSS 3.x | Utility-first, design system support, Nuvama Wealth aesthetic |
+| **Styling** | Tailwind CSS 3.x | Utility-first, design system support, Kairos Capital aesthetic |
 | **UI Components** | Radix UI + Custom | Accessible primitives with premium styling |
 | **Database** | Supabase (PostgreSQL) | Real-time subscriptions, auth, row-level security |
 | **Graph Database** | Neo4j Aura | Relationship mapping between entities, liquidity events, intro paths |
@@ -1265,7 +1265,7 @@ CREATE INDEX idx_news_priority ON news_articles(priority);
 
 ## 9. Design System Reference
 
-Based on **Nuvama Wealth** inspired premium aesthetic:
+Based on **Kairos Capital** inspired premium aesthetic:
 
 ### Color Palette
 

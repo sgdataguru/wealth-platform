@@ -60,8 +60,8 @@ export default function Header({ userName, userInitials, showNotification = fals
     <div className="sticky top-0 z-50">
       <div className="h-11 px-8 flex items-center justify-between bg-[var(--header-strip-bg)] border-b border-[var(--header-border)] backdrop-blur-[6px] transition-colors duration-300">
         <div className="flex items-center gap-3 text-[11px] tracking-wide text-[var(--text-secondary)]">
-          <span className="flex h-7 items-center gap-2 rounded-full px-3 bg-[rgba(217,180,114,0.08)] text-[var(--text-primary)] border border-[rgba(217,180,114,0.25)] shadow-[var(--shadow-sm)]">
-            <span className="h-2 w-2 rounded-full bg-[var(--accent-gold)] shadow-[0_0_12px_rgba(217,180,114,0.85)]" />
+          <span className="flex h-7 items-center gap-2 rounded-full px-3 bg-[rgba(212,175,55,0.08)] text-[var(--text-primary)] border border-[rgba(212,175,55,0.25)] shadow-[var(--shadow-sm)]">
+            <span className="h-2 w-2 rounded-full bg-[var(--primary-gold)] shadow-[0_0_12px_rgba(212,175,55,0.85)]" />
             Signals refreshed 2m ago
           </span>
           <span className="flex items-center gap-2 text-[var(--text-primary)]">
@@ -75,14 +75,14 @@ export default function Header({ userName, userInitials, showNotification = fals
           <button
             type="button"
             onClick={() => setSilentMode(!silentMode)}
-            className={`relative inline-flex h-9 w-16 items-center rounded-full border transition-all duration-200 ease-out ${silentMode ? 'bg-[rgba(255,255,255,0.06)] border-[rgba(255,255,255,0.22)]' : 'bg-[rgba(217,180,114,0.14)] border-[rgba(217,180,114,0.4)] shadow-[0_10px_28px_rgba(217,180,114,0.35)]'}`}
+            className={`relative inline-flex h-9 w-16 items-center rounded-full border transition-all duration-200 ease-out ${silentMode ? 'bg-[rgba(255,255,255,0.06)] border-[rgba(255,255,255,0.22)]' : 'bg-[rgba(212,175,55,0.14)] border-[rgba(212,175,55,0.4)] shadow-[0_10px_28px_rgba(212,175,55,0.35)]'}`}
             aria-pressed={silentMode}
             aria-label="Toggle silent mode for alerts"
           >
             <span
-              className={`absolute left-1 h-6 w-6 rounded-full bg-gradient-to-br from-white/90 via-[#f7e0b5] to-[#d9b472] shadow-[0_10px_25px_rgba(217,180,114,0.55)] transition-transform duration-200 ease-out ${silentMode ? 'translate-x-6 bg-[rgba(255,255,255,0.7)] shadow-[var(--shadow-md)]' : ''}`}
+              className={`absolute left-1 h-6 w-6 rounded-full bg-gradient-to-br from-white/90 via-[#f7e0b5] to-[#d4af37] shadow-[0_10px_25px_rgba(212,175,55,0.55)] transition-transform duration-200 ease-out ${silentMode ? 'translate-x-6 bg-[rgba(255,255,255,0.7)] shadow-[var(--shadow-md)]' : ''}`}
             />
-            <span className={`ml-auto pr-3 text-[10px] font-semibold ${silentMode ? 'text-[var(--text-muted)]' : 'text-[#0a0f1e]'}`}>
+            <span className={`ml-auto pr-3 text-[10px] font-semibold ${silentMode ? 'text-[var(--text-muted)]' : 'text-[var(--primary-deep-blue)]'}`}>
               {silentMode ? 'Off' : 'On'}
             </span>
           </button>
@@ -93,8 +93,8 @@ export default function Header({ userName, userInitials, showNotification = fals
         {/* Logo */}
         <div className="flex items-center gap-4">
           <Image
-            src="/nuvamalogo.jpg"
-            alt="Nuvama Wealth"
+            src="/brand/kairos-logo.png"
+            alt="Kairos Capital"
             width={150}
             height={48}
             className="h-12 w-auto object-contain rounded-lg shadow-[var(--shadow-md)]"
@@ -131,7 +131,7 @@ export default function Header({ userName, userInitials, showNotification = fals
               placeholder="Search prospects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-5 py-3 bg-[var(--input-surface)] border border-[var(--input-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[rgba(217,180,114,0.6)] transition-colors shadow-[var(--shadow-sm)]"
+              className="w-full pl-11 pr-5 py-3 bg-[var(--input-surface)] border border-[var(--input-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[rgba(212,175,55,0.6)] transition-colors shadow-[var(--shadow-sm)]"
             />
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function Header({ userName, userInitials, showNotification = fals
           <ThemeToggle />
 
           {/* Notifications */}
-          <button 
+          <button
             ref={notificationButtonRef}
             className="relative p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[var(--shadow-sm)]"
             aria-label="Notifications"

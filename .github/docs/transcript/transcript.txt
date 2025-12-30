@@ -52,7 +52,7 @@ The main panel can display filters such as city, sector, network, and clusters, 
 A right-side panel can show key metrics, alerts, and clear explanations of why each prospect is relevant.
 
 03:12.000 --> 03:24.000
-The design should follow Nuvama’s branding guidelines to ensure familiarity and ease of adoption.
+The design should follow Kairos Capital’s branding guidelines to ensure familiarity and ease of adoption.
 
 03:24.000 --> 03:36.000
 If feasible, we can also introduce a live AI chatbot that allows Relationship Managers to query the graph database directly.
@@ -209,7 +209,7 @@ Page 2 additions:
 •⁠  ⁠Key trending graphs with AI-driven insights
 •⁠  ⁠TAM-linked news feed (client-specific, not generic)
 •⁠  ⁠AI chatbot for queries in multiple languages
-•⁠  ⁠Nuvama influencer mapping (visual network)
+•⁠  ⁠Kairos Capital influencer mapping (visual network)
 •⁠  ⁠Voice notes auto-mapping to conversations
 
 A few additional elements I believe we should incorporate:

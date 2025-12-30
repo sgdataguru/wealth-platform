@@ -184,7 +184,7 @@ interface GetRecentSignalsResponse {
 #### Main Layout Structure
 \`\`\`
 [Header - Sticky]
-├── Nuvama Wealth Logo
+├── Kairos Capital Logo
 ├── Navigation: Dashboard | Signals | Clients | Insights
 ├── Search Bar (Global)
 └── User Menu (Avatar + Dropdown)
@@ -253,7 +253,7 @@ interface GetRecentSignalsResponse {
 
 ### Design System Compliance
 
-#### Color Palette (Nuvama Wealth Premium Theme)
+#### Color Palette (Kairos Capital Premium Theme)
 
 \`\`\`css
 /* Primary Colors */

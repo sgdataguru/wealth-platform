@@ -12,7 +12,7 @@ The platform is designed exclusively for **Relationship Managers** handling Ultr
 
 ## Design System Reference
 
-Based on the **Nuvama Wealth** inspired premium aesthetic:
+Based on the **Kairos Capital** inspired premium aesthetic:
 
 | Token | Value | Usage |
 |-------|-------|-------|

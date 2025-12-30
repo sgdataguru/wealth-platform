@@ -4,7 +4,7 @@
 **Technical Stack**: Next.js 15 (App Router), React 18, TypeScript 5, TailwindCSS 3, Zustand
 **Backend**: Supabase (PostgreSQL, Realtime), Mock APIs (MVP)
 **Infrastructure**: Vercel (Frontend), Supabase Cloud
-**Design System**: Nuvama Wealth Aesthetic (Premium UHNW)
+**Design System**: Kairos Capital Aesthetic (Premium UHNW)
 
 ---
 

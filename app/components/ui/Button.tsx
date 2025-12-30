@@ -1,6 +1,6 @@
 /**
  * @file Button.tsx
- * @description Premium button component with Nuvama-inspired styling
+ * @description Premium button component with Kairos Capital-inspired styling
  */
 
 import { ButtonHTMLAttributes, ReactNode } from 'react';
@@ -33,20 +33,20 @@ export default function Button({
 
   const variantStyles = {
     primary: `
-      bg-gradient-to-r from-[rgba(217,180,114,0.95)] via-[rgba(202,161,100,0.95)] to-[rgba(176,134,69,0.95)]
-      text-[#0b0f1b] hover:shadow-[0_16px_40px_rgba(0,0,0,0.45)]
-      focus:ring-[rgba(217,180,114,0.35)] focus:ring-offset-0
-      hover:from-[rgba(223,191,132,0.98)] hover:to-[rgba(185,146,79,0.98)]
+      bg-gradient-to-r from-[var(--primary-accent)] to-[var(--primary-gold)]
+      text-[var(--primary-deep-blue)] hover:shadow-[0_4px_12px_rgba(201,162,39,0.3)]
+      focus:ring-[var(--primary-accent)] focus:ring-offset-0
+      hover:from-[var(--primary-gold)] hover:to-[var(--primary-accent)]
     `,
     secondary: `
-      bg-[rgba(255,255,255,0.04)] border border-[rgba(217,180,114,0.5)]
-      text-[var(--text-primary)] hover:bg-[rgba(217,180,114,0.08)]
-      focus:ring-[rgba(217,180,114,0.35)]
+      bg-transparent border border-[var(--primary-royal-blue)]
+      text-[var(--primary-royal-blue)] hover:bg-[var(--primary-royal-blue)] hover:text-white
+      focus:ring-[var(--primary-royal-blue)]
     `,
     ghost: `
       bg-transparent text-[var(--text-secondary)]
-      hover:bg-[rgba(255,255,255,0.04)] hover:text-[var(--text-primary)]
-      focus:ring-[rgba(217,180,114,0.35)]
+      hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)]
+      focus:ring-[var(--primary-accent)]
     `,
   };
 

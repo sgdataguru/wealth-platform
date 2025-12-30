@@ -552,7 +552,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 
 /**
- * Premium button component following the Nuvama Wealth design system.
+ * Premium button component following the Kairos Capital design system.
  * Supports multiple variants for different use cases in the UHNW platform.
  */
 const meta: Meta<typeof Button> = {

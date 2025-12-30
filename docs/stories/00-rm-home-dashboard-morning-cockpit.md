@@ -514,7 +514,7 @@ store/
 - **Nifty/Sensex Data:** NSE API or equivalent
 - **Currency Rates:** RBI API or Forex provider
 - **Calendar:** Microsoft Graph API (Outlook) or Google Calendar API
-- **CRM Data:** Internal Nuvama CRM system
+- **CRM Data:** Internal Kairos Capital CRM system
 
 ### Internal Systems
 - **Supabase:** Client data, portfolio holdings, alerts
@@ -525,7 +525,7 @@ store/
 
 ## Design System References
 
-### Colors (Nuvama Wealth Aesthetic)
+### Colors (Kairos Capital Aesthetic)
 - **Primary Deep Blue:** `#0A1628`
 - **Primary Royal Blue:** `#1E3A5F`
 - **Primary Gold Accent:** `#C9A227`

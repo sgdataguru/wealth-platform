@@ -131,7 +131,7 @@ As a **Relationship Manager**, I want **to see a prioritized list of top prospec
 
 ### Design System Compliance
 
-**Color Palette** (from Nuvama Wealth aesthetic):
+**Color Palette** (from Kairos Capital aesthetic):
 
 ```css
 /* Primary Colors */

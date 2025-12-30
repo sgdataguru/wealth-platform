@@ -1,6 +1,6 @@
 ## Objective
 
-Generate a comprehensive technical description for a full-stack Next.js application based on the provided User Stories. The output should align with project architecture guidelines and follow the premium Nuvama Wealth-inspired design aesthetic.
+Generate a comprehensive technical description for a full-stack Next.js application based on the provided User Stories. The output should align with project architecture guidelines and follow the premium Kairos Capital-inspired design aesthetic.
 
 ---
 
@@ -10,7 +10,7 @@ Generate a comprehensive technical description for a full-stack Next.js applicat
 |-----------|---------------|
 | **Application Type** | Next.js 15 App Router (Server-First Architecture) |
 | **Target Users** | Relationship Managers handling UHNW clients |
-| **Design System** | Premium wealth management aesthetic (Nuvama-inspired) |
+| **Design System** | Premium wealth management aesthetic (Kairos Capital-inspired) |
 | **Database** | Graph database for relationship mapping + Supabase for transactional data |
 | **Key Constraint** | Simple, intuitive UX; explainable AI/lead scoring |
 

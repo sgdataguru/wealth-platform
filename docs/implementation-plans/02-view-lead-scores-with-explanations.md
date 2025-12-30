@@ -1579,7 +1579,7 @@ A: Check your browser console for errors or try a different browser.
  * ClientCard Component
  * 
  * Displays a client with their lead score in a premium card layout.
- * Follows the Nuvama Wealth design aesthetic with gold accents.
+ * Follows the Kairos Capital design aesthetic with gold accents.
  * 
  * @component
  * @category Dashboard/Clients
@@ -1697,7 +1697,7 @@ A: Check your browser console for errors or try a different browser.
 
 ### References
 
-- [Nuvama Wealth Design System](https://www.nuvamawealth.com/)
+- [Kairos Capital Design System](https://www.nuvamawealth.com/)
 - [Next.js 15 Documentation](https://nextjs.org/docs)
 - [Supabase PostgreSQL](https://supabase.com/docs)
 - [OpenAI API Documentation](https://platform.openai.com/docs)

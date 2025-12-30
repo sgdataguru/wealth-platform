@@ -6,7 +6,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { ClientProductMix, NuvamaProduct } from '@/types';
+import type { ClientProductMix, KairosCapitalProduct } from '@/types';
 
 interface ProductMixByClientProps {
     data?: ClientProductMix[];
@@ -94,8 +94,8 @@ export default function ProductMixByClient({ data = MOCK_CLIENT_PRODUCT_MIX, isL
 
     const regions = ['all', ...Array.from(new Set(data.map(c => c.region)))];
 
-    const getProductColor = (product: NuvamaProduct): string => {
-        const colors: Record<NuvamaProduct, string> = {
+    const getProductColor = (product: KairosCapitalProduct): string => {
+        const colors: Record<KairosCapitalProduct, string> = {
             'PMS': '#2A2447',
             'Equities': '#E85D54',
             'Fixed Income': '#5A6C7D',

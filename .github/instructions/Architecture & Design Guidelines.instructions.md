@@ -11,15 +11,22 @@ Standardize system design patterns and technical structures while ensuring compl
 
 ## Design Inspiration: Premium Wealth Management Aesthetic
 
-*Inspired by [Nuvama Wealth](https://www.nuvamawealth.com/) and luxury financial services*
+*Inspired by [Kairos Capital Group](https://www.kairoscapital.group/) - A Bespoke Investment House*
+
+### Brand Philosophy
+> "Derived from the Ancient Greek term “kairos,” which signifies the right, critical, or opportune moment, Kairos Capital Group embodies the pursuit of strategic, timely action in investment."
+
+### Brand Assets
+![Kairos Capital Logo](/Users/maheshkumarpaik/.gemini/antigravity/brain/4d16eef7-20fe-45b0-80ff-c70e44db5e62/uploaded_image_2_1767060874619.png)
+![Kairos Capital Icon](/Users/maheshkumarpaik/.gemini/antigravity/brain/4d16eef7-20fe-45b0-80ff-c70e44db5e62/uploaded_image_0_1767060874619.png)
 
 ### Color Palette
 
 **Primary Colors**
 ```css
---primary-deep-blue: #0A1628;      /* Deep navy - trust, stability */
---primary-royal-blue: #1E3A5F;     /* Royal blue - premium feel */
---primary-accent: #C9A227;          /* Gold/Amber - luxury, wealth */
+--primary-deep-blue: #0A1628;      /* Deep navy - Kairos corporate blue */
+--primary-royal-blue: #1E3A5F;     /* Royal blue - trust & stability */
+--primary-accent: #C9A227;          /* Gold/Amber - bespoke luxury */
 --primary-gold: #D4AF37;            /* Metallic gold - prestige */
 ```
 

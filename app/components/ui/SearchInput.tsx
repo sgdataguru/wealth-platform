@@ -40,7 +40,7 @@ export function SearchInput({
           d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
         />
       </svg>
-      
+
       {/* Input */}
       <input
         type="text"
@@ -48,12 +48,12 @@ export function SearchInput({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         className="w-full pl-10 pr-10 py-2 text-sm
-                   bg-[#F8F9FA] border border-gray-200 rounded-md
-                   text-[#1A1A2E] placeholder-[#8E99A4]
-                   focus:outline-none focus:border-[#2A2447] focus:ring-2 focus:ring-[#2A2447] focus:ring-opacity-20
+                   bg-[var(--bg-secondary)] border border-[var(--input-border)] rounded-md
+                   text-[var(--text-primary)] placeholder-[var(--text-muted)]
+                   focus:outline-none focus:border-[var(--primary-royal-blue)] focus:ring-1 focus:ring-[var(--primary-royal-blue)]
                    transition-all duration-200"
       />
-      
+
       {/* Clear Button */}
       {value && (
         <button

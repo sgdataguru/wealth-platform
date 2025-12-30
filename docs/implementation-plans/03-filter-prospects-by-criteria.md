@@ -803,7 +803,7 @@ const exampleSQL = `
 - No exposure of unauthorized data
 
 #### Usability
-- Intuitive filter UI following Nuvama branding
+- Intuitive filter UI following Kairos Capital branding
 - Clear visual feedback for all interactions
 - Undo capability (clear individual filter)
 - Filter state persists across sessions
@@ -1827,7 +1827,7 @@ A: Refresh the page to reload filter options. Options are cached for 1 hour.
 
 ### References
 
-- [Nuvama Wealth Design System](https://www.nuvamawealth.com/)
+- [Kairos Capital Design System](https://www.nuvamawealth.com/)
 - [Next.js 15 Documentation](https://nextjs.org/docs)
 - [Supabase PostgreSQL](https://supabase.com/docs)
 - [Zustand State Management](https://github.com/pmndrs/zustand)

@@ -443,7 +443,7 @@ export function useChatSuggestions(lastMessage: ChatMessage | null) {
 
 ```typescript
 export const CHAT_SYSTEM_PROMPT = `
-You are an AI assistant for Relationship Managers at Nuvama Wealth.
+You are an AI assistant for Relationship Managers at Kairos Capital.
 You help RMs query information about UHNW clients, liquidity events, and signals.
 
 Your responses should:
@@ -1228,7 +1228,7 @@ npm run test
 **System Prompt**:
 
 ```
-You are an AI assistant for Relationship Managers at Nuvama Wealth, 
+You are an AI assistant for Relationship Managers at Kairos Capital, 
 helping them manage Ultra High Net Worth (UHNW) clients.
 
 Your role is to:
