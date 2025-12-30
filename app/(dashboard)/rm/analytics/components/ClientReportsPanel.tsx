@@ -103,13 +103,14 @@ const mockExecutiveReports: ClientReport[] = [
         recommendations: [
             'Reduce real estate exposure from 42% to 30% over 6 months',
             'Increase fixed income allocation from 18% to 28%',
+            import { formatCroreToUSD, formatINRToUSD } from '@/lib/utils/currency';
             'Implement systematic rebalancing strategy',
             'Schedule risk profile reassessment meeting'
         ]
     },
     {
         id: 'rep-4',
-        clientName: 'Anita Patel',
+                    netWorth: formatCroreToUSD(450),
         clientCode: 'UHNW-004',
         netWorth: '₹540 Cr',
         reportType: 'opportunities',
@@ -136,7 +137,7 @@ const mockExecutiveReports: ClientReport[] = [
     }
 ];
 
-type ReportType = ClientReport['reportType'];
+                    netWorth: formatCroreToUSD(680),
 
 export default function ClientReportsPanel() {
     const [selectedReport, setSelectedReport] = useState<ClientReport | null>(null);
@@ -163,7 +164,7 @@ export default function ClientReportsPanel() {
         }
 
         setIsGenerating(true);
-        
+                    netWorth: formatCroreToUSD(320),
         // Simulate AI report generation
         setTimeout(() => {
             setIsGenerating(false);
@@ -190,7 +191,7 @@ export default function ClientReportsPanel() {
         : mockExecutiveReports.filter(r => r.reportType === reportFilter);
 
     const getReportTypeColor = (type: ReportType | 'all') => {
-        switch (type) {
+                    netWorth: formatCroreToUSD(540),
             case 'portfolio': return 'bg-[#1A1332] text-white';
             case 'performance': return 'bg-[#28A745] text-white';
             case 'risk': return 'bg-[#DC3545] text-white';
@@ -217,7 +218,7 @@ export default function ClientReportsPanel() {
         }
     };
 
-    return (
+                    netWorth: formatCroreToUSD(890),
         <Card padding="lg">
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
@@ -238,7 +239,7 @@ export default function ClientReportsPanel() {
             </div>
 
             {/* Report Type Filters */}
-            <div className="flex flex-wrap gap-2 mb-6">
+                    netWorth: formatCroreToUSD(275)
                 {reportTypes.map(type => (
                     <button
                         key={type.id}

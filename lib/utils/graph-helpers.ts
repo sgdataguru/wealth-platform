@@ -4,6 +4,7 @@
  */
 
 import type { GraphNode, GraphEdge, NodeStyle, EdgeStyle, NodeType, EdgeType } from '@/types/graph';
+import { formatINRToUSD, formatCroreToUSD } from './currency';
 
 /**
  * Get style configuration for node based on type
@@ -312,13 +313,13 @@ export function applyRadialLayout(
  * Format currency for display
  */
 export function formatCurrency(amount: number): string {
-  if (amount >= 10000000) {
-    return `$${(amount / 10000000).toFixed(0)} Million`;
+  // Heuristic: if amount looks like a raw INR value (>= 1,000,000), treat as INR
+  if (Math.abs(amount) >= 1_000_000) {
+    return formatINRToUSD(amount);
   }
-  if (amount >= 100000) {
-    return `$${(amount / 100000).toFixed(0)}L`;
-  }
-  return `$${amount.toLocaleString('en-US')}`;
+
+  // Otherwise assume the number is in Crores (e.g., 450 => 450 Cr)
+  return formatCroreToUSD(amount);
 }
 
 /**

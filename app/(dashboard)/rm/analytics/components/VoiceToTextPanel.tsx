@@ -7,6 +7,7 @@
 
 import { Card } from '@/app/components/ui';
 import { useState, useRef } from 'react';
+import { formatCroreToUSD, formatINRToUSD } from '@/lib/utils/currency';
 
 interface VoiceNote {
     id: string;
@@ -34,9 +35,9 @@ const mockVoiceNotes: VoiceNote[] = [
         language: 'en',
         linkedClients: ['Rajesh Kumar'],
         detectedTopics: ['IPO', 'Wealth Management', 'PMS', 'Alternative Investments', 'Tax Optimization'],
-        aiSummary: 'Discussed post-IPO wealth management strategy with Rajesh Kumar. Proposed diversified allocation: 40% PMS, 30% alternative investments, 30% fixed income. Estimated liquid assets: ₹180 Cr. Client interested in tax optimization strategies.',
+        aiSummary: `Discussed post-IPO wealth management strategy with Rajesh Kumar. Proposed diversified allocation: 40% PMS, 30% alternative investments, 30% fixed income. Estimated liquid assets: ${formatCroreToUSD(180)}. Client interested in tax optimization strategies.`,
         actionItems: [
-            'Prepare detailed PMS proposal for ₹72 Cr allocation',
+            `Prepare detailed PMS proposal for ${formatCroreToUSD(72)} allocation`,
             'Schedule meeting with tax consultant',
             'Send alternative investment opportunities deck',
             'Follow up in 3 days for decision'
@@ -53,7 +54,7 @@ const mockVoiceNotes: VoiceNote[] = [
         language: 'en',
         linkedClients: ['Priya Sharma'],
         detectedTopics: ['Alternative Investments', 'PE Funds', 'Risk Profile', 'IRR'],
-        aiSummary: 'Discussed alternative investment opportunities with Priya Sharma. Presented 3 PE funds: Sequoia, Accel, Matrix. Minimum ticket: ₹5 Cr per fund. Historical IRR: 22-28%. Client requested detailed information packs.',
+        aiSummary: `Discussed alternative investment opportunities with Priya Sharma. Presented 3 PE funds: Sequoia, Accel, Matrix. Minimum ticket: ${formatCroreToUSD(5)} per fund. Historical IRR: 22-28%. Client requested detailed information packs.`,
         actionItems: [
             'Send PE fund information packs to Priya',
             'Prepare comparison analysis of 3 funds',

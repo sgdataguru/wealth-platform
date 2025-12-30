@@ -3,10 +3,11 @@
  * @description AI-generated client reports for Executive dashboard
  */
 
-'use client';
+ 'use client';
 
 import { Card } from '@/app/components/ui';
 import { useState } from 'react';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 
 interface ClientReport {
     id: string;
@@ -30,12 +31,12 @@ const mockExecutiveReports: ClientReport[] = [
         id: 'rep-1',
         clientName: 'Rajesh Kumar',
         clientCode: 'UHNW-001',
-        netWorth: '₹450 Cr',
+        netWorth: formatCroreToUSD(450),
         reportType: 'portfolio',
         generatedAt: '2024-12-21T09:00:00',
         summary: 'Comprehensive portfolio analysis reveals strong diversification across 7 asset classes with 18.2% YTD returns. AI identifies opportunity to increase alternative investments allocation from current 12% to optimal 22% based on risk profile and market conditions.',
         keyMetrics: [
-            { label: 'Total AUM', value: '₹450 Cr', trend: 'up' },
+            { label: 'Total AUM', value: formatCroreToUSD(450), trend: 'up' },
             { label: 'YTD Returns', value: '+18.2%', trend: 'up' },
             { label: 'Risk Score', value: '6.4/10', trend: 'stable' },
             { label: 'Diversification', value: '7 Assets', trend: 'up' }
@@ -44,12 +45,12 @@ const mockExecutiveReports: ClientReport[] = [
             'Portfolio concentration in technology sector (34%) exceeds optimal threshold - recommend rebalancing',
             'Alternative investments allocation (12%) below peer average (18%) for similar wealth bracket',
             'Fixed income exposure (28%) well-positioned for current interest rate environment',
-            'ESOP holdings (₹85 Cr) approaching lock-in expiry in 45 days - liquidity event planning required'
+            `ESOP holdings (${formatCroreToUSD(85)}) approaching lock-in expiry in 45 days - liquidity event planning required`
         ],
         recommendations: [
             'Increase alternative investments to 22% through PE/VC fund allocations',
             'Reduce technology sector exposure from 34% to 25% over next quarter',
-            'Prepare ESOP liquidation strategy - estimated ₹85 Cr liquidity event',
+            `Prepare ESOP liquidation strategy - estimated ${formatCroreToUSD(85)} liquidity event`,
             'Consider structured products for 8-10% allocation to enhance returns'
         ]
     },
@@ -57,7 +58,7 @@ const mockExecutiveReports: ClientReport[] = [
         id: 'rep-2',
         clientName: 'Priya Sharma',
         clientCode: 'UHNW-002',
-        netWorth: '₹680 Cr',
+        netWorth: formatCroreToUSD(680),
         reportType: 'performance',
         generatedAt: '2024-12-21T09:00:00',
         summary: 'Outstanding performance metrics with 24.5% annual returns, significantly outperforming benchmark (Nifty 50: +12.3%). AI analysis attributes success to strategic alternative investments allocation (28%) and timely sector rotation. Client satisfaction score: 9.4/10.',
@@ -84,7 +85,7 @@ const mockExecutiveReports: ClientReport[] = [
         id: 'rep-3',
         clientName: 'Vikram Singh',
         clientCode: 'UHNW-003',
-        netWorth: '₹320 Cr',
+        netWorth: formatCroreToUSD(320),
         reportType: 'risk',
         generatedAt: '2024-12-21T09:00:00',
         summary: 'Risk analysis identifies moderate concentration risk in real estate sector (42% of portfolio). AI recommends gradual rebalancing over 6 months. Overall portfolio risk score: 7.2/10 (Aggressive). Client age: 52 years - suggest transition to moderate risk profile.',
@@ -111,14 +112,14 @@ const mockExecutiveReports: ClientReport[] = [
         id: 'rep-4',
         clientName: 'Anita Patel',
         clientCode: 'UHNW-004',
-        netWorth: '₹540 Cr',
+        netWorth: formatCroreToUSD(540),
         reportType: 'opportunities',
         generatedAt: '2024-12-21T09:00:00',
         summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: ₹65 Cr. Client shows strong propensity for structured products and international investments.',
         keyMetrics: [
             { label: 'Cross-Sell Score', value: '8.7/10', trend: 'up' },
             { label: 'Wallet Share', value: '42%', trend: 'stable' },
-            { label: 'Opportunity Gap', value: '₹312 Cr', trend: 'up' },
+            { label: 'Opportunity Gap', value: formatCroreToUSD(312), trend: 'up' },
             { label: 'Engagement', value: '88%', trend: 'up' }
         ],
         aiInsights: [
@@ -225,7 +226,7 @@ export default function ClientReportsPanel() {
                     <h3 className="text-xl font-semibold text-[#1A1A2E] font-[family-name:var(--font-playfair)]">
                          AI-Generated Client Reports
                     </h3>
-                    <p className="text-sm text-[#5A6C7D] mt-1">
+                        <p className="text-sm text-[#5A6C7D] mt-1">
                         Automated comprehensive reports for UHNW clients (&gt;?100 Cr)  Generated daily
                     </p>
                 </div>
@@ -402,7 +403,7 @@ export default function ClientReportsPanel() {
                         <p className="text-xs text-[#8E99A4] mt-1">Reports Generated</p>
                     </div>
                     <div className="text-center">
-                        <p className="text-2xl font-bold text-[#E85D54]">₹1,990 Cr</p>
+                        <p className="text-2xl font-bold text-[#E85D54]">{formatCroreToUSD(1990)}</p>
                         <p className="text-xs text-[#8E99A4] mt-1">Total AUM Covered</p>
                     </div>
                     <div className="text-center">

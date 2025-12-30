@@ -6,6 +6,7 @@
 'use client';
 
 import type { ExtendedMetrics } from '@/types';
+import { formatCroreToUSD, formatINRToUSD } from '@/lib/utils/currency';
 
 interface MetricsGridProps {
   metrics: ExtendedMetrics | null;
@@ -17,13 +18,12 @@ export default function MetricsGrid({ metrics }: MetricsGridProps) {
   }
 
   const formatCurrency = (amount: number) => {
-    if (amount >= 10000000) {
-      return `₹${(amount / 10000000).toFixed(1)}Cr`;
+    // If number likely represents absolute INR (large number), convert from INR
+    if (Math.abs(amount) >= 1_000_000) {
+      return formatINRToUSD(amount);
     }
-    if (amount >= 100000) {
-      return `₹${(amount / 100000).toFixed(1)}L`;
-    }
-    return `₹${amount.toLocaleString('en-IN')}`;
+    // otherwise treat as Crores
+    return formatCroreToUSD(amount);
   };
 
   const metricsData = [

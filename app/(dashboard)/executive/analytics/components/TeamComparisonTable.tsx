@@ -6,6 +6,7 @@
 'use client';
 
 import { Card } from '@/app/components/ui';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 
 const teamData = [
     { name: 'Priya Sharma', aum: 850, convRate: 28.5, avgDeal: 42, activityScore: 95, growth: 24.5 },
@@ -30,7 +31,7 @@ export default function TeamComparisonTable() {
                     <thead>
                         <tr className="border-b-2 border-gray-200">
                             <th className="text-left py-3 px-4 text-xs font-semibold text-[#8E99A4] uppercase">RM Name</th>
-                            <th className="text-right py-3 px-4 text-xs font-semibold text-[#8E99A4] uppercase">AUM (₹Cr)</th>
+                            <th className="text-right py-3 px-4 text-xs font-semibold text-[#8E99A4] uppercase">AUM ($)</th>
                             <th className="text-right py-3 px-4 text-xs font-semibold text-[#8E99A4] uppercase">Conv Rate</th>
                             <th className="text-right py-3 px-4 text-xs font-semibold text-[#8E99A4] uppercase">Avg Deal</th>
                             <th className="text-right py-3 px-4 text-xs font-semibold text-[#8E99A4] uppercase">Activity</th>
@@ -53,7 +54,7 @@ export default function TeamComparisonTable() {
                                         <span className="font-medium text-[#1A1A2E]">{rm.name}</span>
                                     </div>
                                 </td>
-                                <td className="text-right py-3 px-4 font-semibold text-[#1A1A2E]">₹{rm.aum}</td>
+                                <td className="text-right py-3 px-4 font-semibold text-[#1A1A2E]">{formatCroreToUSD(rm.aum)}</td>
                                 <td className="text-right py-3 px-4">
                                     <span className={`font-semibold ${rm.convRate >= 26 ? 'text-[#28A745]' :
                                             rm.convRate >= 22 ? 'text-[#FFC107]' :
@@ -62,7 +63,7 @@ export default function TeamComparisonTable() {
                                         {rm.convRate}%
                                     </span>
                                 </td>
-                                <td className="text-right py-3 px-4 text-[#1A1A2E]">₹{rm.avgDeal}Cr</td>
+                                <td className="text-right py-3 px-4 text-[#1A1A2E]">{formatCroreToUSD(rm.avgDeal)}</td>
                                 <td className="text-right py-3 px-4">
                                     <div className="flex items-center justify-end gap-2">
                                         <div className="w-16 h-2 bg-gray-100 rounded-full overflow-hidden">

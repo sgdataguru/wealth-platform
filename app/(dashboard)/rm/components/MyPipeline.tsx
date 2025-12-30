@@ -7,13 +7,14 @@
 
 import { Card } from '@/app/components/ui';
 import type { PipelineStage } from '@/types';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 
 const mockPipelineData: PipelineStage[] = [
-    { stage: 'Prospecting', count: 12, value: '₹54 Cr', color: '#8E99A4' },
-    { stage: 'Contacted', count: 8, value: '₹42 Cr', color: '#5A6C7D' },
-    { stage: 'Qualified', count: 5, value: '₹28 Cr', color: '#2A2447' },
-    { stage: 'Proposal', count: 3, value: '₹18 Cr', color: '#E85D54' },
-    { stage: 'Closing', count: 2, value: '₹12 Cr', color: '#28A745' },
+    { stage: 'Prospecting', count: 12, value: 54, color: '#8E99A4' },
+    { stage: 'Contacted', count: 8, value: 42, color: '#5A6C7D' },
+    { stage: 'Qualified', count: 5, value: 28, color: '#2A2447' },
+    { stage: 'Proposal', count: 3, value: 18, color: '#E85D54' },
+    { stage: 'Closing', count: 2, value: 12, color: '#28A745' },
 ];
 
 export default function MyPipeline() {
@@ -57,7 +58,7 @@ export default function MyPipeline() {
                                     </div>
                                 </div>
                                 <span className="text-lg font-bold text-[#1A1A2E]">
-                                    {stage.value}
+                                    {formatCroreToUSD(stage.value as number)}
                                 </span>
                             </div>
                         </div>
@@ -82,7 +83,7 @@ export default function MyPipeline() {
                             Total Pipeline Value
                         </span>
                         <p className="text-2xl font-bold text-[#1A1A2E] mt-1">
-                            ₹154 Cr
+                            {formatCroreToUSD(154)}
                         </p>
                     </div>
                     <div>
@@ -90,7 +91,7 @@ export default function MyPipeline() {
                             Weighted Pipeline
                         </span>
                         <p className="text-2xl font-bold text-[#1A1A2E] mt-1">
-                            ₹42 Cr
+                            {formatCroreToUSD(42)}
                         </p>
                         <p className="text-xs text-[#5A6C7D] mt-1">Based on stage probability</p>
                     </div>
@@ -99,7 +100,7 @@ export default function MyPipeline() {
                             Expected Close
                         </span>
                         <p className="text-2xl font-bold text-[#28A745] mt-1">
-                            ₹18 Cr
+                            {formatCroreToUSD(18)}
                         </p>
                         <p className="text-xs text-[#5A6C7D] mt-1">This quarter</p>
                     </div>

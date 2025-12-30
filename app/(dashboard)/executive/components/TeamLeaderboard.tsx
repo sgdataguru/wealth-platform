@@ -6,6 +6,7 @@
 'use client';
 
 import { Card } from '@/app/components/ui';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 import type { RMPerformance } from '@/types';
 
 interface TeamLeaderboardProps {
@@ -63,7 +64,7 @@ export default function TeamLeaderboard({ topRMs, isLoading }: TeamLeaderboardPr
 
                         {/* Metrics */}
                         <div className="text-right">
-                            <p className="font-bold text-[#1A1A2E]">₹{rm.aum} Cr AUM</p>
+                            <p className="font-bold text-[#1A1A2E]">{formatCroreToUSD(rm.aum)} AUM</p>
                             <p className={`text-sm font-medium ${rm.growth >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                                 {rm.growth >= 0 ? '↑' : '↓'} {Math.abs(rm.growth)}%
                             </p>
@@ -79,8 +80,8 @@ export default function TeamLeaderboard({ topRMs, isLoading }: TeamLeaderboardPr
                         <span className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
                             Avg Growth
                         </span>
-                        <p className="text-xl font-bold text-[#1A1A2E] mt-1">
-                            {(topRMs.reduce((sum, rm) => sum + rm.growth, 0) / topRMs.length).toFixed(1)}%
+                        <p className="text-2xl font-bold text-[#1A1A2E] mt-1">
+                            {formatCroreToUSD(topRMs.reduce((sum, rm) => sum + rm.aum, 0))}
                         </p>
                     </div>
                     <div>

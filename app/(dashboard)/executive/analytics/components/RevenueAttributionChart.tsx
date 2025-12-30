@@ -6,6 +6,7 @@
 'use client';
 
 import { Card } from '@/app/components/ui';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 
 const revenueData = [
     { source: 'Referrals', revenue: 450, percentage: 35, color: '#28A745' },
@@ -33,7 +34,7 @@ export default function RevenueAttributionChart() {
                                 width: `${item.percentage}%`,
                                 backgroundColor: item.color,
                             }}
-                            title={`${item.source}: ₹${item.revenue}Cr (${item.percentage}%)`}
+                            title={`${item.source}: ${formatCroreToUSD(item.revenue)} (${item.percentage}%)`}
                         >
                             {item.percentage >= 15 && (
                                 <span className="text-xs">{item.percentage}%</span>
@@ -57,7 +58,7 @@ export default function RevenueAttributionChart() {
                         <div className="flex items-center gap-4">
                             <span className="text-sm text-[#5A6C7D]">{item.percentage}%</span>
                             <span className="text-sm font-semibold text-[#1A1A2E] min-w-[80px] text-right">
-                                ₹{item.revenue} Cr
+                                {formatCroreToUSD(item.revenue)}
                             </span>
                         </div>
                     </div>
@@ -68,7 +69,7 @@ export default function RevenueAttributionChart() {
                 <div className="grid grid-cols-2 gap-4">
                     <div>
                         <p className="text-xs text-[#8E99A4] uppercase mb-1">Total Revenue</p>
-                        <p className="text-2xl font-bold text-[#1A1A2E]">₹1,282 Cr</p>
+                        <p className="text-2xl font-bold text-[#1A1A2E]">{formatCroreToUSD(1282)}</p>
                     </div>
                     <div>
                         <p className="text-xs text-[#8E99A4] uppercase mb-1">Best ROI Channel</p>

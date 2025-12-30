@@ -3,10 +3,11 @@
  * @description Executive Analytics - Strategic firm-wide insights
  */
 
-'use client';
+ 'use client';
 
 import { Header, Sidebar } from '@/app/components/layout';
 import { Card } from '@/app/components/ui';
+import { formatCroreToUSD, formatINRToUSD } from '@/lib/utils/currency';
 import TeamComparisonTable from './components/TeamComparisonTable';
 import RevenueAttributionChart from './components/RevenueAttributionChart';
 import MarketShareTrends from './components/MarketShareTrends';
@@ -52,9 +53,9 @@ export default function ExecutiveAnalyticsPage() {
                                     Cost Per Acquisition
                                 </span>
                                 <div className="flex items-baseline gap-2 mt-2">
-                                    <span className="text-3xl font-bold text-[var(--text-primary)]">₹12L</span>
+                                    <span className="text-3xl font-bold text-[var(--text-primary)]">{formatINRToUSD(1200000)}</span>
                                 </div>
-                                <span className="text-xs text-[var(--success)] mt-2">↓ ₹3L vs last quarter</span>
+                                <span className="text-xs text-[var(--success)] mt-2">↓ {formatINRToUSD(300000)}</span>
                             </div>
                         </Card>
 
@@ -64,7 +65,7 @@ export default function ExecutiveAnalyticsPage() {
                                     Avg Client LTV
                                 </span>
                                 <div className="flex items-baseline gap-2 mt-2">
-                                    <span className="text-3xl font-bold text-[var(--text-primary)]">₹45 Cr</span>
+                                    <span className="text-3xl font-bold text-[var(--text-primary)]">{formatCroreToUSD(45)}</span>
                                 </div>
                                 <span className="text-xs text-[var(--text-secondary)] mt-2">Over 5 years</span>
                             </div>
