@@ -13,7 +13,7 @@ import type { UserRole, UserProfile } from '@/types';
 const MOCK_RM_PROFILE: UserProfile = {
     id: 'rm-001',
     name: 'Rajesh Kumar',
-    email: 'rm_user@nuvama.com',
+    email: 'rm_user@kairoscapital.mu',
     role: 'rm',
     rmId: 'RM-MUM-001',
     photoUrl: undefined,
@@ -22,7 +22,7 @@ const MOCK_RM_PROFILE: UserProfile = {
 const MOCK_EXECUTIVE_PROFILE: UserProfile = {
     id: 'exec-001',
     name: 'Amit Saxena',
-    email: 'exec_user@nuvama.com',
+    email: 'exec_user@kairoscapital.mu',
     role: 'executive',
     territories: ['Mumbai', 'Delhi', 'Bangalore'],
     teamIds: ['team-west', 'team-north', 'team-south'],

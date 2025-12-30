@@ -10,9 +10,9 @@ export const mockRM: GraphNode = {
   id: 'rm-001',
   type: 'rm',
   label: 'Priya Mehta',
-  properties: {
+    properties: {
     name: 'Priya Mehta',
-    email: 'priya.mehta@nuvama.com',
+    email: 'priya.mehta@kairoscapital.mu',
     role: 'Relationship Manager'
   }
 };
@@ -163,9 +163,9 @@ export const mockNetworks: GraphNode[] = [
   {
     id: 'network-001',
     type: 'network',
-    label: 'TiE Mumbai',
+    label: 'TiE Dubai',
     properties: {
-      name: 'TiE Mumbai',
+      name: 'TiE Dubai',
       type: 'industry_body',
       memberCount: 450
     },
@@ -256,9 +256,9 @@ export const mockEdges: GraphEdge[] = [
   { id: 'edge-011', source: 'person-006', target: 'company-004', type: 'director_of', label: 'Director' },
   
   // Investor relationships
-  { id: 'edge-012', source: 'person-004', target: 'company-001', type: 'investor_in', label: 'Investor (₹250Cr)', properties: { amount: 2500000000 } },
-  { id: 'edge-013', source: 'person-004', target: 'company-004', type: 'investor_in', label: 'Investor (₹180Cr)', properties: { amount: 1800000000 } },
-  { id: 'edge-014', source: 'person-001', target: 'company-003', type: 'investor_in', label: 'Investor (₹300Cr)', properties: { amount: 3000000000 } },
+  { id: 'edge-012', source: 'person-004', target: 'company-001', type: 'investor_in', label: 'Investor ($250 Million)', properties: { amount: 2500000000 } },
+  { id: 'edge-013', source: 'person-004', target: 'company-004', type: 'investor_in', label: 'Investor ($180 Million)', properties: { amount: 1800000000 } },
+  { id: 'edge-014', source: 'person-001', target: 'company-003', type: 'investor_in', label: 'Investor ($300 Million)', properties: { amount: 3000000000 } },
   
   // Network memberships
   { id: 'edge-015', source: 'person-001', target: 'network-001', type: 'member_of', label: 'Member' },

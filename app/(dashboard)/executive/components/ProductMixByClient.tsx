@@ -24,7 +24,7 @@ const MOCK_CLIENT_PRODUCT_MIX: ClientProductMix[] = [
         totalAUM: 450000000,
         region: 'Delhi NCR',
         assignedRM: 'Priya Sharma',
-        assignedRMEmail: 'priya.sharma@nuvama.com',
+        assignedRMEmail: 'priya.sharma@kairoscapital.mu',
         products: [
             { category: 'PMS', aum: 180000000, percentage: 40, lastUpdated: new Date() },
             { category: 'Equities', aum: 112500000, percentage: 25, lastUpdated: new Date() },
@@ -40,7 +40,7 @@ const MOCK_CLIENT_PRODUCT_MIX: ClientProductMix[] = [
         totalAUM: 320000000,
         region: 'Delhi NCR',
         assignedRM: 'Vikram Singh',
-        assignedRMEmail: 'vikram.singh@nuvama.com',
+        assignedRMEmail: 'vikram.singh@kairoscapital.mu',
         products: [
             { category: 'Fixed Income', aum: 128000000, percentage: 40, lastUpdated: new Date() },
             { category: 'PMS', aum: 96000000, percentage: 30, lastUpdated: new Date() },
@@ -56,7 +56,7 @@ const MOCK_CLIENT_PRODUCT_MIX: ClientProductMix[] = [
         totalAUM: 850000000,
         region: 'Jaipur',
         assignedRM: 'Priya Sharma',
-        assignedRMEmail: 'priya.sharma@nuvama.com',
+        assignedRMEmail: 'priya.sharma@kairoscapital.mu',
         products: [
             { category: 'Equities', aum: 340000000, percentage: 40, lastUpdated: new Date() },
             { category: 'Alternative Investments', aum: 255000000, percentage: 30, lastUpdated: new Date() },

@@ -16,7 +16,7 @@ export interface LoginNotificationConfig {
 
 const DEFAULT_DELAY = 15000; // 15 seconds
 const DEFAULT_MESSAGE = 'Equity Flow Signal: Belrise Industries Block Sale surged ~13% click more for detail report';
-const NOTIFICATION_SHOWN_KEY = 'nuvama_notification_shown';
+const NOTIFICATION_SHOWN_KEY = 'kairos_notification_shown';
 
 /**
  * Custom hook to manage login notification for RM and Executive users

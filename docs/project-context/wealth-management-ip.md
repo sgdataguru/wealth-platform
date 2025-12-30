@@ -250,25 +250,25 @@ An AI system that generates time-sensitive engagement recommendations using LLMs
 
 | IP | Action | Timeline | Jurisdiction | Estimated Cost |
 |----|--------|----------|--------------|----------------|
-| **IP-01** | File provisional patent | **Immediate** | India | ₹50,000 - ₹1,00,000 |
-| **IP-02** | File provisional patent | **Immediate** (parallel) | India | ₹50,000 - ₹1,00,000 |
+| **IP-01** | File provisional patent | **Immediate** | India | $600 - $1,200 (approx) |
+| **IP-02** | File provisional patent | **Immediate** (parallel) | India | $600 - $1,200 (approx) |
 
 ### Phase 2 Actions (Q3-Q4 2026)
 
 | IP | Action | Timeline | Jurisdiction | Estimated Cost |
 |----|--------|----------|--------------|----------------|
-| **IP-01** | PCT filing | Within 12 months | PCT → US/EU/SG/UAE | ₹5,00,000 - ₹10,00,000 |
-| **IP-02** | PCT filing | Within 12 months | PCT → US/EU/SG/UAE | ₹5,00,000 - ₹10,00,000 |
+| **IP-01** | PCT filing | Within 12 months | PCT → US/EU/SG/UAE | $6,000 - $12,000 (approx) |
+| **IP-02** | PCT filing | Within 12 months | PCT → US/EU/SG/UAE | $6,000 - $12,000 (approx) |
 | **IP-03** | Assess filing | After IP-01/02 granted | India or US-first | TBD |
 | **IP-04** | Trade secret | Ongoing | N/A | N/A (internal controls) |
 
 ### Budget Estimate (2-Year Horizon)
 
-- **India filings (IP-01, IP-02)**: ₹1,00,000 - ₹2,00,000
-- **PCT filings (IP-01, IP-02)**: ₹10,00,000 - ₹20,00,000
-- **National phase entries (4-5 countries)**: ₹30,00,000 - ₹50,00,000
-- **Prosecution and maintenance**: ₹10,00,000 - ₹20,00,000
-- **Total (2 years)**: ₹51,00,000 - ₹92,00,000 (~$600K - $1.1M USD)
+- **India filings (IP-01, IP-02)**: $1,200 - $2,400 (approx)
+- **PCT filings (IP-01, IP-02)**: $12,000 - $24,000 (approx)
+- **National phase entries (4-5 countries)**: $36,000 - $60,000 (approx)
+- **Prosecution and maintenance**: $12,000 - $24,000 (approx)
+- **Total (2 years)**: $61,000 - $110,000 (approx)
 
 ---
 

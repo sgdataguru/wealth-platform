@@ -13,13 +13,13 @@
 
 ### Purpose
 
-A web application designed exclusively for **Relationship Managers (RMs)** handling Ultra High Net Worth (UHNW) clients (₹100Cr+ wealth). The platform helps identify early liquidity signals 30-90 days before they become obvious in the market, enabling proactive client engagement and first-mover advantage.
+A web application designed exclusively for **Relationship Managers (RMs)** handling Ultra High Net Worth (UHNW) clients ($100 Million+ wealth). The platform helps identify early liquidity signals 30-90 days before they become obvious in the market, enabling proactive client engagement and first-mover advantage.
 
 ### Target Market
 
 - **Organization:** Kairos Capital (30-35 RMs)
 - **Total Addressable Market:** ~4,400 UHNW individuals in India
-- **Client Threshold:** ₹100 Crore+ estimated wealth
+- **Client Threshold:** $100 Million+ estimated wealth
 
 ### Architecture Pattern
 

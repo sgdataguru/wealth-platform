@@ -117,6 +117,12 @@ export async function GET() {
           created_at: new Date('2020-01-01'),
         },
       ],
+      prospectTypes: [
+        'Sovereign Wealth Fund (SWF)',
+        'Pension Fund',
+        'Family Office',
+        'Private Equity Fund',
+      ],
     };
 
     return NextResponse.json({

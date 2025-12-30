@@ -654,7 +654,7 @@ export function calculateConnectionStrength(
 CREATE (rm1:RM {
   id: 'rm-001',
   name: 'Priya Mehta',
-  email: 'priya.mehta@nuvama.com'
+  email: 'priya.mehta@kairoscapital.mu'
 })
 
 // Create People (UHNW Clients)
@@ -743,7 +743,7 @@ CREATE (c4:Company {
 // Create Networks/Clubs
 CREATE (n1:Network {
   id: 'network-001',
-  name: 'TiE Mumbai',
+  name: 'TiE Dubai',
   type: 'industry_body',
   memberCount: 450
 })
@@ -849,7 +849,7 @@ CREATE (e3)-[:INVOLVES]->(c3)
         "label": "Priya Mehta",
         "properties": {
           "name": "Priya Mehta",
-          "email": "priya.mehta@nuvama.com"
+          "email": "priya.mehta@kairoscapital.mu"
         }
       },
       {

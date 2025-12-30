@@ -932,7 +932,7 @@ test.describe('Top Prospects Workflow', () => {
   test('RM can view and interact with top prospects', async ({ page }) => {
     // Login as RM
     await page.goto('/login');
-    await page.fill('[name="email"]', 'rm@nuvama.com');
+    await page.fill('[name="email"]', 'rm@kairoscapital.mu');
     await page.fill('[name="password"]', 'password123');
     await page.click('button[type="submit"]');
     

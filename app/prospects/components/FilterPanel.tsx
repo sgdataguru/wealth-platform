@@ -38,7 +38,7 @@ export function FilterPanel({ className = '' }: FilterPanelProps) {
   }, [filterOptions, loadFilterOptions]);
 
   const handleFilterChange = (
-    filterType: 'cities' | 'sectors' | 'network_ids' | 'cluster_ids',
+    filterType: 'cities' | 'sectors' | 'network_ids' | 'cluster_ids' | 'prospect_types',
     value: string,
     checked: boolean
   ) => {
@@ -142,6 +142,16 @@ export function FilterPanel({ className = '' }: FilterPanelProps) {
               handleFilterChange('cluster_ids', cluster.id, checked);
             }
           }}
+        />
+
+        {/* Prospect Type Filter */}
+        <FilterSection
+          title="Prospect Type"
+          options={filterOptions?.prospectTypes || []}
+          selected={appliedFilters.prospect_types}
+          searchQuery={searchQueries.prospectTypes}
+          onSearchChange={(query) => setSearchQuery('prospectTypes', query)}
+          onChange={(value, checked) => handleFilterChange('prospect_types', value, checked)}
         />
       </div>
     </div>

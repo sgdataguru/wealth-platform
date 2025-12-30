@@ -339,13 +339,13 @@ export const mockDataConflicts: DataConflict[] = [
     conflictingValues: [
       {
         source: 'NSE',
-        value: 5000000000, // ₹5000 Cr
+        value: 5000000000, // $5000 Million
         confidence: 99,
         timestamp: new Date('2025-12-16T09:00:00Z'),
       },
       {
         source: 'NewsAPI',
-        value: 4800000000, // ₹4800 Cr
+        value: 4800000000, // $4800 Million
         confidence: 60,
         timestamp: new Date('2025-12-16T10:30:00Z'),
       },
@@ -541,7 +541,7 @@ export const mockPrivateCircleEvents: PrivateCircleEvent[] = [
 
 export const mockZaubaEvents: ZaubaEvent[] = [
   {
-    companyName: 'Mumbai Infra Developers Ltd',
+    companyName: 'Dubai Infra Developers Ltd',
     cin: 'L45200MH2015PLC267890',
     eventType: 'director_change',
     details: {
@@ -550,15 +550,15 @@ export const mockZaubaEvents: ZaubaEvent[] = [
         { name: 'Priya Agarwal', din: 'DIN00234567' },
         { name: 'Vikram Singh Rathore', din: 'DIN00345678' },
       ],
-      shareCapital: 500000000, // ₹50 Cr
+      shareCapital: 500000000, // $50 Million
       filingDate: new Date('2025-12-14'),
     },
     source: 'Zauba Corp',
-    sourceUrl: 'https://www.zaubacorp.com/company/MUMBAI-INFRA-DEVELOPERS-LIMITED/U45200MH2015PLC267890',
+    sourceUrl: 'https://www.zaubacorp.com/company/DUBAI-INFRA-DEVELOPERS-LIMITED/U45200MH2015PLC267890',
     confidence: 95,
   },
   {
-    companyName: 'Delhi Real Estate Holdings Pvt Ltd',
+    companyName: 'Riyadh Real Estate Holdings Pvt Ltd',
     cin: 'L70100DL2018PTC334455',
     eventType: 'share_transfer',
     details: {
@@ -566,15 +566,15 @@ export const mockZaubaEvents: ZaubaEvent[] = [
         { name: 'Amit Gupta', din: 'DIN00456789' },
         { name: 'Sneha Kapoor', din: 'DIN00567890' },
       ],
-      shareCapital: 750000000, // ₹75 Cr
+      shareCapital: 750000000, // $75 Million
       filingDate: new Date('2025-12-12'),
     },
     source: 'Zauba Corp',
-    sourceUrl: 'https://www.zaubacorp.com/company/DELHI-REAL-ESTATE-HOLDINGS-PRIVATE-LIMITED/U70100DL2018PTC334455',
+    sourceUrl: 'https://www.zaubacorp.com/company/RIYADH-REAL-ESTATE-HOLDINGS-PRIVATE-LIMITED/U70100DL2018PTC334455',
     confidence: 93,
   },
   {
-    companyName: 'Bangalore Tech Ventures Ltd',
+    companyName: 'Doha Tech Ventures Ltd',
     cin: 'L72200KA2016PLC098765',
     eventType: 'filing',
     details: {
@@ -583,15 +583,15 @@ export const mockZaubaEvents: ZaubaEvent[] = [
         { name: 'Lakshmi Venkatesh', din: 'DIN00789012' },
         { name: 'Ravi Kumar Yadav', din: 'DIN00890123' },
       ],
-      shareCapital: 320000000, // ₹32 Cr
+      shareCapital: 320000000, // $32 Million
       filingDate: new Date('2025-12-10'),
     },
     source: 'Zauba Corp',
-    sourceUrl: 'https://www.zaubacorp.com/company/BANGALORE-TECH-VENTURES-LIMITED/U72200KA2016PLC098765',
+    sourceUrl: 'https://www.zaubacorp.com/company/DOHA-TECH-VENTURES-LIMITED/U72200KA2016PLC098765',
     confidence: 92,
   },
   {
-    companyName: 'Chennai Manufacturing Industries Ltd',
+    companyName: 'Manama Manufacturing Industries Ltd',
     cin: 'L28100TN2017PLC123789',
     eventType: 'director_change',
     details: {
@@ -599,11 +599,11 @@ export const mockZaubaEvents: ZaubaEvent[] = [
         { name: 'Suresh Babu Narayanan', din: 'DIN00901234' },
         { name: 'Meera Krishnan', din: 'DIN01012345' },
       ],
-      shareCapital: 450000000, // ₹45 Cr
+      shareCapital: 450000000, // $45 Million
       filingDate: new Date('2025-12-08'),
     },
     source: 'Zauba Corp',
-    sourceUrl: 'https://www.zaubacorp.com/company/CHENNAI-MANUFACTURING-INDUSTRIES-LIMITED/U28100TN2017PLC123789',
+    sourceUrl: 'https://www.zaubacorp.com/company/MANAMA-MANUFACTURING-INDUSTRIES-LIMITED/U28100TN2017PLC123789',
     confidence: 94,
   },
 ];
@@ -618,7 +618,7 @@ export const mockIPOEvents: IPOEvent[] = [
     exchange: 'NSE',
     eventType: 'drhp_filed',
     details: {
-      ipoSize: 12000000000, // ₹1200 Cr
+      ipoSize: 12000000000, // $1200 Million
       priceRange: { min: 450, max: 500 },
       filingDate: new Date('2025-12-16'),
       expectedListing: new Date('2026-02-15'),
@@ -632,7 +632,7 @@ export const mockIPOEvents: IPOEvent[] = [
     exchange: 'BSE',
     eventType: 'prospectus_filed',
     details: {
-      ipoSize: 8500000000, // ₹850 Cr
+      ipoSize: 8500000000, // $850 Million
       priceRange: { min: 320, max: 360 },
       filingDate: new Date('2025-12-14'),
       expectedListing: new Date('2026-01-20'),
@@ -646,7 +646,7 @@ export const mockIPOEvents: IPOEvent[] = [
     exchange: 'NSE',
     eventType: 'listing_approved',
     details: {
-      ipoSize: 15000000000, // ₹1500 Cr
+      ipoSize: 15000000000, // $1500 Million
       priceRange: { min: 580, max: 620 },
       filingDate: new Date('2025-12-12'),
       expectedListing: new Date('2026-01-05'),
@@ -660,7 +660,7 @@ export const mockIPOEvents: IPOEvent[] = [
     exchange: 'BSE',
     eventType: 'drhp_filed',
     details: {
-      ipoSize: 6000000000, // ₹600 Cr
+      ipoSize: 6000000000, // $600 Million
       priceRange: { min: 220, max: 250 },
       filingDate: new Date('2025-12-10'),
       expectedListing: new Date('2026-03-01'),
@@ -679,7 +679,7 @@ export const mockNewsEvents: NewsEvent[] = [
   {
     companyName: 'TechVenture Solutions',
     headline: 'TechVenture Solutions raises $250M in Series B funding led by Sequoia',
-    summary: 'Mumbai-based tech startup TechVenture Solutions announced today that it has raised $250 million in Series B funding, valuing the company at $1.2 billion. The round was led by Sequoia Capital with participation from existing investors.',
+    summary: 'Dubai-based tech startup TechVenture Solutions announced today that it has raised $250 million in Series B funding, valuing the company at $1.2 billion. The round was led by Sequoia Capital with participation from existing investors.',
     source: 'Economic Times',
     publishedAt: new Date('2025-12-18T09:30:00Z'),
     url: 'https://economictimes.com/tech/funding/techventure-solutions-series-b',
@@ -699,7 +699,7 @@ export const mockNewsEvents: NewsEvent[] = [
   {
     companyName: 'FinTech Pro Services',
     headline: 'FinTech Pro Services files for IPO, targets $500M raise',
-    summary: 'Leading fintech company FinTech Pro Services has filed DRHP documents with SEBI for an IPO worth ₹4,000 crore. The company plans to list on NSE by Q1 2026.',
+    summary: 'Leading fintech company FinTech Pro Services has filed DRHP documents with SEBI for an IPO worth $4,000 Million. The company plans to list on NSE by Q1 2026.',
     source: 'Business Standard',
     publishedAt: new Date('2025-12-16T11:00:00Z'),
     url: 'https://business-standard.com/companies/news/fintech-pro-ipo-filing',
@@ -707,12 +707,12 @@ export const mockNewsEvents: NewsEvent[] = [
     confidence: 78,
   },
   {
-    companyName: 'Mumbai Infra Developers',
-    headline: 'Mumbai Infra Developers appoints new board members amid expansion',
-    summary: 'Real estate developer Mumbai Infra Developers Ltd has appointed three new directors to its board as part of its expansion strategy. The company recently secured ₹500 crore in funding.',
-    source: 'Hindu Business Line',
+    companyName: 'Dubai Infra Developers',
+    headline: 'Dubai Infra Developers appoints new board members amid expansion',
+    summary: 'Real estate developer Dubai Infra Developers Ltd has appointed three new directors to its board as part of its expansion strategy. The company recently secured $500 Million in funding.',
+    source: 'Regional Business Line',
     publishedAt: new Date('2025-12-15T16:30:00Z'),
-    url: 'https://thehindubusinessline.com/companies/mumbai-infra-board-changes',
+    url: 'https://regionalbusinessline.com/companies/dubai-infra-board-changes',
     sentiment: 'neutral',
     confidence: 68,
   },
@@ -728,8 +728,8 @@ export const mockNewsEvents: NewsEvent[] = [
   },
   {
     companyName: 'CloudTech Solutions',
-    headline: 'CloudTech Solutions files DRHP for ₹1,200 crore IPO on NSE',
-    summary: 'Cloud infrastructure provider CloudTech Solutions has filed draft papers with SEBI for an initial public offering worth ₹1,200 crore. The IPO is expected to open in February 2026.',
+    headline: 'CloudTech Solutions files DRHP for $1,200 Million IPO on NSE',
+    summary: 'Cloud infrastructure provider CloudTech Solutions has filed draft papers with SEBI for an initial public offering worth $1,200 Million. The IPO is expected to open in February 2026.',
     source: 'MoneyControl',
     publishedAt: new Date('2025-12-17T08:20:00Z'),
     url: 'https://moneycontrol.com/news/business/ipo/cloudtech-solutions-drhp-filing',

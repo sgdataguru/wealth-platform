@@ -51,7 +51,7 @@
 
 ### Demo Credentials
 ```
-Email: demo@nuvama.com
+Email: demo@kairoscapital.mu
 Password: cockpit2025
 ```
 
@@ -173,7 +173,7 @@ app/
 
 ### Demo Credentials
 ```
-Email: demo@nuvama.com
+Email: demo@kairoscapital.mu
 Password: cockpit2025
 ```
 

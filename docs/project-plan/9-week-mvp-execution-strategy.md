@@ -55,7 +55,16 @@ Before Day 1, we must eliminate ambiguity to ensure the team hits the ground run
 ### Technical Readiness
 
 * **Architecture Review:** Verify `infra/` Terraform scripts. Ensure AWS MSK (Kafka) and Spark cluster sizing matches expected throughput (est. 10k events/sec).
-* **Compliance & Data Sovereignty:** Verify AWS Region selection (e.g., `ap-south-1` [Mumbai] or `ap-south-2` [Hyderabad]) complies with Indian DPDP Act & RBI data localization norms.
+* **Compliance & Data Sovereignty:** Verify AWS Region selection complies with local data protection and sovereignty requirements for the target deployment jurisdiction.
+
+* **GCC / Multi-Jurisdiction Considerations:**
+
+  * **Multi-jurisdiction infra:** Identify target jurisdictions (e.g., Saudi Arabia - SAMA, UAE - ADGM/DIFC, Bahrain - CBB, Kuwait - CMA) and map required region, residency and isolation requirements (data-at-rest region, backup location, cross-border backup rules).
+  * **Jurisdictional Policy Engine:** Define a lightweight policy engine (server-side) to evaluate cross-border operations (marketing, document sharing, product offers) at the point of action and return allow/deny with rationale.
+  * **Shariah Compliance & Fields:** Add explicit `shariahStatus` and `complianceTags` to the canonical Client/Prospect model and plan UI affordances for Shariah-only views/filters and AI prompt constraints.
+  * **Wallet Share Intelligence:** Define ingestion points for custodian/held-away assets and a nightly aggregation job to compute `totalWealth` and `walletShare` metrics for wallet-share triggers and UI cards.
+  * **Cross-border Marketing Rules:** Capture consent, permitted channels per jurisdiction, and operational rules to prevent outbound messages that violate local marketing or privacy laws.
+  * **Regulatory Fragmentation Risk:** Add this as a first-class risk to be evaluated during Architecture Review and prioritized in the cut-lines and runbooks.
 * **Schema Finalization:** Define the Canonical Data Model for "Client", "Asset", and "Signal".
   * **Deliverable:** OpenAPI 3.0 spec for BE-FE contract and Avro schemas (`.avsc`) for Kafka topics.
 * **Environment & Data Isolation Strategy (Hard Separation):**
@@ -93,7 +102,7 @@ Detailed software inventory required for project execution, ensuring full FinTec
 
 | Category | Component | Product/Vendor | Purpose | Compliance/Ops Note |
 | :--- | :--- | :--- | :--- | :--- |
-| **Core Infra** | Cloud Provider | **AWS** | Compute (EKS), Networking (VPC), Security | Must be in India Region (`ap-south-1`). |
+| **Core Infra** | Cloud Provider | **AWS** | Compute (EKS), Networking (VPC), Security | Selected compliant region based on deployment jurisdiction (e.g., `me-south-1` for Middle East). |
 | **Data Stream** | Event Bus | **AWS MSK** (Apache Kafka) | Real-time events, Decoupling services | Schema Registry mandatory. Encrypted at rest. |
 | **Data Proc** | Analytics Eng | **AWS EMR / Databricks** (Spark) | Signal aggregation, Privacy Filters | Cluster auto-termination required (FinOps). |
 | **Database** | Relational | **AWS RDS** (PostgreSQL) | User data, WORM Audit Logs | Multi-AZ enabled for Prod. |
@@ -149,6 +158,9 @@ Detailed software inventory required for project execution, ensuring full FinTec
   * **Action Center:** Live Dashboard.
   * **Network Visualization:** Graph database (Neo4j) integrated with Entity Resolution (deduplication).
   * **AI Insights:** LLM integration generating context-aware summaries.
+  * **Jurisdictional Policy Engine (GCC):** Prototype server-side policy checks for cross-border actions and marketing rules; integrate as a pre-flight check in Action Center workflows.
+  * **Shariah Compliance (GCC):** Add Shariah-aware filters and UI toggles (Shariah-only) for AI suggestions and product recommendations.
+  * **Wallet Share Intelligence:** Implement nightly aggregation pipelines and surface wallet-share cards and triggers in the Action Center.
 * **Feature Flag Strategy:**
   * All high-risk features (AI Insights, Network Graph, Fast-path Alerts) must be wrapped with config-based flags (LaunchDarkly/Internal).
   * **Benefit:** Enables partial rollouts and zero-downtime deactivation (Kill-switch).
@@ -234,3 +246,14 @@ This reassures stakeholders the MVP is not a dead-end prototype.
 * **Advanced explainability** for AI scores.
 * **DR automation:** Target RTO < 1 hr.
 * **SOC2 / ISO prep artifacts.**
+
+### Regulatory Fragmentation & Compliance Strategy
+
+Regulatory fragmentation across jurisdictions (especially GCC nations) increases operational risk. Recommended mitigations and design rules for the MVP and immediate post-MVP period:
+
+- **Policy-as-Config:** Keep jurisdiction rules in a versioned config (policy engine) so legal teams can update rules without code deploys.
+- **Pre-flight Enforcement:** All cross-border or marketing actions must call the policy engine and block/soft-block actions when non-compliant; record decisions in the immutable `AuditService`.
+- **Shariah-aware AI Pipeline:** Add a Shariah filtering step to the AI inference pipeline that filters or re-ranks suggestions for clients marked `shariahStatus` = 'halal' / 'restricted'.
+- **Data Residency Controls:** Use environment isolation and dedicated storage endpoints per jurisdiction where required; employ encrypted replication with approval gating.
+- **Regulatory Fragmentation Risk Scoring:** Maintain a per-client/regional risk score (low/medium/high) surfaced in RM UIs so operations can make informed choices (e.g., block cross-border outreach for `high` risk clients).
+- **Legal Review Runbooks:** Create legal/ops runbooks for handling denied actions, cross-jurisdiction consent errors, and cross-border incident disclosure.

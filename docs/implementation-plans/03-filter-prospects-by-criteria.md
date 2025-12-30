@@ -57,7 +57,7 @@ interface Client {
   rm_id: string;
   
   // Filter Fields
-  city: string; // Mumbai, Delhi, Bangalore, etc.
+  city: string; // Dubai, Riyadh, Doha, etc.
   sector: string; // Technology, Finance, Manufacturing, etc.
   network_id: string | null; // Reference to network/cluster
   cluster_tags: string[]; // Array of cluster identifiers
@@ -604,7 +604,7 @@ interface GetFilterOptionsResponse {
 
 // GET /api/clients?[filters] - Get filtered clients
 interface GetFilteredClientsRequest {
-  cities?: string[]; // ?cities=Mumbai&cities=Delhi
+  cities?: string[]; // ?cities=Dubai&cities=Riyadh
   sectors?: string[];
   network_ids?: string[];
   cluster_ids?: string[];
@@ -683,7 +683,7 @@ const exampleSQL = `
   FROM clients
   LEFT JOIN lead_scores ON clients.id = lead_scores.client_id
   WHERE 
-    city = ANY($1) -- ['Mumbai', 'Delhi']
+    city = ANY($1) -- ['Dubai', 'Riyadh']
     AND sector = ANY($2) -- ['Technology', 'Finance']
     AND network_id = ANY($3) -- ['net_123', 'net_456']
     AND cluster_tags && $4 -- ['cluster_xyz']
@@ -745,7 +745,7 @@ const exampleSQL = `
 #### 2. Multi-Filter Application
 - ✅ Multiple filters can be applied simultaneously (AND logic)
 - ✅ Within each filter type, multiple values can be selected (OR logic)
-- ✅ Example: (City = Mumbai OR Delhi) AND (Sector = Tech OR Finance)
+- ✅ Example: (City = Dubai OR Riyadh) AND (Sector = Tech OR Finance)
 - ✅ Filters persist across page navigation
 
 #### 3. Real-time Updates
@@ -1827,7 +1827,7 @@ A: Refresh the page to reload filter options. Options are cached for 1 hour.
 
 ### References
 
-- [Kairos Capital Design System](https://www.nuvamawealth.com/)
+- [Kairos Capital Design System](https://kairoscapital.mu/)
 - [Next.js 15 Documentation](https://nextjs.org/docs)
 - [Supabase PostgreSQL](https://supabase.com/docs)
 - [Zustand State Management](https://github.com/pmndrs/zustand)

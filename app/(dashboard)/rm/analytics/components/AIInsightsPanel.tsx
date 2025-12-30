@@ -27,12 +27,12 @@ const mockRMInsights: AIInsight[] = [
         id: 'rm-1',
         category: 'client',
         title: 'Rajesh Kumar - High Conversion Probability',
-        description: 'AI model predicts 87% probability of conversion within 14 days based on engagement patterns, signal strength (IPO filing), and communication frequency. Estimated wallet capture: ₹180 Cr.',
+        description: 'AI model predicts 87% probability of conversion within 14 days based on engagement patterns, signal strength (IPO filing), and communication frequency. Estimated wallet capture: $180 Million.',
         priority: 'urgent',
         confidence: 87,
         actionable: true,
         clientName: 'Rajesh Kumar',
-        estimatedValue: '₹180 Cr',
+        estimatedValue: '$180 Million',
         suggestedAction: 'Schedule in-person meeting within 48 hours. Prepare customized PMS proposal focusing on post-IPO wealth management. Highlight tax optimization strategies.',
         dataPoints: [
             'IPO filing detected 12 days ago',
@@ -51,7 +51,7 @@ const mockRMInsights: AIInsight[] = [
         confidence: 91,
         actionable: true,
         clientName: 'Priya Sharma',
-        estimatedValue: '₹240 Cr',
+        estimatedValue: '$240 Million',
         suggestedAction: 'Schedule call for this Thursday at 3:00 PM. Discuss alternative investment opportunities - client showed 78% interest in PE/VC funds during last interaction.',
         dataPoints: [
             'Best day: Tuesday/Thursday',
@@ -70,7 +70,7 @@ const mockRMInsights: AIInsight[] = [
         confidence: 84,
         actionable: true,
         clientName: 'Ankit Verma',
-        estimatedValue: '₹95 Cr',
+        estimatedValue: '$95 Million',
         suggestedAction: 'Send personalized email about new structured product offerings within 24 hours. Follow up with voice note explaining tax benefits. Schedule coffee meeting.',
         dataPoints: [
             'Engagement drop: 68%',
@@ -84,19 +84,19 @@ const mockRMInsights: AIInsight[] = [
         id: 'rm-4',
         category: 'conversion',
         title: 'Cross-Sell Opportunity: Vikram Singh',
-        description: 'Client currently holds only PMS (₹120 Cr). AI analysis of portfolio composition, risk appetite, and investment behavior suggests 89% propensity for alternative investments.',
+        description: 'Client currently holds only PMS ($120 Million). AI analysis of portfolio composition, risk appetite, and investment behavior suggests 89% propensity for alternative investments.',
         priority: 'high',
         confidence: 89,
         actionable: true,
         clientName: 'Vikram Singh',
-        estimatedValue: '₹25 Cr additional',
+        estimatedValue: '$25 Million additional',
         suggestedAction: 'Prepare alternative investment proposal. Focus on PE/VC funds and real estate opportunities. Expected allocation: 15-20% of current PMS holding.',
         dataPoints: [
-            'Current PMS: ₹120 Cr',
+            'Current PMS: $120 Million',
             'Risk appetite: Aggressive',
             'Age: 42 years',
             'Alt-inv propensity: 89%',
-            'Expected allocation: ₹18-24 Cr'
+            'Expected allocation: $18-24 Million'
         ]
     },
     {
@@ -108,12 +108,12 @@ const mockRMInsights: AIInsight[] = [
         confidence: 92,
         actionable: true,
         clientName: 'Neha Kapoor',
-        estimatedValue: '₹140 Cr',
+        estimatedValue: '$140 Million',
         suggestedAction: 'Immediate outreach required. Congratulate on funding. Offer complimentary wealth planning session. Prepare ESOP liquidation strategy presentation.',
         dataPoints: [
             'Series C: $75M raised',
             'Funding date: 3 days ago',
-            'ESOP value: ~₹45 Cr',
+            'ESOP value: ~$45 Million',
             'Conversion window: 45 days',
             'Similar client success: 76%'
         ]
@@ -149,23 +149,23 @@ const mockRMInsights: AIInsight[] = [
             'Team average: 48 days',
             'Slow deals: 3 identified',
             'Potential acceleration: 8-12 days',
-            'Revenue at stake: ₹85 Cr'
+            'Revenue at stake: $85 Million'
         ]
     },
     {
         id: 'rm-8',
         category: 'client',
         title: 'Referral Opportunity: Sanjay Gupta Network',
-        description: 'Client Sanjay Gupta is connected to 12 UHNW individuals (>₹100 Cr) in his network. Relationship strength: High. Referral probability: 73% based on satisfaction scores.',
+        description: 'Client Sanjay Gupta is connected to 12 UHNW individuals (>$100 Million) in his network. Relationship strength: High. Referral probability: 73% based on satisfaction scores.',
         priority: 'medium',
         confidence: 81,
         actionable: true,
         clientName: 'Sanjay Gupta',
-        estimatedValue: '₹340 Cr potential',
+        estimatedValue: '$340 Million potential',
         suggestedAction: 'Request warm introductions during next meeting. Offer referral incentive program. Focus on 3 highest-value connections first.',
         dataPoints: [
             'UHNW connections: 12',
-            'Avg net worth: ₹285 Cr',
+            'Avg net worth: $285 Million',
             'Relationship strength: High',
             'Referral probability: 73%',
             'Client satisfaction: 9.2/10'

@@ -8,26 +8,26 @@ export type MockUser = {
 
 export const MOCK_USERS: MockUser[] = [
   {
-    email: 'rm_user@nuvama.com',
+    email: 'rm_user@kairoscapital.mu',
     password: 'cockpit2025',
     profile: {
       id: 'rm-001',
       name: 'Rajesh Kumar',
-      email: 'rm_user@nuvama.com',
+      email: 'rm_user@kairoscapital.mu',
       role: 'rm',
       rmId: 'RM-MUM-001',
       photoUrl: undefined,
     },
   },
   {
-    email: 'exec_user@nuvama.com',
+    email: 'exec_user@kairoscapital.mu',
     password: 'cockpit2025',
     profile: {
       id: 'exec-001',
       name: 'Amit Saxena',
-      email: 'exec_user@nuvama.com',
+      email: 'exec_user@kairoscapital.mu',
       role: 'executive',
-      territories: ['Mumbai', 'Delhi', 'Bangalore'],
+      territories: ['Dubai', 'Riyadh', 'Doha'],
       teamIds: ['team-west', 'team-north', 'team-south'],
       photoUrl: undefined,
     },

@@ -99,7 +99,7 @@ export default function LoginForm() {
                 borderColor: 'var(--input-border)',
                 color: 'var(--text-primary)',
               }}
-              placeholder="rm_user@nuvama.com"
+              placeholder="rm_user@kairoscapital.mu"
             />
             {errors.email && (
               <p className="mt-2 text-sm text-red-500 dark:text-red-400">{errors.email.message}</p>
@@ -231,8 +231,8 @@ export default function LoginForm() {
               Demo Credentials
             </p>
             <div className="text-xs space-y-1 text-center" style={{ color: 'var(--text-secondary)' }}>
-              <p><span style={{ color: 'var(--text-muted)' }}>RM:</span> rm_user@nuvama.com</p>
-              <p><span style={{ color: 'var(--text-muted)' }}>Executive:</span> exec_user@nuvama.com</p>
+              <p><span style={{ color: 'var(--text-muted)' }}>RM:</span> rm_user@kairoscapital.mu</p>
+              <p><span style={{ color: 'var(--text-muted)' }}>Executive:</span> exec_user@kairoscapital.mu</p>
               <p><span style={{ color: 'var(--text-muted)' }}>Password:</span> cockpit2025</p>
             </div>
           </div>

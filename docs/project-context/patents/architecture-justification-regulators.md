@@ -66,14 +66,14 @@ This document provides a comprehensive technical justification of our wealth man
 
 ### 1.2 Deployment Architecture
 
-**Cloud Infrastructure**: AWS India (Mumbai Region - ap-south-1)
+**Cloud Infrastructure**: AWS (primary region selected based on deployment jurisdiction — e.g., AWS me-south-1 for Middle East deployments or a local region to meet sovereign requirements)
 
 **Compliance Rationale**:
 
-- ✅ **Data Residency**: All personal data stored in India (DPDP Act compliance)
+- ✅ **Data Residency**: All personal data stored in the selected compliant region to meet local data protection laws
 - ✅ **Redundancy**: Multi-AZ deployment (99.99% availability SLA)
 - ✅ **Disaster Recovery**: Daily backups, 4-hour RTO, 1-hour RPO
-- ✅ **Compliance Certifications**: AWS India has ISO 27001, SOC 2, PCI DSS
+- ✅ **Compliance Certifications**: AWS regions used have standard compliance certifications (ISO 27001, SOC 2, PCI DSS) as applicable
 
 ---
 

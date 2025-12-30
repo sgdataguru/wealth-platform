@@ -283,9 +283,9 @@ Length: 3-5 bullet points, max 150 words total
 **User Prompt** (Example):
 
 ```
-Client: Rajesh Kumar (Age 52, Net Worth ₹50 Cr)
+Client: Rajesh Kumar (Age 52, Net Worth $50 Million)
 Event: Reliance stock dropped 15% today
-Client Exposure: ₹85 Lakhs (12.5% of portfolio)
+Client Exposure: $85,000 (approx) (12.5% of portfolio)
 Client Risk Profile: Moderate (60% equity, 40% debt)
 Client Goal: Retirement planning (target age 60)
 Recent Activity: Logged in 3 times today (anxiety indicator)
@@ -298,25 +298,25 @@ Generate talking points for RM to call client today.
 ```
 Talking Points for Rajesh Kumar:
 
-1. **Acknowledge the drop**: "I noticed Reliance fell 15% today. I know you hold ₹85 Lakhs, and I wanted to reach out proactively."
+1. **Acknowledge the drop**: "I noticed Reliance fell 15% today. I know you hold $85,000 (approx), and I wanted to reach out proactively."
 
-2. **Contextualize impact**: "This represents a ₹12.9 Lakh unrealized loss, but your overall portfolio is still up 8% YTD. Your diversification is working as intended."
+2. **Contextualize impact**: "This represents an approximate $12,900 unrealized loss, but your overall portfolio is still up 8% YTD. Your diversification is working as intended."
 
 3. **Suggest action**: "Given your moderate risk profile and 8-year retirement horizon, I recommend:
    - Hold Reliance (fundamentals remain strong)
-   - Rebalance by moving ₹10 Lakhs to debt (restore 60/40 allocation)
+   - Rebalance by moving approximately $10,000 to debt (restore 60/40 allocation)
    - Consider tax-loss harvesting if you have capital gains elsewhere"
 
 4. **Offer value**: "I've prepared a detailed portfolio stress test showing how your holdings would perform in various scenarios. Can we schedule a 30-minute call tomorrow to review?"
 
-5. **Reassure**: "Market volatility is normal. Your long-term plan remains on track for your ₹100 Cr retirement goal."
+5. **Reassure**: "Market volatility is normal. Your long-term plan remains on track for your $100 Million retirement goal."
 ```
 
 **Technical Implementation**:
 
 - **API**: OpenAI GPT-4 API (fine-tuned model)
 - **Latency**: <5 seconds per recommendation
-- **Cost**: ~₹10 per recommendation (API charges)
+- **Cost**: ~$0.12 per recommendation (approx) (API charges)
 - **Fallback**: If API fails, use rule-based template (lower quality)
 
 ---

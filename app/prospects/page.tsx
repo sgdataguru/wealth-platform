@@ -70,6 +70,7 @@ const mockProspects: Prospect[] = [
     lastContacted: new Date('2024-12-14'),
     createdAt: new Date('2024-01-15'),
     updatedAt: new Date('2024-12-15'),
+    prospectType: 'Family Office',
   },
   {
     id: '2',
@@ -113,6 +114,7 @@ const mockProspects: Prospect[] = [
     lastContacted: new Date('2024-12-10'),
     createdAt: new Date('2024-02-20'),
     updatedAt: new Date('2024-12-12'),
+    prospectType: 'Private Equity Fund',
   },
   {
     id: '3',
@@ -145,6 +147,7 @@ const mockProspects: Prospect[] = [
     lastContacted: new Date('2024-11-15'),
     createdAt: new Date('2024-03-10'),
     updatedAt: new Date('2024-11-20'),
+    prospectType: 'Sovereign Wealth Fund (SWF)',
   },
   {
     id: '4',
@@ -177,6 +180,7 @@ const mockProspects: Prospect[] = [
     lastContacted: null,
     createdAt: new Date('2024-04-05'),
     updatedAt: new Date('2024-10-15'),
+    prospectType: 'Pension Fund',
   },
 ];
 
@@ -221,6 +225,11 @@ export default function ProspectsPage() {
       filtered = filtered.filter((p) =>
         appliedFilters.network_ids.some(id => p.network.includes(id))
       );
+    }
+
+    // Apply prospect type filter
+    if (appliedFilters.prospect_types && appliedFilters.prospect_types.length > 0) {
+      filtered = filtered.filter((p) => p.prospectType && appliedFilters.prospect_types.includes(p.prospectType));
     }
 
     // For clusters, we'd need cluster_tags on prospects

@@ -27,11 +27,11 @@ const mockExecutiveInsights: AIInsight[] = [
         id: 'ai-1',
         category: 'opportunity',
         title: 'Untapped UHNW Segment in Delhi NCR',
-        description: 'AI analysis reveals 47 UHNW individuals (>₹100 Cr net worth) in Delhi NCR with recent liquidity events who are not currently engaged with any major wealth management firm. Average wealth: ₹285 Cr.',
+        description: 'AI analysis reveals 47 UHNW individuals (>$100 Million net worth) in Delhi NCR with recent liquidity events who are not currently engaged with any major wealth management firm. Average wealth: $285 Million.',
         impact: 'high',
         confidence: 87,
         actionable: true,
-        suggestedAction: 'Deploy 3 senior RMs to Delhi NCR with targeted outreach campaign. Estimated potential AUM capture: ₹1,340 Cr over 6 months.',
+        suggestedAction: 'Deploy 3 senior RMs to Delhi NCR with targeted outreach campaign. Estimated potential AUM capture: $1,340 Million over 6 months.',
         actionBy: 'Jan 15, 2025',
         dataPoints: [
             '47 UHNW prospects identified',
@@ -46,14 +46,14 @@ const mockExecutiveInsights: AIInsight[] = [
         id: 'ai-2',
         category: 'risk',
         title: 'Client Churn Risk Pattern Detected',
-        description: 'Machine learning model identifies 12 UHNW clients showing early churn signals based on engagement patterns, product utilization, and communication frequency. Combined AUM at risk: ₹890 Cr.',
+        description: 'Machine learning model identifies 12 UHNW clients showing early churn signals based on engagement patterns, product utilization, and communication frequency. Combined AUM at risk: $890 Million.',
         impact: 'high',
         confidence: 92,
         actionable: true,
         suggestedAction: 'Immediate executive-level intervention required. Schedule face-to-face meetings with top 5 at-risk clients within 7 days. Assign dedicated relationship managers.',
         dataPoints: [
             '12 clients with churn signals',
-            'AUM at risk: ₹890 Cr',
+            'AUM at risk: $890 Million',
             'Avg engagement drop: 64%',
             'Product utilization down 42%',
             'Last contact: 45+ days avg'
@@ -64,7 +64,7 @@ const mockExecutiveInsights: AIInsight[] = [
         id: 'ai-3',
         category: 'trend',
         title: 'Alternative Investments Demand Surge',
-        description: 'Cross-client analysis shows 68% of UHNW clients (>₹100 Cr) are actively seeking alternative investment opportunities, particularly in PE/VC funds and structured products. Current penetration: only 23%.',
+        description: 'Cross-client analysis shows 68% of UHNW clients (>$100 Million) are actively seeking alternative investment opportunities, particularly in PE/VC funds and structured products. Current penetration: only 23%.',
         impact: 'high',
         confidence: 89,
         actionable: true,
@@ -72,7 +72,7 @@ const mockExecutiveInsights: AIInsight[] = [
         dataPoints: [
             '68% clients seeking alt-investments',
             'Current penetration: 23%',
-            'Potential revenue: ₹180 Cr annually',
+            'Potential revenue: $180 Million annually',
             'Competitor penetration: 41%',
             'Client age group: 35-52 years'
         ],
@@ -108,10 +108,10 @@ const mockExecutiveInsights: AIInsight[] = [
         actionBy: 'TBD',
         dataPoints: [
             '34 high-propensity clients',
-            'Avg PMS holding: ₹120 Cr',
+            'Avg PMS holding: $120 Million',
             'Risk appetite: Aggressive',
             'Expected allocation: 15-20%',
-            'Estimated revenue: ₹45 Cr'
+            'Estimated revenue: $45 Million'
         ],
         generatedAt: '2024-12-21T10:00:00'
     },
@@ -127,7 +127,7 @@ const mockExecutiveInsights: AIInsight[] = [
         dataPoints: [
             '18% Mumbai→Bangalore migration',
             'Tech entrepreneur segment',
-            'Avg wealth: ₹340 Cr',
+            'Avg wealth: $340 Million',
             'Current Bangalore capacity: 65%',
             'Projected growth: 35% in 12 months'
         ],

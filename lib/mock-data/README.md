@@ -258,16 +258,16 @@ GET /api/data-sources/audit-logs?action=sync&status=success
 - EdTech Learning Platform: $15M Seed
 
 **Zauba Corp Events (4 MCA filings):**
-- Mumbai Infra Developers: Director change
-- Delhi Real Estate Holdings: Share transfer
-- Bangalore Tech Ventures: Filing update
-- Chennai Manufacturing: Director change
+ - Dubai Infra Developers: Director change
+ - Riyadh Real Estate Holdings: Share transfer
+ - Doha Tech Ventures: Filing update
+ - Manama Manufacturing: Director change
 
 **IPO Events (4 filings):**
-- CloudTech Solutions: ₹1,200 Cr DRHP filed (NSE)
-- Renewable Energy Corp: ₹850 Cr prospectus (BSE)
-- Fintech Payments Gateway: ₹1,500 Cr approved (NSE)
-- Logistics & Supply Chain: ₹600 Cr DRHP filed (BSE)
+- CloudTech Solutions: $1,200 Million DRHP filed (NSE)
+- Renewable Energy Corp: $850 Million prospectus (BSE)
+- Fintech Payments Gateway: $1,500 Million approved (NSE)
+- Logistics & Supply Chain: $600 Million DRHP filed (BSE)
 
 **News Events (6 articles):**
 - Various company funding announcements
@@ -287,8 +287,8 @@ GET /api/data-sources/audit-logs?action=sync&status=success
    - Status: Pending
 
 3. **Tech Co IPO Size**
-   - NSE: ₹5,000 Cr (confidence: 99%)
-   - NewsAPI: ₹4,800 Cr (confidence: 60%)
+  - NSE: $5,000 Million (confidence: 99%)
+  - NewsAPI: $4,800 Million (confidence: 60%)
    - Status: Resolved
 
 ### Audit Logs (8 entries)

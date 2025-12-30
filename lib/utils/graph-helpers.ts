@@ -313,12 +313,12 @@ export function applyRadialLayout(
  */
 export function formatCurrency(amount: number): string {
   if (amount >= 10000000) {
-    return `₹${(amount / 10000000).toFixed(0)}Cr`;
+    return `$${(amount / 10000000).toFixed(0)} Million`;
   }
   if (amount >= 100000) {
-    return `₹${(amount / 100000).toFixed(0)}L`;
+    return `$${(amount / 100000).toFixed(0)}L`;
   }
-  return `₹${amount.toLocaleString('en-IN')}`;
+  return `$${amount.toLocaleString('en-US')}`;
 }
 
 /**

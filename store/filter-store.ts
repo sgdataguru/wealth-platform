@@ -14,6 +14,7 @@ const initialFilters: AppliedFilters = {
   sectors: [],
   network_ids: [],
   cluster_ids: [],
+  prospect_types: [],
 };
 
 /**
@@ -31,6 +32,7 @@ export const useFilterStore = create<FilterState>((set, get) => ({
     sectors: '',
     networks: '',
     clusters: '',
+    prospectTypes: '',
   },
   filteredCount: 0,
 
@@ -155,6 +157,7 @@ export const useFilterStore = create<FilterState>((set, get) => ({
       sectors: searchParams.getAll('sectors'),
       network_ids: searchParams.getAll('network_ids'),
       cluster_ids: searchParams.getAll('cluster_ids'),
+      prospect_types: searchParams.getAll('prospect_types'),
     };
     set({ appliedFilters: filters });
   },
@@ -173,7 +176,15 @@ export const useFilterStore = create<FilterState>((set, get) => ({
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const filters = JSON.parse(stored);
-        set({ appliedFilters: filters });
+        // Ensure all keys exist
+        const merged: AppliedFilters = {
+          cities: filters.cities || [],
+          sectors: filters.sectors || [],
+          network_ids: filters.network_ids || [],
+          cluster_ids: filters.cluster_ids || [],
+          prospect_types: filters.prospect_types || [],
+        };
+        set({ appliedFilters: merged });
       }
     } catch (error) {
       console.error('Error loading filters from storage:', error);

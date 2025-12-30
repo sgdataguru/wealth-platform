@@ -1697,7 +1697,7 @@ A: Check your browser console for errors or try a different browser.
 
 ### References
 
-- [Kairos Capital Design System](https://www.nuvamawealth.com/)
+- [Kairos Capital Design System](https://kairoscapital.mu/)
 - [Next.js 15 Documentation](https://nextjs.org/docs)
 - [Supabase PostgreSQL](https://supabase.com/docs)
 - [OpenAI API Documentation](https://platform.openai.com/docs)

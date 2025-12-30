@@ -130,6 +130,15 @@ export interface Prospect {
   estWealth?: string;
   myShare?: string;
   sharePercentage?: number;
+  prospectType?: string;
+  // GCC & Compliance fields
+  jurisdiction?: string; // e.g., ADGM, DIFC, SAMA, CMA
+  shariahStatus?: 'halal' | 'haram' | 'restricted' | 'unknown';
+  complianceTags?: string[]; // e.g., ['sanction-checked', 'kyc-updated']
+  // External asset aggregation for Wallet Share intelligence
+  externalAssets?: number; // held-away assets in USD
+  totalWealth?: number; // aggregated total wealth (USD)
+  walletShare?: number; // percentage of Total Wealth that is AUM (0-100)
 }
 
 // Dashboard metrics
@@ -686,7 +695,7 @@ export interface ExecutiveAlert {
 }
 
 // ============================================
-// ENHANCED EXECUTIVE DASHBOARD - NUVAMA
+// ENHANCED EXECUTIVE DASHBOARD - KAIROS
 // ============================================
 
 // Kairos Capital Product Categories

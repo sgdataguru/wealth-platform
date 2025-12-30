@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 
-const RM_USER = 'rm_user@nuvama.com';
-const EXEC_USER = 'exec_user@nuvama.com';
+const RM_USER = 'rm_user@kairoscapital.mu';
+const EXEC_USER = 'exec_user@kairoscapital.mu';
 const PASSWORD = 'cockpit2025';
 
 const loginAs = async (page: Page, email: string) => {

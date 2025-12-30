@@ -36,7 +36,7 @@
 - **Real-Time Updates**: News feed updated throughout the day
   - *Success Metric*: New news appears within 4 hours of publication
   
-- **High-Value Focus**: Prioritize news for₹100Cr+ UHNW individuals
+  - **High-Value Focus**: Prioritize news for $100 Million+ UHNW individuals
   - *Success Metric*: News for top 20% clients appears first
   
 - **Actionable Information**: Each news item linked to affected clients
@@ -765,7 +765,7 @@ serve(async (req) => {
     const { data: clients } = await supabase
       .from('clients')
       .select('id, name, company, estimated_wealth')
-      .gte('estimated_wealth', 10_000_000_000); // ₹100Cr+
+      .gte('estimated_wealth', 10_000_000_000); // $100 Million+
     
     if (!clients || clients.length === 0) {
       return new Response(JSON.stringify({ message: 'No clients found' }), {
@@ -858,7 +858,7 @@ SELECT cron.schedule(
 
 ✅ **AC 1.2**: News filtered based on TAM client list
 
-- Only news for ₹100Cr+ UHNW clients
+- Only news for $100 Million+ UHNW clients
 - Focused on RM's assigned clients
 - Covers top prospect list
 

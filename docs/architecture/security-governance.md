@@ -36,7 +36,7 @@
 
 ## 5. Compliance Controls (DPDP)
 
-* **Data Residency**: All buckets and instances pinned to `ap-south-1` (Mumbai).
+* **Data Residency**: All buckets and instances pinned to the selected compliant region (e.g., `me-south-1` for Middle East deployments) to meet local data protection requirements.
 * **PII Handling**:
   * **Masking**: Phone numbers and emails hashed (SHA-256) during Silver ingestion.
   * **Right to Erasure**: Spark job designed to locate and "tombstone" records for deleted users in Data Lake.

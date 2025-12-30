@@ -11,68 +11,71 @@ Standardize system design patterns and technical structures while ensuring compl
 
 ## Design Inspiration: Premium Wealth Management Aesthetic
 
-*Inspired by [Kairos Capital Group](https://www.kairoscapital.group/) - A Bespoke Investment House*
+*Inspired by Kairos Capital (https://kairoscapital.mu/) and premium financial services aesthetic*
 
-### Brand Philosophy
-> "Derived from the Ancient Greek term “kairos,” which signifies the right, critical, or opportune moment, Kairos Capital Group embodies the pursuit of strategic, timely action in investment."
+### Branding & Logo
 
-### Brand Assets
-![Kairos Capital Logo](/Users/maheshkumarpaik/.gemini/antigravity/brain/4d16eef7-20fe-45b0-80ff-c70e44db5e62/uploaded_image_2_1767060874619.png)
-![Kairos Capital Icon](/Users/maheshkumarpaik/.gemini/antigravity/brain/4d16eef7-20fe-45b0-80ff-c70e44db5e62/uploaded_image_0_1767060874619.png)
+- Use the Kairos Capital wordmark and iconography for all public-facing assets. Prefer the official logo in vector (SVG) format when available.
+- Primary logo source: https://kairoscapital.mu/ (download the official SVG for high-resolution use).
+- Logo usage: place the logo on dark backgrounds using the white/negative variant; on light backgrounds use the full-color or dark variant depending on contrast.
+- Clearspace: maintain at least 24px of clear space around the logo on most UI elements; scale proportionally for larger layouts.
+- Do not alter the logo proportions, colors, or add effects that obscure legibility. Use the color variables defined in this document for accents and highlights.
+
+Add any official brand assets (SVGs, color tokens) to the `public/brand/` folder and reference them from components as `/brand/kairos-logo.svg`.
 
 ### Color Palette
 
-**Primary Colors**
+**Primary Colors (Kairos Capital)**
 ```css
---primary-deep-blue: #0A1628;      /* Deep navy - Kairos corporate blue */
---primary-royal-blue: #1E3A5F;     /* Royal blue - trust & stability */
---primary-accent: #C9A227;          /* Gold/Amber - bespoke luxury */
---primary-gold: #D4AF37;            /* Metallic gold - prestige */
+--primary-ink: #031926;            /* Very deep ink - trust, stability */
+--primary-teal: #007B7A;           /* Teal - modern finance, confidence */
+--primary-cerulean: #00B3C6;       /* Cerulean accent - clarity and insight */
+--primary-gold: #C9A84A;           /* Warm gold - prestige and premium highlights */
 ```
 
 **Secondary Colors**
 ```css
---secondary-slate: #2C3E50;         /* Dark slate - sophistication */
---secondary-charcoal: #1A1A2E;      /* Charcoal - depth */
---secondary-silver: #C0C0C0;        /* Silver - elegance */
---secondary-platinum: #E5E4E2;      /* Platinum - refinement */
+--secondary-deep: #0F3440;         /* Deep teal-slate - sophistication */
+--secondary-charcoal: #111319;     /* Charcoal - depth */
+--secondary-silver: #BFC9CC;       /* Silver - elegance */
+--secondary-platinum: #E9ECEC;     /* Platinum - refinement */
 ```
 
 **Background & Surface**
 ```css
 --bg-primary: #FFFFFF;              /* Clean white - clarity */
---bg-secondary: #F8F9FA;            /* Off-white - subtle warmth */
---bg-dark: #0A1628;                 /* Deep navy - contrast sections */
+--bg-secondary: #F6F8F8;            /* Off-white - subtle warmth */
+--bg-dark: #031926;                 /* Deep ink - contrast sections */
 --bg-card: #FFFFFF;                 /* Card backgrounds */
---bg-overlay: rgba(10, 22, 40, 0.95); /* Modal overlays */
+--bg-overlay: rgba(3, 25, 38, 0.92); /* Modal overlays */
 ```
 
 **Text Colors**
 ```css
---text-primary: #1A1A2E;            /* Near black - readability */
---text-secondary: #5A6C7D;          /* Muted blue-gray */
+--text-primary: #0E1B20;            /* Near-black ink - readability */
+--text-secondary: #4F6467;          /* Muted teal-gray */
 --text-light: #FFFFFF;              /* White text on dark */
---text-accent: #C9A227;             /* Gold highlights */
---text-muted: #8E99A4;              /* Subtle hints */
+--text-accent: #00B3C6;             /* Cerulean highlights */
+--text-muted: #8A9899;              /* Subtle hints */
 ```
 
 **Semantic Colors**
 ```css
 --success: #28A745;                 /* Green - positive growth */
 --success-light: #D4EDDA;
---warning: #FFC107;                 /* Amber - caution */
+--warning: #FFB74D;                 /* Warm amber - caution */
 --warning-light: #FFF3CD;
 --error: #DC3545;                   /* Red - alerts */
 --error-light: #F8D7DA;
---info: #17A2B8;                    /* Teal - information */
+--info: #00A3B2;                    /* Kairos teal - informational */
 ```
 
 ### Typography
 
 **Font Stack**
 ```css
---font-heading: 'Playfair Display', 'Georgia', serif;  /* Elegant headings */
---font-body: 'Inter', 'Helvetica Neue', sans-serif;    /* Clean body text */
+--font-heading: 'Merriweather', 'Georgia', serif;     /* Refined headings */
+--font-body: 'Inter', 'Helvetica Neue', sans-serif;   /* Clean body text */
 --font-mono: 'JetBrains Mono', 'Fira Code', monospace; /* Code/numbers */
 ```
 
@@ -119,8 +122,8 @@ Standardize system design patterns and technical structures while ensuring compl
 .card-premium {
   background: var(--bg-card);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04),
-              0 4px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 18px rgba(2, 18, 22, 0.06),
+              0 10px 36px rgba(2, 18, 22, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
@@ -134,23 +137,23 @@ Standardize system design patterns and technical structures while ensuring compl
 
 **Buttons**
 ```css
-/* Primary - Gold accent */
+/* Primary - Kairos teal & gold accent */
 .btn-primary {
-  background: linear-gradient(135deg, #C9A227 0%, #D4AF37 100%);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-cerulean) 70%, var(--primary-gold) 100%);
+  color: var(--text-light);
   font-weight: 600;
   padding: 12px 32px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  border-radius: 6px;
+  transition: all 0.28s ease;
 }
 
 /* Secondary - Navy outline */
 .btn-secondary {
   background: transparent;
-  border: 2px solid var(--primary-royal-blue);
-  color: var(--primary-royal-blue);
+  border: 2px solid var(--primary-teal);
+  color: var(--primary-teal);
   padding: 10px 30px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 /* Ghost - Minimal */
@@ -173,8 +176,8 @@ Standardize system design patterns and technical structures while ensuring compl
 }
 
 .input-premium:focus {
-  border-color: var(--primary-royal-blue);
-  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+  border-color: var(--primary-cerulean);
+  box-shadow: 0 0 0 4px rgba(0, 179, 198, 0.12);
   outline: none;
 }
 ```
@@ -200,7 +203,7 @@ Standardize system design patterns and technical structures while ensuring compl
 
 **Visual Hierarchy**
 - Clear distinction between primary and secondary content
-- Use of gold accents sparingly for emphasis
+- Use of Kairos teal and warm gold accents sparingly for emphasis
 - Ample negative space around key elements
 - Progressive disclosure for complex information
 
@@ -239,10 +242,10 @@ Standardize system design patterns and technical structures while ensuring compl
    - Subtle, refined color palette
 
 2. **Exclusivity**
-   - Premium feel through whitespace
-   - Gold accents for luxury signaling
-   - High-quality imagery
-   - Refined micro-interactions
+  - Premium feel through whitespace
+  - Kairos teal + gold accents for luxury signaling
+  - High-quality imagery
+  - Refined micro-interactions
 
 3. **Clarity**
    - Clear information hierarchy

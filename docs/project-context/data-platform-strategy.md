@@ -83,7 +83,7 @@ We will adopt a **Lakehouse Architecture** combining the flexibility of data lak
 
 ### Security & Governance Approach
 
-* **Data Residency**: All data stored strictly in **AWS ap-south-1 (Mumbai)** to comply with Indian DPDP.
+* **Data Residency**: All data stored strictly in a compliant AWS region (for example **AWS me-south-1** for Middle East deployments) or the appropriate sovereign region to meet local data protection requirements.
 * **PII Masking**: Client names/phones hashed in Bronze/Silver; revealed only in Gold via RBAC.
 * **Audit**: Full CloudTrail logging of who accessed "Gold" client insights.
 
@@ -91,7 +91,7 @@ We will adopt a **Lakehouse Architecture** combining the flexibility of data lak
 
 **Cloud Platform**: **AWS**
 
-* **Rationale**: Industry standard for data maturity, strong managed services (MSK, EMR), and strict regional control (Mumbai Region). Matches existing tech stack preference.
+* **Rationale**: Industry standard for data maturity, strong managed services (MSK, EMR), and strict regional control in the selected deployment region. Matches existing tech stack preference.
 
 **Core Capabilities**:
 

@@ -7,7 +7,7 @@
 /**
  * Filter type categories
  */
-export type FilterType = 'cities' | 'sectors' | 'network_ids' | 'cluster_ids';
+export type FilterType = 'cities' | 'sectors' | 'network_ids' | 'cluster_ids' | 'prospect_types';
 
 /**
  * Network represents a professional network or association
@@ -40,6 +40,7 @@ export interface FilterOptions {
   sectors: string[];
   networks: Network[];
   clusters: Cluster[];
+  prospectTypes?: string[];
 }
 
 /**
@@ -50,6 +51,7 @@ export interface AppliedFilters {
   sectors: string[];
   network_ids: string[];
   cluster_ids: string[];
+  prospect_types: string[];
 }
 
 /**
@@ -71,6 +73,7 @@ export interface FilterState {
     sectors: string;
     networks: string;
     clusters: string;
+      prospectTypes: string;
   };
   
   // Results

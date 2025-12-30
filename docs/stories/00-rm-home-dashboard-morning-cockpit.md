@@ -43,7 +43,7 @@
 - A prioritized list of 3-5 AI-generated action items
 - Each item displays:
   - **Insight Type** (e.g., "Liquidity Event Detected", "Yield Mismatch", "Portfolio Gap")
-  - **Client Context** (family name, specific numbers like "₹50 Cr from startup exit")
+  - **Client Context** (family name, specific numbers like "$50 Million from startup exit")
   - **Suggested Action** (clickable CTA like "Draft Proposal", "Call Client", "Schedule Meeting")
   - **Priority Badge** (High/Medium/Low with color coding)
 - Items are sorted by priority and recency
@@ -53,13 +53,13 @@
 ```
 Priority: HIGH
 Insight: "Liquidity Event Detected"
-Context: "The Malhotra Family just received ₹50 Cr from their startup exit."
+Context: "The Malhotra Family just received $50 Million from their startup exit."
 Suggested Action: "Propose 'Tax-Free Bonds' or 'Structured Notes'"
 [Draft Proposal Button] [Call Client Button]
 
 Priority: MEDIUM
 Insight: "Yield Mismatch"
-Context: "Mr. Verma's portfolio is holding 40% in low-yield savings."
+  Context: "Mr. Verma's portfolio is holding 40% in low-yield savings."
 Suggested Action: "Suggest re-allocation to Nifty 50 Index Fund"
 [Call Client Button]
 ```
@@ -128,7 +128,7 @@ Details: Term Sheet for Worli Sea Face Property
 - Each agenda item shows:
   - **Time** (e.g., "10:00 AM")
   - **Meeting Title** (e.g., "Coffee with Mrs. Nair")
-  - **Location** (e.g., "The Oberoi, New Delhi")
+  - **Location** (e.g., "The Ritz-Carlton, Riyadh")
   - **AI Context Note** (e.g., "Her granddaughter just got admission to ISB")
   - **Status Indicator** (e.g., "Portfolio Report Ready")
   - **Quick Actions** ([View Report], [Send Gift], etc.)
@@ -142,8 +142,8 @@ Details: Term Sheet for Worli Sea Face Property
 TODAY'S SCHEDULE
 
 10:00 AM - Coffee with Mrs. Nair
-Location: The Oberoi, New Delhi
-💡 Context: Her granddaughter just got admission to ISB Hyderabad. 
+Location: The Ritz-Carlton, Riyadh
+💡 Context: Her granddaughter just got admission to an Executive MBA program in Doha. 
    Send congratulations.
 [Send Gift & Message]
 
@@ -208,12 +208,12 @@ Rupee depreciation detected.
 → Hedge recommendation for clients with US tuition payments
 
 ✨ Commodities
-Gold: ₹62,500/10g (+2.0%)
+Gold: $62,500/10g (+2.0%)
 Wedding Season Demand surge.
 → Good time to pitch Sovereign Gold Bonds?
 
 🏢 Real Estate
-Mumbai - BKC Commercial Yields: 8.0% (Stable)
+Dubai - Downtown Commercial Yields: 8.0% (Stable)
 Prime office space showing resilience.
 → Opportunity for clients seeking passive income
 ```
@@ -226,7 +226,7 @@ Prime office space showing resilience.
 - [ ] Historical comparison shown (e.g., "+2.0%")
 - [ ] Links to detailed market analysis reports
 - [ ] Currency alerts highlight USD/INR volatility
-- [ ] Real estate data specific to Mumbai/Delhi/Bangalore
+- [ ] Real estate data specific to Dubai/Riyadh/Doha
 
 ---
 
@@ -399,7 +399,7 @@ Prime office space showing resilience.
 ║                   ║ │ at collateral │ ║ Family Office     ║    Sell-off -3% ║
 ║ 👤 The Malhotra   ║ │ requirement.  │ ║                   ║    Affects the  ║
 ║    Family just    ║ │ Nifty         │ ║ 📍 The Oberoi,    ║    Sato Family  ║
-║    received ₹50Cr ║ │ correction    │ ║    New Delhi      ║    & mitssa most║
+║    received $50Million ║ │ correction    │ ║    New Delhi      ║    & mitssa most║
 ║    from their     ║ │ risk.         │ ║                   ║    harrard      ║
 ║    startup exit.  ║ │               │ ║ 💡 Context:       ║                  ║
 ║                   ║ │ [VIEW PORTF.] │ ║    Her            ║ [View Impact]   ║

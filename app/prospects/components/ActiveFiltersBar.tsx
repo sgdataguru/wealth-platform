@@ -30,7 +30,8 @@ export function ActiveFiltersBar({
     filters.cities.length > 0 ||
     filters.sectors.length > 0 ||
     filters.network_ids.length > 0 ||
-    filters.cluster_ids.length > 0;
+    filters.cluster_ids.length > 0 ||
+    (filters.prospect_types && filters.prospect_types.length > 0);
 
   if (!hasFilters) {
     return null;
@@ -40,7 +41,8 @@ export function ActiveFiltersBar({
     filters.cities.length +
     filters.sectors.length +
     filters.network_ids.length +
-    filters.cluster_ids.length;
+    filters.cluster_ids.length +
+    (filters.prospect_types ? filters.prospect_types.length : 0);
 
   return (
     <div className="bg-white border-b border-gray-200 p-4">
@@ -84,6 +86,14 @@ export function ActiveFiltersBar({
               key={`cluster-${clusterId}`}
               label={clusterId}
               onRemove={() => onRemoveFilter('cluster_ids', clusterId)}
+            />
+          ))}
+
+          {filters.prospect_types?.map((pt) => (
+            <FilterPill
+              key={`prospect-${pt}`}
+              label={pt}
+              onRemove={() => onRemoveFilter('prospect_types', pt)}
             />
           ))}
         </div>

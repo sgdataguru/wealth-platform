@@ -291,7 +291,7 @@ export async function GET(request: NextRequest) {
 ```typescript
 // ❌ ANTI-PATTERN: Component directly accessing localStorage
 export function MyComponent() {
-  const auth = JSON.parse(localStorage.getItem('nuvama_auth'));
+  const auth = JSON.parse(localStorage.getItem('kairos_auth'));
   // Breaks on server-side rendering, hard to test
 }
 
@@ -986,7 +986,7 @@ npx prisma migrate dev --name init
 **Implementation:** `lib/auth/session.ts`
 
 - Stores auth state in `localStorage` or `sessionStorage`
-- Storage key: `'nuvama_auth'`
+- Storage key: `'kairos_auth'`
 - No JWT, no server-side validation
 - Mock users defined in `lib/auth/mock-users.ts`
 

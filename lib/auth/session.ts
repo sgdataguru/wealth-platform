@@ -5,7 +5,7 @@ export type AuthSession = {
   user: UserProfile;
 };
 
-const AUTH_STORAGE_KEY = 'nuvama_auth';
+const AUTH_STORAGE_KEY = 'kairos_auth';
 
 const ROLE_ROUTES: Record<UserRole, string> = {
   rm: '/rm',
