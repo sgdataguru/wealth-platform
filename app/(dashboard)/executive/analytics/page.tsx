@@ -7,7 +7,6 @@
 
 import { Header, Sidebar } from '@/app/components/layout';
 import { Card } from '@/app/components/ui';
-import { formatCroreToUSD, formatINRToUSD } from '@/lib/utils/currency';
 import TeamComparisonTable from './components/TeamComparisonTable';
 import RevenueAttributionChart from './components/RevenueAttributionChart';
 import MarketShareTrends from './components/MarketShareTrends';

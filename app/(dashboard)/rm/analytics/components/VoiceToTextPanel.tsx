@@ -7,7 +7,7 @@
 
 import { Card } from '@/app/components/ui';
 import { useState, useRef } from 'react';
-import { formatCroreToUSD, formatINRToUSD } from '@/lib/utils/currency';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 
 interface VoiceNote {
     id: string;
