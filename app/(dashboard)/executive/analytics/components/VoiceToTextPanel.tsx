@@ -49,11 +49,11 @@ const mockVoiceNotes: VoiceNote[] = [
         duration: 180,
         recordedAt: '2024-12-21T14:15:00',
         transcriptStatus: 'completed',
-        transcript: 'Hi Priya, thank you for taking my call. I wanted to discuss the alternative investment opportunities we talked about last week. We have three PE funds that match your risk profile - Sequoia India Growth Fund, Accel India Fund VI, and Matrix Partners India Fund IV. The minimum ticket size is 5 crores per fund. These funds have historically delivered 22-28% IRR. Would you like me to send detailed information packs?',
+        transcript: 'Hi Priya, thank you for taking my call. I wanted to discuss the alternative investment opportunities we talked about last week. We have three PE funds that match your risk profile - Wamda Capital Growth Fund, MEVP Fund III, and Dubai Angel Investors Fund II. The minimum ticket size is $5 million per fund. These funds have historically delivered 22-28% IRR. Would you like me to send detailed information packs?',
         language: 'en',
         linkedClients: ['Priya Sharma'],
         detectedTopics: ['Alternative Investments', 'PE Funds', 'Risk Profile', 'IRR'],
-        aiSummary: 'Discussed alternative investment opportunities with Priya Sharma. Presented 3 PE funds: Sequoia, Accel, Matrix. Minimum ticket: ₹5 Cr per fund. Historical IRR: 22-28%. Client requested detailed information packs.',
+        aiSummary: 'Discussed alternative investment opportunities with Priya Sharma. Presented 3 PE funds: Wamda Capital, MEVP, Dubai Angel Investors. Minimum ticket: $5 Million per fund. Historical IRR: 22-28%. Client requested detailed information packs.',
         actionItems: [
             'Send PE fund information packs to Priya',
             'Prepare comparison analysis of 3 funds',

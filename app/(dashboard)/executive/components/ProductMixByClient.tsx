@@ -22,7 +22,7 @@ const MOCK_CLIENT_PRODUCT_MIX: ClientProductMix[] = [
         clientName: 'Ramesh Gupta',
         clientCode: '#HC001',
         totalAUM: 450000000,
-        region: 'Delhi NCR',
+        region: 'Dubai',
         assignedRM: 'Priya Sharma',
         assignedRMEmail: 'priya.sharma@kairoscapital.mu',
         products: [
@@ -38,7 +38,7 @@ const MOCK_CLIENT_PRODUCT_MIX: ClientProductMix[] = [
         clientName: 'Meera Kapoor',
         clientCode: '#HC045',
         totalAUM: 320000000,
-        region: 'Delhi NCR',
+        region: 'Abu Dhabi',
         assignedRM: 'Vikram Singh',
         assignedRMEmail: 'vikram.singh@kairoscapital.mu',
         products: [

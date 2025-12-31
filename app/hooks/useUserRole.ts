@@ -24,7 +24,7 @@ const MOCK_EXECUTIVE_PROFILE: UserProfile = {
     name: 'Amit Saxena',
     email: 'exec_user@kairoscapital.mu',
     role: 'executive',
-    territories: ['Mumbai', 'Delhi', 'Bangalore'],
+    territories: ['Dubai', 'Abu Dhabi', 'Riyadh'],
     teamIds: ['team-west', 'team-north', 'team-south'],
     photoUrl: undefined,
 };

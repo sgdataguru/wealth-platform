@@ -67,8 +67,8 @@ const SOURCE_DETAILS: Record<
     text: 'text-[#8B1E1E]',
     description: 'Relationship manager captured intelligence with context.',
   },
-  'ET Now': {
-    label: 'ET Now',
+  'Bloomberg Gulf': {
+    label: 'Bloomberg Gulf',
     tier: 'Media — verified',
     icon: '📺',
     bg: 'bg-[#E9F5FF]',
@@ -76,8 +76,8 @@ const SOURCE_DETAILS: Record<
     text: 'text-[#12344D]',
     description: 'Broadcast coverage cross-checked with primary filings.',
   },
-  'NSE Clearing Archive': {
-    label: 'NSE Clearing Archive',
+  'DFM Archive': {
+    label: 'DFM Archive',
     tier: 'Exchange — archival',
     icon: '🗄️',
     bg: 'bg-[#F5FBF5]',
@@ -103,8 +103,8 @@ const SOURCE_DETAILS: Record<
     text: 'text-[#1E2A3D]',
     description: 'Regulatory notices and orders from DFSA repository.',
   },
-  'Economic Times': {
-    label: 'Economic Times',
+  'Gulf News': {
+    label: 'Gulf News',
     tier: 'Media — trusted',
     icon: '📰',
     bg: 'bg-[#F4F6F8]',
@@ -112,8 +112,8 @@ const SOURCE_DETAILS: Record<
     text: 'text-[#243B53]',
     description: 'Editorial reporting validated against multiple sources.',
   },
-  'Business Standard': {
-    label: 'Business Standard',
+  'Arabian Business': {
+    label: 'Arabian Business',
     tier: 'Media — trusted',
     icon: '🗞️',
     bg: 'bg-[#F6F2ED]',
@@ -121,8 +121,8 @@ const SOURCE_DETAILS: Record<
     text: 'text-[#3D2F22]',
     description: 'Business news corroborated with market disclosures.',
   },
-  'Angel One': {
-    label: 'Angel One',
+  'Saxo Bank': {
+    label: 'Saxo Bank',
     tier: 'Broker — insights',
     icon: '📈',
     bg: 'bg-[#F1F7FF]',

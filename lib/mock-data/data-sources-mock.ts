@@ -94,7 +94,7 @@ export interface ZaubaEvent {
 
 export interface IPOEvent {
   companyName: string;
-  exchange: 'NSE' | 'BSE';
+  exchange: 'DFM' | 'ADX' | 'Tadawul';
   eventType: 'drhp_filed' | 'prospectus_filed' | 'listing_approved';
   details: {
     ipoSize: number;
@@ -102,7 +102,7 @@ export interface IPOEvent {
     filingDate: Date;
     expectedListing: Date;
   };
-  source: 'NSE' | 'BSE';
+  source: 'DFM' | 'ADX' | 'Tadawul';
   sourceUrl: string;
   confidence: number;
 }
@@ -615,7 +615,7 @@ export const mockZaubaEvents: ZaubaEvent[] = [
 export const mockIPOEvents: IPOEvent[] = [
   {
     companyName: 'CloudTech Solutions Limited',
-    exchange: 'NSE',
+    exchange: 'DFM',
     eventType: 'drhp_filed',
     details: {
       ipoSize: 12000000000, // $1200 Million
@@ -623,8 +623,8 @@ export const mockIPOEvents: IPOEvent[] = [
       filingDate: new Date('2025-12-16'),
       expectedListing: new Date('2026-02-15'),
     },
-    source: 'NSE',
-    sourceUrl: 'https://www.nseindia.com/companies-listing/corporate-filings-ipo',
+    source: 'DFM',
+    sourceUrl: 'https://www.dfm.ae/companies-listing/corporate-filings-ipo',
     confidence: 99,
   },
   {
@@ -637,8 +637,8 @@ export const mockIPOEvents: IPOEvent[] = [
       filingDate: new Date('2025-12-14'),
       expectedListing: new Date('2026-01-20'),
     },
-    source: 'BSE',
-    sourceUrl: 'https://www.bseindia.com/markets/PublicIssues/IPOIssues_new.aspx',
+    source: 'ADX',
+    sourceUrl: 'https://www.adx.ae/markets/PublicIssues/IPOIssues_new.aspx',
     confidence: 98,
   },
   {

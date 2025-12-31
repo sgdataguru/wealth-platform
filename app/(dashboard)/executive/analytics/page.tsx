@@ -53,9 +53,9 @@ export default function ExecutiveAnalyticsPage() {
                                     Cost Per Acquisition
                                 </span>
                                 <div className="flex items-baseline gap-2 mt-2">
-                                    <span className="text-3xl font-bold text-[var(--text-primary)]">{formatINRToUSD(1200000)}</span>
+                                    <span className="text-3xl font-bold text-[var(--text-primary)]">$1.2 Million</span>
                                 </div>
-                                <span className="text-xs text-[var(--success)] mt-2">↓ {formatINRToUSD(300000)}</span>
+                                <span className="text-xs text-[var(--success)] mt-2">↓ $300K</span>
                             </div>
                         </Card>
 
@@ -65,7 +65,7 @@ export default function ExecutiveAnalyticsPage() {
                                     Avg Client LTV
                                 </span>
                                 <div className="flex items-baseline gap-2 mt-2">
-                                    <span className="text-3xl font-bold text-[var(--text-primary)]">{formatCroreToUSD(45)}</span>
+                                    <span className="text-3xl font-bold text-[var(--text-primary)]">$450 Million</span>
                                 </div>
                                 <span className="text-xs text-[var(--text-secondary)] mt-2">Over 5 years</span>
                             </div>
@@ -74,7 +74,7 @@ export default function ExecutiveAnalyticsPage() {
                         <Card>
                             <div className="flex flex-col">
                                 <span className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">
-                                    Market Share (Mumbai)
+                                    Market Share (Dubai)
                                 </span>
                                 <div className="flex items-baseline gap-2 mt-2">
                                     <span className="text-3xl font-bold text-[var(--accent-coral)]">18.5%</span>

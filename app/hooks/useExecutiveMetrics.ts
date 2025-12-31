@@ -46,18 +46,18 @@ const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
 
     // Regional breakdown
     regionalBreakdown: [
-        { region: 'Mumbai', aum: '₹1.2 L Cr', growth: 18.5, rmCount: 385, clientCount: 42000 },
-        { region: 'Delhi NCR', aum: '₹95,000 Cr', growth: 17.2, rmCount: 298, clientCount: 35000 },
-        { region: 'Bangalore', aum: '₹82,000 Cr', growth: 22.8, rmCount: 245, clientCount: 28000 },
-        { region: 'Pune', aum: '₹48,000 Cr', growth: 15.3, rmCount: 142, clientCount: 15000 },
-        { region: 'Chennai', aum: '₹35,000 Cr', growth: 14.1, rmCount: 98, clientCount: 10000 },
-        { region: 'Others', aum: '₹18,000 Cr', growth: 12.5, rmCount: 79, clientCount: 4000 },
+        { region: 'Dubai', aum: '$120 Billion', growth: 18.5, rmCount: 385, clientCount: 42000 },
+        { region: 'Abu Dhabi', aum: '$95 Billion', growth: 17.2, rmCount: 298, clientCount: 35000 },
+        { region: 'Riyadh', aum: '$82 Billion', growth: 22.8, rmCount: 245, clientCount: 28000 },
+        { region: 'Doha', aum: '$48 Billion', growth: 15.3, rmCount: 142, clientCount: 15000 },
+        { region: 'Jeddah', aum: '$35 Billion', growth: 14.1, rmCount: 98, clientCount: 10000 },
+        { region: 'Others', aum: '$18 Billion', growth: 12.5, rmCount: 79, clientCount: 4000 },
     ],
 
     // Product mix
     productMix: [
-        { product: 'Equity PMS', percentage: 35, value: '₹1.61 L Cr', color: '#2A2447' },
-        { product: 'Mutual Funds', percentage: 28, value: '₹1.29 L Cr', color: '#E85D54' },
+        { product: 'Equity PMS', percentage: 35, value: '$161 Billion', color: '#2A2447' },
+        { product: 'Mutual Funds', percentage: 28, value: '$129 Billion', color: '#E85D54' },
         { product: 'Fixed Income', percentage: 18, value: '₹82,800 Cr', color: '#5A6C7D' },
         { product: 'Alternative Investments', percentage: 12, value: '₹55,200 Cr', color: '#8E99A4' },
         { product: 'Others', percentage: 7, value: '₹32,200 Cr', color: '#F06E66' },
