@@ -15,16 +15,16 @@ export async function GET() {
     // Mock data - in production, this would fetch from database
     const filterOptions: FilterOptions = {
       cities: [
-        'Mumbai',
-        'Delhi',
-        'Bangalore',
-        'Hyderabad',
-        'Chennai',
-        'Pune',
-        'Kolkata',
-        'Ahmedabad',
-        'Gurgaon',
-        'Noida',
+        'Dubai',
+        'Abu Dhabi',
+        'Riyadh',
+        'Jeddah',
+        'Doha',
+        'Kuwait City',
+        'Manama',
+        'Muscat',
+        'Sharjah',
+        'Al Ain',
       ],
       sectors: [
         'Technology',
@@ -62,8 +62,8 @@ export async function GET() {
         },
         {
           id: 'net_004',
-          name: 'IIT Alumni Network',
-          description: 'Indian Institute of Technology alumni',
+          name: 'Dubai Business Network',
+          description: 'Dubai Chamber of Commerce alumni',
           member_count: 200,
           created_at: new Date('2020-01-01'),
         },

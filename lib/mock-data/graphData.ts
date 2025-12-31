@@ -107,10 +107,10 @@ export const mockCompanies: GraphNode[] = [
   {
     id: 'company-001',
     type: 'company',
-    label: 'TechCorp India',
+    label: 'TechCorp Gulf',
     properties: {
-      name: 'TechCorp India',
-      cin: 'U72900DL2015PTC123456',
+      name: 'TechCorp Gulf',
+      cin: 'AE-DXB-2015-FIN-123456',
       sector: 'Fintech',
       founded: '2015-03-15',
       valuation: 45000000000
@@ -123,7 +123,7 @@ export const mockCompanies: GraphNode[] = [
     label: 'E-Commerce Solutions',
     properties: {
       name: 'E-Commerce Solutions',
-      cin: 'U52100MH2018PTC234567',
+      cin: 'AE-DXB-2018-COM-234567',
       sector: 'E-commerce',
       founded: '2018-06-20',
       valuation: 25000000000
@@ -136,7 +136,7 @@ export const mockCompanies: GraphNode[] = [
     label: 'GreenEnergy Ventures',
     properties: {
       name: 'GreenEnergy Ventures',
-      cin: 'U40109KA2020PTC345678',
+      cin: 'AE-AUH-2020-ENE-345678',
       sector: 'Renewable Energy',
       founded: '2020-01-10',
       valuation: 18000000000
@@ -149,7 +149,7 @@ export const mockCompanies: GraphNode[] = [
     label: 'HealthTech Innovations',
     properties: {
       name: 'HealthTech Innovations',
-      cin: 'U85100TN2019PTC456789',
+      cin: 'AE-DXB-2019-HLT-456789',
       sector: 'Healthcare',
       founded: '2019-09-05',
       valuation: 12000000000
@@ -174,9 +174,9 @@ export const mockNetworks: GraphNode[] = [
   {
     id: 'network-002',
     type: 'network',
-    label: 'YPO India',
+    label: 'YPO Middle East',
     properties: {
-      name: 'YPO India',
+      name: 'YPO Middle East',
       type: 'club',
       memberCount: 280
     },
@@ -194,8 +194,8 @@ export const mockEvents: GraphNode[] = [
       type: 'ipo_filing',
       amount: 8500000000,
       date: '2025-02-15',
-      source: 'SEBI Filing',
-      company: 'TechCorp India'
+      source: 'DFM Filing',
+      company: 'TechCorp Gulf'
     },
     metadata: { eventId: 'evt-001' }
   },

@@ -151,7 +151,7 @@ export const mockDataSources: DataSource[] = [
   },
   {
     id: 'nse',
-    name: 'NSE India',
+    name: 'DFM (Dubai)',
     type: 'api',
     status: 'online',
     lastSync: new Date(Date.now() - 3 * 60 * 1000), // 3 minutes ago
@@ -164,7 +164,7 @@ export const mockDataSources: DataSource[] = [
   },
   {
     id: 'bse',
-    name: 'BSE India',
+    name: 'ADX (Abu Dhabi)',
     type: 'api',
     status: 'degraded',
     lastSync: new Date(Date.now() - 25 * 60 * 1000), // 25 minutes ago
@@ -389,7 +389,7 @@ export const mockAuditLogs: AuditLog[] = [
   {
     id: 'log-003',
     sourceId: 'nse',
-    sourceName: 'NSE India',
+    sourceName: 'DFM (Dubai)',
     action: 'sync',
     status: 'success',
     recordsProcessed: 45,
@@ -400,13 +400,13 @@ export const mockAuditLogs: AuditLog[] = [
   {
     id: 'log-004',
     sourceId: 'bse',
-    sourceName: 'BSE India',
+    sourceName: 'ADX (Abu Dhabi)',
     action: 'sync',
     status: 'partial',
     recordsProcessed: 23,
     errors: [
       'Rate limit exceeded for endpoint /ipo/filings',
-      'Timeout on request for company CIN: L12345MH2020PLC123456',
+      'Timeout on request for company CIN: AE-DXB-2020-COM-123456',
       'Invalid response format for 2 records',
     ],
     timestamp: new Date(Date.now() - 25 * 60 * 1000),
@@ -527,7 +527,7 @@ export const mockPrivateCircleEvents: PrivateCircleEvent[] = [
       currency: 'USD',
       date: new Date('2025-12-01'),
     },
-    investors: ['Blume Ventures', 'India Quotient', 'Elevation Capital'],
+    investors: ['Wamda Capital', 'Middle East Venture Partners', 'Dubai Angel Investors'],
     promoters: ['Rahul Desai', 'Kavita Nair'],
     source: 'PrivateCircle',
     sourceId: 'pc-deal-12349',
@@ -628,8 +628,8 @@ export const mockIPOEvents: IPOEvent[] = [
     confidence: 99,
   },
   {
-    companyName: 'Renewable Energy Corp India Ltd',
-    exchange: 'BSE',
+    companyName: 'Renewable Energy Corp Gulf Ltd',
+    exchange: 'ADX',
     eventType: 'prospectus_filed',
     details: {
       ipoSize: 8500000000, // $850 Million
@@ -643,7 +643,7 @@ export const mockIPOEvents: IPOEvent[] = [
   },
   {
     companyName: 'Fintech Payments Gateway Ltd',
-    exchange: 'NSE',
+    exchange: 'DFM',
     eventType: 'listing_approved',
     details: {
       ipoSize: 15000000000, // $1500 Million
@@ -651,13 +651,13 @@ export const mockIPOEvents: IPOEvent[] = [
       filingDate: new Date('2025-12-12'),
       expectedListing: new Date('2026-01-05'),
     },
-    source: 'NSE',
-    sourceUrl: 'https://www.nseindia.com/companies-listing/corporate-filings-ipo',
+    source: 'DFM',
+    sourceUrl: 'https://www.dfm.ae/companies-listing/corporate-filings-ipo',
     confidence: 99,
   },
   {
-    companyName: 'Logistics & Supply Chain India Ltd',
-    exchange: 'BSE',
+    companyName: 'Logistics & Supply Chain Gulf Ltd',
+    exchange: 'ADX',
     eventType: 'drhp_filed',
     details: {
       ipoSize: 6000000000, // $600 Million
@@ -665,8 +665,8 @@ export const mockIPOEvents: IPOEvent[] = [
       filingDate: new Date('2025-12-10'),
       expectedListing: new Date('2026-03-01'),
     },
-    source: 'BSE',
-    sourceUrl: 'https://www.bseindia.com/markets/PublicIssues/IPOIssues_new.aspx',
+    source: 'ADX',
+    sourceUrl: 'https://www.adx.ae/markets/PublicIssues/IPOIssues_new.aspx',
     confidence: 97,
   },
 ];
@@ -718,8 +718,8 @@ export const mockNewsEvents: NewsEvent[] = [
   },
   {
     companyName: 'HealthTech Diagnostics',
-    headline: 'HealthTech Diagnostics raises $180M in Series C, eyes pan-India expansion',
-    summary: 'Digital diagnostics platform HealthTech Diagnostics announced a $180 million Series C funding round led by Kalaari Capital. The funds will be used to expand to 50 new cities.',
+    headline: 'HealthTech Diagnostics raises $180M in Series C, eyes regional expansion',
+    summary: 'Digital diagnostics platform HealthTech Diagnostics announced a $180 million Series C funding round led by Gulf Capital. The funds will be used to expand to 50 new locations across the Middle East.',
     source: 'YourStory',
     publishedAt: new Date('2025-12-14T10:45:00Z'),
     url: 'https://yourstory.com/2025/12/healthtech-diagnostics-series-c-funding',
@@ -728,8 +728,8 @@ export const mockNewsEvents: NewsEvent[] = [
   },
   {
     companyName: 'CloudTech Solutions',
-    headline: 'CloudTech Solutions files DRHP for $1,200 Million IPO on NSE',
-    summary: 'Cloud infrastructure provider CloudTech Solutions has filed draft papers with SEBI for an initial public offering worth $1,200 Million. The IPO is expected to open in February 2026.',
+    headline: 'CloudTech Solutions files prospectus for $1,200 Million IPO on DFM',
+    summary: 'Cloud infrastructure provider CloudTech Solutions has filed draft papers with DFSA for an initial public offering worth $1,200 Million. The IPO is expected to open in February 2026.',
     source: 'MoneyControl',
     publishedAt: new Date('2025-12-17T08:20:00Z'),
     url: 'https://moneycontrol.com/news/business/ipo/cloudtech-solutions-drhp-filing',

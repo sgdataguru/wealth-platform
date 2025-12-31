@@ -71,7 +71,7 @@ export const mockSignals: Signal[] = [
     title: 'Covidh Technologies — Open offer tendering',
     description:
       'Open offer tendering running 23 Dec 2025 to 6 Jan 2026; primary cash-out event under takeover regulations.',
-    source: 'Securities and Exchange Board of India',
+    source: 'Dubai Financial Services Authority',
     createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000), // 8 hours ago
     isActioned: false,
     isRead: false,
@@ -92,7 +92,7 @@ export const mockSignals: Signal[] = [
     title: 'Avishkar Infra Realty — Open offer live',
     description:
       'Open offer window 23 Dec 2025 to 6 Jan 2026 after earlier allotment triggered SAST obligations.',
-    source: 'Securities and Exchange Board of India',
+    source: 'Dubai Financial Services Authority',
     createdAt: new Date(Date.now() - 10 * 60 * 60 * 1000), // 10 hours ago
     isActioned: false,
     isRead: true,
@@ -197,7 +197,7 @@ export const mockSignals: Signal[] = [
     title: 'Covidh Technologies — Open offer settlement milestone',
     description:
       'Settlement completion milestone shown as 20 Jan 2026; downstream liquidity depends on acceptance levels.',
-    source: 'Securities and Exchange Board of India',
+    source: 'Dubai Financial Services Authority',
     createdAt: new Date(Date.now() - 20 * 60 * 60 * 1000), // 20 hours ago
     isActioned: false,
     isRead: false,

@@ -94,14 +94,14 @@ const SOURCE_DETAILS: Record<
     text: 'text-[#5B3D16]',
     description: 'IPO intelligence validated against exchange disclosures.',
   },
-  'Securities and Exchange Board of India': {
-    label: 'SEBI',
+  'Dubai Financial Services Authority': {
+    label: 'DFSA',
     tier: 'Regulator — official',
     icon: '🏦',
     bg: 'bg-[#EDF4FF]',
     ring: 'ring-[#B4CBFF]',
     text: 'text-[#1E2A3D]',
-    description: 'Regulatory notices and orders from SEBI repository.',
+    description: 'Regulatory notices and orders from DFSA repository.',
   },
   'Economic Times': {
     label: 'Economic Times',

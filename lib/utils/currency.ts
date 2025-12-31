@@ -1,20 +1,22 @@
 /**
  * @file lib/utils/currency.ts
- * @description Helpers to convert INR / Crore values to USD display strings (Million / Billion)
+ * @description Helpers to convert AED / Middle East currency values to USD display strings (Million / Billion)
  */
 
 /**
- * Convert Crores (1 Cr = 10 million) to millions (number)
+ * Convert millions to billions where appropriate
  */
-export function croreToMillions(crore: number): number {
-  return crore * 10; // 1 Cr = 10 million
+export function millionsToBillions(millions: number): number {
+  return millions / 1000;
 }
 
 /**
- * Convert absolute INR amount (rupees) to millions
+ * Convert absolute AED amount (dirhams) to millions
+ * Using approximate exchange rate: 1 USD = 3.67 AED
  */
-export function inrToMillions(inr: number): number {
-  return inr / 1_000_000;
+export function aedToMillions(aed: number): number {
+  const usd = aed / 3.67;
+  return usd / 1_000_000;
 }
 
 /**
@@ -32,15 +34,27 @@ export function formatMillionsAsUSD(millions: number): string {
 }
 
 /**
- * Convenience: format a Crore number directly to USD display.
+ * Convenience: format an AED amount directly to USD display.
+ * @param aed - Amount in AED (dirhams)
  */
-export function formatCroreToUSD(crore: number): string {
-  return formatMillionsAsUSD(croreToMillions(crore));
+export function formatAEDToUSD(aed: number): string {
+  return formatMillionsAsUSD(aedToMillions(aed));
 }
 
 /**
- * Convenience: format an INR amount directly to USD display.
+ * Legacy function for backward compatibility
+ * @deprecated Use formatAEDToUSD or formatMillionsAsUSD instead
+ */
+export function formatCroreToUSD(crore: number): string {
+  // Convert crore to millions for display (1 Cr = 10 million)
+  return formatMillionsAsUSD(crore * 10);
+}
+
+/**
+ * Legacy function for backward compatibility
+ * @deprecated Use formatAEDToUSD instead
  */
 export function formatINRToUSD(inr: number): string {
-  return formatMillionsAsUSD(inrToMillions(inr));
+  // Assume INR input, convert to millions
+  return formatMillionsAsUSD(inr / 1_000_000);
 }

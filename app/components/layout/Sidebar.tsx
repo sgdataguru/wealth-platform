@@ -43,7 +43,7 @@ export default function Sidebar({ activePage = 'home' }: SidebarProps) {
     },
   ];
 
-  const cities = ['All', 'Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad'];
+  const cities = ['All', 'Dubai', 'Abu Dhabi', 'Riyadh', 'Doha', 'Jeddah'];
   const sectors = ['All', 'Technology', 'Finance', 'Healthcare', 'Real Estate', 'Manufacturing'];
 
   return (
