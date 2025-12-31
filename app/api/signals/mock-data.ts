@@ -8,7 +8,7 @@ export const mockSignals: Signal[] = [
     title: 'Nectar Lifesciences — Buyback (record date liquidity)',
     description:
       'Record date on 24 Dec 2025 for the announced buyback; tender route provides cash-out for shareholders and often precedes block repositioning.',
-    source: 'ET Now',
+    source: 'Bloomberg Gulf',
     createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
     isActioned: false,
     isRead: false,
@@ -29,7 +29,7 @@ export const mockSignals: Signal[] = [
     title: 'VLS Finance — Buyback window live',
     description:
       'Tender offer window running 18–24 Dec 2025 with settlement to follow; live liquidity for existing holders.',
-    source: 'NSE Clearing Archive',
+    source: 'DFM Archive',
     createdAt: new Date(Date.now() - 4 * 60 * 60 * 1000), // 4 hours ago
     isActioned: false,
     isRead: true,
@@ -71,7 +71,7 @@ export const mockSignals: Signal[] = [
     title: 'Covidh Technologies — Open offer tendering',
     description:
       'Open offer tendering running 23 Dec 2025 to 6 Jan 2026; primary cash-out event under takeover regulations.',
-    source: 'Securities and Exchange Board of India',
+    source: 'Dubai Financial Services Authority',
     createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000), // 8 hours ago
     isActioned: false,
     isRead: false,
@@ -92,7 +92,7 @@ export const mockSignals: Signal[] = [
     title: 'Avishkar Infra Realty — Open offer live',
     description:
       'Open offer window 23 Dec 2025 to 6 Jan 2026 after earlier allotment triggered SAST obligations.',
-    source: 'Securities and Exchange Board of India',
+    source: 'Dubai Financial Services Authority',
     createdAt: new Date(Date.now() - 10 * 60 * 60 * 1000), // 10 hours ago
     isActioned: false,
     isRead: true,
@@ -113,7 +113,7 @@ export const mockSignals: Signal[] = [
     title: 'MCX — Stock split record date',
     description:
       'Record date set for 2 Jan 2026; split drives liquidity and trading volume around eligibility.',
-    source: 'Economic Times',
+    source: 'Gulf News',
     createdAt: new Date(Date.now() - 12 * 60 * 60 * 1000), // 12 hours ago
     isActioned: false,
     isRead: false,
@@ -134,7 +134,7 @@ export const mockSignals: Signal[] = [
     title: 'Harmony Capital Services — Open offer upcoming',
     description:
       'Tendering slated for 13–27 Jan 2026; cash-settlement mechanics relevant for post-offer liquidity.',
-    source: 'Business Standard',
+    source: 'Arabian Business',
     createdAt: new Date(Date.now() - 14 * 60 * 60 * 1000), // 14 hours ago
     isActioned: false,
     isRead: false,
@@ -155,7 +155,7 @@ export const mockSignals: Signal[] = [
     title: 'HUL — Ice cream business demerger listing expected',
     description:
       'Listing for the demerged ice cream unit expected Feb 2026; value unlock and rebalancing catalyst.',
-    source: 'Economic Times',
+    source: 'Gulf News',
     createdAt: new Date(Date.now() - 16 * 60 * 60 * 1000), // 16 hours ago
     isActioned: false,
     isRead: true,
@@ -176,7 +176,7 @@ export const mockSignals: Signal[] = [
     title: 'Bharti Airtel — Partly-paid shares call',
     description:
       'Call money on partly-paid shares with record date 6 Feb 2026 and payment window 2–16 Mar 2026.',
-    source: 'Angel One',
+    source: 'Saxo Bank',
     createdAt: new Date(Date.now() - 18 * 60 * 60 * 1000), // 18 hours ago
     isActioned: false,
     isRead: false,
@@ -197,7 +197,7 @@ export const mockSignals: Signal[] = [
     title: 'Covidh Technologies — Open offer settlement milestone',
     description:
       'Settlement completion milestone shown as 20 Jan 2026; downstream liquidity depends on acceptance levels.',
-    source: 'Securities and Exchange Board of India',
+    source: 'Dubai Financial Services Authority',
     createdAt: new Date(Date.now() - 20 * 60 * 60 * 1000), // 20 hours ago
     isActioned: false,
     isRead: false,

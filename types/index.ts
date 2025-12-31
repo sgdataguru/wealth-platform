@@ -31,13 +31,13 @@ export type DataSource =
   | 'VCCircle'
   | 'NewsAPI'
   | 'Manual Intelligence'
-  | 'ET Now'
-  | 'NSE Clearing Archive'
+  | 'Bloomberg Gulf'
+  | 'DFM Archive'
   | 'IPO Central'
-  | 'Securities and Exchange Board of India'
-  | 'Economic Times'
-  | 'Business Standard'
-  | 'Angel One';
+  | 'Dubai Financial Services Authority'
+  | 'Gulf News'
+  | 'Arabian Business'
+  | 'Saxo Bank';
 
 // Timeline categories for signals
 export type SignalTimeline = '30_days' | '30_60_days' | '60_90_days' | '3_6_months' | '6_plus_months';
@@ -876,26 +876,26 @@ export interface ChurnScore {
   lastUpdated: Date;
 }
 
-// Northern Region Cities
-export const NORTHERN_CITIES = [
-  'Delhi',
-  'Noida',
-  'Gurgaon',
-  'Ghaziabad',
-  'Chandigarh',
-  'Jaipur',
-  'Lucknow',
-  'Dehradun',
-  'Shimla',
-  'Amritsar',
-  'Ludhiana',
-  'Kanpur',
-  'Agra',
-  'Faridabad',
-  'Panchkula'
+// Middle East Region Cities
+export const MIDDLE_EAST_CITIES = [
+  'Dubai',
+  'Abu Dhabi',
+  'Riyadh',
+  'Jeddah',
+  'Doha',
+  'Kuwait City',
+  'Manama',
+  'Muscat',
+  'Sharjah',
+  'Al Ain',
+  'Dammam',
+  'Mecca',
+  'Medina',
+  'Ras Al Khaimah',
+  'Fujairah'
 ] as const;
 
-export type NorthernCity = typeof NORTHERN_CITIES[number];
+export type MiddleEastCity = typeof MIDDLE_EAST_CITIES[number];
 
 // Enhanced Executive Metrics with new fields
 export interface EnhancedExecutiveMetrics extends ExecutiveMetrics {

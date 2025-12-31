@@ -8,11 +8,11 @@
 import { Card } from '@/app/components/ui';
 
 const marketShareData = [
-    { city: 'Mumbai', current: 18.5, growth: 1.2, target: 22, color: '#E85D54' },
-    { city: 'Delhi NCR', current: 14.2, growth: 0.8, target: 18, color: '#2A2447' },
-    { city: 'Bangalore', current: 12.8, growth: 2.1, target: 15, color: '#28A745' },
-    { city: 'Pune', current: 8.5, growth: 1.5, target: 12, color: '#5A6C7D' },
-    { city: 'Chennai', current: 6.2, growth: 0.6, target: 8, color: '#8E99A4' },
+    { city: 'Dubai', current: 18.5, growth: 1.2, target: 22, color: '#E85D54' },
+    { city: 'Abu Dhabi', current: 14.2, growth: 0.8, target: 18, color: '#2A2447' },
+    { city: 'Riyadh', current: 12.8, growth: 2.1, target: 15, color: '#28A745' },
+    { city: 'Doha', current: 8.5, growth: 1.5, target: 12, color: '#5A6C7D' },
+    { city: 'Jeddah', current: 6.2, growth: 0.6, target: 8, color: '#8E99A4' },
 ];
 
 export default function MarketShareTrends() {
@@ -84,15 +84,15 @@ export default function MarketShareTrends() {
                 <ul className="space-y-2 text-sm text-[#5A6C7D]">
                     <li className="flex items-start gap-2">
                         <span className="text-[#28A745]">✓</span>
-                        <span>Bangalore showing strongest growth (+2.1%) - increase marketing investment</span>
+                        <span>Riyadh showing strongest growth (+2.1%) - increase marketing investment</span>
                     </li>
                     <li className="flex items-start gap-2">
                         <span className="text-[#E85D54]">→</span>
-                        <span>Mumbai at 18.5% - closest to market leadership (top player: 22%)</span>
+                        <span>Dubai at 18.5% - closest to market leadership (top player: 22%)</span>
                     </li>
                     <li className="flex items-start gap-2">
                         <span className="text-[#2A2447]">📈</span>
-                        <span>Chennai underperforming - consider hiring additional senior RMs</span>
+                        <span>Jeddah underperforming - consider hiring additional senior RMs</span>
                     </li>
                 </ul>
             </div>

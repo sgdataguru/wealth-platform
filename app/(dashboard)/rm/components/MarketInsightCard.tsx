@@ -13,16 +13,16 @@ interface MarketInsightCardProps {
 
 export default function MarketInsightCard({ insight }: MarketInsightCardProps) {
   const assetClassConfig = {
-    indian_equities: {
+    middle_east_equities: {
       icon: '📊',
-      label: 'Indian Equities',
+      label: 'Middle East Equities',
       color: 'text-blue-700',
       bg: 'bg-blue-50',
       border: 'border-blue-200',
     },
     currency: {
       icon: '💱',
-      label: 'Currency (USD/INR)',
+      label: 'Currency (USD/AED)',
       color: 'text-green-700',
       bg: 'bg-green-50',
       border: 'border-green-200',

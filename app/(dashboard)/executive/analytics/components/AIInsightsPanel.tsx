@@ -26,16 +26,16 @@ const mockExecutiveInsights: AIInsight[] = [
     {
         id: 'ai-1',
         category: 'opportunity',
-        title: 'Untapped UHNW Segment in Delhi NCR',
-        description: 'AI analysis reveals 47 UHNW individuals (>$100 Million net worth) in Delhi NCR with recent liquidity events who are not currently engaged with any major wealth management firm. Average wealth: $285 Million.',
+        title: 'Untapped UHNW Segment in Dubai',
+        description: 'AI analysis reveals 47 UHNW individuals (>$100 Million net worth) in Dubai with recent liquidity events who are not currently engaged with any major wealth management firm. Average wealth: $285 Million.',
         impact: 'high',
         confidence: 87,
         actionable: true,
-        suggestedAction: 'Deploy 3 senior RMs to Delhi NCR with targeted outreach campaign. Estimated potential AUM capture: $1,340 Million over 6 months.',
+        suggestedAction: 'Deploy 3 senior RMs to Dubai with targeted outreach campaign. Estimated potential AUM capture: $1,340 Million over 6 months.',
         actionBy: 'Jan 15, 2025',
         dataPoints: [
             '47 UHNW prospects identified',
-            'Avg net worth: ₹285 Cr',
+            'Avg net worth: $285 Million',
             'Recent IPO exits: 23 individuals',
             'M&A exits: 18 individuals',
             'Series C+ funding: 6 individuals'
@@ -118,17 +118,17 @@ const mockExecutiveInsights: AIInsight[] = [
     {
         id: 'ai-6',
         category: 'trend',
-        title: 'Regional Shift: Mumbai to Bangalore Migration',
-        description: 'Geospatial analysis reveals 18% of Mumbai-based UHNW tech entrepreneurs are relocating to Bangalore. Current Bangalore RM capacity insufficient to handle influx.',
+        title: 'Regional Shift: Dubai to Riyadh Migration',
+        description: 'Geospatial analysis reveals 18% of Dubai-based UHNW tech entrepreneurs are relocating to Riyadh. Current Riyadh RM capacity insufficient to handle influx.',
         impact: 'medium',
         confidence: 78,
         actionable: true,
-        suggestedAction: 'Expand Bangalore team by 2 senior RMs. Establish dedicated tech entrepreneur desk. Maintain Mumbai relationships through hybrid model.',
+        suggestedAction: 'Expand Riyadh team by 2 senior RMs. Establish dedicated tech entrepreneur desk. Maintain Dubai relationships through hybrid model.',
         dataPoints: [
-            '18% Mumbai→Bangalore migration',
+            '18% Dubai→Riyadh migration',
             'Tech entrepreneur segment',
             'Avg wealth: $340 Million',
-            'Current Bangalore capacity: 65%',
+            'Current Riyadh capacity: 65%',
             'Projected growth: 35% in 12 months'
         ],
         generatedAt: '2024-12-20T16:30:00'

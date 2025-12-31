@@ -176,7 +176,7 @@ export default function IntelligenceForm({
         {errors.estimatedAmount && (
           <p className="mt-1 text-sm text-red-600">{errors.estimatedAmount.message}</p>
         )}
-        <p className="mt-1 text-xs text-[#8E99A4]">Amount in rupees</p>
+        <p className="mt-1 text-xs text-[#8E99A4]">Amount in USD</p>
       </div>
 
       {/* Information Source */}

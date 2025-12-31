@@ -1,6 +1,14 @@
 # UHNW Liquidity Intelligence Platform
 
-A comprehensive platform for Ultra High Net Worth (UHNW) client management, now featuring a dedicated **Data Platform** for real-time liquidity event detection.
+A comprehensive platform for Ultra High Net Worth (UHNW) client management in the **Middle East and Gulf region**, featuring a dedicated **Data Platform** for real-time liquidity event detection.
+
+## 🌍 Regional Focus
+
+This platform is designed for wealth management in the Middle East, with support for:
+- **Primary Markets**: Dubai (DFM), Abu Dhabi (ADX), Riyadh (Tadawul)
+- **Currency**: USD/AED with regional exchange rates
+- **Data Sources**: DFSA, Bloomberg Gulf, Gulf News, Arabian Business
+- **Geographic Coverage**: UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman
 
 ## 🚀 Key Features
 

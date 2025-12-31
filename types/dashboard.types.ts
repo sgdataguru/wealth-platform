@@ -107,7 +107,7 @@ export interface LifeEvent {
 // ============================================
 
 export type AssetClass =
-  | 'indian_equities'
+  | 'middle_east_equities'
   | 'currency'
   | 'commodities'
   | 'real_estate';

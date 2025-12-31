@@ -194,12 +194,12 @@ const MOCK_ENHANCED_METRICS: EnhancedExecutiveMetrics = {
 
     underperformingRMs: [],
 
-    // Regional breakdown (Northern focus)
+    // Regional breakdown (Middle East focus)
     regionalBreakdown: [
-        { region: 'Delhi NCR', aum: '₹95,000 Cr', growth: 17.2, rmCount: 298, clientCount: 35000 },
-        { region: 'Jaipur', aum: '₹28,000 Cr', growth: 15.8, rmCount: 85, clientCount: 12500 },
-        { region: 'Chandigarh', aum: '₹18,500 Cr', growth: 14.2, rmCount: 58, clientCount: 8200 },
-        { region: 'Lucknow', aum: '₹12,000 Cr', growth: 12.8, rmCount: 42, clientCount: 5800 },
+        { region: 'Dubai', aum: '$95 Billion', growth: 17.2, rmCount: 298, clientCount: 35000 },
+        { region: 'Abu Dhabi', aum: '$28 Billion', growth: 15.8, rmCount: 85, clientCount: 12500 },
+        { region: 'Riyadh', aum: '$18.5 Billion', growth: 14.2, rmCount: 58, clientCount: 8200 },
+        { region: 'Doha', aum: '$12 Billion', growth: 12.8, rmCount: 42, clientCount: 5800 },
     ],
 
     productMix: [

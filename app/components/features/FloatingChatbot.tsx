@@ -51,16 +51,16 @@ export default function FloatingChatbot({ userRole = 'rm' }: FloatingChatbotProp
         // Role-specific responses
         if (userRole === 'executive') {
             if (lowerMessage.includes('aum') || lowerMessage.includes('growth')) {
-                return "Based on current data, your AUM stands at ₹4.6 L Cr with a 2.8% MoM growth and 19.2% YoY. The Northern region is performing particularly well with Delhi NCR contributing ₹95,000 Cr. Would you like a detailed breakdown by region or product?";
+                return "Based on current data, your AUM stands at $460 Billion with a 2.8% MoM growth and 19.2% YoY. The Middle East region is performing particularly well with Dubai contributing $95 Billion. Would you like a detailed breakdown by region or product?";
             }
             if (lowerMessage.includes('liquidity') || lowerMessage.includes('trigger')) {
-                return "There are currently 5 high-priority liquidity triggers in the next 90 days, totaling ₹1,240 Cr. The most imminent is Sanjay Malhotra's ESOP vesting (₹62 Cr in 15 days, 92% probability). Priya Sharma is assigned. Would you like me to pull up the full pipeline?";
+                return "There are currently 5 high-priority liquidity triggers in the next 90 days, totaling $124 Billion. The most imminent is Sanjay Malhotra's ESOP vesting ($6.2 Billion in 15 days, 92% probability). Priya Sharma is assigned. Would you like me to pull up the full pipeline?";
             }
             if (lowerMessage.includes('team') || lowerMessage.includes('rm')) {
-                return "Your top performing RM is Priya Sharma with ₹850 Cr AUM and 24.5% growth. The team average productivity is 78/100. Northern region has 298 RMs managing 35,000 clients. Need details on a specific RM or region?";
+                return "Your top performing RM is Priya Sharma with $85 Billion AUM and 24.5% growth. The team average productivity is 78/100. Middle East region has 298 RMs managing 35,000 clients. Need details on a specific RM or region?";
             }
             if (lowerMessage.includes('target') || lowerMessage.includes('goal')) {
-                return "Current AUM is ₹4.6 L Cr against the target of ₹5.2 L Cr (88.5% achievement). To reach the target, you need ₹60,000 Cr more. At current growth rate, you're on track to achieve by Q2. Want to see a detailed gap analysis?";
+                return "Current AUM is $460 Billion against the target of $520 Billion (88.5% achievement). To reach the target, you need $60 Billion more. At current growth rate, you're on track to achieve by Q2. Want to see a detailed gap analysis?";
             }
         } else {
             // RM responses
