@@ -7,6 +7,7 @@
 
 import { useState, useEffect } from 'react';
 import type { RMMetrics } from '@/types';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 
 const MOCK_RM_METRICS: RMMetrics = {
     // Base metrics
@@ -21,10 +22,10 @@ const MOCK_RM_METRICS: RMMetrics = {
 
     // RM-specific
     myClients: 47,
-    myClientsAum: '₹245 Cr',
+    myClientsAum: formatCroreToUSD(120),
     myClientsAumGrowth: 12.5,
     activeOpps: 8,
-    activeOppsValue: '₹42 Cr',
+    activeOppsValue: formatCroreToUSD(42),
     lastMonthRevenue: '₹18.5 L',
     conversionRate: 28.5,
     avgClientValue: '₹5.2 Cr',

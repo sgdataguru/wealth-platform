@@ -7,6 +7,7 @@
 
 import { Card } from '@/app/components/ui';
 import { useState } from 'react';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 
 interface ClientReport {
     id: string;
@@ -25,17 +26,19 @@ interface ClientReport {
     recommendations: string[];
 }
 
+type ReportType = 'portfolio' | 'performance' | 'risk' | 'opportunities';
+
 const mockExecutiveReports: ClientReport[] = [
     {
         id: 'rep-1',
         clientName: 'Rajesh Kumar',
         clientCode: 'UHNW-001',
-        netWorth: '₹450 Cr',
+        netWorth: formatCroreToUSD(450),
         reportType: 'portfolio',
         generatedAt: '2024-12-21T09:00:00',
         summary: 'Comprehensive portfolio analysis reveals strong diversification across 7 asset classes with 18.2% YTD returns. AI identifies opportunity to increase alternative investments allocation from current 12% to optimal 22% based on risk profile and market conditions.',
         keyMetrics: [
-            { label: 'Total AUM', value: '₹450 Cr', trend: 'up' },
+            { label: 'Total AUM', value: formatCroreToUSD(450), trend: 'up' },
             { label: 'YTD Returns', value: '+18.2%', trend: 'up' },
             { label: 'Risk Score', value: '6.4/10', trend: 'stable' },
             { label: 'Diversification', value: '7 Assets', trend: 'up' }
@@ -57,7 +60,7 @@ const mockExecutiveReports: ClientReport[] = [
         id: 'rep-2',
         clientName: 'Priya Sharma',
         clientCode: 'UHNW-002',
-        netWorth: '₹680 Cr',
+        netWorth: formatCroreToUSD(680),
         reportType: 'performance',
         generatedAt: '2024-12-21T09:00:00',
         summary: 'Outstanding performance metrics with 24.5% annual returns, significantly outperforming benchmark (Nifty 50: +12.3%). AI analysis attributes success to strategic alternative investments allocation (28%) and timely sector rotation. Client satisfaction score: 9.4/10.',
@@ -84,7 +87,7 @@ const mockExecutiveReports: ClientReport[] = [
         id: 'rep-3',
         clientName: 'Vikram Singh',
         clientCode: 'UHNW-003',
-        netWorth: '₹320 Cr',
+        netWorth: formatCroreToUSD(320),
         reportType: 'risk',
         generatedAt: '2024-12-21T09:00:00',
         summary: 'Risk analysis identifies moderate concentration risk in real estate sector (42% of portfolio). AI recommends gradual rebalancing over 6 months. Overall portfolio risk score: 7.2/10 (Aggressive). Client age: 52 years - suggest transition to moderate risk profile.',
@@ -103,16 +106,15 @@ const mockExecutiveReports: ClientReport[] = [
         recommendations: [
             'Reduce real estate exposure from 42% to 30% over 6 months',
             'Increase fixed income allocation from 18% to 28%',
-            import { formatCroreToUSD, formatINRToUSD } from '@/lib/utils/currency';
             'Implement systematic rebalancing strategy',
             'Schedule risk profile reassessment meeting'
         ]
     },
     {
         id: 'rep-4',
-                    netWorth: formatCroreToUSD(450),
+        clientName: 'Anita Patel',
         clientCode: 'UHNW-004',
-        netWorth: '₹540 Cr',
+        netWorth: formatCroreToUSD(540),
         reportType: 'opportunities',
         generatedAt: '2024-12-21T09:00:00',
         summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: ₹65 Cr. Client shows strong propensity for structured products and international investments.',
@@ -137,8 +139,6 @@ const mockExecutiveReports: ClientReport[] = [
     }
 ];
 
-                    netWorth: formatCroreToUSD(680),
-
 export default function ClientReportsPanel() {
     const [selectedReport, setSelectedReport] = useState<ClientReport | null>(null);
     const [reportFilter, setReportFilter] = useState<ReportType | 'all'>('all');
@@ -149,12 +149,12 @@ export default function ClientReportsPanel() {
 
     // Mock client list
     const clients = [
-        { id: 'UHNW-001', name: 'Rajesh Kumar', netWorth: '₹450 Cr' },
-        { id: 'UHNW-002', name: 'Priya Sharma', netWorth: '₹680 Cr' },
-        { id: 'UHNW-003', name: 'Vikram Singh', netWorth: '₹320 Cr' },
-        { id: 'UHNW-004', name: 'Anita Patel', netWorth: '₹540 Cr' },
-        { id: 'UHNW-005', name: 'Sanjay Gupta', netWorth: '₹890 Cr' },
-        { id: 'UHNW-006', name: 'Neha Kapoor', netWorth: '₹275 Cr' }
+        { id: 'UHNW-001', name: 'Rajesh Kumar', netWorth: formatCroreToUSD(450) },
+        { id: 'UHNW-002', name: 'Priya Sharma', netWorth: formatCroreToUSD(680) },
+        { id: 'UHNW-003', name: 'Vikram Singh', netWorth: formatCroreToUSD(320) },
+        { id: 'UHNW-004', name: 'Anita Patel', netWorth: formatCroreToUSD(540) },
+        { id: 'UHNW-005', name: 'Sanjay Gupta', netWorth: formatCroreToUSD(890) },
+        { id: 'UHNW-006', name: 'Neha Kapoor', netWorth: formatCroreToUSD(275) }
     ];
 
     const handleGenerateReport = () => {
@@ -164,7 +164,6 @@ export default function ClientReportsPanel() {
         }
 
         setIsGenerating(true);
-                    netWorth: formatCroreToUSD(320),
         // Simulate AI report generation
         setTimeout(() => {
             setIsGenerating(false);
@@ -191,7 +190,7 @@ export default function ClientReportsPanel() {
         : mockExecutiveReports.filter(r => r.reportType === reportFilter);
 
     const getReportTypeColor = (type: ReportType | 'all') => {
-                    netWorth: formatCroreToUSD(540),
+        switch (type) {
             case 'portfolio': return 'bg-[#1A1332] text-white';
             case 'performance': return 'bg-[#28A745] text-white';
             case 'risk': return 'bg-[#DC3545] text-white';
@@ -218,19 +217,19 @@ export default function ClientReportsPanel() {
         }
     };
 
-                    netWorth: formatCroreToUSD(890),
+    return (
         <Card padding="lg">
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <div>
                     <h3 className="text-xl font-semibold text-[#1A1A2E] font-[family-name:var(--font-playfair)]">
-                         AI-Generated Client Reports
+                        AI-Generated Client Reports
                     </h3>
                     <p className="text-sm text-[#5A6C7D] mt-1">
-                        Automated comprehensive reports for UHNW clients (&gt;?100 Cr)  Generated daily
+                        Automated comprehensive reports for UHNW clients (&gt;{formatCroreToUSD(100)}) • Generated daily
                     </p>
                 </div>
-                <button 
+                <button
                     onClick={() => setShowGenerateModal(true)}
                     className="px-4 py-2 bg-[#E85D54] text-white rounded-lg text-sm font-medium hover:bg-[#D14D44] transition-colors"
                 >
@@ -239,7 +238,7 @@ export default function ClientReportsPanel() {
             </div>
 
             {/* Report Type Filters */}
-                    netWorth: formatCroreToUSD(275)
+            <div className="flex flex-wrap gap-2 mb-6">
                 {reportTypes.map(type => (
                     <button
                         key={type.id}
@@ -403,7 +402,7 @@ export default function ClientReportsPanel() {
                         <p className="text-xs text-[#8E99A4] mt-1">Reports Generated</p>
                     </div>
                     <div className="text-center">
-                        <p className="text-2xl font-bold text-[#E85D54]">₹1,990 Cr</p>
+                        <p className="text-2xl font-bold text-[#E85D54]">{formatCroreToUSD(1990)}</p>
                         <p className="text-xs text-[#8E99A4] mt-1">Total AUM Covered</p>
                     </div>
                     <div className="text-center">
@@ -416,6 +415,7 @@ export default function ClientReportsPanel() {
                     </div>
                 </div>
             </div>
+
             {/* Generate Report Modal */}
             {showGenerateModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -424,37 +424,68 @@ export default function ClientReportsPanel() {
                             <h3 className="text-xl font-bold text-[#1A1A2E] font-[family-name:var(--font-playfair)]">
                                 Generate New Report
                             </h3>
-                            <button onClick={() => setShowGenerateModal(false)} className="text-[#5A6C7D] hover:text-[#1A1A2E] text-2xl"></button>
+                            <button onClick={() => setShowGenerateModal(false)} className="text-[#5A6C7D] hover:text-[#1A1A2E] text-2xl">×</button>
                         </div>
                         <div className="space-y-4">
                             <div>
                                 <label className="block text-sm font-semibold text-[#1A1A2E] mb-2">Select Client</label>
-                                <select value={selectedClient} onChange={(e) => setSelectedClient(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E85D54]">
+                                <select
+                                    value={selectedClient}
+                                    onChange={(e) => setSelectedClient(e.target.value)}
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E85D54]"
+                                >
                                     <option value="">Choose a client...</option>
-                                    {clients.map(client => (<option key={client.id} value={client.id}>{client.name} ({client.netWorth})</option>))}
+                                    {clients.map(client => (
+                                        <option key={client.id} value={client.id}>
+                                            {client.name} ({client.netWorth})
+                                        </option>
+                                    ))}
                                 </select>
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-[#1A1A2E] mb-2">Report Type</label>
                                 <div className="grid grid-cols-2 gap-2">
                                     {selectableReportTypes.map(type => (
-                                        <button key={type.id} onClick={() => setSelectedReportType(type.id)} className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border-2 ${selectedReportType === type.id ? 'bg-[#E85D54] text-white border-[#E85D54]' : 'bg-white text-[#5A6C7D] border-gray-300 hover:border-[#E85D54]'}`}>
+                                        <button
+                                            key={type.id}
+                                            onClick={() => setSelectedReportType(type.id)}
+                                            className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border-2 ${selectedReportType === type.id ? 'bg-[#E85D54] text-white border-[#E85D54]' : 'bg-white text-[#5A6C7D] border-gray-300 hover:border-[#E85D54]'}`}
+                                        >
                                             <div className="text-2xl mb-1">{type.icon}</div>{type.label}
                                         </button>
                                     ))}
                                 </div>
                             </div>
                             <div className="flex gap-3 pt-4">
-                                <button onClick={handleGenerateReport} disabled={isGenerating || !selectedClient} className={`flex-1 px-6 py-3 rounded-lg font-medium transition-colors ${isGenerating || !selectedClient ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-[#E85D54] text-white hover:bg-[#D14D44]'}`}>
-                                    {isGenerating ? (<span className="flex items-center justify-center gap-2"><svg className="animate-spin h-5 w-5" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" /></svg>Generating...</span>) : (' Generate Report')}
+                                <button
+                                    onClick={handleGenerateReport}
+                                    disabled={isGenerating || !selectedClient}
+                                    className={`flex-1 px-6 py-3 rounded-lg font-medium transition-colors ${isGenerating || !selectedClient ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-[#E85D54] text-white hover:bg-[#D14D44]'}`}
+                                >
+                                    {isGenerating ? (
+                                        <span className="flex items-center justify-center gap-2">
+                                            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                            </svg>
+                                            Generating...
+                                        </span>
+                                    ) : (
+                                        'Generate Report'
+                                    )}
                                 </button>
-                                <button onClick={() => setShowGenerateModal(false)} disabled={isGenerating} className="px-6 py-3 border border-gray-300 text-[#5A6C7D] rounded-lg font-medium hover:bg-[#F8F9FA] transition-colors disabled:opacity-50">Cancel</button>
+                                <button
+                                    onClick={() => setShowGenerateModal(false)}
+                                    disabled={isGenerating}
+                                    className="px-6 py-3 border border-gray-300 text-[#5A6C7D] rounded-lg font-medium hover:bg-[#F8F9FA] transition-colors disabled:opacity-50"
+                                >
+                                    Cancel
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             )}
-
         </Card>
     );
 }

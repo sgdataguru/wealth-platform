@@ -650,7 +650,7 @@ export interface TrendPoint {
 export interface PipelineStage {
   stage: string;
   count: number;
-  value: string;
+  value: string | number;
   color: string;
 }
 

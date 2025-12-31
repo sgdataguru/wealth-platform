@@ -97,7 +97,7 @@ export default function Header({ userName, userInitials, showNotification = fals
             alt="Kairos Capital"
             width={150}
             height={48}
-            className="h-12 w-auto object-contain rounded-lg shadow-[var(--shadow-md)]"
+            className="h-12 w-auto object-contain rounded-lg shadow-[var(--shadow-md)] bg-[#0A1628] p-1"
             priority
           />
 

@@ -11,6 +11,7 @@
 * Highlights potential referral paths to target prospects
 * Interactive visualization (zoom, pan, click to explore)
 * Shows relationship strength and connection type
+* **Conversation history** and last contact touchpoints visible within node details
 * Integrates with prospect list to show connection opportunities
 
 ## Notes

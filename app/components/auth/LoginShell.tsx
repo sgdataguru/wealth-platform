@@ -59,7 +59,7 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
           {/* Header with Logo and Branding */}
           <div className="space-y-6">
             <div className="flex items-center gap-4">
-              <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+              <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-[#0A1628] backdrop-blur-sm border border-white/20 flex items-center justify-center">
                 <Image
                   src="/brand/kairos-logo.png"
                   alt="Kairos Capital"
@@ -161,7 +161,7 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-8 bg-[var(--bg-primary)]">
         {/* Mobile Logo */}
         <div className="lg:hidden absolute top-8 left-8 flex items-center gap-3">
-          <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+          <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-[#0A1628] backdrop-blur-sm border border-white/20 flex items-center justify-center">
             <Image
               src="/brand/kairos-logo.png"
               alt="Kairos Capital"

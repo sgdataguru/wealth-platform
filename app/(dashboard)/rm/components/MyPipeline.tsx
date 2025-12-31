@@ -58,7 +58,7 @@ export default function MyPipeline() {
                                     </div>
                                 </div>
                                 <span className="text-lg font-bold text-[#1A1A2E]">
-                                    {formatCroreToUSD(stage.value as number)}
+                                    {formatCroreToUSD(Number(stage.value))}
                                 </span>
                             </div>
                         </div>
