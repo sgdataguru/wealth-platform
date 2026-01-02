@@ -43,7 +43,18 @@ export type DataSource =
 export type SignalTimeline = '30_days' | '30_60_days' | '60_90_days' | '3_6_months' | '6_plus_months';
 
 // Re-export intelligence types
-export type { InformationSource, IntelligenceFormData, CreateIntelligenceResponse, ClientSearchResult } from './intelligence';
+export type {
+  InformationSource,
+  IntelligenceFormData,
+  CreateIntelligenceResponse,
+  ClientSearchResult,
+  SourceType,
+  Priority,
+  TimelineFilter,
+  SourceTraceEntry,
+  RawSignal,
+  LiquiditySignal,
+} from './intelligence';
 
 // Signal type definitions
 export interface Signal {
