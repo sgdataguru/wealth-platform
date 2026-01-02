@@ -16,6 +16,12 @@
 			"problemMatcher": [
 				"$tsc"
 			]
+		},
+		{
+			"label": "typecheck",
+			"type": "shell",
+			"command": "npx tsc --noEmit",
+			"isBackground": false
 		}
 	]
 }

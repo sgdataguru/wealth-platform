@@ -1,3 +1,143 @@
+# 01 - View Early Liquidity Signals - Implementation Planning
+
+## Project Context
+**Technical Stack**: Next.js 14 (App Router), React 18, TypeScript, TailwindCSS, shadcn/ui
+**Backend**: NestJS, PostgreSQL, Redis, BullMQ
+**Infrastructure**: Vercel (FE), Fly.io/Render (BE), GitHub Actions CI/CD
+
+## User Story
+As a Relationship Manager handling UHNW clients, I want to view early liquidity signals detected from multiple data sources, so that I can gain a first-mover advantage and engage with clients before opportunities become obvious in the market.
+
+## Pre-conditions
+- Database infrastructure (Postgres) is available and accessible
+- Ingestion pipelines provide normalized signals to the `intelligence` data store or API
+- Authentication is configured (Supabase/Clerk) and roles available for RMs
+- Elasticsearch (or Postgres full-text) is available for search (prototype can use Postgres)
+
+## Business Requirements
+- Dashboard displays recent liquidity signals with timestamps and source attribution (SLA: update within 5 minutes of ingestion)
+- Signals sortable and filterable by recency, relevance, timeline window (30/60/90 days) and urgency
+- Signals link to affected client/prospect and include summary & confidence score
+- Near-real-time updates: UI reflects new signals within ingestion window
+
+## Technical Specifications
+
+### Integration Points
+- `GET /api/intelligence/aggregated?q=&filters=` — search/aggregation API (server-side)
+- Authentication: Supabase Auth or existing auth provider
+- Data store: Postgres (`intelligence_signals`) + optional Elasticsearch index
+
+### Security Requirements
+- Display only signals authorized for the logged-in RM (RBAC)
+- Do not expose raw PII without proper flags; mask where necessary
+- Rate limit APIs and verify webhook/integrator credentials
+
+## Design Specifications
+
+**Visual Layout & Components**
+- Page header with timeline tabs (30d / 60d / 90d) and urgency filter
+- Main list: `SignalCard` components (compact view for list, expanded modal for details)
+- Right rail: `ClientQuickView` for the selected prospect (contact details, holdings summary)
+- Top controls: search box, sort (Recency, Relevance), refresh
+
+Component Hierarchy
+```
+<LiquiditySignalsPage>
+  <FilterBar />
+  <SignalsList>
+    <SignalCard />
+  </SignalsList>
+  <ClientQuickView />
+  <SignalDetailsModal />
+</LiquiditySignalsPage>
+```
+
+UI Notes
+- Use Server Components for initial data fetch and rendering; mark small interactive components ('use client') for filters and modal interactions.
+- Styling: Tailwind + design tokens from project theme.
+
+## API Schema (server)
+- `GET /api/intelligence/signals`
+  - Query: `q`, `from`, `to`, `timeline=30|60|90`, `urgency`, `page`, `limit`
+  - Response: `{ success: true, results: UnifiedLiquidityEvent[], total: number }`
+
+- `GET /api/intelligence/signals/:id` — detailed signal with provenance and links to client record
+
+## Data Model (summary)
+```
+interface UnifiedLiquidityEvent {
+  id: string;
+  eventType: 'ipo'|'funding'|'acquisition'|'exit'|string;
+  title: string;
+  summary: string;
+  companyName?: string;
+  clientId?: string; // link to internal client/prospect
+  detectedAt: string; // ISO
+  confidence: number; // 0-1
+  sources: { source: string; receivedAt: string }[];
+}
+```
+
+## Implementation Plan (Phases & Tasks)
+
+Phase 1 — Foundation (2-3 days)
+- [ ] Create route `app/intelligence/page.tsx` as primary entry (Server Component)
+- [ ] Implement `GET /api/intelligence/signals` that proxies to aggregated endpoint (or Postgres/Elasticsearch) with pagination and filters
+- [ ] Create `SignalCard` and `SignalsList` components (Server + Client split)
+- [ ] Add timeline tabs (30/60/90) and filter UI (client-side state)
+
+Phase 2 — Enrichment & Access Control (1-2 days)
+- [ ] Implement `GET /api/intelligence/signals/:id` with provenance and related client lookup
+- [ ] Apply RBAC checks in API to ensure RMs see only permitted clients
+- [ ] Add `ClientQuickView` component that fetches client info server-side
+
+Phase 3 — UX polish & near-real-time (1-2 days)
+- [ ] Add optimistic refresh button and SSE/WS or polling (5-minute window) for near-real-time updates
+- [ ] Add sort by relevance and recency; add confidence visualization (badge/score)
+- [ ] Add modal `SignalDetailsModal` showing source trace and conflict indicators
+
+Phase 4 — Search & Performance (2-3 days)
+- [ ] Integrate Postgres full-text search or Elasticsearch for `q` searches and ensure ingestion pipeline triggers indexing
+- [ ] Add GIN indexes / full-text configuration to meet <5 min searchability target
+
+Phase 5 — Testing & Release (1-2 days)
+- [ ] Add unit tests for `SignalCard`, `filterBar`, and API handlers
+- [ ] Add integration test for end-to-end flow (ingest -> aggregated -> UI)
+- [ ] QA pass and accessibility checks
+
+## Acceptance Criteria Mapping
+- Dashboard lists detected signals with timestamps — implemented by `SignalsList` using `/api/intelligence/signals`
+- Source attribution visible — `SignalCard` shows `sources[]` and modal shows source trace
+- Sorted by recency & relevance — FilterBar + server-side sort
+- Updated in near real-time — implement polling or SSE (configurable; default 15s polling for demo)
+- Timeline windows 30/60/90 — supported via query param `timeline`
+
+## Deployment & Rollout
+- Feature flag `FEATURE_LIQUIDITY_SIGNALS` to toggle visibility
+- Staging rollout with mocked ingestion traffic, then enable production data sources gradually
+
+## Monitoring & Metrics
+- Track ingestion-to-view latency metric (time between detectedAt and first UI availability)
+- Monitor API latency and error rate via existing observability stack
+
+## Risks & Mitigations
+- Data quality and duplicates — mitigate with conflict resolution layer and show provenance
+- PII exposure — mask fields unless RM is authorized (RBAC)
+- Search performance at scale — use Elasticsearch or tune Postgres indexes
+
+## Deliverables
+- `app/intelligence/page.tsx` + components: `SignalCard`, `SignalsList`, `FilterBar`, `SignalDetailsModal`
+- API endpoints: `/api/intelligence/signals` and `/api/intelligence/signals/:id`
+- Basic polling/SSE for near-real-time updates
+- Tests: unit + integration
+- Documentation update: `docs/implementation-plans/01-view-early-liquidity-signals.md`
+
+## Estimated Effort
+- MVP (Prototype): 6–9 developer days
+- Production-ready (search scaling, monitoring, RBAC hardening): 3–4 additional developer weeks
+
+---
+Prepared for implementation by the engineering team; use this plan to split work into sprint tickets and track progress through the delivery pipeline.
 # 01 - View Early Liquidity Signals - Implementation Plan
 
 ## Project Context
