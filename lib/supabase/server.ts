@@ -8,9 +8,19 @@ import 'server-only';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
+// Basic validation: ensure both values exist and the service role key
+// looks like a JWT (starts with 'eyJ'). Many providers use different
+// key formats (e.g., 'sb_publishable_...') which are not valid
+// Supabase service_role keys and indicate a misconfiguration.
 if (!supabaseUrl || !serviceRoleKey) {
   throw new Error(
     'Missing Supabase environment variables. Ensure NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are set.'
+  );
+}
+
+if (!serviceRoleKey.startsWith('eyJ')) {
+  throw new Error(
+    'Invalid SUPABASE_SERVICE_ROLE_KEY format. Expected a Supabase JWT service role key (starts with "eyJ..."). Do not use publishable or third-party keys.'
   );
 }
 
