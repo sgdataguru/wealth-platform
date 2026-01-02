@@ -5,6 +5,40 @@
 
 import type { SignalType, SignalSeverity, SignalTimeline } from './index';
 
+export type SourceType = 'REGULATORY' | 'FINOVA' | 'IPO' | 'MARKET';
+
+export type Priority = 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
+
+export type TimelineFilter = 'ALL' | '30_DAY' | '60_DAY' | '90_DAY';
+
+export interface SourceTraceEntry {
+  source: SourceType;
+  ingestedAt: string;
+  detail?: string;
+}
+
+export interface RawSignal {
+  title: string;
+  description?: string;
+  relevanceScore?: number;
+  detectedAt?: string;
+  prospectId?: string | null;
+  sourceTrace?: SourceTraceEntry[];
+  metadata?: Record<string, unknown>;
+}
+
+export interface LiquiditySignal {
+  id: string;
+  title: string;
+  description?: string | null;
+  relevanceScore: number | null;
+  detectedAt: string;
+  sourceTrace: SourceTraceEntry[];
+  prospectId?: string | null;
+  priority: Priority;
+  confidence: number | null;
+}
+
 // Information source for manual intelligence
 export type InformationSource = 
   | 'client_conversation'
