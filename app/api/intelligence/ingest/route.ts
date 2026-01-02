@@ -4,7 +4,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import type { RawSignal, SourceTraceEntry, SourceType } from '@/types';
+import type { RawSignal, SourceTrace, SourceType } from '@/types';
 import { createSignalSignature, resolveConflicts, SOURCE_PRIORITY_MAP } from '@/lib/utils/signals';
 import { fetchSupabase, getAuthenticatedUserId } from '../utils';
 
@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
     for (const signal of resolved) {
       const signature = createSignalSignature(signal);
       const existing = existingMap.get(signature);
-      const incomingTrace: SourceTraceEntry = { source, ingestedAt: now };
+      const incomingTrace: SourceTrace = { source, ingestedAt: now };
       const mergedTrace = [
         ...(Array.isArray(signal.sourceTrace) ? signal.sourceTrace : []),
         incomingTrace,
@@ -127,11 +127,11 @@ export async function POST(request: NextRequest) {
       const existingTrace = Array.isArray(existing.source_trace) ? existing.source_trace : [];
       const mergedSources = Array.from(
         new Map(
-          [...existingTrace, ...mergedTrace].map((entry: SourceTraceEntry) => [entry.source, entry])
+          [...existingTrace, ...mergedTrace].map((entry: SourceTrace) => [entry.source, entry])
         ).values()
       );
 
-      const existingPrimary = existingTrace.reduce<SourceType | null>((current, entry: SourceTraceEntry) => {
+      const existingPrimary = existingTrace.reduce<SourceType | null>((current, entry: SourceTrace) => {
         if (!current) return entry.source;
         return SOURCE_PRIORITY_MAP[entry.source] > SOURCE_PRIORITY_MAP[current] ? entry.source : current;
       }, null);

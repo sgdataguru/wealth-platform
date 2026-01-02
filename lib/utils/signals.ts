@@ -3,7 +3,7 @@
  * @description Utilities for liquidity signals
  */
 
-import type { Priority, RawSignal, SourceTraceEntry, SourceType, TimelineFilter } from '@/types';
+import type { Priority, RawSignal, SourceTrace, SourceType, TimelineFilter } from '@/types';
 
 const PRIORITY_THRESHOLDS = {
   critical: 0.85,
@@ -16,6 +16,9 @@ const SOURCE_PRIORITY: Record<SourceType, number> = {
   FINOVA: 3,
   IPO: 2,
   MARKET: 1,
+  PRIVATE_CIRCLE: 1,
+  ZAUBA: 1,
+  NEWS_API: 1,
 };
 
 export const derivePriority = (relevanceScore?: number | null): Priority => {
@@ -59,7 +62,7 @@ export const createSignalSignature = (signal: RawSignal) => {
   return `${prospectKey}::${normalizedTitle}`;
 };
 
-const mergeSourceTrace = (existing: SourceTraceEntry[], incoming: SourceTraceEntry) => {
+const mergeSourceTrace = (existing: SourceTrace[], incoming: SourceTrace) => {
   const bySource = new Map(existing.map((entry) => [entry.source, entry]));
   if (!bySource.has(incoming.source)) {
     bySource.set(incoming.source, incoming);
@@ -67,7 +70,7 @@ const mergeSourceTrace = (existing: SourceTraceEntry[], incoming: SourceTraceEnt
   return Array.from(bySource.values());
 };
 
-const getHighestPrioritySource = (trace: SourceTraceEntry[]) => {
+const getHighestPrioritySource = (trace: SourceTrace[]) => {
   return trace.reduce<SourceType | null>((current, entry) => {
     if (!current) return entry.source;
     return SOURCE_PRIORITY[entry.source] > SOURCE_PRIORITY[current] ? entry.source : current;
@@ -91,7 +94,7 @@ export const resolveConflicts = (signals: RawSignal[], source: SourceType) => {
     }
 
     conflicts += 1;
-    const incomingTrace: SourceTraceEntry = { source, ingestedAt: now };
+    const incomingTrace: SourceTrace = { source, ingestedAt: now };
     const currentTrace = current.sourceTrace ?? [];
     const mergedTrace = mergeSourceTrace(currentTrace, incomingTrace);
     const currentBest = getHighestPrioritySource(currentTrace) ?? source;

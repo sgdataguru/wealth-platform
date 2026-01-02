@@ -10,6 +10,9 @@ const SOURCE_LABELS: Record<SourceType, string> = {
   FINOVA: 'Finova',
   IPO: 'IPO Watch',
   MARKET: 'Market',
+  PRIVATE_CIRCLE: 'Private Circle',
+  ZAUBA: 'Zauba Corp',
+  NEWS_API: 'News API',
 };
 
 export default function SourceBadge({ source }: { source: SourceType }) {

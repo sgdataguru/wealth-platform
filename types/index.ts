@@ -51,7 +51,7 @@ export type {
   SourceType,
   Priority,
   TimelineFilter,
-  SourceTraceEntry,
+  SourceTrace,
   RawSignal,
   LiquiditySignal,
 } from './intelligence';
