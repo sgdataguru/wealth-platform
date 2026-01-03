@@ -30,6 +30,17 @@ export const SCORING_WEIGHTS: Record<SignalType, number> = {
   rights_call: 0.16, // 16% weight - funding obligation for holders
   margin_pledge: 0.15, // 15% weight
   early_exit: 0.22, // 22% weight
+  liquidity: 0.28, // 28% weight - high priority for GCC signals
+  wealth_creation: 0.30, // 30% weight - highest priority
+  real_estate: 0.24, // 24% weight - significant GCC asset class
+  healthcare: 0.20, // 20% weight
+  energy: 0.26, // 26% weight - key GCC sector
+  logistics: 0.18, // 18% weight
+  consumer: 0.16, // 16% weight
+  financial_services: 0.22, // 22% weight
+  family_office_rotation: 0.25, // 25% weight - major liquidity event
+  ipo_approval: 0.28, // 28% weight - pre-liquidity signal
+  strategic_stake_sale: 0.26, // 26% weight - significant transaction
 };
 
 /**
