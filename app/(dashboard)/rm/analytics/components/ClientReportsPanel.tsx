@@ -31,7 +31,7 @@ type ReportType = 'portfolio' | 'performance' | 'risk' | 'opportunities';
 const mockExecutiveReports: ClientReport[] = [
     {
         id: 'rep-1',
-        clientName: 'Rajesh Kumar',
+        clientName: 'Ahmad Al Maktoum',
         clientCode: 'UHNW-001',
         netWorth: formatCroreToUSD(450),
         reportType: 'portfolio',
@@ -58,7 +58,7 @@ const mockExecutiveReports: ClientReport[] = [
     },
     {
         id: 'rep-2',
-        clientName: 'Priya Sharma',
+        clientName: 'Amal Al Sabah',
         clientCode: 'UHNW-002',
         netWorth: formatCroreToUSD(680),
         reportType: 'performance',
@@ -85,7 +85,7 @@ const mockExecutiveReports: ClientReport[] = [
     },
     {
         id: 'rep-3',
-        clientName: 'Vikram Singh',
+        clientName: 'Ali Al Saud',
         clientCode: 'UHNW-003',
         netWorth: formatCroreToUSD(320),
         reportType: 'risk',
@@ -112,7 +112,7 @@ const mockExecutiveReports: ClientReport[] = [
     },
     {
         id: 'rep-4',
-        clientName: 'Anita Patel',
+        clientName: 'Latifa Al Qasimi',
         clientCode: 'UHNW-004',
         netWorth: formatCroreToUSD(540),
         reportType: 'opportunities',

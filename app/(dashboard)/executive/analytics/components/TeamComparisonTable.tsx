@@ -9,14 +9,14 @@ import { Card } from '@/app/components/ui';
 import { formatCroreToUSD } from '@/lib/utils/currency';
 
 const teamData = [
-    { name: 'Priya Sharma', aum: 850, convRate: 28.5, avgDeal: 42, activityScore: 95, growth: 24.5 },
-    { name: 'Vikram Singh', aum: 720, convRate: 26.2, avgDeal: 38, activityScore: 88, growth: 22.1 },
-    { name: 'Anita Patel', aum: 680, convRate: 24.8, avgDeal: 35, activityScore: 82, growth: 21.3 },
-    { name: 'Rajesh Kumar', aum: 650, convRate: 28.2, avgDeal: 41, activityScore: 91, growth: 19.8 },
-    { name: 'Meera Reddy', aum: 620, convRate: 22.5, avgDeal: 32, activityScore: 76, growth: 18.5 },
-    { name: 'Amit Desai', aum: 590, convRate: 23.1, avgDeal: 30, activityScore: 79, growth: 16.2 },
-    { name: 'Kavita Joshi', aum: 540, convRate: 21.8, avgDeal: 28, activityScore: 72, growth: 15.1 },
-    { name: 'Rahul Nair', aum: 510, convRate: 20.5, avgDeal: 26, activityScore: 68, growth: 12.8 },
+    { name: 'Amal Al Sabah', aum: 850, convRate: 28.5, avgDeal: 42, activityScore: 95, growth: 24.5 },
+    { name: 'Ali Al Saud', aum: 720, convRate: 26.2, avgDeal: 38, activityScore: 88, growth: 22.1 },
+    { name: 'Latifa Al Qasimi', aum: 680, convRate: 24.8, avgDeal: 35, activityScore: 82, growth: 21.3 },
+    { name: 'Ahmad Al Maktoum', aum: 650, convRate: 28.2, avgDeal: 41, activityScore: 91, growth: 19.8 },
+    { name: 'Reem Al Otaiba', aum: 620, convRate: 22.5, avgDeal: 32, activityScore: 76, growth: 18.5 },
+    { name: 'Khalid Al Thani', aum: 590, convRate: 23.1, avgDeal: 30, activityScore: 79, growth: 16.2 },
+    { name: 'Hessa Al Nahyan', aum: 540, convRate: 21.8, avgDeal: 28, activityScore: 72, growth: 15.1 },
+    { name: 'Hamad Al Mansouri', aum: 510, convRate: 20.5, avgDeal: 26, activityScore: 68, growth: 12.8 },
 ];
 
 export default function TeamComparisonTable() {
