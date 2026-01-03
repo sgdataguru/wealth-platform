@@ -12,7 +12,7 @@ export const MOCK_USERS: MockUser[] = [
     password: 'cockpit2025',
     profile: {
       id: 'rm-001',
-      name: 'Rajesh Kumar',
+      name: 'Amira Al-Hashimi',
       email: 'rm_user@kairoscapital.mu',
       role: 'rm',
       rmId: 'RM-MUM-001',
@@ -24,7 +24,7 @@ export const MOCK_USERS: MockUser[] = [
     password: 'cockpit2025',
     profile: {
       id: 'exec-001',
-      name: 'Amit Saxena',
+      name: 'Amritan Shua Garwal',
       email: 'exec_user@kairoscapital.mu',
       role: 'executive',
       territories: ['Dubai', 'Riyadh', 'Doha'],

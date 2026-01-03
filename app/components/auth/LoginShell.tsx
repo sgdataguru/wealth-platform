@@ -73,13 +73,13 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
                 <h1 className="text-2xl font-bold !text-white font-[family-name:var(--font-playfair)]">
                   Kairos Capital
                 </h1>
-                <p className="text-sm text-white/90 font-medium">Wealth Intelligence Hub — Cockpit</p>
+                <p className="text-sm text-white/90 font-medium">North Star — Cockpit</p>
               </div>
             </div>
 
             <div className="mt-8 space-y-3">
               <h2 className="text-4xl font-bold !text-white leading-tight font-[family-name:var(--font-playfair)]">
-                Wealth Intelligence Hub
+                North Star
               </h2>
               <div className="flex items-center gap-3">
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#C9A227] to-transparent" />
@@ -175,7 +175,7 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
             <div className="text-lg font-bold text-[var(--text-primary)] font-[family-name:var(--font-playfair)]">
               Kairos Capital
             </div>
-            <div className="text-xs text-[var(--text-muted)]">Wealth Intelligence Hub — Cockpit</div>
+            <div className="text-xs text-[var(--text-muted)]">North Star — Cockpit</div>
           </div>
         </div>
 

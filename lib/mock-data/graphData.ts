@@ -9,10 +9,10 @@ import type { GraphNode, GraphEdge } from '@/types/graph';
 export const mockRM: GraphNode = {
   id: 'rm-001',
   type: 'rm',
-  label: 'Priya Mehta',
+  label: 'Amira Al-Hashimi',
     properties: {
-    name: 'Priya Mehta',
-    email: 'priya.mehta@kairoscapital.mu',
+    name: 'Amira Al-Hashimi',
+    email: 'amira.alhashimi@kairoscapital.mu',
     role: 'Relationship Manager - MENA Desk'
   }
 };

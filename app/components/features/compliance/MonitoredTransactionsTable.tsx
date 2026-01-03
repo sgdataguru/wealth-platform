@@ -6,6 +6,7 @@
 
 'use client';
 
+import { useState } from 'react';
 import Card from '@/app/components/ui/Card';
 import Button from '@/app/components/ui/Button';
 import ComplianceStatusBadge from './ComplianceStatusBadge';
@@ -13,12 +14,47 @@ import { mockMonitoredTransactions } from '@/lib/mock-data/compliance-mock-data'
 
 export default function MonitoredTransactionsTable() {
   const transactions = mockMonitoredTransactions;
+  const [isRechecking, setIsRechecking] = useState(false);
+  const [lastRecheckTime, setLastRecheckTime] = useState<Date | null>(null);
+
+  const handleRecheck = async () => {
+    setIsRechecking(true);
+    // Simulate recheck process
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    setIsRechecking(false);
+    setLastRecheckTime(new Date());
+    alert('Compliance re-check completed!\n\nAll transactions have been re-evaluated against latest rules.');
+  };
 
   return (
     <Card className="p-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-semibold text-slate-900">Monitored Transactions</h2>
-        <Button size="sm" variant="secondary">Export</Button>
+        <div>
+          <h2 className="text-lg font-semibold text-slate-900">Monitored Transactions</h2>
+          {lastRecheckTime && (
+            <p className="text-xs text-slate-500 mt-1">
+              Last re-check: {lastRecheckTime.toLocaleString()}
+            </p>
+          )}
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm" variant="secondary" onClick={handleRecheck} disabled={isRechecking}>
+            {isRechecking ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Re-checking...
+              </>
+            ) : (
+              <>
+                🔄 Re-check All
+              </>
+            )}
+          </Button>
+          <Button size="sm" variant="secondary">Export</Button>
+        </div>
       </div>
 
       <div className="overflow-x-auto">

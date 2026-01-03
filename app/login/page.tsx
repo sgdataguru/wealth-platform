@@ -1,6 +1,6 @@
 /**
  * @file login/page.tsx
- * @description Premium login page for Wealth Intelligence Hub — Cockpit
+ * @description Premium login page for North Star — Cockpit
  * @module app/login
  */
 
