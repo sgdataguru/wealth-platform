@@ -1,6 +1,6 @@
 /**
  * @file Header.tsx
- * @description Main header with search, notifications, role switcher, and user avatar
+ * @description Main header with premium Heroicons 2
  */
 
 'use client';
@@ -13,6 +13,7 @@ import NotificationPopup from '../ui/NotificationPopup';
 import { useUserRole } from '@/app/hooks/useUserRole';
 import { clearStoredAuth } from '@/lib/auth/session';
 import ThemeToggle from './ThemeToggle';
+import { NavigationIcons } from '@/app/components/icons';
 
 interface HeaderProps {
   userName?: string;
@@ -113,19 +114,10 @@ export default function Header({ userName, userInitials, showNotification = fals
         {/* Search Bar */}
         <div className="flex-1 max-w-2xl mx-10">
           <div className="relative">
-            <svg
+            <NavigationIcons.DeepDive
               className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--text-muted)]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+              strokeWidth={1.8}
+            />
             <input
               type="text"
               placeholder="Search prospects..."
@@ -146,33 +138,13 @@ export default function Header({ userName, userInitials, showNotification = fals
             className="relative p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[var(--shadow-sm)]"
             aria-label="Notifications"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-              />
-            </svg>
+            <NavigationIcons.Notifications className="w-6 h-6" strokeWidth={1.8} />
             <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-[var(--accent-gold)] rounded-full shadow-[0_0_12px_rgba(217,180,114,0.9)]" />
           </button>
 
           {/* Settings */}
           <button className="p-3 rounded-xl bg-[var(--control-surface)] border border-[var(--control-border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-[var(--shadow-sm)]">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
+            <NavigationIcons.Settings className="w-6 h-6" strokeWidth={1.8} />
           </button>
 
           {/* User Menu */}
@@ -189,9 +161,7 @@ export default function Header({ userName, userInitials, showNotification = fals
                 <p className="text-[var(--text-primary)] text-sm font-medium">{displayName}</p>
                 <p className="text-[var(--text-muted)] text-xs">{userProfile.role === 'rm' ? 'Relationship Manager' : 'Executive'}</p>
               </div>
-              <svg className="w-4 h-4 text-[var(--text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+              <NavigationIcons.ChevronDown className="w-4 h-4 text-[var(--text-secondary)]" strokeWidth={2} />
             </button>
 
             {isUserMenuOpen && (

@@ -25,11 +25,7 @@ const mockRMTasks: RMTask[] = [
     {
         id: 'task-1',
         assignedTo: 'rm-001',
-<<<<<<< HEAD
         assignedToName: 'Amira Al-Hashimi',
-=======
-        assignedToName: 'Amal Al Sabah',
->>>>>>> f43339b (feat(ai-insights): update all client names to GCC/Arabic names in AI Insights page)
         assignedBy: 'exec-001',
         assignedByName: 'Amritan Shua Garwal',
         prospectId: 'p-123',
@@ -45,11 +41,7 @@ const mockRMTasks: RMTask[] = [
     {
         id: 'task-2',
         assignedTo: 'rm-002',
-<<<<<<< HEAD
         assignedToName: 'Khalid Al-Farsi',
-=======
-        assignedToName: 'Ali Al Saud',
->>>>>>> f43339b (feat(ai-insights): update all client names to GCC/Arabic names in AI Insights page)
         assignedBy: 'exec-001',
         assignedByName: 'Amritan Shua Garwal',
         taskType: 'proposal',
@@ -63,11 +55,7 @@ const mockRMTasks: RMTask[] = [
     {
         id: 'task-3',
         assignedTo: 'rm-003',
-<<<<<<< HEAD
         assignedToName: 'Layla Al-Mazrouei',
-=======
-        assignedToName: 'Latifa Al Qasimi',
->>>>>>> f43339b (feat(ai-insights): update all client names to GCC/Arabic names in AI Insights page)
         assignedBy: 'exec-001',
         assignedByName: 'Amritan Shua Garwal',
         taskType: 'review',
@@ -81,11 +69,7 @@ const mockRMTasks: RMTask[] = [
     {
         id: 'task-4',
         assignedTo: 'rm-001',
-<<<<<<< HEAD
         assignedToName: 'Amira Al-Hashimi',
-=======
-        assignedToName: 'Amal Al Sabah',
->>>>>>> f43339b (feat(ai-insights): update all client names to GCC/Arabic names in AI Insights page)
         assignedBy: 'exec-001',
         assignedByName: 'Amritan Shua Garwal',
         taskType: 'cross_sell',
