@@ -93,7 +93,7 @@ export default function ComplianceAlertPanel() {
   );
 }
 
-function AlertCard({ alert }: { alert: ComplianceAlert }) {
+function AlertCard({ alert: alertData }: { alert: ComplianceAlert }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isReviewing, setIsReviewing] = useState(false);
   const [reviewTriggered, setReviewTriggered] = useState(false);
@@ -104,7 +104,7 @@ function AlertCard({ alert }: { alert: ComplianceAlert }) {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsReviewing(false);
     setReviewTriggered(true);
-    alert(`Review triggered for alert: ${alert.title}\nAssigned to compliance team at ${new Date().toLocaleTimeString()}`);
+    alert(`Review triggered for alert: ${alertData.title}\nAssigned to compliance team at ${new Date().toLocaleTimeString()}`);
   };
 
   const severityConfig = {
@@ -122,7 +122,7 @@ function AlertCard({ alert }: { alert: ComplianceAlert }) {
     FALSE_POSITIVE: 'bg-slate-100 text-slate-700',
   };
 
-  const config = severityConfig[alert.severity];
+  const config = severityConfig[alertData.severity];
 
   return (
     <Card className={`p-6 border-l-4 ${config.color}`}>
@@ -131,36 +131,36 @@ function AlertCard({ alert }: { alert: ComplianceAlert }) {
         <div className="flex-1">
           <div className="flex items-start justify-between mb-2">
             <div>
-              <h3 className="font-semibold text-slate-900 text-lg">{alert.title}</h3>
-              <p className="text-sm text-slate-600 mt-1">{alert.description}</p>
+              <h3 className="font-semibold text-slate-900 text-lg">{alertData.title}</h3>
+              <p className="text-sm text-slate-600 mt-1">{alertData.description}</p>
             </div>
             <div className="flex flex-col gap-2 items-end">
               <span className={`px-3 py-1 rounded-full text-xs font-medium ${config.badge}`}>
-                {alert.severity}
+                {alertData.severity}
               </span>
-              <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusConfig[alert.status]}`}>
-                {alert.status.replace('_', ' ')}
+              <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusConfig[alertData.status]}`}>
+                {alertData.status.replace('_', ' ')}
               </span>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-4 text-sm text-slate-600 mt-4">
             <div>
-              <span className="font-medium">Type:</span> {alert.alertType.replace(/_/g, ' ')}
+              <span className="font-medium">Type:</span> {alertData.alertType.replace(/_/g, ' ')}
             </div>
-            {alert.authority && (
+            {alertData.authority && (
               <div>
-                <span className="font-medium">Authority:</span> {alert.authority}
+                <span className="font-medium">Authority:</span> {alertData.authority}
               </div>
             )}
             <div>
               <span className="font-medium">Triggered:</span>{' '}
-              {new Date(alert.triggeredAt).toLocaleString()}
+              {new Date(alertData.triggeredAt).toLocaleString()}
             </div>
-            {alert.dueDate && (
+            {alertData.dueDate && (
               <div>
                 <span className="font-medium">Due:</span>{' '}
-                {new Date(alert.dueDate).toLocaleString()}
+                {new Date(alertData.dueDate).toLocaleString()}
               </div>
             )}
           </div>
@@ -170,34 +170,34 @@ function AlertCard({ alert }: { alert: ComplianceAlert }) {
               <div>
                 <p className="text-xs text-slate-500">Entity</p>
                 <p className="text-sm text-slate-900">
-                  {alert.relatedEntityType}: {alert.relatedEntityId}
+                  {alertData.relatedEntityType}: {alertData.relatedEntityId}
                 </p>
               </div>
-              {alert.assignedTo && (
+              {alertData.assignedTo && (
                 <div>
                   <p className="text-xs text-slate-500">Assigned To</p>
-                  <p className="text-sm text-slate-900">{alert.assignedTo}</p>
+                  <p className="text-sm text-slate-900">{alertData.assignedTo}</p>
                 </div>
               )}
-              {alert.acknowledgedAt && (
+              {alertData.acknowledgedAt && (
                 <div>
                   <p className="text-xs text-slate-500">Acknowledged At</p>
                   <p className="text-sm text-slate-900">
-                    {new Date(alert.acknowledgedAt).toLocaleString()}
+                    {new Date(alertData.acknowledgedAt).toLocaleString()}
                   </p>
                 </div>
               )}
-              {alert.resolutionNotes && (
+              {alertData.resolutionNotes && (
                 <div>
                   <p className="text-xs text-slate-500">Resolution Notes</p>
-                  <p className="text-sm text-slate-900">{alert.resolutionNotes}</p>
+                  <p className="text-sm text-slate-900">{alertData.resolutionNotes}</p>
                 </div>
               )}
             </div>
           )}
 
           <div className="flex gap-2 mt-4">
-            {alert.status === 'ACTIVE' && (
+            {alertData.status === 'ACTIVE' && (
               <>
                 <Button size="sm">Acknowledge</Button>
                 <Button size="sm" variant="secondary">
@@ -205,7 +205,7 @@ function AlertCard({ alert }: { alert: ComplianceAlert }) {
                 </Button>
               </>
             )}
-            {alert.status === 'ACKNOWLEDGED' || alert.status === 'IN_PROGRESS' ? (
+            {alertData.status === 'ACKNOWLEDGED' || alertData.status === 'IN_PROGRESS' ? (
               <Button size="sm">Mark Resolved</Button>
             ) : null}
             <Button
