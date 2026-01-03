@@ -95,6 +95,17 @@ export default function ComplianceAlertPanel() {
 
 function AlertCard({ alert }: { alert: ComplianceAlert }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isReviewing, setIsReviewing] = useState(false);
+  const [reviewTriggered, setReviewTriggered] = useState(false);
+
+  const handleTriggerReview = async () => {
+    setIsReviewing(true);
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setIsReviewing(false);
+    setReviewTriggered(true);
+    alert(`Review triggered for alert: ${alert.title}\nAssigned to compliance team at ${new Date().toLocaleTimeString()}`);
+  };
 
   const severityConfig = {
     CRITICAL: { color: 'bg-red-50 border-red-500', icon: '🔴', badge: 'bg-red-600 text-white' },
@@ -197,6 +208,14 @@ function AlertCard({ alert }: { alert: ComplianceAlert }) {
             {alert.status === 'ACKNOWLEDGED' || alert.status === 'IN_PROGRESS' ? (
               <Button size="sm">Mark Resolved</Button>
             ) : null}
+            <Button
+              size="sm"
+              variant={reviewTriggered ? 'secondary' : 'primary'}
+              onClick={handleTriggerReview}
+              disabled={isReviewing || reviewTriggered}
+            >
+              {isReviewing ? 'Triggering...' : reviewTriggered ? '✓ Review Triggered' : '🔔 Trigger Review'}
+            </Button>
             <Button
               size="sm"
               variant="ghost"

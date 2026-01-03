@@ -31,6 +31,8 @@ export default function ReportConfigForm() {
   });
 
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isEmailing, setIsEmailing] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
 
   const handleGenerate = async () => {
     setIsGenerating(true);
@@ -38,6 +40,18 @@ export default function ReportConfigForm() {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsGenerating(false);
     alert('Report generated successfully!');
+  };
+
+  const handleEmailReport = async () => {
+    setIsEmailing(true);
+    setEmailSent(false);
+    // Simulate email sending
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setIsEmailing(false);
+    setEmailSent(true);
+    alert(`Report emailed successfully – demo mode\n\nSent to: compliance@kairoscapital.mu\nTime: ${new Date().toLocaleTimeString()}\n\nNote: This is a demonstration feature.`);
+    // Reset after 3 seconds
+    setTimeout(() => setEmailSent(false), 3000);
   };
 
   const isValid = config.authority && config.reportType && config.startDate && config.endDate;
@@ -212,6 +226,25 @@ export default function ReportConfigForm() {
             disabled={!isValid || isGenerating}
           >
             {isGenerating ? 'Generating...' : 'Generate Report'}
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={handleEmailReport}
+            disabled={!isValid || isEmailing || emailSent}
+          >
+            {isEmailing ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Sending...
+              </>
+            ) : emailSent ? (
+              '✓ Email Sent'
+            ) : (
+              '📧 Email Report'
+            )}
           </Button>
           <Button
             variant="secondary"
