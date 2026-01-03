@@ -12,17 +12,17 @@ import type { UserRole, UserProfile } from '@/types';
 // Mock user profiles for POC
 const MOCK_RM_PROFILE: UserProfile = {
     id: 'rm-001',
-    name: 'Rajesh Kumar',
-    email: 'rm_user@kairoscapital.mu',
+    name: 'Faisal Al-Nuaimi',
+    email: 'rm_user@kairoscapital.ae',
     role: 'rm',
-    rmId: 'RM-MUM-001',
+    rmId: 'RM-DXB-001',
     photoUrl: undefined,
 };
 
 const MOCK_EXECUTIVE_PROFILE: UserProfile = {
     id: 'exec-001',
-    name: 'Amit Saxena',
-    email: 'exec_user@kairoscapital.mu',
+    name: 'Omar Al-Fadl',
+    email: 'exec_user@kairoscapital.ae',
     role: 'executive',
     territories: ['Dubai', 'Abu Dhabi', 'Riyadh'],
     teamIds: ['team-west', 'team-north', 'team-south'],

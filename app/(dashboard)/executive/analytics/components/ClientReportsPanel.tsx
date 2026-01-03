@@ -29,7 +29,7 @@ interface ClientReport {
 const mockExecutiveReports: ClientReport[] = [
     {
         id: 'rep-1',
-        clientName: 'Rajesh Kumar',
+        clientName: 'Khalid Al-Mansouri',
         clientCode: 'UHNW-001',
         netWorth: formatCroreToUSD(450),
         reportType: 'portfolio',
@@ -56,12 +56,12 @@ const mockExecutiveReports: ClientReport[] = [
     },
     {
         id: 'rep-2',
-        clientName: 'Priya Sharma',
+        clientName: 'Noor Al-Muhairi',
         clientCode: 'UHNW-002',
         netWorth: formatCroreToUSD(680),
         reportType: 'performance',
         generatedAt: '2024-12-21T09:00:00',
-        summary: 'Outstanding performance metrics with 24.5% annual returns, significantly outperforming benchmark (Nifty 50: +12.3%). AI analysis attributes success to strategic alternative investments allocation (28%) and timely sector rotation. Client satisfaction score: 9.4/10.',
+        summary: 'Outstanding performance metrics with 24.5% annual returns, significantly outperforming benchmark (Tadawul All Share Index: +12.3%). AI analysis attributes success to strategic alternative investments allocation (28%) and timely sector rotation. Client satisfaction score: 9.4/10.',
         keyMetrics: [
             { label: 'Annual Returns', value: '+24.5%', trend: 'up' },
             { label: 'vs Benchmark', value: '+12.2%', trend: 'up' },
@@ -83,7 +83,7 @@ const mockExecutiveReports: ClientReport[] = [
     },
     {
         id: 'rep-3',
-        clientName: 'Vikram Singh',
+        clientName: 'Hassan Al-Rashid',
         clientCode: 'UHNW-003',
         netWorth: formatCroreToUSD(320),
         reportType: 'risk',
@@ -110,12 +110,12 @@ const mockExecutiveReports: ClientReport[] = [
     },
     {
         id: 'rep-4',
-        clientName: 'Anita Patel',
+        clientName: 'Aisha Al-Farsi',
         clientCode: 'UHNW-004',
         netWorth: formatCroreToUSD(540),
         reportType: 'opportunities',
         generatedAt: '2024-12-21T09:00:00',
-        summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: ₹65 Cr. Client shows strong propensity for structured products and international investments.',
+        summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: AED 65M. Client shows strong propensity for structured products and international investments.',
         keyMetrics: [
             { label: 'Cross-Sell Score', value: '8.7/10', trend: 'up' },
             { label: 'Wallet Share', value: '42%', trend: 'stable' },
@@ -149,12 +149,12 @@ export default function ClientReportsPanel() {
 
     // Mock client list
     const clients = [
-        { id: 'UHNW-001', name: 'Rajesh Kumar', netWorth: '₹450 Cr' },
-        { id: 'UHNW-002', name: 'Priya Sharma', netWorth: '₹680 Cr' },
-        { id: 'UHNW-003', name: 'Vikram Singh', netWorth: '₹320 Cr' },
-        { id: 'UHNW-004', name: 'Anita Patel', netWorth: '₹540 Cr' },
-        { id: 'UHNW-005', name: 'Sanjay Gupta', netWorth: '₹890 Cr' },
-        { id: 'UHNW-006', name: 'Neha Kapoor', netWorth: '₹275 Cr' }
+        { id: 'UHNW-001', name: 'Khalid Al-Mansouri', netWorth: 'AED 450M' },
+        { id: 'UHNW-002', name: 'Noor Al-Muhairi', netWorth: 'AED 680M' },
+        { id: 'UHNW-003', name: 'Hassan Al-Rashid', netWorth: 'AED 320M' },
+        { id: 'UHNW-004', name: 'Aisha Al-Farsi', netWorth: 'AED 540M' },
+        { id: 'UHNW-005', name: 'Mariam Al-Zahra', netWorth: 'AED 890M' },
+        { id: 'UHNW-006', name: 'Yousef Al-Khatib', netWorth: 'AED 275M' }
     ];
 
     const handleGenerateReport = () => {
@@ -227,7 +227,7 @@ export default function ClientReportsPanel() {
                          AI-Generated Client Reports
                     </h3>
                         <p className="text-sm text-[#5A6C7D] mt-1">
-                        Automated comprehensive reports for UHNW clients (&gt;?100 Cr)  Generated daily
+                        Automated comprehensive reports for UHNW clients (&gt;AED 100M) • Generated daily
                     </p>
                 </div>
                 <button 

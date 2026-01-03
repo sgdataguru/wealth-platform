@@ -10,17 +10,17 @@ import type { ExecutiveMetrics } from '@/types';
 
 const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
     // Firm-wide performance
-    totalAum: '₹4.6 L Cr',
+    totalAum: 'AED 4.6T',
     aumGrowth: 2.8,
     aumGrowthYoy: 19.2,
-    netNewMoney: '₹12,450 Cr',
+    netNewMoney: 'AED 124.5B',
     operatingMargin: 34.0,
     roe: 31.5,
 
     // Team metrics
     totalRMs: 1247,
-    aumPerRM: '₹3.7 Cr',
-    revenuePerRM: '₹23.2 L',
+    aumPerRM: 'AED 370M',
+    revenuePerRM: 'AED 23.2M',
     avgRMProductivity: 78,
 
     // Client metrics
@@ -28,20 +28,20 @@ const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
     hniClients: 128500,
     uhniClients: 5500,
     clientRetentionRate: 94.5,
-    clientAcquisitionCost: '₹2.8 L',
+    clientAcquisitionCost: 'AED 2.8M',
 
     // Top performers
     topPerformingRMs: [
-        { rmId: 'RM-001', rmName: 'Priya Sharma', aum: 850, growth: 24.5, clientCount: 65, revenue: 42, rank: 1 },
-        { rmId: 'RM-002', rmName: 'Vikram Singh', aum: 720, growth: 22.1, clientCount: 58, revenue: 38, rank: 2 },
-        { rmId: 'RM-003', rmName: 'Anita Patel', aum: 680, growth: 21.3, clientCount: 52, revenue: 36, rank: 3 },
-        { rmId: 'RM-004', rmName: 'Rajesh Kumar', aum: 650, growth: 19.8, clientCount: 47, revenue: 34, rank: 4 },
-        { rmId: 'RM-005', rmName: 'Meera Reddy', aum: 620, growth: 18.5, clientCount: 45, revenue: 32, rank: 5 },
+        { rmId: 'RM-001', rmName: 'Maha Al-Suwaidi', aum: 850, growth: 24.5, clientCount: 65, revenue: 42, rank: 1 },
+        { rmId: 'RM-002', rmName: 'Yousef Al-Omari', aum: 720, growth: 22.1, clientCount: 58, revenue: 38, rank: 2 },
+        { rmId: 'RM-003', rmName: 'Laila Al-Farsi', aum: 680, growth: 21.3, clientCount: 52, revenue: 36, rank: 3 },
+        { rmId: 'RM-004', rmName: 'Khalid Al-Mansouri', aum: 650, growth: 19.8, clientCount: 47, revenue: 34, rank: 4 },
+        { rmId: 'RM-005', rmName: 'Hassan Al-Rashid', aum: 620, growth: 18.5, clientCount: 45, revenue: 32, rank: 5 },
     ],
 
     underperformingRMs: [
-        { rmId: 'RM-100', rmName: 'Amit Joshi', aum: 120, growth: -2.5, clientCount: 18, revenue: 8, rank: 1243 },
-        { rmId: 'RM-101', rmName: 'Kavita Nair', aum: 135, growth: 1.2, clientCount: 22, revenue: 9, rank: 1244 },
+        { rmId: 'RM-100', rmName: 'Noura Al-Haddad', aum: 120, growth: -2.5, clientCount: 18, revenue: 8, rank: 1243 },
+        { rmId: 'RM-101', rmName: 'Omar Al-Khatib', aum: 135, growth: 1.2, clientCount: 22, revenue: 9, rank: 1244 },
     ],
 
     // Regional breakdown
@@ -58,9 +58,9 @@ const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
     productMix: [
         { product: 'Equity PMS', percentage: 35, value: '$161 Billion', color: '#2A2447' },
         { product: 'Mutual Funds', percentage: 28, value: '$129 Billion', color: '#E85D54' },
-        { product: 'Fixed Income', percentage: 18, value: '₹82,800 Cr', color: '#5A6C7D' },
-        { product: 'Alternative Investments', percentage: 12, value: '₹55,200 Cr', color: '#8E99A4' },
-        { product: 'Others', percentage: 7, value: '₹32,200 Cr', color: '#F06E66' },
+        { product: 'Fixed Income', percentage: 18, value: 'AED 828B', color: '#5A6C7D' },
+        { product: 'Alternative Investments', percentage: 12, value: 'AED 552B', color: '#8E99A4' },
+        { product: 'Others', percentage: 7, value: 'AED 322B', color: '#F06E66' },
     ],
 
     // AUM trend (last 12 months)

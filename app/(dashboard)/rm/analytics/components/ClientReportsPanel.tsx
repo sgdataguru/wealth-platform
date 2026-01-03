@@ -31,7 +31,7 @@ type ReportType = 'portfolio' | 'performance' | 'risk' | 'opportunities';
 const mockExecutiveReports: ClientReport[] = [
     {
         id: 'rep-1',
-        clientName: 'Rajesh Kumar',
+        clientName: 'Khalid Al-Mansouri',
         clientCode: 'UHNW-001',
         netWorth: formatCroreToUSD(450),
         reportType: 'portfolio',
@@ -47,23 +47,23 @@ const mockExecutiveReports: ClientReport[] = [
             'Portfolio concentration in technology sector (34%) exceeds optimal threshold - recommend rebalancing',
             'Alternative investments allocation (12%) below peer average (18%) for similar wealth bracket',
             'Fixed income exposure (28%) well-positioned for current interest rate environment',
-            'ESOP holdings (₹85 Cr) approaching lock-in expiry in 45 days - liquidity event planning required'
+            'ESOP holdings (AED 85M) approaching lock-in expiry in 45 days - liquidity event planning required'
         ],
         recommendations: [
             'Increase alternative investments to 22% through PE/VC fund allocations',
             'Reduce technology sector exposure from 34% to 25% over next quarter',
-            'Prepare ESOP liquidation strategy - estimated ₹85 Cr liquidity event',
+            'Prepare ESOP liquidation strategy - estimated AED 85M liquidity event',
             'Consider structured products for 8-10% allocation to enhance returns'
         ]
     },
     {
         id: 'rep-2',
-        clientName: 'Priya Sharma',
+        clientName: 'Noor Al-Muhairi',
         clientCode: 'UHNW-002',
         netWorth: formatCroreToUSD(680),
         reportType: 'performance',
         generatedAt: '2024-12-21T09:00:00',
-        summary: 'Outstanding performance metrics with 24.5% annual returns, significantly outperforming benchmark (Nifty 50: +12.3%). AI analysis attributes success to strategic alternative investments allocation (28%) and timely sector rotation. Client satisfaction score: 9.4/10.',
+        summary: 'Outstanding performance metrics with 24.5% annual returns, significantly outperforming benchmark (Tadawul All Share Index: +12.3%). AI analysis attributes success to strategic alternative investments allocation (28%) and timely sector rotation. Client satisfaction score: 9.4/10.',
         keyMetrics: [
             { label: 'Annual Returns', value: '+24.5%', trend: 'up' },
             { label: 'vs Benchmark', value: '+12.2%', trend: 'up' },
@@ -85,7 +85,7 @@ const mockExecutiveReports: ClientReport[] = [
     },
     {
         id: 'rep-3',
-        clientName: 'Vikram Singh',
+        clientName: 'Hassan Al-Rashid',
         clientCode: 'UHNW-003',
         netWorth: formatCroreToUSD(320),
         reportType: 'risk',
@@ -112,16 +112,16 @@ const mockExecutiveReports: ClientReport[] = [
     },
     {
         id: 'rep-4',
-        clientName: 'Anita Patel',
+        clientName: 'Aisha Al-Farsi',
         clientCode: 'UHNW-004',
         netWorth: formatCroreToUSD(540),
         reportType: 'opportunities',
         generatedAt: '2024-12-21T09:00:00',
-        summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: ₹65 Cr. Client shows strong propensity for structured products and international investments.',
+        summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: AED 65M. Client shows strong propensity for structured products and international investments.',
         keyMetrics: [
             { label: 'Cross-Sell Score', value: '8.7/10', trend: 'up' },
             { label: 'Wallet Share', value: '42%', trend: 'stable' },
-            { label: 'Opportunity Gap', value: '₹312 Cr', trend: 'up' },
+            { label: 'Opportunity Gap', value: 'AED 312M', trend: 'up' },
             { label: 'Engagement', value: '88%', trend: 'up' }
         ],
         aiInsights: [
@@ -149,12 +149,12 @@ export default function ClientReportsPanel() {
 
     // Mock client list
     const clients = [
-        { id: 'UHNW-001', name: 'Rajesh Kumar', netWorth: formatCroreToUSD(450) },
-        { id: 'UHNW-002', name: 'Priya Sharma', netWorth: formatCroreToUSD(680) },
-        { id: 'UHNW-003', name: 'Vikram Singh', netWorth: formatCroreToUSD(320) },
-        { id: 'UHNW-004', name: 'Anita Patel', netWorth: formatCroreToUSD(540) },
-        { id: 'UHNW-005', name: 'Sanjay Gupta', netWorth: formatCroreToUSD(890) },
-        { id: 'UHNW-006', name: 'Neha Kapoor', netWorth: formatCroreToUSD(275) }
+        { id: 'UHNW-001', name: 'Khalid Al-Mansouri', netWorth: formatCroreToUSD(450) },
+        { id: 'UHNW-002', name: 'Noor Al-Muhairi', netWorth: formatCroreToUSD(680) },
+        { id: 'UHNW-003', name: 'Hassan Al-Rashid', netWorth: formatCroreToUSD(320) },
+        { id: 'UHNW-004', name: 'Aisha Al-Farsi', netWorth: formatCroreToUSD(540) },
+        { id: 'UHNW-005', name: 'Mariam Al-Zahra', netWorth: formatCroreToUSD(890) },
+        { id: 'UHNW-006', name: 'Yousef Al-Khatib', netWorth: formatCroreToUSD(275) }
     ];
 
     const handleGenerateReport = () => {

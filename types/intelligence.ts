@@ -11,7 +11,7 @@ export type SourceType =
   | 'IPO'
   | 'MARKET'
   | 'PRIVATE_CIRCLE'
-  | 'ZAUBA'
+  | 'REGISTRY'
   | 'NEWS_API';
 
 export type Priority = 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';

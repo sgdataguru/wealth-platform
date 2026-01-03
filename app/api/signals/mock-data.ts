@@ -110,7 +110,7 @@ export const mockSignals: Signal[] = [
     id: 'mcx-stock-split-2026',
     type: 'stock_split',
     severity: 'medium',
-    title: 'MCX — Stock split record date',
+    title: 'Aldar Properties — Stock split record date',
     description:
       'Record date set for 2 Jan 2026; split drives liquidity and trading volume around eligibility.',
     source: 'Gulf News',
@@ -122,7 +122,7 @@ export const mockSignals: Signal[] = [
     confidence: 82,
     metadata: {
       keyDates: ['Record date 2 Jan 2026'],
-      people: ['MCX shareholders'],
+      people: ['Aldar shareholders'],
       signalType: 'Stock split',
       window: '0–30 days (by 21 Jan 2026)',
     },
@@ -143,7 +143,7 @@ export const mockSignals: Signal[] = [
     confidence: 87,
     metadata: {
       keyDates: ['Tendering 13 Jan 2026 → 27 Jan 2026'],
-      people: ['Dorni Vinimoy Pvt Ltd (acquirer)', 'Rajesh Ghosh (LOF signatory)'],
+      people: ['Al Noor Holdings LLC (acquirer)', 'Khalid Al-Mansouri (LOF signatory)'],
       signalType: 'Open offer / tendering period',
       window: '30–60 days (22 Jan → 20 Feb 2026)',
     },
@@ -152,7 +152,7 @@ export const mockSignals: Signal[] = [
     id: 'hul-demerger-2026',
     type: 'demerger',
     severity: 'medium',
-    title: 'HUL — Ice cream business demerger listing expected',
+    title: 'Savola Group — Food division demerger listing expected',
     description:
       'Listing for the demerged ice cream unit expected Feb 2026; value unlock and rebalancing catalyst.',
     source: 'Gulf News',
@@ -164,7 +164,7 @@ export const mockSignals: Signal[] = [
     confidence: 83,
     metadata: {
       keyDates: ['Listing expected Feb 2026'],
-      people: ['HUL shareholders (record date already done)'],
+      people: ['Savola shareholders (record date already done)'],
       signalType: 'Demerger / value unlock',
       window: '30–60 days (22 Jan → 20 Feb 2026)',
     },
@@ -173,7 +173,7 @@ export const mockSignals: Signal[] = [
     id: 'airtel-rights-call-2026',
     type: 'rights_call',
     severity: 'high',
-    title: 'Bharti Airtel — Partly-paid shares call',
+    title: 'stc — Partly-paid shares call',
     description:
       'Call money on partly-paid shares with record date 6 Feb 2026 and payment window 2–16 Mar 2026.',
     source: 'Saxo Bank',

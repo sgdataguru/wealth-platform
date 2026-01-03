@@ -27,30 +27,30 @@ import type { Prospect } from '@/types';
 const mockRMProspects: Prospect[] = [
     {
         id: '1',
-        firstName: 'Rajesh',
-        lastName: 'Kumar',
-        initials: 'RK',
+        firstName: 'Faisal',
+        lastName: 'Al-Nuaimi',
+        initials: 'FA',
         title: 'Director',
-        company: 'Tech Innovations DMCC',
+        company: 'Harbor Tech Solutions DMCC',
         location: 'Dubai',
         sector: 'Technology',
-        network: 'TiE',
-        email: 'rajesh@techinnovations.ae',
-        phone: '+971 50 123 4567',
+        network: 'DIFC FinTech Circle',
+        email: 'faisal@harbortech.ae',
+        phone: '+971 50 321 4567',
         leadScore: 92,
         scoreCategory: 'excellent',
         scoreBreakdown: [
-            { label: 'IPO Filing', points: 40, description: 'Company filed DRHP' },
-            { label: 'Series C Funding', points: 30, description: 'Raised $50M from Sequoia' },
+            { label: 'IPO Prospectus', points: 40, description: 'Company filed prospectus with SCA' },
+            { label: 'Series C Funding', points: 30, description: 'Raised $65M led by Mubadala Capital' },
         ],
         signals: [
-            { id: 's1', type: 'ipo', severity: 'critical', title: 'IPO Filing', description: 'Filed DRHP with SEBI', source: 'Exchange Data', createdAt: new Date('2024-12-15'), isActioned: false },
+            { id: 's1', type: 'ipo', severity: 'critical', title: 'IPO Filing', description: 'Filed prospectus with UAE SCA', source: 'Exchange Data', createdAt: new Date('2024-12-15'), isActioned: false },
         ],
         lastContacted: new Date('2024-12-14'),
         createdAt: new Date('2024-01-15'),
         updatedAt: new Date('2024-12-15'),
-        estWealth: '₹450 Cr',
-        myShare: '₹180 Cr',
+        estWealth: 'AED 450M',
+        myShare: 'AED 180M',
         sharePercentage: 40,
     },
 ];
@@ -109,7 +109,7 @@ export default function RMDashboard() {
                     {/* Welcome Section */}
                     <div className="mb-8">
                         <h1 className="text-3xl font-bold text-[#1A1A2E] font-[family-name:var(--font-playfair)]">
-                            Morning Rajesh, Welcome to Cockpit
+                            Morning Faisal, Welcome to Cockpit
                         </h1>
                         <p className="text-[#5A6C7D] mt-1">
                             Below are your triggers. There are 7 Actions for the day. If you have any questions, happy to chat. Have a Great Day.

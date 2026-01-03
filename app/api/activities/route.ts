@@ -12,7 +12,7 @@ const mockActivities: Activity[] = [
     id: 'act-1',
     userId: 'rm-1',
     actionType: 'lead_contacted',
-    description: 'Called Rajesh Kumar regarding IPO liquidity options',
+    description: 'Called Faisal Al-Nuaimi regarding IPO liquidity options',
     leadId: 'lead-1',
     createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
   },
@@ -20,7 +20,7 @@ const mockActivities: Activity[] = [
     id: 'act-2',
     userId: 'rm-1',
     actionType: 'signal_viewed',
-    description: 'Viewed new funding signal for FinServ Holdings',
+    description: 'Viewed new funding signal for Amanah Capital Holdings',
     signalId: 's4',
     leadId: 'lead-2',
     createdAt: new Date(Date.now() - 3 * 60 * 60 * 1000), // 3 hours ago
@@ -29,7 +29,7 @@ const mockActivities: Activity[] = [
     id: 'act-3',
     userId: 'rm-1',
     actionType: 'follow_up_completed',
-    description: 'Completed follow-up: Send investment proposal to Vikram',
+    description: 'Completed follow-up: Send investment proposal to Hassan',
     followUpId: 'fu-3',
     leadId: 'lead-3',
     createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 hours ago
@@ -38,7 +38,7 @@ const mockActivities: Activity[] = [
     id: 'act-4',
     userId: 'rm-1',
     actionType: 'follow_up_created',
-    description: 'Created new follow-up for Rajesh Kumar',
+    description: 'Created new follow-up for Faisal Al-Nuaimi',
     followUpId: 'fu-4',
     leadId: 'lead-1',
     createdAt: new Date(Date.now() - 6 * 60 * 60 * 1000), // 6 hours ago
@@ -47,7 +47,7 @@ const mockActivities: Activity[] = [
     id: 'act-5',
     userId: 'rm-1',
     actionType: 'signal_actioned',
-    description: 'Actioned IPO signal for Tech Innovations',
+    description: 'Actioned IPO signal for Harbor Tech Solutions',
     signalId: 's1',
     leadId: 'lead-1',
     createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000), // 8 hours ago

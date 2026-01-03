@@ -26,9 +26,9 @@ const MOCK_RM_METRICS: RMMetrics = {
     myClientsAumGrowth: 12.5,
     activeOpps: 8,
     activeOppsValue: formatCroreToUSD(42),
-    lastMonthRevenue: '₹18.5 L',
+    lastMonthRevenue: 'AED 1.85M',
     conversionRate: 28.5,
-    avgClientValue: '₹5.2 Cr',
+    avgClientValue: 'AED 5.2M',
 
     // Activity
     callsMadeThisWeek: 23,

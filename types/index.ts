@@ -26,9 +26,9 @@ export type SignalType =
 // Data sources for signals
 export type DataSource =
   | 'PrivateCircle'
-  | 'Zauba Corp'
+  | 'UAE Ministry of Economy'
   | 'Exchange Data'
-  | 'VCCircle'
+  | 'Zawya'
   | 'NewsAPI'
   | 'Manual Intelligence'
   | 'Bloomberg Gulf'

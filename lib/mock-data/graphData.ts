@@ -9,10 +9,10 @@ import type { GraphNode, GraphEdge } from '@/types/graph';
 export const mockRM: GraphNode = {
   id: 'rm-001',
   type: 'rm',
-  label: 'Priya Mehta',
+  label: 'Maha Al-Suwaidi',
     properties: {
-    name: 'Priya Mehta',
-    email: 'priya.mehta@kairoscapital.mu',
+    name: 'Maha Al-Suwaidi',
+    email: 'maha.alsuwaidi@kairoscapital.ae',
     role: 'Relationship Manager'
   }
 };
@@ -22,9 +22,9 @@ export const mockPeople: GraphNode[] = [
   {
     id: 'person-001',
     type: 'person',
-    label: 'Rajesh Sharma',
+    label: 'Khalid Al-Mansouri',
     properties: {
-      name: 'Rajesh Sharma',
+      name: 'Khalid Al-Mansouri',
       designation: 'CEO',
       netWorth: 15000000000,
       isClient: true,
@@ -36,9 +36,9 @@ export const mockPeople: GraphNode[] = [
   {
     id: 'person-002',
     type: 'person',
-    label: 'Amit Patel',
+    label: 'Yousef Al-Khatib',
     properties: {
-      name: 'Amit Patel',
+      name: 'Yousef Al-Khatib',
       designation: 'Founder',
       netWorth: 8500000000,
       isClient: true,
@@ -50,9 +50,9 @@ export const mockPeople: GraphNode[] = [
   {
     id: 'person-003',
     type: 'person',
-    label: 'Sneha Kapoor',
+    label: 'Noor Al-Muhairi',
     properties: {
-      name: 'Sneha Kapoor',
+      name: 'Noor Al-Muhairi',
       designation: 'CFO',
       netWorth: 3200000000,
       isClient: false,
@@ -63,9 +63,9 @@ export const mockPeople: GraphNode[] = [
   {
     id: 'person-004',
     type: 'person',
-    label: 'Vikram Singh',
+    label: 'Hassan Al-Rashid',
     properties: {
-      name: 'Vikram Singh',
+      name: 'Hassan Al-Rashid',
       designation: 'Angel Investor',
       netWorth: 12000000000,
       isClient: true,
@@ -77,9 +77,9 @@ export const mockPeople: GraphNode[] = [
   {
     id: 'person-005',
     type: 'person',
-    label: 'Neha Reddy',
+    label: 'Mariam Al-Zahra',
     properties: {
-      name: 'Neha Reddy',
+      name: 'Mariam Al-Zahra',
       designation: 'Co-Founder',
       netWorth: 5500000000,
       isClient: false,
@@ -90,9 +90,9 @@ export const mockPeople: GraphNode[] = [
   {
     id: 'person-006',
     type: 'person',
-    label: 'Arjun Malhotra',
+    label: 'Omar Al-Hassan',
     properties: {
-      name: 'Arjun Malhotra',
+      name: 'Omar Al-Hassan',
       designation: 'Managing Director',
       netWorth: 6800000000,
       isClient: false,

@@ -11,7 +11,7 @@ const SOURCE_LABELS: Record<SourceType, string> = {
   IPO: 'IPO Watch',
   MARKET: 'Market',
   PRIVATE_CIRCLE: 'Private Circle',
-  ZAUBA: 'Zauba Corp',
+  REGISTRY: 'UAE Ministry of Economy',
   NEWS_API: 'News API',
 };
 

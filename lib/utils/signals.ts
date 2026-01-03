@@ -17,7 +17,7 @@ const SOURCE_PRIORITY: Record<SourceType, number> = {
   IPO: 2,
   MARKET: 1,
   PRIVATE_CIRCLE: 1,
-  ZAUBA: 1,
+  REGISTRY: 1,
   NEWS_API: 1,
 };
 

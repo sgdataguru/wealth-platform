@@ -45,9 +45,9 @@ export default function SignalFilters({
 
   const sourceOptions: DataSource[] = [
     'PrivateCircle',
-    'Zauba Corp',
+    'UAE Ministry of Economy',
     'Exchange Data',
-    'VCCircle',
+    'Zawya',
     'NewsAPI',
     'Manual Intelligence',
   ];

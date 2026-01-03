@@ -56,7 +56,7 @@ export default function MorningCockpitPage() {
           {/* Page Title */}
           <div className="mb-6">
             <h1 className="text-3xl font-bold text-[#1A1A2E] font-[family-name:var(--font-playfair)]">
-              Morning Rajesh, Welcome to Cockpit
+              Morning Faisal, Welcome to Cockpit
             </h1>
             <p className="text-[#5A6C7D] mt-1">
               Below are your triggers. There are {alerts.length} Immediate Actions. If you have any questions, happy to chat. Have a Great Flight ✈️

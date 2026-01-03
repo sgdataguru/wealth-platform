@@ -26,12 +26,12 @@ const mockRMInsights: AIInsight[] = [
     {
         id: 'rm-1',
         category: 'client',
-        title: 'Rajesh Kumar - High Conversion Probability',
+        title: 'Khalid Al-Mansouri - High Conversion Probability',
         description: 'AI model predicts 87% probability of conversion within 14 days based on engagement patterns, signal strength (IPO filing), and communication frequency. Estimated wallet capture: $180 Million.',
         priority: 'urgent',
         confidence: 87,
         actionable: true,
-        clientName: 'Rajesh Kumar',
+        clientName: 'Khalid Al-Mansouri',
         estimatedValue: '$180 Million',
         suggestedAction: 'Schedule in-person meeting within 48 hours. Prepare customized PMS proposal focusing on post-IPO wealth management. Highlight tax optimization strategies.',
         dataPoints: [
@@ -45,12 +45,12 @@ const mockRMInsights: AIInsight[] = [
     {
         id: 'rm-2',
         category: 'timing',
-        title: 'Optimal Contact Time: Priya Sharma',
-        description: 'Historical analysis shows Priya Sharma has 3.2x higher response rate when contacted between 2-4 PM on Tuesdays or Thursdays. Last successful engagement: Thursday 3:15 PM.',
+        title: 'Optimal Contact Time: Noor Al-Muhairi',
+        description: 'Historical analysis shows Noor Al-Muhairi has 3.2x higher response rate when contacted between 2-4 PM on Tuesdays or Thursdays. Last successful engagement: Thursday 3:15 PM.',
         priority: 'high',
         confidence: 91,
         actionable: true,
-        clientName: 'Priya Sharma',
+        clientName: 'Noor Al-Muhairi',
         estimatedValue: '$240 Million',
         suggestedAction: 'Schedule call for this Thursday at 3:00 PM. Discuss alternative investment opportunities - client showed 78% interest in PE/VC funds during last interaction.',
         dataPoints: [
@@ -64,12 +64,12 @@ const mockRMInsights: AIInsight[] = [
     {
         id: 'rm-3',
         category: 'engagement',
-        title: 'Re-engagement Opportunity: Ankit Verma',
+        title: 'Re-engagement Opportunity: Tariq Al-Hakim',
         description: 'Client engagement dropped 68% in last 30 days. AI detects early churn signals. However, recent LinkedIn activity shows interest in structured products - potential re-engagement angle.',
         priority: 'urgent',
         confidence: 84,
         actionable: true,
-        clientName: 'Ankit Verma',
+        clientName: 'Tariq Al-Hakim',
         estimatedValue: '$95 Million',
         suggestedAction: 'Send personalized email about new structured product offerings within 24 hours. Follow up with voice note explaining tax benefits. Schedule coffee meeting.',
         dataPoints: [
@@ -83,12 +83,12 @@ const mockRMInsights: AIInsight[] = [
     {
         id: 'rm-4',
         category: 'conversion',
-        title: 'Cross-Sell Opportunity: Vikram Singh',
+        title: 'Cross-Sell Opportunity: Hassan Al-Rashid',
         description: 'Client currently holds only PMS ($120 Million). AI analysis of portfolio composition, risk appetite, and investment behavior suggests 89% propensity for alternative investments.',
         priority: 'high',
         confidence: 89,
         actionable: true,
-        clientName: 'Vikram Singh',
+        clientName: 'Hassan Al-Rashid',
         estimatedValue: '$25 Million additional',
         suggestedAction: 'Prepare alternative investment proposal. Focus on PE/VC funds and real estate opportunities. Expected allocation: 15-20% of current PMS holding.',
         dataPoints: [
@@ -102,12 +102,12 @@ const mockRMInsights: AIInsight[] = [
     {
         id: 'rm-5',
         category: 'client',
-        title: 'New Signal: Neha Kapoor - Series C Funding',
+        title: 'New Signal: Layla Al-Fahim - Series C Funding',
         description: 'AI detected Series C funding announcement ($75M) for client\'s company. Historical data shows 76% of similar clients seek wealth management within 45 days post-funding.',
         priority: 'urgent',
         confidence: 92,
         actionable: true,
-        clientName: 'Neha Kapoor',
+        clientName: 'Layla Al-Fahim',
         estimatedValue: '$140 Million',
         suggestedAction: 'Immediate outreach required. Congratulate on funding. Offer complimentary wealth planning session. Prepare ESOP liquidation strategy presentation.',
         dataPoints: [
@@ -143,7 +143,7 @@ const mockRMInsights: AIInsight[] = [
         priority: 'high',
         confidence: 86,
         actionable: true,
-        suggestedAction: 'Review 3 slow-moving deals: (1) Amit Shah - stuck at proposal stage, (2) Ritu Malhotra - awaiting decision, (3) Karan Mehta - pricing concerns. Schedule follow-ups.',
+        suggestedAction: 'Review 3 slow-moving deals: (1) Omar Al-Khatib - stuck at proposal stage, (2) Layla Al-Fahim - awaiting decision, (3) Hamad Al-Ansari - pricing concerns. Schedule follow-ups.',
         dataPoints: [
             'Your avg velocity: 42 days',
             'Team average: 48 days',
@@ -155,12 +155,12 @@ const mockRMInsights: AIInsight[] = [
     {
         id: 'rm-8',
         category: 'client',
-        title: 'Referral Opportunity: Sanjay Gupta Network',
-        description: 'Client Sanjay Gupta is connected to 12 UHNW individuals (>$100 Million) in his network. Relationship strength: High. Referral probability: 73% based on satisfaction scores.',
+        title: 'Referral Opportunity: Yousef Al-Omari Network',
+        description: 'Client Yousef Al-Omari is connected to 12 UHNW individuals (>$100 Million) in his network. Relationship strength: High. Referral probability: 73% based on satisfaction scores.',
         priority: 'medium',
         confidence: 81,
         actionable: true,
-        clientName: 'Sanjay Gupta',
+        clientName: 'Yousef Al-Omari',
         estimatedValue: '$340 Million potential',
         suggestedAction: 'Request warm introductions during next meeting. Offer referral incentive program. Focus on 3 highest-value connections first.',
         dataPoints: [

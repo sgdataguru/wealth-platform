@@ -153,7 +153,7 @@ export default function LiquidityTriggersPanel({ triggers, isLoading }: Liquidit
             Client: t.clientName,
             'Client Code': t.clientCode,
             Event: t.eventType.replace(/_/g, ' ').toUpperCase(),
-            Amount: `₹${(t.amount / 10000000).toFixed(2)} Cr`,
+            Amount: `AED ${(t.amount / 10000000).toFixed(2)}M`,
             Date: new Date(t.eventDate).toLocaleDateString(),
             'Days Until': t.daysUntilEvent,
             Probability: `${t.probability}%`,
@@ -200,7 +200,7 @@ export default function LiquidityTriggersPanel({ triggers, isLoading }: Liquidit
                             🔥 Liquidity Triggers & Actions
                         </h3>
                         <p className="text-sm text-[#5A6C7D] mt-1">
-                            Next 12 months • {filteredTriggers.length} events • ₹{(totalInPlay / 10000000).toFixed(2)} Cr in play
+                            Next 12 months • {filteredTriggers.length} events • AED {(totalInPlay / 10000000).toFixed(2)}M in play
                         </p>
                     </div>
 

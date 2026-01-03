@@ -61,17 +61,17 @@ export default function AIChatbot() {
         role: 'assistant',
         content: `Based on current signals, I found relevant prospects matching your query "${input}". Here are some insights:
 
-1. **Rajesh Kumar** (Score: 92)
+1. **Khalid Al-Mansouri** (Score: 92)
    IPO filing detected - High priority
    
-2. **Anita Patel** (Score: 87)
+2. **Aisha Al-Farsi** (Score: 87)
    Recent funding round announced
 
 Would you like me to provide more details on any of these prospects?`,
         timestamp: new Date(),
         links: [
-          { label: 'View Rajesh Kumar', href: '/prospects/1' },
-          { label: 'View Anita Patel', href: '/prospects/2' },
+          { label: 'View Khalid Al-Mansouri', href: '/prospects/1' },
+          { label: 'View Aisha Al-Farsi', href: '/prospects/2' },
         ],
       };
       setMessages((prev) => [...prev, aiResponse]);

@@ -13,7 +13,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
     {
         id: 'LT-001',
         clientId: 'HC001',
-        clientName: 'Ramesh Gupta',
+        clientName: 'Hamad Al-Ansari',
         clientCode: '#HC001',
         eventType: 'lock_in_expiry',
         amount: 450000000,
@@ -30,7 +30,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['Structured Products', 'Alternative Investments', 'PMS'],
         assignedRM: 'RM-001',
-        assignedRMName: 'Priya Sharma',
+        assignedRMName: 'Maha Al-Suwaidi',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -38,7 +38,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
     {
         id: 'LT-002',
         clientId: 'HC045',
-        clientName: 'Meera Kapoor',
+        clientName: 'Aisha Al-Mazroui',
         clientCode: '#HC045',
         eventType: 'bond_maturity',
         amount: 280000000,
@@ -50,11 +50,11 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         confidenceLevel: 'high',
         recommendedActions: [
             'Propose PMS allocation',
-            'Present high-yield corporate FD options'
+            'Present high-yield corporate term deposit options'
         ],
         recommendedProducts: ['PMS', 'Fixed Income', 'Structured Products'],
         assignedRM: 'RM-002',
-        assignedRMName: 'Vikram Singh',
+        assignedRMName: 'Yousef Al-Omari',
         status: 'engaged',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -62,7 +62,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
     {
         id: 'LT-003',
         clientId: 'HC128',
-        clientName: 'Sanjay Malhotra',
+        clientName: 'Yousef Al-Omari',
         clientCode: '#HC128',
         eventType: 'esop_vesting',
         amount: 620000000,
@@ -78,7 +78,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['Alternative Investments', 'Real Estate', 'PMS'],
         assignedRM: 'RM-001',
-        assignedRMName: 'Priya Sharma',
+        assignedRMName: 'Maha Al-Suwaidi',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -102,7 +102,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['Mutual Funds', 'PMS', 'Fixed Income'],
         assignedRM: 'RM-003',
-        assignedRMName: 'Anita Patel',
+        assignedRMName: 'Laila Al-Farsi',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -127,7 +127,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['PMS', 'Alternative Investments', 'Real Estate'],
         assignedRM: 'RM-002',
-        assignedRMName: 'Vikram Singh',
+        assignedRMName: 'Yousef Al-Omari',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -152,7 +152,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['PMS', 'Alternative Investments', 'Structured Products'],
         assignedRM: 'RM-001',
-        assignedRMName: 'Priya Sharma',
+        assignedRMName: 'Maha Al-Suwaidi',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -161,24 +161,24 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
 
 const MOCK_ENHANCED_METRICS: EnhancedExecutiveMetrics = {
     // Existing metrics
-    totalAum: '₹4.6 L Cr',
+    totalAum: 'AED 4.6T',
     aumGrowth: 2.8,
     aumGrowthYoy: 19.2,
-    netNewMoney: '₹12,450 Cr',
+    netNewMoney: 'AED 124.5B',
     operatingMargin: 34.0,
     roe: 31.5,
     totalRMs: 1247,
-    revenuePerRM: '₹23.2 L',
+    revenuePerRM: 'AED 23.2M',
     avgRMProductivity: 78,
     totalClients: 134000,
     hniClients: 128500,
     uhniClients: 5500,
     clientRetentionRate: 94.5,
-    clientAcquisitionCost: '₹2.8 L',
+    clientAcquisitionCost: 'AED 2.8M',
 
     // New metrics from client feedback
-    targetAUM: '₹5.2 L Cr',
-    aumPerRM: '₹3.7 Cr',
+    targetAUM: 'AED 5.2T',
+    aumPerRM: 'AED 370M',
     totalLeads: 4400,
     targetLeadsPerQuarter: 1200,
     totalUHNWClients: 5500,
@@ -187,27 +187,27 @@ const MOCK_ENHANCED_METRICS: EnhancedExecutiveMetrics = {
 
     // Trend data
     topPerformingRMs: [
-        { rmId: 'RM-001', rmName: 'Priya Sharma', aum: 850, growth: 24.5, clientCount: 65, revenue: 42, rank: 1 },
-        { rmId: 'RM-002', rmName: 'Vikram Singh', aum: 720, growth: 22.1, clientCount: 58, revenue: 38, rank: 2 },
-        { rmId: 'RM-003', rmName: 'Anita Patel', aum: 680, growth: 21.3, clientCount: 52, revenue: 36, rank: 3 },
+        { rmId: 'RM-001', rmName: 'Maha Al-Suwaidi', aum: 850, growth: 24.5, clientCount: 65, revenue: 42, rank: 1 },
+        { rmId: 'RM-002', rmName: 'Yousef Al-Omari', aum: 720, growth: 22.1, clientCount: 58, revenue: 38, rank: 2 },
+        { rmId: 'RM-003', rmName: 'Laila Al-Farsi', aum: 680, growth: 21.3, clientCount: 52, revenue: 36, rank: 3 },
     ],
 
     underperformingRMs: [],
 
     // Regional breakdown (Middle East focus)
     regionalBreakdown: [
-        { region: 'Dubai', aum: '$95 Billion', growth: 17.2, rmCount: 298, clientCount: 35000 },
-        { region: 'Abu Dhabi', aum: '$28 Billion', growth: 15.8, rmCount: 85, clientCount: 12500 },
-        { region: 'Riyadh', aum: '$18.5 Billion', growth: 14.2, rmCount: 58, clientCount: 8200 },
-        { region: 'Doha', aum: '$12 Billion', growth: 12.8, rmCount: 42, clientCount: 5800 },
+        { region: 'Dubai', aum: 'AED 95B', growth: 17.2, rmCount: 298, clientCount: 35000 },
+        { region: 'Abu Dhabi', aum: 'AED 28B', growth: 15.8, rmCount: 85, clientCount: 12500 },
+        { region: 'Riyadh', aum: 'AED 18.5B', growth: 14.2, rmCount: 58, clientCount: 8200 },
+        { region: 'Doha', aum: 'AED 12B', growth: 12.8, rmCount: 42, clientCount: 5800 },
     ],
 
     productMix: [
-        { product: 'PMS', percentage: 35, value: '₹1.61 L Cr', color: '#2A2447' },
-        { product: 'Mutual Funds', percentage: 28, value: '₹1.29 L Cr', color: '#E85D54' },
-        { product: 'Fixed Income', percentage: 18, value: '₹82,800 Cr', color: '#5A6C7D' },
-        { product: 'Alternative Investments', percentage: 12, value: '₹55,200 Cr', color: '#8E99A4' },
-        { product: 'Equities', percentage: 7, value: '₹32,200 Cr', color: '#F06E66' },
+        { product: 'PMS', percentage: 35, value: 'AED 1.61T', color: '#2A2447' },
+        { product: 'Mutual Funds', percentage: 28, value: 'AED 1.29T', color: '#E85D54' },
+        { product: 'Fixed Income', percentage: 18, value: 'AED 828B', color: '#5A6C7D' },
+        { product: 'Alternative Investments', percentage: 12, value: 'AED 552B', color: '#8E99A4' },
+        { product: 'Equities', percentage: 7, value: 'AED 322B', color: '#F06E66' },
     ],
 
     aumTrend: [

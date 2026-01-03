@@ -143,7 +143,7 @@ export default function AlertCard({ alert, onDismiss, onAcknowledge }: AlertCard
         {isExpanded && (
           <div className="mt-3 pt-3 border-t border-gray-200">
             <p className="text-xs text-gray-600">
-              Created: {new Date(alert.createdAt).toLocaleString('en-IN')}
+              Created: {new Date(alert.createdAt).toLocaleString('en-AE')}
             </p>
           </div>
         )}

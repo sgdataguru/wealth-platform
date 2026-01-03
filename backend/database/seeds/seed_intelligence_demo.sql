@@ -15,7 +15,7 @@ ON CONFLICT DO NOTHING;
 
 INSERT INTO intelligence_conflicts (signal_id, field, conflicting_values, resolution, has_auto_resolution)
 VALUES
-('demo-signal-1', 'beneficiary_name', '[{"value":"Rajesh Kumar","source":"zauba","confidence":60},{"value":"R. Kumar","source":"mca","confidence":80}]'::jsonb, null, false)
+('demo-signal-1', 'beneficiary_name', '[{"value":"Faisal Al-Nuaimi","source":"uae-registry","confidence":60},{"value":"F. Al-Nuaimi","source":"uae-moe","confidence":80}]'::jsonb, null, false)
 ON CONFLICT DO NOTHING;
 
 INSERT INTO intelligence_audit_logs (event_type, source, details, severity)

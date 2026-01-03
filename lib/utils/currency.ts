@@ -46,7 +46,7 @@ export function formatAEDToUSD(aed: number): string {
  * @deprecated Use formatAEDToUSD or formatMillionsAsUSD instead
  */
 export function formatCroreToUSD(crore: number): string {
-  // Convert crore to millions for display (1 Cr = 10 million)
+  // Convert legacy unit to millions for display (10 million)
   return formatMillionsAsUSD(crore * 10);
 }
 

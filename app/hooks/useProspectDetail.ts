@@ -65,7 +65,7 @@ export function useProspectDetail(prospectId: string | null) {
       const mockConnections: Connection[] = [
         {
           id: 'c1',
-          name: 'Vikram Sharma',
+          name: 'Hassan Al-Rashid',
           relationship: 'Board Member',
           strength: 85,
           canIntroduce: true,
@@ -73,11 +73,11 @@ export function useProspectDetail(prospectId: string | null) {
         },
         {
           id: 'c2',
-          name: 'Priya Mehta',
+          name: 'Maha Al-Suwaidi',
           relationship: 'Co-founder',
           strength: 90,
           canIntroduce: true,
-          company: 'Tech Innovations',
+          company: 'Harbor Tech Solutions',
         },
       ];
 

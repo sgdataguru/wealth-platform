@@ -17,7 +17,7 @@ interface ProspectiveProductsByLeadProps {
 const MOCK_PROSPECTIVE_PRODUCTS: ProspectiveProductMix[] = [
     {
         leadId: 'L001',
-        leadName: 'Arjun Reddy',
+        leadName: 'Hamad Al-Ansari',
         estimatedNetWorth: 950000000,
         riskProfile: 'aggressive',
         recommendedProducts: [
@@ -44,11 +44,11 @@ const MOCK_PROSPECTIVE_PRODUCTS: ProspectiveProductMix[] = [
             },
         ],
         totalExpectedAUM: 855000000,
-        assignedRM: 'Rajesh Kumar',
+        assignedRM: 'Maha Al-Suwaidi',
     },
     {
         leadId: 'L002',
-        leadName: 'Deepak Verma',
+        leadName: 'Tariq Al-Hakim',
         estimatedNetWorth: 420000000,
         riskProfile: 'moderate',
         recommendedProducts: [
@@ -75,7 +75,7 @@ const MOCK_PROSPECTIVE_PRODUCTS: ProspectiveProductMix[] = [
             },
         ],
         totalExpectedAUM: 378000000,
-        assignedRM: 'Anita Patel',
+        assignedRM: 'Laila Al-Farsi',
     },
 ];
 
@@ -154,10 +154,10 @@ export default function ProspectiveProductsByLead({ data = MOCK_PROSPECTIVE_PROD
                             <div className="text-right">
                                 <p className="text-sm text-[#8E99A4]">Est. Net Worth</p>
                                 <p className="text-lg font-bold text-[#1A1A2E]">
-                                    ₹{(prospect.estimatedNetWorth / 10000000).toFixed(2)} Cr
+                                    AED {(prospect.estimatedNetWorth / 10000000).toFixed(2)}M
                                 </p>
                                 <p className="text-xs text-[#E85D54] font-medium mt-1">
-                                    Target: ₹{(prospect.totalExpectedAUM / 10000000).toFixed(2)} Cr
+                                    Target: AED {(prospect.totalExpectedAUM / 10000000).toFixed(2)}M
                                 </p>
                             </div>
                         </div>
@@ -184,7 +184,7 @@ export default function ProspectiveProductsByLead({ data = MOCK_PROSPECTIVE_PROD
                                             </div>
                                             <div className="text-right ml-4">
                                                 <p className="text-sm font-bold text-[#1A1A2E]">
-                                                    ₹{(product.expectedAllocation / 10000000).toFixed(2)} Cr
+                                                    AED {(product.expectedAllocation / 10000000).toFixed(2)}M
                                                 </p>
                                             </div>
                                         </div>

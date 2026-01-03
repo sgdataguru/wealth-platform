@@ -13,18 +13,18 @@ const mockSuggestions: EngagementSuggestion[] = [
     rmId: 'rm-1',
     clientId: '1',
     signalId: 's1',
-    title: 'Rajesh Kumar - IPO Filing',
-    context: 'Tech Innovations filed DRHP with SEBI yesterday. Rajesh (35% stake) may realize ₹298Cr in 60-90 days. This represents a significant liquidity event that requires immediate attention.',
-    recommendedAction: 'Call Rajesh to discuss tax-efficient exit strategies and post-liquidity wealth management plan. Suggest meeting with tax advisor within the next 3 days.',
+    title: 'Khalid Al-Mansouri - IPO Filing',
+    context: 'GulfTech Innovations filed a prospectus with the UAE SCA yesterday. Khalid (35% stake) may realize AED 120M in 60-90 days. This represents a significant liquidity event that requires immediate attention.',
+    recommendedAction: 'Call Khalid to discuss tax-efficient exit strategies and post-liquidity wealth management plan. Suggest meeting with tax advisor within the next 3 days.',
     priority: 'critical',
     category: 'liquidity_event',
     generatedAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
     expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days from now
     client: {
       id: '1',
-      name: 'Rajesh Kumar',
-      company: 'Tech Innovations Pvt Ltd',
-      estimatedWealth: 29800000000, // ₹298Cr
+      name: 'Khalid Al-Mansouri',
+      company: 'GulfTech Innovations LLC',
+      estimatedWealth: 1200000000, // AED 120M
       leadScore: 92,
     },
     signal: {
@@ -41,17 +41,17 @@ const mockSuggestions: EngagementSuggestion[] = [
     rmId: 'rm-1',
     clientId: '2',
     signalId: 's4',
-    title: 'Anita Patel - Series C Funding Announced',
-    context: 'FinServ Holdings raised ₹350Cr Series C led by Sequoia Capital. Anita is Founder/CEO and likely to see significant stake dilution but increased company valuation.',
-    recommendedAction: 'Congratulate Anita on the funding and explore opportunities for diversifying wealth beyond the company. Schedule a portfolio review within 2 weeks.',
+    title: 'Aisha Al-Farsi - Series C Funding Announced',
+    context: 'Riyadh FinServ Holdings raised AED 90M Series C led by Gulf Capital. Aisha is Founder/CEO and likely to see significant stake dilution but increased company valuation.',
+    recommendedAction: 'Congratulate Aisha on the funding and explore opportunities for diversifying wealth beyond the company. Schedule a portfolio review within 2 weeks.',
     priority: 'high',
     category: 'relationship_opportunity',
     generatedAt: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 hours ago
     client: {
       id: '2',
-      name: 'Anita Patel',
-      company: 'FinServ Holdings Ltd',
-      estimatedWealth: 15000000000, // ₹150Cr
+      name: 'Aisha Al-Farsi',
+      company: 'Riyadh FinServ Holdings',
+      estimatedWealth: 900000000, // AED 90M
       leadScore: 87,
     },
     signal: {
@@ -68,17 +68,17 @@ const mockSuggestions: EngagementSuggestion[] = [
     rmId: 'rm-1',
     clientId: '3',
     signalId: 's5',
-    title: 'Vikram Rao - Board Change Detected',
-    context: 'Manufacturing Solutions appointed 3 new independent directors. Vikram Rao is promoter. This could signal preparation for PE investment or IPO in next 6-12 months.',
-    recommendedAction: 'Reach out to Vikram to understand board changes and discuss long-term wealth planning. Good opportunity to position our services for upcoming liquidity event.',
+    title: 'Omar Al-Hassan - Board Change Detected',
+    context: 'Desert Manufacturing Solutions appointed three new independent directors. Omar Al-Hassan is the promoter. This could signal preparation for PE investment or an IPO in the next 6-12 months.',
+    recommendedAction: 'Reach out to Omar to understand board changes and discuss long-term wealth planning. Good opportunity to position our services for upcoming liquidity event.',
     priority: 'medium',
     category: 'liquidity_event',
     generatedAt: new Date(Date.now() - 12 * 60 * 60 * 1000), // 12 hours ago
     client: {
       id: '3',
-      name: 'Vikram Rao',
-      company: 'Manufacturing Solutions Ltd',
-      estimatedWealth: 8500000000, // ₹85Cr
+      name: 'Omar Al-Hassan',
+      company: 'Desert Manufacturing Solutions',
+      estimatedWealth: 750000000, // AED 75M
       leadScore: 75,
     },
     signal: {

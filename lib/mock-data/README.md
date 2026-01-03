@@ -6,9 +6,9 @@ This directory contains mock data for demonstrating the multi-source data aggreg
 
 The mock data simulates responses from 6 different data sources:
 1. **PrivateCircle** - VC/PE funding data
-2. **Zauba Corp** - MCA filings and company data
-3. **NSE India** - IPO filings from National Stock Exchange
-4. **BSE India** - IPO filings from Bombay Stock Exchange
+2. **UAE Ministry of Economy** - Corporate registry filings and company data
+3. **DFM (Dubai)** - IPO filings from Dubai Financial Market
+4. **ADX (Abu Dhabi)** - IPO filings from Abu Dhabi Securities Exchange
 5. **NewsAPI** - Business news and announcements
 6. **Public Domain** - General public information
 
@@ -91,7 +91,7 @@ GET /api/data-sources/metrics?sourceId=privatecircle
     },
     "bySource": {
       "privatecircle": { /* source metrics */ },
-      "zauba": { /* source metrics */ }
+      "uae-registry": { /* source metrics */ }
       // ... other sources
     }
   }
@@ -130,7 +130,7 @@ GET /api/data-sources/conflicts?status=pending
       {
         "id": "conflict-001",
         "entityType": "company",
-        "entityId": "comp-zomato",
+        "entityId": "comp-gulftech",
         "field": "funding_amount",
         "conflictingValues": [
           {
@@ -242,32 +242,32 @@ GET /api/data-sources/audit-logs?action=sync&status=success
 | Source | Type | Status | Reliability | Uptime | Data Quality |
 |--------|------|--------|-------------|--------|--------------|
 | PrivateCircle | API | Online | 92% | 98.5% | 88% |
-| Zauba Corp | Scraper | Online | 95% | 99.2% | 95% |
-| NSE India | API | Online | 98% | 99.8% | 99% |
-| BSE India | API | Degraded | 96% | 97.5% | 97% |
+| UAE Ministry of Economy | Scraper | Online | 95% | 99.2% | 95% |
+| DFM (Dubai) | API | Online | 98% | 99.8% | 99% |
+| ADX (Abu Dhabi) | API | Degraded | 96% | 97.5% | 97% |
 | NewsAPI | API | Online | 85% | 96.0% | 75% |
 | Public Domain | Scraper | Online | 78% | 94.0% | 70% |
 
 ### Sample Events
 
 **PrivateCircle Events (5 funding rounds):**
-- TechVenture Solutions: $250M Series B
-- GreenEnergy Innovations: $75M Series A
-- FinTech Pro Services: $500M Pre-IPO
-- HealthTech Diagnostics: $180M Series C
-- EdTech Learning Platform: $15M Seed
+- Harbor Tech Solutions: $250M Series B
+- Desert Solar Innovations: $75M Series A
+- GulfPay Services: $500M Pre-IPO
+- HealthTech Diagnostics ME: $180M Series C
+- EduBridge Learning Platform: $15M Seed
 
-**Zauba Corp Events (4 MCA filings):**
+**Registry Events (4 filings):**
  - Dubai Infra Developers: Director change
- - Riyadh Real Estate Holdings: Share transfer
- - Doha Tech Ventures: Filing update
- - Manama Manufacturing: Director change
+ - Abu Dhabi Real Estate Holdings: Share transfer
+ - Sharjah Tech Ventures: Filing update
+ - Ras Al Khaimah Manufacturing Industries: Director change
 
 **IPO Events (4 filings):**
-- CloudTech Solutions: $1,200 Million DRHP filed (NSE)
-- Renewable Energy Corp: $850 Million prospectus (BSE)
-- Fintech Payments Gateway: $1,500 Million approved (NSE)
-- Logistics & Supply Chain: $600 Million DRHP filed (BSE)
+- CloudTech Solutions: $1,200 Million prospectus filed (DFM)
+- Renewable Energy Corp: $850 Million prospectus (ADX)
+- Fintech Payments Gateway: $1,500 Million approved (DFM)
+- Logistics & Supply Chain: $600 Million prospectus filed (ADX)
 
 **News Events (6 articles):**
 - Various company funding announcements
@@ -276,18 +276,18 @@ GET /api/data-sources/audit-logs?action=sync&status=success
 
 ### Data Conflicts (3 conflicts)
 
-1. **Zomato Funding Amount**
+1. **Harbor Tech Solutions Funding Amount**
    - PrivateCircle: $250M (confidence: 85%)
    - NewsAPI: $275M (confidence: 65%)
    - Status: Pending
 
-2. **Rajesh Kumar Role**
-   - Zauba Corp: Managing Director (confidence: 95%)
+2. **Faisal Al-Nuaimi Role**
+   - UAE Ministry of Economy: Managing Director (confidence: 95%)
    - Public Domain: Director (confidence: 70%)
    - Status: Pending
 
 3. **Tech Co IPO Size**
-  - NSE: $5,000 Million (confidence: 99%)
+  - DFM: $5,000 Million (confidence: 99%)
   - NewsAPI: $4,800 Million (confidence: 60%)
    - Status: Resolved
 
@@ -321,7 +321,7 @@ getAuditLogsBySource(sourceId: string): AuditLog[]
 // Get all events for a company
 getEventsByCompany(companyName: string): {
   privateCircle: PrivateCircleEvent[];
-  zauba: ZaubaEvent[];
+  registry: RegistryEvent[];
   ipo: IPOEvent[];
   news: NewsEvent[];
 }

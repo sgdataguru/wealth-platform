@@ -31,17 +31,17 @@ const SOURCE_DETAILS: Record<
     text: 'text-[#2A2447]',
     description: 'Privately sourced event with human curation and enrichment.',
   },
-  'Zauba Corp': {
-    label: 'Zauba Corp',
+  'UAE Ministry of Economy': {
+    label: 'UAE Ministry of Economy',
     tier: 'Filings — corroborated',
     icon: '📑',
     bg: 'bg-[#FFF6EB]',
     ring: 'ring-[#F6C28B]',
     text: 'text-[#5A3B10]',
-    description: 'Company filings matched to entity metadata.',
+    description: 'Company registry filings matched to entity metadata.',
   },
-  VCCircle: {
-    label: 'VCCircle',
+  Zawya: {
+    label: 'Zawya',
     tier: 'Media — curated',
     icon: '📰',
     bg: 'bg-[#F0F7F4]',
@@ -274,7 +274,7 @@ export default function SignalCard({
             )}
             {signal.estimatedLiquidity && (
               <span className="flex items-center gap-1">
-                <span className="font-medium">Est. Liquidity:</span> ₹{signal.estimatedLiquidity}Cr
+                <span className="font-medium">Est. Liquidity:</span> AED {signal.estimatedLiquidity}M
               </span>
             )}
             {signal.confidence && (

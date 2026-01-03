@@ -27,15 +27,15 @@ interface VoiceNote {
 const mockVoiceNotes: VoiceNote[] = [
     {
         id: 'vn-1',
-        title: 'Meeting with Rajesh Kumar - IPO Discussion',
+        title: 'Meeting with Faisal Al-Nuaimi - IPO Discussion',
         duration: 245,
         recordedAt: '',
         transcriptStatus: 'completed',
-        transcript: 'Good morning Rajesh, congratulations on the IPO filing. I wanted to discuss your post-IPO wealth management strategy. Based on our analysis, you\'ll have approximately 180 crores in liquid assets after the lock-in period expires. I recommend a diversified approach with 40% in PMS, 30% in alternative investments, and 30% in fixed income. We should also discuss tax optimization strategies to minimize capital gains tax. What are your thoughts on this allocation?',
+        transcript: 'Good morning Faisal, congratulations on the IPO filing. I wanted to discuss your post-IPO wealth management strategy. Based on our analysis, you\'ll have approximately AED 180M in liquid assets after the lock-in period expires. I recommend a diversified approach with 40% in PMS, 30% in alternative investments, and 30% in fixed income. We should also discuss tax optimization strategies. What are your thoughts on this allocation?',
         language: 'en',
-        linkedClients: ['Rajesh Kumar'],
+        linkedClients: ['Faisal Al-Nuaimi'],
         detectedTopics: ['IPO', 'Wealth Management', 'PMS', 'Alternative Investments', 'Tax Optimization'],
-        aiSummary: `Discussed post-IPO wealth management strategy with Rajesh Kumar. Proposed diversified allocation: 40% PMS, 30% alternative investments, 30% fixed income. Estimated liquid assets: ${formatCroreToUSD(180)}. Client interested in tax optimization strategies.`,
+        aiSummary: `Discussed post-IPO wealth management strategy with Faisal Al-Nuaimi. Proposed diversified allocation: 40% PMS, 30% alternative investments, 30% fixed income. Estimated liquid assets: ${formatCroreToUSD(180)}. Client interested in tax optimization strategies.`,
         actionItems: [
             `Prepare detailed PMS proposal for ${formatCroreToUSD(72)} allocation`,
             'Schedule meeting with tax consultant',
@@ -46,17 +46,17 @@ const mockVoiceNotes: VoiceNote[] = [
     },
     {
         id: 'vn-2',
-        title: 'Call with Priya Sharma - Alternative Investments',
+        title: 'Call with Noor Al-Muhairi - Alternative Investments',
         duration: 180,
         recordedAt: '',
         transcriptStatus: 'completed',
-        transcript: 'Hi Priya, thank you for taking my call. I wanted to discuss the alternative investment opportunities we talked about last week. We have three PE funds that match your risk profile - Wamda Capital Growth Fund, MEVP Fund III, and Dubai Angel Investors Fund II. The minimum ticket size is $5 million per fund. These funds have historically delivered 22-28% IRR. Would you like me to send detailed information packs?',
+        transcript: 'Hi Noor, thank you for taking my call. I wanted to discuss the alternative investment opportunities we talked about last week. We have three PE funds that match your risk profile - Wamda Capital Growth Fund, MEVP Fund III, and Dubai Angel Investors Fund II. The minimum ticket size is $5 million per fund. These funds have historically delivered 22-28% IRR. Would you like me to send detailed information packs?',
         language: 'en',
-        linkedClients: ['Priya Sharma'],
+        linkedClients: ['Noor Al-Muhairi'],
         detectedTopics: ['Alternative Investments', 'PE Funds', 'Risk Profile', 'IRR'],
-        aiSummary: `Discussed alternative investment opportunities with Priya Sharma. Presented 3 PE funds: Wamda Capital, MEVP, Dubai Angel Investors. Minimum ticket: $5 Million per fund. Historical IRR: 22-28%. Client requested detailed information packs.`,
+        aiSummary: `Discussed alternative investment opportunities with Noor Al-Muhairi. Presented 3 PE funds: Wamda Capital, MEVP, Dubai Angel Investors. Minimum ticket: $5 Million per fund. Historical IRR: 22-28%. Client requested detailed information packs.`,
         actionItems: [
-            'Send PE fund information packs to Priya',
+            'Send PE fund information packs to Noor',
             'Prepare comparison analysis of 3 funds',
             'Schedule follow-up call in 5 days',
             'Coordinate with fund managers for Q&A session'
@@ -65,15 +65,15 @@ const mockVoiceNotes: VoiceNote[] = [
     },
     {
         id: 'vn-3',
-        title: 'Re-engagement Call - Ankit Verma',
+        title: 'Re-engagement Call - Tariq Al-Hakim',
         duration: 120,
         recordedAt: '',
         transcriptStatus: 'completed',
-        transcript: 'Hello Ankit, I hope you\'re doing well. I noticed we haven\'t connected in a while and wanted to check in. I saw your LinkedIn post about structured products - we have some new offerings that might interest you. Our new equity-linked structured notes offer 12-15% returns with capital protection. Would you be open to a quick coffee meeting next week to discuss?',
+        transcript: 'Hello Tariq, I hope you\'re doing well. I noticed we haven\'t connected in a while and wanted to check in. I saw your LinkedIn post about structured products - we have some new offerings that might interest you. Our new equity-linked structured notes offer 12-15% returns with capital protection. Would you be open to a quick coffee meeting next week to discuss?',
         language: 'en',
-        linkedClients: ['Ankit Verma'],
+        linkedClients: ['Tariq Al-Hakim'],
         detectedTopics: ['Re-engagement', 'Structured Products', 'Equity-Linked Notes', 'Capital Protection'],
-        aiSummary: 'Re-engagement call with Ankit Verma after 32-day gap. Discussed new structured product offerings. Equity-linked notes with 12-15% returns and capital protection. Client open to coffee meeting next week.',
+        aiSummary: 'Re-engagement call with Tariq Al-Hakim after 32-day gap. Discussed new structured product offerings. Equity-linked notes with 12-15% returns and capital protection. Client open to coffee meeting next week.',
         actionItems: [
             'Schedule coffee meeting for next week',
             'Prepare structured products presentation',
@@ -84,20 +84,20 @@ const mockVoiceNotes: VoiceNote[] = [
     },
     {
         id: 'vn-4',
-        title: 'Hindi Conversation - Vikram Singh',
+        title: 'Regional Conversation - Hassan Al-Rashid',
         duration: 195,
         recordedAt: '',
         transcriptStatus: 'completed',
-        transcript: 'Namaste Vikram ji, aapka portfolio bahut achha perform kar raha hai. Is quarter mein 6.5% returns mile hain. Main aapko alternative investments ke baare mein batana chahta hoon. PE aur VC funds mein invest karne se aapko 20-25% returns mil sakte hain. Kya aap is baare mein discuss karna chahenge?',
-        language: 'hi',
-        linkedClients: ['Vikram Singh'],
+        transcript: 'Hello Hassan, your portfolio has performed strongly this quarter with 6.5% returns. I wanted to share alternative investment opportunities. Allocating to PE and VC funds could target 20-25% returns over the cycle. Would you like to discuss this further?',
+        language: 'en',
+        linkedClients: ['Hassan Al-Rashid'],
         detectedTopics: ['Portfolio Performance', 'Alternative Investments', 'PE/VC Funds', 'Returns'],
-        aiSummary: 'Hindi conversation with Vikram Singh. Discussed strong portfolio performance (6.5% quarterly returns). Introduced alternative investments opportunity (PE/VC funds with 20-25% potential returns). Client interested in further discussion.',
+        aiSummary: 'Conversation with Hassan Al-Rashid. Discussed strong portfolio performance (6.5% quarterly returns). Introduced alternative investments opportunity (PE/VC funds with 20-25% potential returns). Client interested in further discussion.',
         actionItems: [
-            'Prepare Hindi language alternative investments presentation',
+            'Prepare tailored alternative investments presentation',
             'Schedule in-person meeting',
             'Send portfolio performance report',
-            'Coordinate with Hindi-speaking fund managers'
+            'Coordinate with fund managers for follow-up'
         ],
         sentiment: 'positive'
     },
@@ -164,8 +164,8 @@ export default function VoiceToTextPanel() {
 
     const languages = [
         { code: 'en', label: 'English', flag: '🇬🇧' },
-        { code: 'hi', label: 'Hindi', flag: '🇮🇳' },
-        { code: 'mr', label: 'Marathi', flag: '🇮🇳' }
+        { code: 'hi', label: 'Arabic', flag: '🇦🇪' },
+        { code: 'mr', label: 'French', flag: '🇫🇷' }
     ];
 
     return (
