@@ -21,7 +21,18 @@ export type SignalType =
   | 'demerger'
   | 'rights_call'
   | 'margin_pledge'
-  | 'early_exit';
+  | 'early_exit'
+  | 'liquidity'
+  | 'wealth_creation'
+  | 'real_estate'
+  | 'healthcare'
+  | 'energy'
+  | 'logistics'
+  | 'consumer'
+  | 'financial_services'
+  | 'family_office_rotation'
+  | 'ipo_approval'
+  | 'strategic_stake_sale';
 
 // Data sources for signals
 export type DataSource =
@@ -37,7 +48,17 @@ export type DataSource =
   | 'Dubai Financial Services Authority'
   | 'Gulf News'
   | 'Arabian Business'
-  | 'Saxo Bank';
+  | 'Saxo Bank'
+  | 'Argaam'
+  | 'Zawya'
+  | 'Tadawul'
+  | 'ADX'
+  | 'DFM'
+  | 'SWFI'
+  | 'CMA Saudi Arabia'
+  | 'SAMA'
+  | 'ADGM'
+  | 'DIFC';
 
 // Timeline categories for signals
 export type SignalTimeline = '30_days' | '30_60_days' | '60_90_days' | '3_6_months' | '6_plus_months';
