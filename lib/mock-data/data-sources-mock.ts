@@ -352,7 +352,7 @@ export const mockDataConflicts: DataConflict[] = [
   {
     id: 'conflict-002',
     entityType: 'person',
-    entityId: 'person-rajesh-kumar',
+    entityId: 'person-khalid-alfarsi',
     field: 'company_role',
     conflictingValues: [
       {
@@ -516,7 +516,7 @@ export const mockPrivateCircleEvents: PrivateCircleEvent[] = [
       date: new Date('2025-12-15'),
     },
     investors: ['Sequoia Capital', 'Accel Partners', 'Tiger Global'],
-    promoters: ['Amit Sharma', 'Priya Mehta'],
+    promoters: ['Hassan Al-Zahrani', 'Maryam Al-Dosari'],
     source: 'PrivateCircle',
     sourceId: 'pc-deal-12345',
     confidence: 88,
@@ -530,7 +530,7 @@ export const mockPrivateCircleEvents: PrivateCircleEvent[] = [
       date: new Date('2025-12-10'),
     },
     investors: ['Matrix Partners', 'Lightspeed Venture', 'Nexus Venture Partners'],
-    promoters: ['Rajesh Verma', 'Sneha Patel'],
+    promoters: ['Abdullah Al-Ansari', 'Fatima Al-Rashid'],
     source: 'PrivateCircle',
     sourceId: 'pc-deal-12346',
     confidence: 85,
@@ -544,7 +544,7 @@ export const mockPrivateCircleEvents: PrivateCircleEvent[] = [
       date: new Date('2025-12-08'),
     },
     investors: ['SoftBank Vision Fund', 'Temasek Holdings', 'GIC Private Limited'],
-    promoters: ['Vikram Singh', 'Neha Gupta', 'Arjun Khanna'],
+    promoters: ['Khalid Al-Mutawa', 'Noura Al-Majid', 'Mohammed Al-Suwaidi'],
     source: 'PrivateCircle',
     sourceId: 'pc-deal-12347',
     confidence: 92,
@@ -558,7 +558,7 @@ export const mockPrivateCircleEvents: PrivateCircleEvent[] = [
       date: new Date('2025-12-05'),
     },
     investors: ['Kalaari Capital', 'Chiratae Ventures', 'Saif Partners'],
-    promoters: ['Dr. Anjali Rao', 'Sanjay Kumar'],
+    promoters: ['Dr. Aisha Al-Kaabi', 'Salem Al-Ameri'],
     source: 'PrivateCircle',
     sourceId: 'pc-deal-12348',
     confidence: 87,
@@ -572,7 +572,7 @@ export const mockPrivateCircleEvents: PrivateCircleEvent[] = [
       date: new Date('2025-12-01'),
     },
     investors: ['Wamda Capital', 'Middle East Venture Partners', 'Dubai Angel Investors'],
-    promoters: ['Rahul Desai', 'Kavita Nair'],
+    promoters: ['Omar Al-Mansoori', 'Layla Al-Qasimi'],
     source: 'PrivateCircle',
     sourceId: 'pc-deal-12349',
     confidence: 82,
@@ -590,9 +590,9 @@ export const mockZaubaEvents: ZaubaEvent[] = [
     eventType: 'director_change',
     details: {
       directors: [
-        { name: 'Rajesh Kumar Sharma', din: 'DIN00123456' },
-        { name: 'Priya Agarwal', din: 'DIN00234567' },
-        { name: 'Vikram Singh Rathore', din: 'DIN00345678' },
+        { name: 'Mohammed Al-Zaabi', din: 'DIN00123456' },
+        { name: 'Sara Al-Mazrouei', din: 'DIN00234567' },
+        { name: 'Khalid Al-Shamsi', din: 'DIN00345678' },
       ],
       shareCapital: 500000000, // $50 Million
       filingDate: new Date('2025-12-14'),
@@ -607,8 +607,8 @@ export const mockZaubaEvents: ZaubaEvent[] = [
     eventType: 'share_transfer',
     details: {
       directors: [
-        { name: 'Amit Gupta', din: 'DIN00456789' },
-        { name: 'Sneha Kapoor', din: 'DIN00567890' },
+        { name: 'Hassan Al-Yami', din: 'DIN00456789' },
+        { name: 'Noor Al-Harthy', din: 'DIN00567890' },
       ],
       shareCapital: 750000000, // $75 Million
       filingDate: new Date('2025-12-12'),
@@ -623,9 +623,9 @@ export const mockZaubaEvents: ZaubaEvent[] = [
     eventType: 'filing',
     details: {
       directors: [
-        { name: 'Karthik Ramesh', din: 'DIN00678901' },
-        { name: 'Lakshmi Venkatesh', din: 'DIN00789012' },
-        { name: 'Ravi Kumar Yadav', din: 'DIN00890123' },
+        { name: 'Tariq Al-Nuaimi', din: 'DIN00678901' },
+        { name: 'Ayesha Al-Zarouni', din: 'DIN00789012' },
+        { name: 'Sultan Al-Dhaheri', din: 'DIN00890123' },
       ],
       shareCapital: 320000000, // $32 Million
       filingDate: new Date('2025-12-10'),
@@ -640,8 +640,8 @@ export const mockZaubaEvents: ZaubaEvent[] = [
     eventType: 'director_change',
     details: {
       directors: [
-        { name: 'Suresh Babu Narayanan', din: 'DIN00901234' },
-        { name: 'Meera Krishnan', din: 'DIN01012345' },
+        { name: 'Ahmed Al-Balushi', din: 'DIN00901234' },
+        { name: 'Fatima Al-Kindi', din: 'DIN01012345' },
       ],
       shareCapital: 450000000, // $45 Million
       filingDate: new Date('2025-12-08'),
