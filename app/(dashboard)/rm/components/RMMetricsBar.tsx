@@ -6,6 +6,7 @@
 'use client';
 
 import type { RMDashboardMetrics } from '@/types/dashboard.types';
+import { buildDisplayChange } from '@/lib/utils/currency';
 
 interface RMMetricsBarProps {
   metrics: RMDashboardMetrics | null;
@@ -33,6 +34,11 @@ export default function RMMetricsBar({ metrics, isLoading }: RMMetricsBarProps) 
 
   if (!metrics) return null;
 
+  const aumChange = buildDisplayChange(metrics.totalAUM, metrics.aumChange);
+  const netNewChange = buildDisplayChange(metrics.netNewMoney, metrics.netNewMoneyChange);
+  const netNewLabel = metrics.netNewMoneyChange >= 0 ? 'Net Inflow' : 'Net Outflow';
+  const formatPercent = (value: number) => Math.abs(value).toFixed(1).replace(/\.0$/, '');
+
   return (
     <div className="bg-gradient-to-r from-[#1A1332] to-[#2A2447] rounded-lg shadow-md p-6 mb-8">
       {/* Greeting Header */}
@@ -59,7 +65,7 @@ export default function RMMetricsBar({ metrics, isLoading }: RMMetricsBarProps) 
             <span className={`text-xs font-semibold ${
               metrics.aumChange >= 0 ? 'text-green-400' : 'text-red-400'
             }`}>
-              {metrics.aumChange >= 0 ? '↑' : '↓'} {Math.abs(metrics.aumChange)}%
+              {aumChange.direction === 'up' ? '↑' : '↓'} {aumChange.formattedChange} ({formatPercent(metrics.aumChange)}%) Daily
             </span>
           </div>
         </div>
@@ -67,7 +73,7 @@ export default function RMMetricsBar({ metrics, isLoading }: RMMetricsBarProps) 
         {/* Net New Money */}
         <div className="flex flex-col">
           <span className="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">
-            Net New Money
+            {netNewLabel}
           </span>
           <div className="flex items-baseline gap-2">
             <span className="text-2xl font-bold text-white">
@@ -76,7 +82,7 @@ export default function RMMetricsBar({ metrics, isLoading }: RMMetricsBarProps) 
             <span className={`text-xs font-semibold ${
               metrics.netNewMoneyChange >= 0 ? 'text-green-400' : 'text-red-400'
             }`}>
-              {metrics.netNewMoneyChange >= 0 ? '↑' : '↓'} {Math.abs(metrics.netNewMoneyChange)}%
+              {netNewChange.direction === 'up' ? '↑' : '↓'} {netNewChange.formattedChange} ({formatPercent(metrics.netNewMoneyChange)}%) Quarter-to-date
             </span>
           </div>
         </div>

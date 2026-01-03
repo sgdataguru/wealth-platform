@@ -10,6 +10,7 @@ import { formatCroreAmount } from '@/lib/utils/currency';
 import { Card } from '@/app/components/ui';
 import DrillDownModal from '@/app/components/ui/DrillDownModal';
 import type { EnhancedExecutiveMetrics, DrillDownView } from '@/types';
+import { buildDisplayChange } from '@/lib/utils/currency';
 
 interface EnhancedExecutiveHeroMetricsProps {
     metrics: EnhancedExecutiveMetrics | null;
@@ -33,20 +34,23 @@ export default function EnhancedExecutiveHeroMetrics({ metrics, isLoading }: Enh
 
     if (!metrics) return null;
 
+    const aumMonthlyChange = buildDisplayChange(metrics.totalAum, metrics.aumGrowth);
+    const formatPercent = (value: number) => Math.abs(value).toFixed(1).replace(/\.0$/, '');
+
     const metricCards = [
         {
             id: 'current-aum',
             title: 'Current AUM',
             value: metrics.totalAum,
-            subtitle: `${metrics.aumGrowth >= 0 ? '↑' : '↓'} ${metrics.aumGrowth}% MoM`,
+            subtitle: `Monthly Change: ${aumMonthlyChange.direction === 'up' ? '↑' : '↓'} ${aumMonthlyChange.formattedChange} (${formatPercent(metrics.aumGrowth)}%)`,
             color: 'coral',
             drillDown: 'product_mix_by_client' as DrillDownView,
         },
         {
             id: 'net-new-aum',
-            title: 'Net New AUM',
+            title: 'Net Inflow',
             value: metrics.netNewMoney,
-            subtitle: 'This quarter',
+            subtitle: 'Quarter-to-date',
             color: 'green',
             drillDown: 'aum_sources' as DrillDownView,
         },

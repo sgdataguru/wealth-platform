@@ -7,6 +7,7 @@
 
 import { Card } from '@/app/components/ui';
 import type { RMMetrics } from '@/types';
+import { buildDisplayChange } from '@/lib/utils/currency';
 
 interface RMHeroMetricsProps {
     metrics: RMMetrics | null;
@@ -28,6 +29,9 @@ export default function RMHeroMetrics({ metrics, isLoading }: RMHeroMetricsProps
 
     if (!metrics) return null;
 
+    const aumChange = buildDisplayChange(metrics.myClientsAum, metrics.myClientsAumGrowth);
+    const formatPercent = (value: number) => Math.abs(value).toFixed(1).replace(/\.0$/, '');
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {/* My Clients AUM */}
@@ -43,9 +47,9 @@ export default function RMHeroMetrics({ metrics, isLoading }: RMHeroMetricsProps
                     </div>
                     <div className="flex items-center gap-1 mt-2">
                         <span className={`text-sm font-medium ${metrics.myClientsAumGrowth >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                            {metrics.myClientsAumGrowth >= 0 ? '↑' : '↓'} {Math.abs(metrics.myClientsAumGrowth)}%
+                            {aumChange.direction === 'up' ? '↑' : '↓'} {aumChange.formattedChange} ({formatPercent(metrics.myClientsAumGrowth)}%)
                         </span>
-                        <span className="text-xs text-[#8E99A4]">vs last month</span>
+                        <span className="text-xs text-[#8E99A4]">Monthly Change</span>
                     </div>
                 </div>
             </Card>
