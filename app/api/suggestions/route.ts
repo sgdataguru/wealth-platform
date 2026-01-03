@@ -5,6 +5,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import type { EngagementSuggestion, ApiResponse } from '@/types';
+import { formatCroreAmount } from '@/lib/utils/currency';
 
 // Mock suggestions data for demonstration
 const mockSuggestions: EngagementSuggestion[] = [
@@ -14,7 +15,7 @@ const mockSuggestions: EngagementSuggestion[] = [
     clientId: '1',
     signalId: 's1',
     title: 'Rajesh Kumar - IPO Filing',
-    context: 'Tech Innovations filed DRHP with SEBI yesterday. Rajesh (35% stake) may realize ₹298Cr in 60-90 days. This represents a significant liquidity event that requires immediate attention.',
+    context: `Tech Innovations filed DRHP with SEBI yesterday. Rajesh (35% stake) may realize ${formatCroreAmount(298)} in 60-90 days. This represents a significant liquidity event that requires immediate attention.`,
     recommendedAction: 'Call Rajesh to discuss tax-efficient exit strategies and post-liquidity wealth management plan. Suggest meeting with tax advisor within the next 3 days.',
     priority: 'critical',
     category: 'liquidity_event',
@@ -42,7 +43,7 @@ const mockSuggestions: EngagementSuggestion[] = [
     clientId: '2',
     signalId: 's4',
     title: 'Anita Patel - Series C Funding Announced',
-    context: 'FinServ Holdings raised ₹350Cr Series C led by Sequoia Capital. Anita is Founder/CEO and likely to see significant stake dilution but increased company valuation.',
+    context: `FinServ Holdings raised ${formatCroreAmount(350)} Series C led by Sequoia Capital. Anita is Founder/CEO and likely to see significant stake dilution but increased company valuation.`,
     recommendedAction: 'Congratulate Anita on the funding and explore opportunities for diversifying wealth beyond the company. Schedule a portfolio review within 2 weeks.',
     priority: 'high',
     category: 'relationship_opportunity',

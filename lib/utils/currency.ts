@@ -1,60 +1,123 @@
 /**
  * @file lib/utils/currency.ts
- * @description Helpers to convert AED / Middle East currency values to USD display strings (Million / Billion)
+ * @description Centralized currency formatting helpers for USD, AED, and INR.
  */
 
-/**
- * Convert millions to billions where appropriate
- */
-export function millionsToBillions(millions: number): number {
-  return millions / 1000;
+export type SupportedCurrency = 'USD' | 'AED' | 'INR';
+
+const CURRENCY_LOCALES: Record<SupportedCurrency, string> = {
+  USD: 'en-US',
+  AED: 'en-AE',
+  INR: 'en-IN',
+};
+
+const FORMATTER_CACHE = new Map<string, Intl.NumberFormat>();
+
+const CRORE_VALUE = 10_000_000;
+const LAKH_VALUE = 100_000;
+const MILLION_VALUE = 1_000_000;
+
+interface FormatCurrencyOptions {
+  currency?: SupportedCurrency;
+  notation?: Intl.NumberFormatOptions['notation'];
+  maximumFractionDigits?: number;
+  minimumFractionDigits?: number;
 }
 
-/**
- * Convert absolute AED amount (dirhams) to millions
- * Using approximate exchange rate: 1 USD = 3.67 AED
- */
-export function aedToMillions(aed: number): number {
-  const usd = aed / 3.67;
-  return usd / 1_000_000;
+function getFormatter({
+  currency,
+  notation,
+  maximumFractionDigits,
+  minimumFractionDigits,
+}: Required<FormatCurrencyOptions>) {
+  const locale = CURRENCY_LOCALES[currency];
+  const cacheKey = `${locale}-${currency}-${notation}-${maximumFractionDigits}-${minimumFractionDigits}`;
+  const cached = FORMATTER_CACHE.get(cacheKey);
+  if (cached) return cached;
+
+  const formatter = new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency,
+    notation,
+    compactDisplay: notation === 'compact' ? 'short' : undefined,
+    maximumFractionDigits,
+    minimumFractionDigits,
+  });
+  FORMATTER_CACHE.set(cacheKey, formatter);
+  return formatter;
 }
 
-/**
- * Format a value expressed in millions into a human-friendly USD string.
- * - <1000 -> "$X Million"
- * - >=1000 -> "$Y.Billion"
- */
+export function formatCurrencyAmount(
+  amount: number,
+  {
+    currency = 'USD',
+    notation = 'compact',
+    maximumFractionDigits = 1,
+    minimumFractionDigits = 0,
+  }: FormatCurrencyOptions = {}
+): string {
+  const formatter = getFormatter({
+    currency,
+    notation,
+    maximumFractionDigits,
+    minimumFractionDigits,
+  });
+  return formatter.format(amount);
+}
+
 export function formatMillionsAsUSD(millions: number): string {
-  if (millions >= 1000) {
-    const billions = (millions / 1000);
-    // show one decimal for readability
-    return `$${billions % 1 === 0 ? billions.toFixed(0) : billions.toFixed(1)} Billion`;
-  }
-  return `$${millions % 1 === 0 ? millions.toFixed(0) : millions.toFixed(1)} Million`;
+  return formatCurrencyAmount(millions * MILLION_VALUE, { currency: 'USD' });
+}
+
+export function formatAEDAmount(aed: number): string {
+  return formatCurrencyAmount(aed, { currency: 'AED' });
+}
+
+export function formatINRAmount(inr: number): string {
+  return formatCurrencyAmount(inr, { currency: 'INR' });
+}
+
+export function formatCroreAmount(
+  crore: number,
+  currency: SupportedCurrency = 'USD'
+): string {
+  return formatCurrencyAmount(crore * CRORE_VALUE, { currency });
+}
+
+export function formatLakhAmount(
+  lakh: number,
+  currency: SupportedCurrency = 'USD'
+): string {
+  return formatCurrencyAmount(lakh * LAKH_VALUE, { currency });
+}
+
+export function formatLakhCroreAmount(
+  lakhCrore: number,
+  currency: SupportedCurrency = 'USD'
+): string {
+  return formatCroreAmount(lakhCrore * 100_000, currency);
 }
 
 /**
- * Convenience: format an AED amount directly to USD display.
- * @param aed - Amount in AED (dirhams)
- */
-export function formatAEDToUSD(aed: number): string {
-  return formatMillionsAsUSD(aedToMillions(aed));
-}
-
-/**
- * Legacy function for backward compatibility
- * @deprecated Use formatAEDToUSD or formatMillionsAsUSD instead
+ * Legacy wrappers for backward compatibility.
+ * @deprecated Prefer formatCroreAmount or formatCurrencyAmount.
  */
 export function formatCroreToUSD(crore: number): string {
-  // Convert crore to millions for display (1 Cr = 10 million)
-  return formatMillionsAsUSD(crore * 10);
+  return formatCroreAmount(crore, 'USD');
 }
 
 /**
- * Legacy function for backward compatibility
- * @deprecated Use formatAEDToUSD instead
+ * Legacy wrapper for INR.
+ * @deprecated Prefer formatINRAmount.
  */
 export function formatINRToUSD(inr: number): string {
-  // Assume INR input, convert to millions
-  return formatMillionsAsUSD(inr / 1_000_000);
+  return formatINRAmount(inr);
+}
+
+/**
+ * Legacy wrapper for AED.
+ * @deprecated Prefer formatAEDAmount.
+ */
+export function formatAEDToUSD(aed: number): string {
+  return formatAEDAmount(aed);
 }

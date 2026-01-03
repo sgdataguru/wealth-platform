@@ -22,6 +22,7 @@ import TodayAgendaColumn from './components/TodayAgendaColumn';
 import MarketInsightsColumn from './components/MarketInsightsColumn';
 import { useDashboardData } from '@/app/hooks/useDashboardData';
 import type { Prospect } from '@/types';
+import { formatCroreAmount } from '@/lib/utils/currency';
 
 // Mock prospects for RM's book
 const mockRMProspects: Prospect[] = [
@@ -49,8 +50,8 @@ const mockRMProspects: Prospect[] = [
         lastContacted: new Date('2024-12-14'),
         createdAt: new Date('2024-01-15'),
         updatedAt: new Date('2024-12-15'),
-        estWealth: '₹450 Cr',
-        myShare: '₹180 Cr',
+        estWealth: formatCroreAmount(450),
+        myShare: formatCroreAmount(180),
         sharePercentage: 40,
     },
 ];

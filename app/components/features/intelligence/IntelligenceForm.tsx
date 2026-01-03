@@ -163,7 +163,7 @@ export default function IntelligenceForm({
           Estimated Amount (optional)
         </label>
         <div className="relative">
-          <span className="absolute left-4 top-3 text-[#5A6C7D]">₹</span>
+          <span className="absolute left-4 top-3 text-[#5A6C7D]">$</span>
           <input
             {...register('estimatedAmount', {
               setValueAs: (v) => v === '' ? undefined : parseFloat(v),

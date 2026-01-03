@@ -7,6 +7,7 @@
 'use client';
 
 import { SignalBadge } from '@/app/components/ui';
+import { formatCroreAmount } from '@/lib/utils/currency';
 import type { DataSource, Signal } from '@/types';
 
 const SOURCE_DETAILS: Record<
@@ -375,7 +376,7 @@ export default function SignalCard({
             )}
             {signal.estimatedLiquidity && (
               <span className="flex items-center gap-1">
-                <span className="font-medium">Est. Liquidity:</span> ₹{signal.estimatedLiquidity}Cr
+                <span className="font-medium">Est. Liquidity:</span> {formatCroreAmount(signal.estimatedLiquidity)}
               </span>
             )}
             {signal.confidence && (

@@ -7,6 +7,7 @@
 'use client';
 
 import Image from 'next/image';
+import { formatCroreAmount } from '@/lib/utils/currency';
 
 interface CockpitPreviewCardProps {
   title: string;
@@ -115,7 +116,7 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
               />
               <CockpitPreviewCard
                 title="AUM Movement"
-                value="₹24.3Cr"
+                value={formatCroreAmount(24.3)}
                 priority="medium"
                 trend="up"
                 trendValue="+18%"

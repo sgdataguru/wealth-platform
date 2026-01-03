@@ -7,6 +7,7 @@
 
 import { Card } from '@/app/components/ui';
 import { useState } from 'react';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 
 interface AIInsight {
     id: string;
@@ -100,7 +101,7 @@ const mockExecutiveInsights: AIInsight[] = [
         id: 'ai-5',
         category: 'opportunity',
         title: 'Cross-Sell Opportunity: PMS to Structured Products',
-        description: 'Predictive model identifies 34 PMS clients with high propensity for structured products based on risk profile, portfolio composition, and investment behavior. Estimated additional revenue: ₹45 Cr.',
+        description: `Predictive model identifies 34 PMS clients with high propensity for structured products based on risk profile, portfolio composition, and investment behavior. Estimated additional revenue: ${formatCroreToUSD(45)}.`,
         impact: 'medium',
         confidence: 84,
         actionable: true,

@@ -24,7 +24,7 @@ export default function RegionalBreakdown({ regions, isLoading }: RegionalBreakd
 
     if (!regions || regions.length === 0) return null;
 
-    const totalAUM = regions.reduce((sum, r) => sum + parseFloat(r.aum.replace(/[₹,\sCrLKk]/g, '')), 0);
+    const totalAUM = regions.reduce((sum, r) => sum + parseFloat(r.aum.replace(/[^\d.-]/g, '')), 0);
 
     return (
         <Card padding="lg">
@@ -50,7 +50,7 @@ export default function RegionalBreakdown({ regions, isLoading }: RegionalBreakd
                             <div
                                 className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#2A2447] to-[#E85D54] transition-all"
                                 style={{
-                                    width: `${(parseFloat(region.aum.replace(/[₹,\sCrLKk]/g, '')) / totalAUM) * 100}%`,
+                                    width: `${(parseFloat(region.aum.replace(/[^\d.-]/g, '')) / totalAUM) * 100}%`,
                                 }}
                             />
                         </div>

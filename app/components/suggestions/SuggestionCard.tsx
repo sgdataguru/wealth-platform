@@ -9,6 +9,7 @@ import { useState } from 'react';
 import Button from '../ui/Button';
 import type { EngagementSuggestion, SnoozeDuration } from '@/types';
 import { useSuggestionActions } from '@/hooks/useSuggestionActions';
+import { formatCroreAmount } from '@/lib/utils/currency';
 
 interface SuggestionCardProps {
   suggestion: EngagementSuggestion;
@@ -168,7 +169,7 @@ export default function SuggestionCard({ suggestion, onAction }: SuggestionCardP
           <span>Lead Score: {suggestion.client.leadScore}</span>
           <span>•</span>
           <span>
-            ₹{(suggestion.client.estimatedWealth / 10000000).toFixed(0)}Cr
+            {formatCroreAmount(suggestion.client.estimatedWealth / 10_000_000)}
           </span>
         </div>
         

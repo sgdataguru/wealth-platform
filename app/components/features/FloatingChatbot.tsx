@@ -6,6 +6,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { formatCroreAmount } from '@/lib/utils/currency';
 import type { UserRole } from '@/types';
 
 interface Message {
@@ -65,10 +66,10 @@ export default function FloatingChatbot({ userRole = 'rm' }: FloatingChatbotProp
         } else {
             // RM responses
             if (lowerMessage.includes('lead') || lowerMessage.includes('prospect')) {
-                return "You have 24 active leads with an average score of 72/100. Your top prospect is Arjun Reddy (₹95 Cr net worth, aggressive profile). He's showing strong interest in Alternative Investments. I recommend scheduling a meeting within the next week. Would you like me to draft talking points?";
+                return `You have 24 active leads with an average score of 72/100. Your top prospect is Arjun Reddy (${formatCroreAmount(95)} net worth, aggressive profile). He's showing strong interest in Alternative Investments. I recommend scheduling a meeting within the next week. Would you like me to draft talking points?`;
             }
             if (lowerMessage.includes('client') || lowerMessage.includes('portfolio')) {
-                return "You're managing 65 clients with ₹850 Cr total AUM. Ramesh Gupta's lock-in expires in 26 days (₹45 Cr liquidity event). I suggest preparing a diversification proposal with Structured Products and Alternative Investments. Need help with the proposal?";
+                return `You're managing 65 clients with ${formatCroreAmount(850)} total AUM. Ramesh Gupta's lock-in expires in 26 days (${formatCroreAmount(45)} liquidity event). I suggest preparing a diversification proposal with Structured Products and Alternative Investments. Need help with the proposal?`;
             }
             if (lowerMessage.includes('score') || lowerMessage.includes('scoring')) {
                 return "Lead scoring is based on 5 factors: Financial Profile (30%), Engagement Level (25%), Propensity to Convert (20%), Revenue Potential (15%), and Strategic Value (10%). Your highest-scored lead is currently at 92/100. Want to see the detailed breakdown?";

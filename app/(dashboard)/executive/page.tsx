@@ -18,6 +18,7 @@ import FloatingChatbot from '@/app/components/features/FloatingChatbot';
 import { useEnhancedExecutiveMetrics } from '@/app/hooks/useEnhancedExecutiveMetrics';
 import { useLoginNotification } from '@/app/hooks/useLoginNotification';
 import type { RMTask } from '@/types';
+import { formatCroreAmount } from '@/lib/utils/currency';
 
 // Mock recent RM tasks
 const mockRMTasks: RMTask[] = [
@@ -48,7 +49,7 @@ const mockRMTasks: RMTask[] = [
         dueDate: new Date('2024-12-20'),
         status: 'pending',
         title: 'Prepare proposal for HNI family office',
-        notes: 'Family looking to consolidate ₹450 Cr assets',
+        notes: `Family looking to consolidate ${formatCroreAmount(450)} assets`,
         createdAt: new Date('2024-12-19'),
     },
     {
@@ -62,7 +63,7 @@ const mockRMTasks: RMTask[] = [
         dueDate: new Date('2024-12-15'),
         status: 'overdue',
         title: 'Quarterly portfolio review for top client',
-        notes: 'Review needed for ₹280 Cr portfolio',
+        notes: `Review needed for ${formatCroreAmount(280)} portfolio`,
         createdAt: new Date('2024-12-10'),
     },
     {
