@@ -168,7 +168,7 @@ export default function SuggestionCard({ suggestion, onAction }: SuggestionCardP
           <span>Lead Score: {suggestion.client.leadScore}</span>
           <span>•</span>
           <span>
-            AED {(suggestion.client.estimatedWealth / 10000000).toFixed(0)}M
+            ${(suggestion.client.estimatedWealth / 10000000).toFixed(0)}M
           </span>
         </div>
         

@@ -274,7 +274,7 @@ export default function SignalCard({
             )}
             {signal.estimatedLiquidity && (
               <span className="flex items-center gap-1">
-                <span className="font-medium">Est. Liquidity:</span> AED {signal.estimatedLiquidity}M
+                <span className="font-medium">Est. Liquidity:</span> ${signal.estimatedLiquidity}M
               </span>
             )}
             {signal.confidence && (

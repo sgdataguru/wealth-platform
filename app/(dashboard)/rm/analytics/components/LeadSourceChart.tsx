@@ -8,11 +8,11 @@
 import { Card } from '@/app/components/ui';
 
 const leadSources = [
-    { source: 'Referrals', count: 15, conversionRate: 40, avgDealSize: 'AED 380M', roi: 'High', color: '#28A745' },
-    { source: 'Events', count: 6, conversionRate: 33, avgDealSize: 'AED 410M', roi: 'High', color: '#E85D54' },
-    { source: 'LinkedIn', count: 8, conversionRate: 25, avgDealSize: 'AED 220M', roi: 'Medium', color: '#2A2447' },
-    { source: 'Cold Outreach', count: 12, conversionRate: 8, avgDealSize: 'AED 150M', roi: 'Low', color: '#8E99A4' },
-    { source: 'Website', count: 6, conversionRate: 17, avgDealSize: 'AED 190M', roi: 'Medium', color: '#5A6C7D' },
+    { source: 'Referrals', count: 15, conversionRate: 40, avgDealSize: '$380M', roi: 'High', color: '#28A745' },
+    { source: 'Events', count: 6, conversionRate: 33, avgDealSize: '$410M', roi: 'High', color: '#E85D54' },
+    { source: 'LinkedIn', count: 8, conversionRate: 25, avgDealSize: '$220M', roi: 'Medium', color: '#2A2447' },
+    { source: 'Cold Outreach', count: 12, conversionRate: 8, avgDealSize: '$150M', roi: 'Low', color: '#8E99A4' },
+    { source: 'Website', count: 6, conversionRate: 17, avgDealSize: '$190M', roi: 'Medium', color: '#5A6C7D' },
 ];
 
 export default function LeadSourceChart() {
@@ -89,7 +89,7 @@ export default function LeadSourceChart() {
                     </li>
                     <li className="flex items-start gap-2">
                         <span className="text-[#E85D54] font-bold">2.</span>
-                        <span><strong>Prioritize events:</strong> Second-best conversion (33%) and highest average deal size (AED 410M).</span>
+                        <span><strong>Prioritize events:</strong> Second-best conversion (33%) and highest average deal size ($410M).</span>
                     </li>
                     <li className="flex items-start gap-2">
                         <span className="text-[#DC3545] font-bold">3.</span>

@@ -22,7 +22,7 @@ export default function MarketInsightCard({ insight }: MarketInsightCardProps) {
     },
     currency: {
       icon: '💱',
-      label: 'Currency (USD/AED)',
+      label: 'Currency (USD)',
       color: 'text-green-700',
       bg: 'bg-green-50',
       border: 'border-green-200',

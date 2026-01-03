@@ -154,10 +154,10 @@ export default function ProspectiveProductsByLead({ data = MOCK_PROSPECTIVE_PROD
                             <div className="text-right">
                                 <p className="text-sm text-[#8E99A4]">Est. Net Worth</p>
                                 <p className="text-lg font-bold text-[#1A1A2E]">
-                                    AED {(prospect.estimatedNetWorth / 10000000).toFixed(2)}M
+                                    ${(prospect.estimatedNetWorth / 10000000).toFixed(2)}M
                                 </p>
                                 <p className="text-xs text-[#E85D54] font-medium mt-1">
-                                    Target: AED {(prospect.totalExpectedAUM / 10000000).toFixed(2)}M
+                                    Target: ${(prospect.totalExpectedAUM / 10000000).toFixed(2)}M
                                 </p>
                             </div>
                         </div>
@@ -184,7 +184,7 @@ export default function ProspectiveProductsByLead({ data = MOCK_PROSPECTIVE_PROD
                                             </div>
                                             <div className="text-right ml-4">
                                                 <p className="text-sm font-bold text-[#1A1A2E]">
-                                                    AED {(product.expectedAllocation / 10000000).toFixed(2)}M
+                                                    ${(product.expectedAllocation / 10000000).toFixed(2)}M
                                                 </p>
                                             </div>
                                         </div>

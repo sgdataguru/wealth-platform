@@ -24,7 +24,7 @@ export default function LiveTransactionStream() {
         portfolioId: `port-${Math.floor(Math.random() * 10)}`,
         transactionType: ['BUY', 'SELL', 'TRANSFER', 'WITHDRAWAL', 'DEPOSIT'][Math.floor(Math.random() * 5)] as any,
         amount: Math.floor(Math.random() * 500000) + 10000,
-        currency: ['SAR', 'USD', 'AED'][Math.floor(Math.random() * 3)],
+        currency: ['USD', 'USD', 'USD'][Math.floor(Math.random() * 3)],
         isCrossBorder: Math.random() > 0.7,
         complianceStatus: ['COMPLIANT', 'FLAGGED', 'UNDER_REVIEW'][Math.floor(Math.random() * 3)] as any,
         flagReasons: Math.random() > 0.7 ? ['Threshold exceeded', 'High-risk client'] : [],

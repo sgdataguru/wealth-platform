@@ -6,7 +6,7 @@ A comprehensive platform for Ultra High Net Worth (UHNW) client management in th
 
 This platform is designed for wealth management in the Middle East, with support for:
 - **Primary Markets**: Dubai (DFM), Abu Dhabi (ADX), Riyadh (Tadawul)
-- **Currency**: USD/AED with regional exchange rates
+- **Currency**: USD with regional exchange rates
 - **Data Sources**: DFSA, Bloomberg Gulf, Gulf News, Arabian Business
 - **Geographic Coverage**: UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman
 

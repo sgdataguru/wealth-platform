@@ -6,7 +6,7 @@
 'use client';
 
 import type { ExtendedMetrics } from '@/types';
-import { formatAEDToUSD, formatMillionsAsUSD } from '@/lib/utils/currency';
+import { formatUSDFromAbsolute, formatMillionsAsUSD } from '@/lib/utils/currency';
 
 interface MetricsGridProps {
   metrics: ExtendedMetrics | null;
@@ -18,9 +18,9 @@ export default function MetricsGrid({ metrics }: MetricsGridProps) {
   }
 
   const formatCurrency = (amount: number) => {
-    // If number likely represents absolute AED (large number), convert from AED
+    // If number likely represents absolute USD (large number), convert from USD
     if (Math.abs(amount) >= 1_000_000) {
-      return formatAEDToUSD(amount);
+      return formatUSDFromAbsolute(amount);
     }
     // otherwise treat as millions
     return formatMillionsAsUSD(amount);

@@ -48,7 +48,7 @@ const mockRMTasks: RMTask[] = [
         dueDate: new Date('2024-12-20'),
         status: 'pending',
         title: 'Prepare proposal for HNI family office',
-        notes: 'Family looking to consolidate AED 450M assets',
+        notes: 'Family looking to consolidate $450M assets',
         createdAt: new Date('2024-12-19'),
     },
     {
@@ -62,7 +62,7 @@ const mockRMTasks: RMTask[] = [
         dueDate: new Date('2024-12-15'),
         status: 'overdue',
         title: 'Quarterly portfolio review for top client',
-        notes: 'Review needed for AED 280M portfolio',
+        notes: 'Review needed for $280M portfolio',
         createdAt: new Date('2024-12-10'),
     },
     {

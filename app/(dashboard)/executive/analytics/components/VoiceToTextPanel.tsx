@@ -30,13 +30,13 @@ const mockVoiceNotes: VoiceNote[] = [
         duration: 245,
         recordedAt: '2024-12-21T10:30:00',
         transcriptStatus: 'completed',
-        transcript: 'Good morning Khalid, congratulations on the IPO filing. I wanted to discuss your post-IPO wealth management strategy. Based on our analysis, you\'ll have approximately AED 180M in liquid assets after the lock-in period expires. I recommend a diversified approach with 40% in PMS, 30% in alternative investments, and 30% in fixed income. We should also discuss tax optimization strategies. What are your thoughts on this allocation?',
+        transcript: 'Good morning Khalid, congratulations on the IPO filing. I wanted to discuss your post-IPO wealth management strategy. Based on our analysis, you\'ll have approximately $180M in liquid assets after the lock-in period expires. I recommend a diversified approach with 40% in PMS, 30% in alternative investments, and 30% in fixed income. We should also discuss tax optimization strategies. What are your thoughts on this allocation?',
         language: 'en',
         linkedClients: ['Khalid Al-Mansouri'],
         detectedTopics: ['IPO', 'Wealth Management', 'PMS', 'Alternative Investments', 'Tax Optimization'],
-        aiSummary: 'Discussed post-IPO wealth management strategy with Khalid Al-Mansouri. Proposed diversified allocation: 40% PMS, 30% alternative investments, 30% fixed income. Estimated liquid assets: AED 180M. Client interested in tax optimization strategies.',
+        aiSummary: 'Discussed post-IPO wealth management strategy with Khalid Al-Mansouri. Proposed diversified allocation: 40% PMS, 30% alternative investments, 30% fixed income. Estimated liquid assets: $180M. Client interested in tax optimization strategies.',
         actionItems: [
-            'Prepare detailed PMS proposal for AED 72M allocation',
+            'Prepare detailed PMS proposal for $72M allocation',
             'Schedule meeting with tax consultant',
             'Send alternative investment opportunities deck',
             'Follow up in 3 days for decision'

@@ -115,7 +115,7 @@ export default function LoginShell({ children }: { children: React.ReactNode }) 
               />
               <CockpitPreviewCard
                 title="AUM Movement"
-                value="AED 24.3M"
+                value="$24.3M"
                 priority="medium"
                 trend="up"
                 trendValue="+18%"

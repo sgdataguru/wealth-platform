@@ -54,7 +54,7 @@ export function useProspectDetail(prospectId: string | null) {
       // Mock data - in production this comes from API
       const mockMetrics: ExtendedMetrics = {
         aum: 25000000,
-        aumCurrency: 'AED',
+        aumCurrency: 'USD',
         walletShare: 35,
         relationshipStrength: 78,
         lifetimeValue: 1250000,

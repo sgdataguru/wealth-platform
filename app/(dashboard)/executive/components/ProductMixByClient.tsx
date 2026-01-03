@@ -211,7 +211,7 @@ export default function ProductMixByClient({ data = MOCK_CLIENT_PRODUCT_MIX, isL
                             </div>
                             <div className="text-right">
                                 <p className="text-lg font-bold text-[#E85D54]">
-                                    AED {(client.totalAUM / 10000000).toFixed(2)}M
+                                    ${(client.totalAUM / 10000000).toFixed(2)}M
                                 </p>
                                 <p className="text-xs text-[#8E99A4]">
                                     Last review: {Math.floor((RENDER_REFERENCE_TIMESTAMP - client.lastReviewDate.getTime()) / (1000 * 60 * 60 * 24))}d ago
@@ -226,7 +226,7 @@ export default function ProductMixByClient({ data = MOCK_CLIENT_PRODUCT_MIX, isL
                                     <div className="flex items-center justify-between mb-1">
                                         <span className="text-sm font-medium text-[#1A1A2E]">{product.category}</span>
                                         <span className="text-sm text-[#5A6C7D]">
-                                            AED {(product.aum / 10000000).toFixed(2)}M ({product.percentage}%)
+                                            ${(product.aum / 10000000).toFixed(2)}M ({product.percentage}%)
                                         </span>
                                     </div>
                                     <div className="w-full bg-gray-200 rounded-full h-2">

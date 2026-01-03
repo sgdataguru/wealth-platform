@@ -10,7 +10,7 @@ import { Card } from '@/app/components/ui';
 const winLossData = {
     won: {
         count: 5,
-        totalValue: 'AED 245M',
+        totalValue: '$245M',
         reasons: [
             { reason: 'Strong relationship', percentage: 40 },
             { reason: 'Competitive pricing', percentage: 30 },
@@ -20,7 +20,7 @@ const winLossData = {
     },
     lost: {
         count: 8,
-        totalValue: 'AED 180M',
+        totalValue: '$180M',
         reasons: [
             { reason: 'Price too high', percentage: 38 },
             { reason: 'Lost to competitor', percentage: 25 },

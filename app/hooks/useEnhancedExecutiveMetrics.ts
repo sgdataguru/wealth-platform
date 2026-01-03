@@ -161,24 +161,24 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
 
 const MOCK_ENHANCED_METRICS: EnhancedExecutiveMetrics = {
     // Existing metrics
-    totalAum: 'AED 4.6T',
+    totalAum: '$4.6T',
     aumGrowth: 2.8,
     aumGrowthYoy: 19.2,
-    netNewMoney: 'AED 124.5B',
+    netNewMoney: '$124.5B',
     operatingMargin: 34.0,
     roe: 31.5,
     totalRMs: 1247,
-    revenuePerRM: 'AED 23.2M',
+    revenuePerRM: '$23.2M',
     avgRMProductivity: 78,
     totalClients: 134000,
     hniClients: 128500,
     uhniClients: 5500,
     clientRetentionRate: 94.5,
-    clientAcquisitionCost: 'AED 2.8M',
+    clientAcquisitionCost: '$2.8M',
 
     // New metrics from client feedback
-    targetAUM: 'AED 5.2T',
-    aumPerRM: 'AED 370M',
+    targetAUM: '$5.2T',
+    aumPerRM: '$370M',
     totalLeads: 4400,
     targetLeadsPerQuarter: 1200,
     totalUHNWClients: 5500,
@@ -196,18 +196,18 @@ const MOCK_ENHANCED_METRICS: EnhancedExecutiveMetrics = {
 
     // Regional breakdown (Middle East focus)
     regionalBreakdown: [
-        { region: 'Dubai', aum: 'AED 95B', growth: 17.2, rmCount: 298, clientCount: 35000 },
-        { region: 'Abu Dhabi', aum: 'AED 28B', growth: 15.8, rmCount: 85, clientCount: 12500 },
-        { region: 'Riyadh', aum: 'AED 18.5B', growth: 14.2, rmCount: 58, clientCount: 8200 },
-        { region: 'Doha', aum: 'AED 12B', growth: 12.8, rmCount: 42, clientCount: 5800 },
+        { region: 'Dubai', aum: '$95B', growth: 17.2, rmCount: 298, clientCount: 35000 },
+        { region: 'Abu Dhabi', aum: '$28B', growth: 15.8, rmCount: 85, clientCount: 12500 },
+        { region: 'Riyadh', aum: '$18.5B', growth: 14.2, rmCount: 58, clientCount: 8200 },
+        { region: 'Doha', aum: '$12B', growth: 12.8, rmCount: 42, clientCount: 5800 },
     ],
 
     productMix: [
-        { product: 'PMS', percentage: 35, value: 'AED 1.61T', color: '#2A2447' },
-        { product: 'Mutual Funds', percentage: 28, value: 'AED 1.29T', color: '#E85D54' },
-        { product: 'Fixed Income', percentage: 18, value: 'AED 828B', color: '#5A6C7D' },
-        { product: 'Alternative Investments', percentage: 12, value: 'AED 552B', color: '#8E99A4' },
-        { product: 'Equities', percentage: 7, value: 'AED 322B', color: '#F06E66' },
+        { product: 'PMS', percentage: 35, value: '$1.61T', color: '#2A2447' },
+        { product: 'Mutual Funds', percentage: 28, value: '$1.29T', color: '#E85D54' },
+        { product: 'Fixed Income', percentage: 18, value: '$828B', color: '#5A6C7D' },
+        { product: 'Alternative Investments', percentage: 12, value: '$552B', color: '#8E99A4' },
+        { product: 'Equities', percentage: 7, value: '$322B', color: '#F06E66' },
     ],
 
     aumTrend: [

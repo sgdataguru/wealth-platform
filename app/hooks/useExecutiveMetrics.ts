@@ -10,17 +10,17 @@ import type { ExecutiveMetrics } from '@/types';
 
 const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
     // Firm-wide performance
-    totalAum: 'AED 4.6T',
+    totalAum: '$4.6T',
     aumGrowth: 2.8,
     aumGrowthYoy: 19.2,
-    netNewMoney: 'AED 124.5B',
+    netNewMoney: '$124.5B',
     operatingMargin: 34.0,
     roe: 31.5,
 
     // Team metrics
     totalRMs: 1247,
-    aumPerRM: 'AED 370M',
-    revenuePerRM: 'AED 23.2M',
+    aumPerRM: '$370M',
+    revenuePerRM: '$23.2M',
     avgRMProductivity: 78,
 
     // Client metrics
@@ -28,7 +28,7 @@ const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
     hniClients: 128500,
     uhniClients: 5500,
     clientRetentionRate: 94.5,
-    clientAcquisitionCost: 'AED 2.8M',
+    clientAcquisitionCost: '$2.8M',
 
     // Top performers
     topPerformingRMs: [
@@ -58,9 +58,9 @@ const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
     productMix: [
         { product: 'Equity PMS', percentage: 35, value: '$161 Billion', color: '#2A2447' },
         { product: 'Mutual Funds', percentage: 28, value: '$129 Billion', color: '#E85D54' },
-        { product: 'Fixed Income', percentage: 18, value: 'AED 828B', color: '#5A6C7D' },
-        { product: 'Alternative Investments', percentage: 12, value: 'AED 552B', color: '#8E99A4' },
-        { product: 'Others', percentage: 7, value: 'AED 322B', color: '#F06E66' },
+        { product: 'Fixed Income', percentage: 18, value: '$828B', color: '#5A6C7D' },
+        { product: 'Alternative Investments', percentage: 12, value: '$552B', color: '#8E99A4' },
+        { product: 'Others', percentage: 7, value: '$322B', color: '#F06E66' },
     ],
 
     // AUM trend (last 12 months)

@@ -49,8 +49,8 @@ const mockRMProspects: Prospect[] = [
         lastContacted: new Date('2024-12-14'),
         createdAt: new Date('2024-01-15'),
         updatedAt: new Date('2024-12-15'),
-        estWealth: 'AED 450M',
-        myShare: 'AED 180M',
+        estWealth: '$450M',
+        myShare: '$180M',
         sharePercentage: 40,
     },
 ];

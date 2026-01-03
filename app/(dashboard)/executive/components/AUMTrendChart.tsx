@@ -150,7 +150,7 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
                                             fontWeight="700"
                                             fill="#E85D54"
                                         >
-                                            AED {point.value}T
+                                            ${point.value}T
                                         </text>
                                         {index > 0 && (
                                             <text
@@ -192,7 +192,7 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
                             Current
                         </span>
                         <p className="text-xl font-bold text-[#1A1A2E] mt-1">
-                            AED {data[data.length - 1].value}T
+                            ${data[data.length - 1].value}T
                         </p>
                     </div>
                     <div>
@@ -200,7 +200,7 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
                             Growth
                         </span>
                         <p className="text-xl font-bold text-[#28A745] mt-1">
-                            AED {(data[data.length - 1].value - data[0].value).toFixed(1)}T
+                            ${(data[data.length - 1].value - data[0].value).toFixed(1)}T
                         </p>
                     </div>
                     <div>
@@ -208,7 +208,7 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
                             Avg Monthly
                         </span>
                         <p className="text-xl font-bold text-[#1A1A2E] mt-1">
-                            +AED {((data[data.length - 1].value - data[0].value) / 12).toFixed(2)}T
+                            +${((data[data.length - 1].value - data[0].value) / 12).toFixed(2)}T
                         </p>
                     </div>
                 </div>

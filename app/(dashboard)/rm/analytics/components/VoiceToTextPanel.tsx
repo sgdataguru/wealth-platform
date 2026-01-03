@@ -31,7 +31,7 @@ const mockVoiceNotes: VoiceNote[] = [
         duration: 245,
         recordedAt: '',
         transcriptStatus: 'completed',
-        transcript: 'Good morning Faisal, congratulations on the IPO filing. I wanted to discuss your post-IPO wealth management strategy. Based on our analysis, you\'ll have approximately AED 180M in liquid assets after the lock-in period expires. I recommend a diversified approach with 40% in PMS, 30% in alternative investments, and 30% in fixed income. We should also discuss tax optimization strategies. What are your thoughts on this allocation?',
+        transcript: 'Good morning Faisal, congratulations on the IPO filing. I wanted to discuss your post-IPO wealth management strategy. Based on our analysis, you\'ll have approximately $180M in liquid assets after the lock-in period expires. I recommend a diversified approach with 40% in PMS, 30% in alternative investments, and 30% in fixed income. We should also discuss tax optimization strategies. What are your thoughts on this allocation?',
         language: 'en',
         linkedClients: ['Faisal Al-Nuaimi'],
         detectedTopics: ['IPO', 'Wealth Management', 'PMS', 'Alternative Investments', 'Tax Optimization'],

@@ -77,9 +77,9 @@ export const mockSuggestions: Suggestion[] = [
     priority: 'high',
     clientName: 'Aisha Al-Farsi',
     clientId: 'client-002',
-    clientContext: 'AED 85M in savings account yielding 3.5%, missing 5% term deposit opportunity',
+    clientContext: '$85M in savings account yielding 3.5%, missing 5% term deposit opportunity',
     suggestedAction: 'Propose laddered term deposits to optimize yield while maintaining liquidity',
-    reasoning: 'Client has significant idle cash. Market term deposit rates at 7.5% represent AED 3.4M/year additional income opportunity.',
+    reasoning: 'Client has significant idle cash. Market term deposit rates at 7.5% represent $3.4M/year additional income opportunity.',
     actionButtons: [
       { label: 'Create Term Deposit Proposal', action: 'create_fd_proposal', variant: 'primary' },
       { label: 'Send Email', action: 'send_email', variant: 'secondary' },
@@ -92,7 +92,7 @@ export const mockSuggestions: Suggestion[] = [
     priority: 'medium',
     clientName: 'Hassan Al-Rashid',
     clientId: 'client-003',
-    clientContext: 'Zero gold allocation in $300 Million portfolio, high AED cash exposure',
+    clientContext: 'Zero gold allocation in $300 Million portfolio, high cash exposure',
     suggestedAction: 'Propose 5% gold allocation via Gold ETFs for portfolio diversification',
     reasoning: 'Portfolio heavily concentrated in equities (75%) and real estate (25%). Gold can provide currency hedge and diversification.',
     actionButtons: [
@@ -348,9 +348,9 @@ export const mockMarketInsights: MarketInsight[] = [
   {
     id: 'market-002',
     assetClass: 'currency',
-    headline: 'USD/AED Remains Stable at Peg',
-    context: 'Dirham maintains stability at 3.67 AED per USD. Regional currency hedging strategies remain favorable for international portfolios.',
-    portfolioSuggestion: 'Clients with multi-currency exposure benefit from stable AED peg. Consider regional diversification.',
+    headline: 'USD Remains Stable on DXY Range',
+    context: 'Dollar index holds steady this week as inflation data matched expectations. Hedging costs remain favorable for global allocations.',
+    portfolioSuggestion: 'Clients with multi-currency exposure can maintain USD hedges while adding selective developed-market FX diversification.',
     change: 0.0,
     changeDirection: 'neutral',
     lastUpdated: new Date(),

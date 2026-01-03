@@ -115,7 +115,7 @@ const mockExecutiveReports: ClientReport[] = [
         netWorth: formatCroreToUSD(540),
         reportType: 'opportunities',
         generatedAt: '2024-12-21T09:00:00',
-        summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: AED 65M. Client shows strong propensity for structured products and international investments.',
+        summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: $65M. Client shows strong propensity for structured products and international investments.',
         keyMetrics: [
             { label: 'Cross-Sell Score', value: '8.7/10', trend: 'up' },
             { label: 'Wallet Share', value: '42%', trend: 'stable' },
@@ -149,12 +149,12 @@ export default function ClientReportsPanel() {
 
     // Mock client list
     const clients = [
-        { id: 'UHNW-001', name: 'Khalid Al-Mansouri', netWorth: 'AED 450M' },
-        { id: 'UHNW-002', name: 'Noor Al-Muhairi', netWorth: 'AED 680M' },
-        { id: 'UHNW-003', name: 'Hassan Al-Rashid', netWorth: 'AED 320M' },
-        { id: 'UHNW-004', name: 'Aisha Al-Farsi', netWorth: 'AED 540M' },
-        { id: 'UHNW-005', name: 'Mariam Al-Zahra', netWorth: 'AED 890M' },
-        { id: 'UHNW-006', name: 'Yousef Al-Khatib', netWorth: 'AED 275M' }
+        { id: 'UHNW-001', name: 'Khalid Al-Mansouri', netWorth: '$450M' },
+        { id: 'UHNW-002', name: 'Noor Al-Muhairi', netWorth: '$680M' },
+        { id: 'UHNW-003', name: 'Hassan Al-Rashid', netWorth: '$320M' },
+        { id: 'UHNW-004', name: 'Aisha Al-Farsi', netWorth: '$540M' },
+        { id: 'UHNW-005', name: 'Mariam Al-Zahra', netWorth: '$890M' },
+        { id: 'UHNW-006', name: 'Yousef Al-Khatib', netWorth: '$275M' }
     ];
 
     const handleGenerateReport = () => {
@@ -227,7 +227,7 @@ export default function ClientReportsPanel() {
                          AI-Generated Client Reports
                     </h3>
                         <p className="text-sm text-[#5A6C7D] mt-1">
-                        Automated comprehensive reports for UHNW clients (&gt;AED 100M) • Generated daily
+                        Automated comprehensive reports for UHNW clients (&gt;$100M) • Generated daily
                     </p>
                 </div>
                 <button 

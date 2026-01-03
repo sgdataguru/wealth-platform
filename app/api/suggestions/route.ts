@@ -14,7 +14,7 @@ const mockSuggestions: EngagementSuggestion[] = [
     clientId: '1',
     signalId: 's1',
     title: 'Khalid Al-Mansouri - IPO Filing',
-    context: 'GulfTech Innovations filed a prospectus with the UAE SCA yesterday. Khalid (35% stake) may realize AED 120M in 60-90 days. This represents a significant liquidity event that requires immediate attention.',
+    context: 'GulfTech Innovations filed a prospectus with the UAE SCA yesterday. Khalid (35% stake) may realize $120M in 60-90 days. This represents a significant liquidity event that requires immediate attention.',
     recommendedAction: 'Call Khalid to discuss tax-efficient exit strategies and post-liquidity wealth management plan. Suggest meeting with tax advisor within the next 3 days.',
     priority: 'critical',
     category: 'liquidity_event',
@@ -24,7 +24,7 @@ const mockSuggestions: EngagementSuggestion[] = [
       id: '1',
       name: 'Khalid Al-Mansouri',
       company: 'GulfTech Innovations LLC',
-      estimatedWealth: 1200000000, // AED 120M
+      estimatedWealth: 1200000000, // $120M
       leadScore: 92,
     },
     signal: {
@@ -42,7 +42,7 @@ const mockSuggestions: EngagementSuggestion[] = [
     clientId: '2',
     signalId: 's4',
     title: 'Aisha Al-Farsi - Series C Funding Announced',
-    context: 'Riyadh FinServ Holdings raised AED 90M Series C led by Gulf Capital. Aisha is Founder/CEO and likely to see significant stake dilution but increased company valuation.',
+    context: 'Riyadh FinServ Holdings raised $90M Series C led by Gulf Capital. Aisha is Founder/CEO and likely to see significant stake dilution but increased company valuation.',
     recommendedAction: 'Congratulate Aisha on the funding and explore opportunities for diversifying wealth beyond the company. Schedule a portfolio review within 2 weeks.',
     priority: 'high',
     category: 'relationship_opportunity',
@@ -51,7 +51,7 @@ const mockSuggestions: EngagementSuggestion[] = [
       id: '2',
       name: 'Aisha Al-Farsi',
       company: 'Riyadh FinServ Holdings',
-      estimatedWealth: 900000000, // AED 90M
+      estimatedWealth: 900000000, // $90M
       leadScore: 87,
     },
     signal: {
@@ -78,7 +78,7 @@ const mockSuggestions: EngagementSuggestion[] = [
       id: '3',
       name: 'Omar Al-Hassan',
       company: 'Desert Manufacturing Solutions',
-      estimatedWealth: 750000000, // AED 75M
+      estimatedWealth: 750000000, // $75M
       leadScore: 75,
     },
     signal: {

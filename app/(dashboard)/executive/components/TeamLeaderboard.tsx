@@ -89,7 +89,7 @@ export default function TeamLeaderboard({ topRMs, isLoading }: TeamLeaderboardPr
                             Total AUM
                         </span>
                         <p className="text-xl font-bold text-[#1A1A2E] mt-1">
-                            AED {topRMs.reduce((sum, rm) => sum + rm.aum, 0)}M
+                            ${topRMs.reduce((sum, rm) => sum + rm.aum, 0)}M
                         </p>
                     </div>
                 </div>

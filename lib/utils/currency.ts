@@ -1,6 +1,6 @@
 /**
  * @file lib/utils/currency.ts
- * @description Helpers to convert AED / Middle East currency values to USD display strings (Million / Billion)
+ * @description Helpers to format USD values into display strings (Million / Billion)
  */
 
 /**
@@ -11,11 +11,9 @@ export function millionsToBillions(millions: number): number {
 }
 
 /**
- * Convert absolute AED amount (dirhams) to millions
- * Using approximate exchange rate: 1 USD = 3.67 AED
+ * Convert absolute USD amount to millions
  */
-export function aedToMillions(aed: number): number {
-  const usd = aed / 3.67;
+export function usdToMillions(usd: number): number {
   return usd / 1_000_000;
 }
 
@@ -34,27 +32,18 @@ export function formatMillionsAsUSD(millions: number): string {
 }
 
 /**
- * Convenience: format an AED amount directly to USD display.
- * @param aed - Amount in AED (dirhams)
+ * Convenience: format an absolute USD amount directly to USD display.
+ * @param usd - Amount in USD
  */
-export function formatAEDToUSD(aed: number): string {
-  return formatMillionsAsUSD(aedToMillions(aed));
+export function formatUSDFromAbsolute(usd: number): string {
+  return formatMillionsAsUSD(usdToMillions(usd));
 }
 
 /**
  * Legacy function for backward compatibility
- * @deprecated Use formatAEDToUSD or formatMillionsAsUSD instead
+ * @deprecated Use formatUSDFromAbsolute or formatMillionsAsUSD instead
  */
 export function formatCroreToUSD(crore: number): string {
   // Convert legacy unit to millions for display (10 million)
   return formatMillionsAsUSD(crore * 10);
-}
-
-/**
- * Legacy function for backward compatibility
- * @deprecated Use formatAEDToUSD instead
- */
-export function formatINRToUSD(inr: number): string {
-  // Assume INR input, convert to millions
-  return formatMillionsAsUSD(inr / 1_000_000);
 }

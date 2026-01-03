@@ -47,12 +47,12 @@ const mockExecutiveReports: ClientReport[] = [
             'Portfolio concentration in technology sector (34%) exceeds optimal threshold - recommend rebalancing',
             'Alternative investments allocation (12%) below peer average (18%) for similar wealth bracket',
             'Fixed income exposure (28%) well-positioned for current interest rate environment',
-            'ESOP holdings (AED 85M) approaching lock-in expiry in 45 days - liquidity event planning required'
+            'ESOP holdings ($85M) approaching lock-in expiry in 45 days - liquidity event planning required'
         ],
         recommendations: [
             'Increase alternative investments to 22% through PE/VC fund allocations',
             'Reduce technology sector exposure from 34% to 25% over next quarter',
-            'Prepare ESOP liquidation strategy - estimated AED 85M liquidity event',
+            'Prepare ESOP liquidation strategy - estimated $85M liquidity event',
             'Consider structured products for 8-10% allocation to enhance returns'
         ]
     },
@@ -117,11 +117,11 @@ const mockExecutiveReports: ClientReport[] = [
         netWorth: formatCroreToUSD(540),
         reportType: 'opportunities',
         generatedAt: '2024-12-21T09:00:00',
-        summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: AED 65M. Client shows strong propensity for structured products and international investments.',
+        summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: $65M. Client shows strong propensity for structured products and international investments.',
         keyMetrics: [
             { label: 'Cross-Sell Score', value: '8.7/10', trend: 'up' },
             { label: 'Wallet Share', value: '42%', trend: 'stable' },
-            { label: 'Opportunity Gap', value: 'AED 312M', trend: 'up' },
+            { label: 'Opportunity Gap', value: '$312M', trend: 'up' },
             { label: 'Engagement', value: '88%', trend: 'up' }
         ],
         aiInsights: [
