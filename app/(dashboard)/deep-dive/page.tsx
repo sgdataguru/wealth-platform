@@ -14,6 +14,7 @@ import ReportPreview from '@/app/components/features/deep-dive/ReportPreview';
 import { parseNlpIntent, generateSqlPreview } from '@/lib/deep-dive/nlp-parser';
 import { generateMockReportData } from '@/lib/deep-dive/mock-data';
 import type { Intent, ReportData } from '@/types/deep-dive.types';
+import { Header, Sidebar } from '@/app/components/layout';
 
 export default function DeepDivePage() {
   const [prompt, setPrompt] = useState('');
@@ -58,7 +59,11 @@ export default function DeepDivePage() {
   }, [intent]);
 
   return (
-    <div className="min-h-screen bg-[var(--bg-secondary)] p-4 md:p-6">
+    <div className="min-h-screen bg-[var(--bg-primary)]">
+      <Header />
+      <div className="flex">
+        <Sidebar activePage="deep-dive" />
+        <main className="flex-1 p-4 md:p-6 bg-[var(--bg-secondary)]">
       {/* Page Header */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-2">
@@ -159,6 +164,8 @@ export default function DeepDivePage() {
         aria-atomic="true"
       >
         {lastUpdated && `Report updated at ${lastUpdated.toLocaleTimeString()}`}
+      </div>
+        </main>
       </div>
     </div>
   );
