@@ -102,6 +102,9 @@ export type LeadScoreCategory = 'excellent' | 'good' | 'fair' | 'low';
 // Score category for HOT/WARM/COLD classification
 export type ScoreCategory = 'HOT' | 'WARM' | 'COLD';
 
+// Client tier classifications for Middle East market
+export type ClientTier = 'UHNW' | 'HNW' | 'Emerging';
+
 // Score trend indicator
 export type ScoreTrend = 'up' | 'down' | 'stable';
 
@@ -163,6 +166,9 @@ export interface Prospect {
   myShare?: string;
   sharePercentage?: number;
   prospectType?: string;
+  // Middle East specific segmentation
+  clientTier?: ClientTier; // UHNW, HNW, or Emerging
+  segment?: string; // Family Office, PE-backed, Founder-led
   // GCC & Compliance fields
   jurisdiction?: string; // e.g., ADGM, DIFC, SAMA, CMA
   shariahStatus?: 'halal' | 'haram' | 'restricted' | 'unknown';

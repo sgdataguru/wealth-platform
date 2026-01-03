@@ -123,6 +123,16 @@ export async function GET() {
         'Family Office',
         'Private Equity Fund',
       ],
+      segments: [
+        'Family Office',
+        'PE-backed',
+        'Founder-led',
+      ],
+      tiers: [
+        'UHNW',
+        'HNW',
+        'Emerging',
+      ],
     };
 
     return NextResponse.json({
