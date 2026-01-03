@@ -4,10 +4,16 @@
  */
 
 'use client';
-
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { clearStoredAuth, getDefaultDashboardRoute, getStoredAuth } from '@/lib/auth/session';
+
+import { Header, Sidebar } from '@/app/components/layout';
+import { ProspectCard, AIChatbot, ProspectDetailPanel } from '@/app/components/features';
+import { Card, Button, SignalBadge } from '@/app/components/ui';
+import SuggestionsSection from '@/app/components/suggestions/SuggestionsSection';
+import { usePanelStore } from '@/store/panel-store';
+import type { Prospect, Signal, ActivityItem, DashboardMetrics } from '@/types';
 
 export default function LandingPage() {
   const router = useRouter();
