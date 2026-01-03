@@ -7,6 +7,7 @@
 
 import { Card } from '@/app/components/ui';
 import type { ExecutiveMetrics } from '@/types';
+import { buildDisplayChange } from '@/lib/utils/currency';
 
 interface ExecutiveHeroMetricsProps {
     metrics: ExecutiveMetrics | null;
@@ -28,6 +29,10 @@ export default function ExecutiveHeroMetrics({ metrics, isLoading }: ExecutiveHe
 
     if (!metrics) return null;
 
+    const aumMonthlyChange = buildDisplayChange(metrics.totalAum, metrics.aumGrowth);
+    const aumYoyChange = buildDisplayChange(metrics.totalAum, metrics.aumGrowthYoy);
+    const formatPercent = (value: number) => Math.abs(value).toFixed(1).replace(/\.0$/, '');
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {/* Firm AUM */}
@@ -43,11 +48,11 @@ export default function ExecutiveHeroMetrics({ metrics, isLoading }: ExecutiveHe
                     </div>
                     <div className="flex items-center gap-2 mt-2">
                         <span className={`text-sm font-medium ${metrics.aumGrowth >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                            ↑ {metrics.aumGrowth}% MoM
+                            {aumMonthlyChange.direction === 'up' ? '↑' : '↓'} {aumMonthlyChange.formattedChange} ({formatPercent(metrics.aumGrowth)}%) Monthly Change
                         </span>
                         <span className="text-xs text-gray-400">|</span>
-                        <span className="text-sm text-gray-300">
-                            {metrics.aumGrowthYoy}% YoY
+                        <span className={`text-sm ${metrics.aumGrowthYoy >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                            {aumYoyChange.direction === 'up' ? '↑' : '↓'} {aumYoyChange.formattedChange} ({formatPercent(metrics.aumGrowthYoy)}%) YoY Change
                         </span>
                     </div>
                 </div>
@@ -140,7 +145,7 @@ export default function ExecutiveHeroMetrics({ metrics, isLoading }: ExecutiveHe
             <Card>
                 <div className="flex flex-col">
                     <span className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
-                        Net New Money
+                        Net Inflow
                     </span>
                     <div className="flex items-baseline gap-2 mt-2">
                         <span className="text-3xl font-bold text-[#28A745]">
@@ -148,7 +153,7 @@ export default function ExecutiveHeroMetrics({ metrics, isLoading }: ExecutiveHe
                         </span>
                     </div>
                     <span className="text-sm text-[#5A6C7D] mt-2">
-                        This quarter
+                        Quarter-to-date
                     </span>
                 </div>
             </Card>

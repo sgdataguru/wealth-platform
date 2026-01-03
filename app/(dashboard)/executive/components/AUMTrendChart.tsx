@@ -30,6 +30,8 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
     const maxValue = Math.max(...data.map(d => d.value));
     const minValue = Math.min(...data.map(d => d.value));
     const range = maxValue - minValue;
+    const yearChangeValue = data[data.length - 1].value - data[0].value;
+    const yearChangePercent = (yearChangeValue / data[0].value) * 100;
 
     return (
         <Card padding="lg">
@@ -42,8 +44,8 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
                         Click data points for detailed breakdown
                     </p>
                 </div>
-                <span className="text-sm text-[#28A745] font-medium">
-                    ↑ {(((data[data.length - 1].value - data[0].value) / data[0].value) * 100).toFixed(1)}% YoY
+                <span className={`text-sm font-medium ${yearChangeValue >= 0 ? 'text-[#28A745]' : 'text-[#DC3545]'}`}>
+                    YoY Change: {yearChangeValue >= 0 ? '↑' : '↓'} ₹{Math.abs(yearChangeValue).toFixed(1)} L Cr ({Math.abs(yearChangePercent).toFixed(1)}%)
                 </span>
             </div>
 
@@ -160,8 +162,9 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
                                                 fontSize="10"
                                                 fill={data[index].value >= data[index - 1].value ? '#28A745' : '#DC3545'}
                                             >
-                                                {data[index].value >= data[index - 1].value ? '↑' : '↓'}
-                                                {Math.abs(((data[index].value - data[index - 1].value) / data[index - 1].value) * 100).toFixed(1)}% MoM
+                                                {data[index].value >= data[index - 1].value ? '↑' : '↓'} ₹
+                                                {Math.abs(data[index].value - data[index - 1].value).toFixed(1)} L Cr (
+                                                {Math.abs(((data[index].value - data[index - 1].value) / data[index - 1].value) * 100).toFixed(1)}%) Monthly Change
                                             </text>
                                         )}
                                     </g>
@@ -197,18 +200,18 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
                     </div>
                     <div>
                         <span className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
-                            Growth
+                            YoY Change
                         </span>
-                        <p className="text-xl font-bold text-[#28A745] mt-1">
-                            ₹{(data[data.length - 1].value - data[0].value).toFixed(1)} L Cr
+                        <p className={`text-xl font-bold mt-1 ${yearChangeValue >= 0 ? 'text-[#28A745]' : 'text-[#DC3545]'}`}>
+                            {yearChangeValue >= 0 ? '+' : '-'}₹{Math.abs(yearChangeValue).toFixed(1)} L Cr
                         </p>
                     </div>
                     <div>
                         <span className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
-                            Avg Monthly
+                            Avg Monthly Change
                         </span>
                         <p className="text-xl font-bold text-[#1A1A2E] mt-1">
-                            +₹{((data[data.length - 1].value - data[0].value) / 12).toFixed(2)} L Cr
+                            {yearChangeValue >= 0 ? '+' : '-'}₹{Math.abs(yearChangeValue / 12).toFixed(2)} L Cr
                         </p>
                     </div>
                 </div>
