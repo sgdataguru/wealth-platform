@@ -12,20 +12,23 @@ export default function GraphLegend() {
   const nodeTypes: Array<{ type: NodeType; label: string }> = [
     { type: 'rm', label: 'Relationship Manager' },
     { type: 'person', label: 'People (Clients/Prospects)' },
+    { type: 'family_office', label: 'Family Offices' },
+    { type: 'holding_company', label: 'Holding Companies' },
+    { type: 'advisor', label: 'Advisors' },
     { type: 'company', label: 'Companies' },
-    { type: 'liquidity_event', label: 'Liquidity Events' },
-    { type: 'network', label: 'Networks/Clubs' }
+    { type: 'network', label: 'Networks/Clubs' },
+    { type: 'liquidity_event', label: 'Liquidity Events' }
   ];
 
-  const edgeTypes: Array<{ type: EdgeType; label: string }> = [
-    { type: 'manages', label: 'Manages' },
-    { type: 'promoter_of', label: 'Promoter' },
-    { type: 'director_of', label: 'Director' },
-    { type: 'investor_in', label: 'Investor' },
-    { type: 'member_of', label: 'Member' },
-    { type: 'knows', label: 'Knows' },
-    { type: 'affects', label: 'Affects' },
-    { type: 'involves', label: 'Involves' }
+  const edgeTypes: Array<{ type: EdgeType; label: string; strength?: string }> = [
+    { type: 'manages', label: 'Manages', strength: 'primary' },
+    { type: 'controls', label: 'Controls', strength: 'primary' },
+    { type: 'advises', label: 'Advises', strength: 'primary' },
+    { type: 'family_of', label: 'Family', strength: 'primary' },
+    { type: 'promoter_of', label: 'Promoter', strength: 'primary' },
+    { type: 'investor_in', label: 'Investor', strength: 'primary' },
+    { type: 'knows', label: 'Knows', strength: 'secondary' },
+    { type: 'member_of', label: 'Member', strength: 'secondary' }
   ];
 
   return (
@@ -61,8 +64,9 @@ export default function GraphLegend() {
       <div>
         <h4 className="text-xs font-semibold text-gray-500 uppercase mb-2">Relationships</h4>
         <div className="space-y-2">
-          {edgeTypes.map(({ type, label }) => {
+          {edgeTypes.map(({ type, label, strength }) => {
             const style = getEdgeStyle(type);
+            const opacity = strength === 'primary' ? 0.8 : 0.3;
             return (
               <div key={type} className="flex items-center gap-2">
                 <svg width="30" height="10">
@@ -74,9 +78,15 @@ export default function GraphLegend() {
                     stroke={style.stroke}
                     strokeWidth={style.strokeWidth}
                     strokeDasharray={style.strokeDasharray}
+                    opacity={opacity}
                   />
                 </svg>
-                <span className="text-xs text-gray-700">{label}</span>
+                <span className="text-xs text-gray-700">
+                  {label}
+                  {strength === 'primary' && (
+                    <span className="ml-1 text-[10px] text-blue-600 font-medium">(Primary)</span>
+                  )}
+                </span>
               </div>
             );
           })}

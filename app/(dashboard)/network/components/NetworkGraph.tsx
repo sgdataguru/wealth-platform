@@ -119,6 +119,11 @@ export default function NetworkGraph({
             const isHighlighted = highlightedNodeIds.includes(edge.source) && 
                                  highlightedNodeIds.includes(edge.target);
             
+            // Visual distinction for primary vs secondary connections
+            const isPrimary = edge.strength === 'primary';
+            const opacity = isPrimary ? 0.8 : 0.3;
+            const highlightedOpacity = isPrimary ? 1 : 0.6;
+            
             return (
               <g key={edge.id} className="edge">
                 <line
@@ -129,7 +134,7 @@ export default function NetworkGraph({
                   stroke={isHighlighted ? '#28A745' : style.stroke}
                   strokeWidth={isHighlighted ? style.strokeWidth * 1.5 : style.strokeWidth}
                   strokeDasharray={style.strokeDasharray}
-                  opacity={isHighlighted ? 1 : 0.6}
+                  opacity={isHighlighted ? highlightedOpacity : opacity}
                 />
                 {/* Edge label */}
                 <text

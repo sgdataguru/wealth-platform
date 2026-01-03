@@ -73,6 +73,44 @@ export default function NodeDetailsPanel({ node, onClose, onFindIntro }: NodeDet
               </div>
             </div>
 
+            {/* Conversation History */}
+            {node.conversations && node.conversations.length > 0 && (
+              <div className="mt-4 border-t border-gray-200 pt-4">
+                <h4 className="text-xs font-semibold text-gray-500 uppercase mb-3">
+                  Recent Conversations
+                </h4>
+                <div className="space-y-3 max-h-64 overflow-y-auto">
+                  {node.conversations.map((conv) => (
+                    <div key={conv.id} className="bg-gray-50 rounded-lg p-3">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-xs font-medium text-gray-900">
+                          {new Date(conv.date).toLocaleDateString('en-US', { 
+                            month: 'short', 
+                            day: 'numeric', 
+                            year: 'numeric' 
+                          })}
+                        </span>
+                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 capitalize">
+                          {conv.type}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-700 mb-2">{conv.summary}</p>
+                      {conv.outcome && (
+                        <p className="text-xs text-green-700">
+                          <span className="font-medium">Outcome:</span> {conv.outcome}
+                        </p>
+                      )}
+                      {conv.nextSteps && (
+                        <p className="text-xs text-blue-700">
+                          <span className="font-medium">Next:</span> {conv.nextSteps}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {!node.properties.isClient && onFindIntro && (
               <button
                 onClick={() => onFindIntro(node.id)}
@@ -209,6 +247,116 @@ export default function NodeDetailsPanel({ node, onClose, onFindIntro }: NodeDet
               <div>
                 <span className="text-xs font-medium text-gray-500">Role</span>
                 <p className="text-sm text-gray-900">{role}</p>
+              </div>
+            )}
+          </div>
+        );
+
+      case 'family_office':
+        const foAum = typeof node.properties.aum === 'number' ? node.properties.aum : null;
+        const foEstablished = typeof node.properties.established === 'string' ? node.properties.established : null;
+        const foLocation = typeof node.properties.location === 'string' ? node.properties.location : null;
+        const foFocus = typeof node.properties.focus === 'string' ? node.properties.focus : null;
+
+        return (
+          <div className="space-y-2">
+            {foAum !== null && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">AUM</span>
+                <p className="text-sm font-semibold text-gray-900">
+                  {formatCurrency(foAum)}
+                </p>
+              </div>
+            )}
+
+            {foEstablished && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">Established</span>
+                <p className="text-sm text-gray-900">{foEstablished}</p>
+              </div>
+            )}
+
+            {foLocation && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">Location</span>
+                <p className="text-sm text-gray-900">{foLocation}</p>
+              </div>
+            )}
+
+            {foFocus && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">Focus Areas</span>
+                <p className="text-sm text-gray-900">{foFocus}</p>
+              </div>
+            )}
+          </div>
+        );
+
+      case 'holding_company':
+        const hcSubsidiaries = typeof node.properties.subsidiaries === 'number' ? node.properties.subsidiaries : null;
+        const hcValuation = typeof node.properties.valuation === 'number' ? node.properties.valuation : null;
+        const hcCin = typeof node.properties.cin === 'string' ? node.properties.cin : null;
+        const hcSector = typeof node.properties.sector === 'string' ? node.properties.sector : null;
+
+        return (
+          <div className="space-y-2">
+            {hcCin && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">CIN</span>
+                <p className="text-sm text-gray-900 font-mono">{hcCin}</p>
+              </div>
+            )}
+
+            {hcSector && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">Sector</span>
+                <p className="text-sm text-gray-900">{hcSector}</p>
+              </div>
+            )}
+
+            {hcValuation !== null && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">Valuation</span>
+                <p className="text-sm font-semibold text-gray-900">
+                  {formatCurrency(hcValuation)}
+                </p>
+              </div>
+            )}
+
+            {hcSubsidiaries !== null && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">Subsidiaries</span>
+                <p className="text-sm text-gray-900">{hcSubsidiaries}</p>
+              </div>
+            )}
+          </div>
+        );
+
+      case 'advisor':
+        const advisorDesignation = typeof node.properties.designation === 'string' ? node.properties.designation : null;
+        const advisorSpecialty = typeof node.properties.specialty === 'string' ? node.properties.specialty : null;
+        const advisorFirm = typeof node.properties.firm === 'string' ? node.properties.firm : null;
+
+        return (
+          <div className="space-y-2">
+            {advisorDesignation && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">Designation</span>
+                <p className="text-sm text-gray-900">{advisorDesignation}</p>
+              </div>
+            )}
+
+            {advisorSpecialty && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">Specialty</span>
+                <p className="text-sm text-gray-900">{advisorSpecialty}</p>
+              </div>
+            )}
+
+            {advisorFirm && (
+              <div>
+                <span className="text-xs font-medium text-gray-500">Firm</span>
+                <p className="text-sm text-gray-900">{advisorFirm}</p>
               </div>
             )}
           </div>
