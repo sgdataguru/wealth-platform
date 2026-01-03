@@ -11,6 +11,7 @@ import ConversionFunnel from './components/ConversionFunnel';
 import ActivityDashboard from './components/ActivityDashboard';
 import LeadSourceChart from './components/LeadSourceChart';
 import WinLossAnalysis from './components/WinLossAnalysis';
+import { formatCroreAmount } from '@/lib/utils/currency';
 
 
 export default function RMAnalyticsPage() {
@@ -114,7 +115,7 @@ export default function RMAnalyticsPage() {
                                 <div className="flex-1">
                                     <p className="font-semibold text-[#1A1A2E]">3 High-Value Deals Stale</p>
                                     <p className="text-sm text-[#5A6C7D] mt-1">
-                                        No activity in 14+ days. Total value: ₹85 Cr
+                                        No activity in 14+ days. Total value: {formatCroreAmount(85)}
                                     </p>
                                     <button className="text-sm text-[#E85D54] font-medium mt-2 hover:underline">
                                         Review Now →

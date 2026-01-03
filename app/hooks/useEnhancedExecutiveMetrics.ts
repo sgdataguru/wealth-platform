@@ -7,6 +7,12 @@
 
 import { useState, useEffect } from 'react';
 import type { EnhancedExecutiveMetrics, LiquidityTrigger } from '@/types';
+import {
+    formatCroreAmount,
+    formatCurrencyAmount,
+    formatLakhAmount,
+    formatLakhCroreAmount,
+} from '@/lib/utils/currency';
 
 // Mock liquidity triggers
 const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
@@ -161,24 +167,24 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
 
 const MOCK_ENHANCED_METRICS: EnhancedExecutiveMetrics = {
     // Existing metrics
-    totalAum: '₹4.6 L Cr',
+    totalAum: formatLakhCroreAmount(4.6),
     aumGrowth: 2.8,
     aumGrowthYoy: 19.2,
-    netNewMoney: '₹12,450 Cr',
+    netNewMoney: formatCroreAmount(12450),
     operatingMargin: 34.0,
     roe: 31.5,
     totalRMs: 1247,
-    revenuePerRM: '₹23.2 L',
+    revenuePerRM: formatLakhAmount(23.2),
     avgRMProductivity: 78,
     totalClients: 134000,
     hniClients: 128500,
     uhniClients: 5500,
     clientRetentionRate: 94.5,
-    clientAcquisitionCost: '₹2.8 L',
+    clientAcquisitionCost: formatLakhAmount(2.8),
 
     // New metrics from client feedback
-    targetAUM: '₹5.2 L Cr',
-    aumPerRM: '₹3.7 Cr',
+    targetAUM: formatLakhCroreAmount(5.2),
+    aumPerRM: formatCroreAmount(3.7),
     totalLeads: 4400,
     targetLeadsPerQuarter: 1200,
     totalUHNWClients: 5500,
@@ -196,18 +202,18 @@ const MOCK_ENHANCED_METRICS: EnhancedExecutiveMetrics = {
 
     // Regional breakdown (Middle East focus)
     regionalBreakdown: [
-        { region: 'Dubai', aum: '$95 Billion', growth: 17.2, rmCount: 298, clientCount: 35000 },
-        { region: 'Abu Dhabi', aum: '$28 Billion', growth: 15.8, rmCount: 85, clientCount: 12500 },
-        { region: 'Riyadh', aum: '$18.5 Billion', growth: 14.2, rmCount: 58, clientCount: 8200 },
-        { region: 'Doha', aum: '$12 Billion', growth: 12.8, rmCount: 42, clientCount: 5800 },
+        { region: 'Dubai', aum: formatCurrencyAmount(95_000_000_000, { currency: 'AED' }), growth: 17.2, rmCount: 298, clientCount: 35000 },
+        { region: 'Abu Dhabi', aum: formatCurrencyAmount(28_000_000_000, { currency: 'AED' }), growth: 15.8, rmCount: 85, clientCount: 12500 },
+        { region: 'Riyadh', aum: formatCurrencyAmount(18_500_000_000, { currency: 'AED' }), growth: 14.2, rmCount: 58, clientCount: 8200 },
+        { region: 'Doha', aum: formatCurrencyAmount(12_000_000_000, { currency: 'AED' }), growth: 12.8, rmCount: 42, clientCount: 5800 },
     ],
 
     productMix: [
-        { product: 'PMS', percentage: 35, value: '₹1.61 L Cr', color: '#2A2447' },
-        { product: 'Mutual Funds', percentage: 28, value: '₹1.29 L Cr', color: '#E85D54' },
-        { product: 'Fixed Income', percentage: 18, value: '₹82,800 Cr', color: '#5A6C7D' },
-        { product: 'Alternative Investments', percentage: 12, value: '₹55,200 Cr', color: '#8E99A4' },
-        { product: 'Equities', percentage: 7, value: '₹32,200 Cr', color: '#F06E66' },
+        { product: 'PMS', percentage: 35, value: formatLakhCroreAmount(1.61), color: '#2A2447' },
+        { product: 'Mutual Funds', percentage: 28, value: formatLakhCroreAmount(1.29), color: '#E85D54' },
+        { product: 'Fixed Income', percentage: 18, value: formatCroreAmount(82_800), color: '#5A6C7D' },
+        { product: 'Alternative Investments', percentage: 12, value: formatCroreAmount(55_200), color: '#8E99A4' },
+        { product: 'Equities', percentage: 7, value: formatCroreAmount(32_200), color: '#F06E66' },
     ],
 
     aumTrend: [

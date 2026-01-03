@@ -6,13 +6,14 @@
 'use client';
 
 import { Card } from '@/app/components/ui';
+import { formatCroreAmount } from '@/lib/utils/currency';
 
 const leadSources = [
-    { source: 'Referrals', count: 15, conversionRate: 40, avgDealSize: '₹380 Cr', roi: 'High', color: '#28A745' },
-    { source: 'Events', count: 6, conversionRate: 33, avgDealSize: '₹410 Cr', roi: 'High', color: '#E85D54' },
-    { source: 'LinkedIn', count: 8, conversionRate: 25, avgDealSize: '₹220 Cr', roi: 'Medium', color: '#2A2447' },
-    { source: 'Cold Outreach', count: 12, conversionRate: 8, avgDealSize: '₹150 Cr', roi: 'Low', color: '#8E99A4' },
-    { source: 'Website', count: 6, conversionRate: 17, avgDealSize: '₹190 Cr', roi: 'Medium', color: '#5A6C7D' },
+    { source: 'Referrals', count: 15, conversionRate: 40, avgDealSize: formatCroreAmount(380), roi: 'High', color: '#28A745' },
+    { source: 'Events', count: 6, conversionRate: 33, avgDealSize: formatCroreAmount(410), roi: 'High', color: '#E85D54' },
+    { source: 'LinkedIn', count: 8, conversionRate: 25, avgDealSize: formatCroreAmount(220), roi: 'Medium', color: '#2A2447' },
+    { source: 'Cold Outreach', count: 12, conversionRate: 8, avgDealSize: formatCroreAmount(150), roi: 'Low', color: '#8E99A4' },
+    { source: 'Website', count: 6, conversionRate: 17, avgDealSize: formatCroreAmount(190), roi: 'Medium', color: '#5A6C7D' },
 ];
 
 export default function LeadSourceChart() {
@@ -89,7 +90,7 @@ export default function LeadSourceChart() {
                     </li>
                     <li className="flex items-start gap-2">
                         <span className="text-[#E85D54] font-bold">2.</span>
-                        <span><strong>Prioritize events:</strong> Second-best conversion (33%) and highest average deal size (₹410 Cr).</span>
+                        <span><strong>Prioritize events:</strong> Second-best conversion (33%) and highest average deal size ({formatCroreAmount(410)}).</span>
                     </li>
                     <li className="flex items-start gap-2">
                         <span className="text-[#DC3545] font-bold">3.</span>

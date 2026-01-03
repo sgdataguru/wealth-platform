@@ -6,6 +6,7 @@
 'use client';
 
 import { useState } from 'react';
+import { formatCroreAmount } from '@/lib/utils/currency';
 import type { ClientProductMix, KairosCapitalProduct } from '@/types';
 
 interface ProductMixByClientProps {
@@ -211,7 +212,7 @@ export default function ProductMixByClient({ data = MOCK_CLIENT_PRODUCT_MIX, isL
                             </div>
                             <div className="text-right">
                                 <p className="text-lg font-bold text-[#E85D54]">
-                                    ₹{(client.totalAUM / 10000000).toFixed(2)} Cr
+                                    {formatCroreAmount(client.totalAUM / 10_000_000)}
                                 </p>
                                 <p className="text-xs text-[#8E99A4]">
                                     Last review: {Math.floor((RENDER_REFERENCE_TIMESTAMP - client.lastReviewDate.getTime()) / (1000 * 60 * 60 * 24))}d ago
@@ -226,7 +227,7 @@ export default function ProductMixByClient({ data = MOCK_CLIENT_PRODUCT_MIX, isL
                                     <div className="flex items-center justify-between mb-1">
                                         <span className="text-sm font-medium text-[#1A1A2E]">{product.category}</span>
                                         <span className="text-sm text-[#5A6C7D]">
-                                            ₹{(product.aum / 10000000).toFixed(2)} Cr ({product.percentage}%)
+                                            {formatCroreAmount(product.aum / 10_000_000)} ({product.percentage}%)
                                         </span>
                                     </div>
                                     <div className="w-full bg-gray-200 rounded-full h-2">

@@ -115,7 +115,7 @@ const mockExecutiveReports: ClientReport[] = [
         netWorth: formatCroreToUSD(540),
         reportType: 'opportunities',
         generatedAt: '2024-12-21T09:00:00',
-        summary: 'AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: ₹65 Cr. Client shows strong propensity for structured products and international investments.',
+        summary: `AI identifies 4 high-probability cross-sell opportunities based on portfolio gaps, investment behavior, and peer analysis. Estimated additional revenue: ${formatCroreToUSD(65)}. Client shows strong propensity for structured products and international investments.`,
         keyMetrics: [
             { label: 'Cross-Sell Score', value: '8.7/10', trend: 'up' },
             { label: 'Wallet Share', value: '42%', trend: 'stable' },
@@ -149,12 +149,12 @@ export default function ClientReportsPanel() {
 
     // Mock client list
     const clients = [
-        { id: 'UHNW-001', name: 'Rajesh Kumar', netWorth: '₹450 Cr' },
-        { id: 'UHNW-002', name: 'Priya Sharma', netWorth: '₹680 Cr' },
-        { id: 'UHNW-003', name: 'Vikram Singh', netWorth: '₹320 Cr' },
-        { id: 'UHNW-004', name: 'Anita Patel', netWorth: '₹540 Cr' },
-        { id: 'UHNW-005', name: 'Sanjay Gupta', netWorth: '₹890 Cr' },
-        { id: 'UHNW-006', name: 'Neha Kapoor', netWorth: '₹275 Cr' }
+        { id: 'UHNW-001', name: 'Rajesh Kumar', netWorth: formatCroreToUSD(450) },
+        { id: 'UHNW-002', name: 'Priya Sharma', netWorth: formatCroreToUSD(680) },
+        { id: 'UHNW-003', name: 'Vikram Singh', netWorth: formatCroreToUSD(320) },
+        { id: 'UHNW-004', name: 'Anita Patel', netWorth: formatCroreToUSD(540) },
+        { id: 'UHNW-005', name: 'Sanjay Gupta', netWorth: formatCroreToUSD(890) },
+        { id: 'UHNW-006', name: 'Neha Kapoor', netWorth: formatCroreToUSD(275) }
     ];
 
     const handleGenerateReport = () => {
@@ -227,7 +227,7 @@ export default function ClientReportsPanel() {
                          AI-Generated Client Reports
                     </h3>
                         <p className="text-sm text-[#5A6C7D] mt-1">
-                        Automated comprehensive reports for UHNW clients (&gt;?100 Cr)  Generated daily
+                        Automated comprehensive reports for UHNW clients ({formatCroreToUSD(100)}+) Generated daily
                     </p>
                 </div>
                 <button 

@@ -7,20 +7,26 @@
 
 import { useState, useEffect } from 'react';
 import type { ExecutiveMetrics } from '@/types';
+import {
+    formatCroreAmount,
+    formatCurrencyAmount,
+    formatLakhAmount,
+    formatLakhCroreAmount,
+} from '@/lib/utils/currency';
 
 const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
     // Firm-wide performance
-    totalAum: '₹4.6 L Cr',
+    totalAum: formatLakhCroreAmount(4.6),
     aumGrowth: 2.8,
     aumGrowthYoy: 19.2,
-    netNewMoney: '₹12,450 Cr',
+    netNewMoney: formatCroreAmount(12450),
     operatingMargin: 34.0,
     roe: 31.5,
 
     // Team metrics
     totalRMs: 1247,
-    aumPerRM: '₹3.7 Cr',
-    revenuePerRM: '₹23.2 L',
+    aumPerRM: formatCroreAmount(3.7),
+    revenuePerRM: formatLakhAmount(23.2),
     avgRMProductivity: 78,
 
     // Client metrics
@@ -28,7 +34,7 @@ const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
     hniClients: 128500,
     uhniClients: 5500,
     clientRetentionRate: 94.5,
-    clientAcquisitionCost: '₹2.8 L',
+    clientAcquisitionCost: formatLakhAmount(2.8),
 
     // Top performers
     topPerformingRMs: [
@@ -46,21 +52,21 @@ const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
 
     // Regional breakdown
     regionalBreakdown: [
-        { region: 'Dubai', aum: '$120 Billion', growth: 18.5, rmCount: 385, clientCount: 42000 },
-        { region: 'Abu Dhabi', aum: '$95 Billion', growth: 17.2, rmCount: 298, clientCount: 35000 },
-        { region: 'Riyadh', aum: '$82 Billion', growth: 22.8, rmCount: 245, clientCount: 28000 },
-        { region: 'Doha', aum: '$48 Billion', growth: 15.3, rmCount: 142, clientCount: 15000 },
-        { region: 'Jeddah', aum: '$35 Billion', growth: 14.1, rmCount: 98, clientCount: 10000 },
-        { region: 'Others', aum: '$18 Billion', growth: 12.5, rmCount: 79, clientCount: 4000 },
+        { region: 'Dubai', aum: formatCurrencyAmount(120_000_000_000, { currency: 'AED' }), growth: 18.5, rmCount: 385, clientCount: 42000 },
+        { region: 'Abu Dhabi', aum: formatCurrencyAmount(95_000_000_000, { currency: 'AED' }), growth: 17.2, rmCount: 298, clientCount: 35000 },
+        { region: 'Riyadh', aum: formatCurrencyAmount(82_000_000_000, { currency: 'AED' }), growth: 22.8, rmCount: 245, clientCount: 28000 },
+        { region: 'Doha', aum: formatCurrencyAmount(48_000_000_000, { currency: 'AED' }), growth: 15.3, rmCount: 142, clientCount: 15000 },
+        { region: 'Jeddah', aum: formatCurrencyAmount(35_000_000_000, { currency: 'AED' }), growth: 14.1, rmCount: 98, clientCount: 10000 },
+        { region: 'Others', aum: formatCurrencyAmount(18_000_000_000, { currency: 'AED' }), growth: 12.5, rmCount: 79, clientCount: 4000 },
     ],
 
     // Product mix
     productMix: [
-        { product: 'Equity PMS', percentage: 35, value: '$161 Billion', color: '#2A2447' },
-        { product: 'Mutual Funds', percentage: 28, value: '$129 Billion', color: '#E85D54' },
-        { product: 'Fixed Income', percentage: 18, value: '₹82,800 Cr', color: '#5A6C7D' },
-        { product: 'Alternative Investments', percentage: 12, value: '₹55,200 Cr', color: '#8E99A4' },
-        { product: 'Others', percentage: 7, value: '₹32,200 Cr', color: '#F06E66' },
+        { product: 'Equity PMS', percentage: 35, value: formatCurrencyAmount(161_000_000_000), color: '#2A2447' },
+        { product: 'Mutual Funds', percentage: 28, value: formatCurrencyAmount(129_000_000_000), color: '#E85D54' },
+        { product: 'Fixed Income', percentage: 18, value: formatCroreAmount(82_800), color: '#5A6C7D' },
+        { product: 'Alternative Investments', percentage: 12, value: formatCroreAmount(55_200), color: '#8E99A4' },
+        { product: 'Others', percentage: 7, value: formatCroreAmount(32_200), color: '#F06E66' },
     ],
 
     // AUM trend (last 12 months)
