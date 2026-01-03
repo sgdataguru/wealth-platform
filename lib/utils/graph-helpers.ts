@@ -4,7 +4,7 @@
  */
 
 import type { GraphNode, GraphEdge, NodeStyle, EdgeStyle, NodeType, EdgeType } from '@/types/graph';
-import { formatAEDToUSD, formatMillionsAsUSD } from './currency';
+import { formatAEDAmount, formatMillionsAsUSD } from './currency';
 
 /**
  * Get style configuration for node based on type
@@ -45,6 +45,27 @@ export function getNodeStyle(nodeType: NodeType): NodeStyle {
       strokeWidth: 3,
       radius: 40,
       icon: 'rm'
+    },
+    family_office: {
+      fill: '#6F42C1',      // Purple - prestige
+      stroke: '#5A34A6',    // Darker purple
+      strokeWidth: 3,
+      radius: 38,
+      icon: 'family_office'
+    },
+    holding_company: {
+      fill: '#FD7E14',      // Orange - corporate structure
+      stroke: '#E66A00',    // Darker orange
+      strokeWidth: 2,
+      radius: 36,
+      icon: 'holding_company'
+    },
+    advisor: {
+      fill: '#17A2B8',      // Teal - professional services
+      stroke: '#138496',    // Darker teal
+      strokeWidth: 2,
+      radius: 30,
+      icon: 'advisor'
     }
   };
 
@@ -93,6 +114,18 @@ export function getEdgeStyle(edgeType: EdgeType): EdgeStyle {
     connected_to: {
       stroke: '#1E3A5F',      // Royal blue
       strokeWidth: 2
+    },
+    advises: {
+      stroke: '#17A2B8',      // Teal - advisory relationship
+      strokeWidth: 2.5
+    },
+    controls: {
+      stroke: '#FD7E14',      // Orange - control relationship
+      strokeWidth: 3
+    },
+    family_of: {
+      stroke: '#6F42C1',      // Purple - family connection
+      strokeWidth: 3
     }
   };
 
@@ -315,7 +348,7 @@ export function applyRadialLayout(
 export function formatCurrency(amount: number): string {
   // Heuristic: if amount looks like a raw AED value (>= 1,000,000), treat as AED
   if (Math.abs(amount) >= 1_000_000) {
-    return formatAEDToUSD(amount);
+    return formatAEDAmount(amount);
   }
 
   // Otherwise assume the number is in millions (e.g., 450 => $450 Million)
@@ -331,7 +364,10 @@ export function getNodeIcon(nodeType: NodeType): string {
     company: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
     liquidity_event: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     network: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
-    rm: 'M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+    rm: 'M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z',
+    family_office: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+    holding_company: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+    advisor: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'
   };
 
   return icons[nodeType];

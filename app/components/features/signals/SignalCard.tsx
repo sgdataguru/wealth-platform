@@ -7,6 +7,7 @@
 'use client';
 
 import { SignalBadge } from '@/app/components/ui';
+import { formatCroreAmount } from '@/lib/utils/currency';
 import type { DataSource, Signal } from '@/types';
 
 const SOURCE_DETAILS: Record<
@@ -130,6 +131,96 @@ const SOURCE_DETAILS: Record<
     text: 'text-[#173354]',
     description: 'Brokerage research feeds mapped to client holdings.',
   },
+  'Argaam': {
+    label: 'Argaam',
+    tier: 'GCC Markets — verified',
+    icon: '📊',
+    bg: 'bg-[#E8F5E9]',
+    ring: 'ring-[#A5D6A7]',
+    text: 'text-[#1B5E20]',
+    description: 'Leading Saudi & GCC financial data provider with real-time market intelligence.',
+  },
+  'Zawya': {
+    label: 'Zawya',
+    tier: 'LSEG — curated',
+    icon: '🏛️',
+    bg: 'bg-[#E3F2FD]',
+    ring: 'ring-[#90CAF9]',
+    text: 'text-[#0D47A1]',
+    description: 'LSEG (London Stock Exchange Group) MENA business intelligence platform.',
+  },
+  'Tadawul': {
+    label: 'Tadawul',
+    tier: 'Exchange — official',
+    icon: '🏦',
+    bg: 'bg-[#F3E5F5]',
+    ring: 'ring-[#CE93D8]',
+    text: 'text-[#4A148C]',
+    description: 'Saudi Stock Exchange official filings and market data.',
+  },
+  'ADX': {
+    label: 'ADX',
+    tier: 'Exchange — official',
+    icon: '📈',
+    bg: 'bg-[#E1F5FE]',
+    ring: 'ring-[#81D4FA]',
+    text: 'text-[#01579B]',
+    description: 'Abu Dhabi Securities Exchange official market data.',
+  },
+  'DFM': {
+    label: 'DFM',
+    tier: 'Exchange — official',
+    icon: '💹',
+    bg: 'bg-[#FFF3E0]',
+    ring: 'ring-[#FFCC80]',
+    text: 'text-[#E65100]',
+    description: 'Dubai Financial Market official exchange data.',
+  },
+  'SWFI': {
+    label: 'SWFI',
+    tier: 'Intelligence — institutional',
+    icon: '🌐',
+    bg: 'bg-[#E8EAF6]',
+    ring: 'ring-[#9FA8DA]',
+    text: 'text-[#1A237E]',
+    description: 'Sovereign Wealth Fund Institute tracking high-value institutional deals.',
+  },
+  'CMA Saudi Arabia': {
+    label: 'CMA',
+    tier: 'Regulator — official',
+    icon: '⚖️',
+    bg: 'bg-[#EFEBE9]',
+    ring: 'ring-[#BCAAA4]',
+    text: 'text-[#3E2723]',
+    description: 'Capital Market Authority of Saudi Arabia regulatory filings.',
+  },
+  'SAMA': {
+    label: 'SAMA',
+    tier: 'Central Bank — official',
+    icon: '🏛️',
+    bg: 'bg-[#E0F2F1]',
+    ring: 'ring-[#80CBC4]',
+    text: 'text-[#004D40]',
+    description: 'Saudi Arabian Monetary Authority official banking & financial data.',
+  },
+  'ADGM': {
+    label: 'ADGM',
+    tier: 'Financial Center — official',
+    icon: '🏢',
+    bg: 'bg-[#F1F8E9]',
+    ring: 'ring-[#C5E1A5]',
+    text: 'text-[#33691E]',
+    description: 'Abu Dhabi Global Market regulatory filings and corporate records.',
+  },
+  'DIFC': {
+    label: 'DIFC',
+    tier: 'Financial Center — official',
+    icon: '🏙️',
+    bg: 'bg-[#FCE4EC]',
+    ring: 'ring-[#F48FB1]',
+    text: 'text-[#880E4F]',
+    description: 'Dubai International Financial Centre regulatory and corporate intelligence.',
+  },
 };
 
 function formatTooltipDate(date: Date | string): string {
@@ -175,6 +266,17 @@ function getSignalTypeLabel(type: string): string {
     corporate_action: 'Corporate Action',
     margin_pledge: 'Margin/Pledge',
     early_exit: 'Early Exit',
+    liquidity: 'Liquidity Event',
+    wealth_creation: 'Wealth Creation',
+    real_estate: 'Real Estate',
+    healthcare: 'Healthcare',
+    energy: 'Energy Sector',
+    logistics: 'Logistics',
+    consumer: 'Consumer',
+    financial_services: 'Financial Services',
+    family_office_rotation: 'Family Office Rotation',
+    ipo_approval: 'IPO Approval',
+    strategic_stake_sale: 'Strategic Stake Sale',
   };
   return labels[type] || type;
 }
@@ -274,7 +376,7 @@ export default function SignalCard({
             )}
             {signal.estimatedLiquidity && (
               <span className="flex items-center gap-1">
-                <span className="font-medium">Est. Liquidity:</span> ₹{signal.estimatedLiquidity}Cr
+                <span className="font-medium">Est. Liquidity:</span> {formatCroreAmount(signal.estimatedLiquidity)}
               </span>
             )}
             {signal.confidence && (

@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import { Card } from '@/app/components/ui';
+import { formatLakhCroreAmount } from '@/lib/utils/currency';
 import type { TrendPoint } from '@/types';
 
 interface AUMTrendChartProps {
@@ -152,7 +153,7 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
                                             fontWeight="700"
                                             fill="#E85D54"
                                         >
-                                            ₹{point.value} L Cr
+                                            {formatLakhCroreAmount(point.value)}
                                         </text>
                                         {index > 0 && (
                                             <text
@@ -195,7 +196,7 @@ export default function AUMTrendChart({ data, isLoading }: AUMTrendChartProps) {
                             Current
                         </span>
                         <p className="text-xl font-bold text-[#1A1A2E] mt-1">
-                            ₹{data[data.length - 1].value} L Cr
+                            {formatLakhCroreAmount(data[data.length - 1].value)}
                         </p>
                     </div>
                     <div>

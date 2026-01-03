@@ -10,7 +10,10 @@ export type NodeType =
   | 'company' 
   | 'liquidity_event' 
   | 'network' 
-  | 'rm';
+  | 'rm'
+  | 'family_office'
+  | 'holding_company'
+  | 'advisor';
 
 // Edge/Relationship types
 export type EdgeType = 
@@ -22,7 +25,10 @@ export type EdgeType =
   | 'affects'
   | 'involves'
   | 'manages'
-  | 'connected_to';
+  | 'connected_to'
+  | 'advises'
+  | 'controls'
+  | 'family_of';
 
 // Graph layout algorithm types
 export type GraphLayout = 
@@ -43,6 +49,17 @@ export interface GraphNode {
     eventId?: string;
     networkId?: string;
   };
+  conversations?: ConversationHistory[]; // Conversation history for person nodes
+}
+
+// Conversation history for relationship context
+export interface ConversationHistory {
+  id: string;
+  date: string;
+  type: 'meeting' | 'call' | 'email' | 'event';
+  summary: string;
+  outcome?: string;
+  nextSteps?: string;
 }
 
 // Graph edge/relationship representation
@@ -53,6 +70,7 @@ export interface GraphEdge {
   type: EdgeType;
   label: string;
   properties?: Record<string, unknown>;
+  strength?: 'primary' | 'secondary'; // Connection strength for visual distinction
 }
 
 // Warm introduction path

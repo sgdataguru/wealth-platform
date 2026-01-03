@@ -7,6 +7,7 @@
 
 import { Card } from '@/app/components/ui';
 import { useState, useRef } from 'react';
+import { formatCroreToUSD } from '@/lib/utils/currency';
 
 interface VoiceNote {
     id: string;
@@ -30,13 +31,13 @@ const mockVoiceNotes: VoiceNote[] = [
         duration: 245,
         recordedAt: '2024-12-21T10:30:00',
         transcriptStatus: 'completed',
-        transcript: 'Good morning Rajesh, congratulations on the IPO filing. I wanted to discuss your post-IPO wealth management strategy. Based on our analysis, you\'ll have approximately 180 crores in liquid assets after the lock-in period expires. I recommend a diversified approach with 40% in PMS, 30% in alternative investments, and 30% in fixed income. We should also discuss tax optimization strategies to minimize capital gains tax. What are your thoughts on this allocation?',
+        transcript: `Good morning Rajesh, congratulations on the IPO filing. I wanted to discuss your post-IPO wealth management strategy. Based on our analysis, you'll have approximately ${formatCroreToUSD(180)} in liquid assets after the lock-in period expires. I recommend a diversified approach with 40% in PMS, 30% in alternative investments, and 30% in fixed income. We should also discuss tax optimization strategies to minimize capital gains tax. What are your thoughts on this allocation?`,
         language: 'en',
         linkedClients: ['Rajesh Kumar'],
         detectedTopics: ['IPO', 'Wealth Management', 'PMS', 'Alternative Investments', 'Tax Optimization'],
-        aiSummary: 'Discussed post-IPO wealth management strategy with Rajesh Kumar. Proposed diversified allocation: 40% PMS, 30% alternative investments, 30% fixed income. Estimated liquid assets: ₹180 Cr. Client interested in tax optimization strategies.',
+        aiSummary: `Discussed post-IPO wealth management strategy with Rajesh Kumar. Proposed diversified allocation: 40% PMS, 30% alternative investments, 30% fixed income. Estimated liquid assets: ${formatCroreToUSD(180)}. Client interested in tax optimization strategies.`,
         actionItems: [
-            'Prepare detailed PMS proposal for ₹72 Cr allocation',
+            `Prepare detailed PMS proposal for ${formatCroreToUSD(72)} allocation`,
             'Schedule meeting with tax consultant',
             'Send alternative investment opportunities deck',
             'Follow up in 3 days for decision'

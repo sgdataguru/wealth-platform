@@ -6,6 +6,7 @@
 'use client';
 
 import { useState } from 'react';
+import { formatCroreAmount } from '@/lib/utils/currency';
 import { Card } from '@/app/components/ui';
 import DrillDownModal from '@/app/components/ui/DrillDownModal';
 import type { EnhancedExecutiveMetrics, DrillDownView } from '@/types';
@@ -252,7 +253,7 @@ function renderModalContent(view: DrillDownView) {
                 </div>
                 <div className="bg-white p-4 rounded-lg border border-gray-200">
                     <p className="text-xs text-[#8E99A4] uppercase">Sample Metric 2</p>
-                    <p className="text-2xl font-bold text-[#1A1A2E] mt-1">₹340 Cr</p>
+                    <p className="text-2xl font-bold text-[#1A1A2E] mt-1">{formatCroreAmount(340)}</p>
                 </div>
                 <div className="bg-white p-4 rounded-lg border border-gray-200">
                     <p className="text-xs text-[#8E99A4] uppercase">Sample Metric 3</p>

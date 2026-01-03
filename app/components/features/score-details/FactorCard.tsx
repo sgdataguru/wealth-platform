@@ -31,6 +31,17 @@ export default function FactorCard({ factor }: FactorCardProps) {
     rights_call: 'bg-yellow-100 text-yellow-700',
     margin_pledge: 'bg-pink-100 text-pink-700',
     early_exit: 'bg-cyan-100 text-cyan-700',
+    liquidity: 'bg-blue-100 text-blue-700',
+    wealth_creation: 'bg-green-100 text-green-700',
+    real_estate: 'bg-orange-100 text-orange-700',
+    healthcare: 'bg-red-100 text-red-700',
+    energy: 'bg-yellow-100 text-yellow-700',
+    logistics: 'bg-indigo-100 text-indigo-700',
+    consumer: 'bg-purple-100 text-purple-700',
+    financial_services: 'bg-teal-100 text-teal-700',
+    family_office_rotation: 'bg-pink-100 text-pink-700',
+    ipo_approval: 'bg-violet-100 text-violet-700',
+    strategic_stake_sale: 'bg-emerald-100 text-emerald-700',
   };
   
   const colorClass = signalColors[factor.signal_type] || 'bg-gray-100 text-gray-700';

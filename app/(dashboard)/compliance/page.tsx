@@ -13,6 +13,7 @@ import ComplianceTermsLibrary from '@/app/components/features/compliance/Complia
 import ClientComplianceMatrix from '@/app/components/features/compliance/ClientComplianceMatrix';
 import ComplianceGapAnalysis from '@/app/components/features/compliance/ComplianceGapAnalysis';
 import ComplianceAlertPanel from '@/app/components/features/compliance/ComplianceAlertPanel';
+import { Header, Sidebar } from '@/app/components/layout';
 
 type TabType = 'dashboard' | 'terms' | 'matrix' | 'gaps' | 'alerts';
 
@@ -28,7 +29,11 @@ export default function CompliancePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6">
+    <div className="min-h-screen bg-[var(--bg-primary)]">
+      <Header />
+      <div className="flex">
+        <Sidebar activePage="compliance" />
+        <main className="flex-1 p-6">
       {/* Page Header */}
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-slate-900 mb-2">
@@ -69,6 +74,8 @@ export default function CompliancePage() {
         {activeTab === 'matrix' && <ClientComplianceMatrix />}
         {activeTab === 'gaps' && <ComplianceGapAnalysis />}
         {activeTab === 'alerts' && <ComplianceAlertPanel />}
+      </div>
+        </main>
       </div>
     </div>
   );
