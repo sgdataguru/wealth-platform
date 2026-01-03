@@ -51,14 +51,34 @@ export default function EnhancedProspectCard({
       >
         <div className="flex items-start justify-between gap-4">
           {/* Left: Avatar and Info */}
-          <div className="flex items-start gap-4">
+          <div className="flex items-start gap-4 flex-1">
             <Avatar initials={prospect.initials} size="lg" />
-            <div>
-              <h3 className="text-lg font-semibold text-[#1A1A2E]">
-                {prospect.firstName} {prospect.lastName}
-              </h3>
+            <div className="flex-1">
+              <div className="flex items-center gap-2">
+                <h3 className="text-lg font-semibold text-[#1A1A2E]">
+                  {prospect.firstName} {prospect.lastName}
+                </h3>
+                {/* Client Tier Badge */}
+                {prospect.clientTier && (
+                  <span className={`px-2 py-0.5 text-xs font-semibold rounded-full ${
+                    prospect.clientTier === 'UHNW' 
+                      ? 'bg-[#C9A84A] text-white'
+                      : prospect.clientTier === 'HNW'
+                      ? 'bg-[#007B7A] text-white'
+                      : 'bg-[#BFC9CC] text-[#1A1A2E]'
+                  }`}>
+                    {prospect.clientTier}
+                  </span>
+                )}
+              </div>
               <p className="text-sm text-[#5A6C7D]">{prospect.title}</p>
               <p className="text-sm text-[#5A6C7D]">{prospect.company}</p>
+              {/* Segment Badge */}
+              {prospect.segment && (
+                <span className="inline-block mt-1 px-2 py-0.5 text-xs font-medium rounded bg-[#E9ECEC] text-[#1A1A2E]">
+                  {prospect.segment}
+                </span>
+              )}
             </div>
           </div>
           
@@ -70,6 +90,30 @@ export default function EnhancedProspectCard({
             size="md"
           />
         </div>
+        
+        {/* Wallet Share Info */}
+        {prospect.walletShare !== undefined && prospect.totalWealth !== undefined && (
+          <div className="mt-4 p-3 bg-[#F6F8F8] rounded-lg border border-[#E9ECEC]">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
+                  Wallet Share
+                </p>
+                <p className="text-2xl font-bold text-[#007B7A] mt-0.5">
+                  {prospect.walletShare}%
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs font-semibold text-[#8E99A4] uppercase tracking-wider">
+                  Est. Total Wealth
+                </p>
+                <p className="text-lg font-semibold text-[#1A1A2E] mt-0.5">
+                  ${(prospect.totalWealth / 1000000).toFixed(1)}M
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
         
         {/* Meta Info */}
         <div className="mt-4 flex items-center gap-4 text-sm text-[#5A6C7D]">

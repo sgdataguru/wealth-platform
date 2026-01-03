@@ -71,6 +71,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-01-15'),
     updatedAt: new Date('2024-12-15'),
     prospectType: 'Family Office',
+    clientTier: 'UHNW',
+    segment: 'Founder-led',
+    totalWealth: 85000000,
+    walletShare: 18,
   },
   {
     id: '2',
@@ -115,6 +119,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-02-20'),
     updatedAt: new Date('2024-12-12'),
     prospectType: 'Private Equity Fund',
+    clientTier: 'UHNW',
+    segment: 'PE-backed',
+    totalWealth: 120000000,
+    walletShare: 25,
   },
   {
     id: '3',
@@ -148,6 +156,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-03-10'),
     updatedAt: new Date('2024-11-20'),
     prospectType: 'Sovereign Wealth Fund (SWF)',
+    clientTier: 'HNW',
+    segment: 'Founder-led',
+    totalWealth: 42000000,
+    walletShare: 12,
   },
   {
     id: '4',
@@ -181,6 +193,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-04-05'),
     updatedAt: new Date('2024-10-15'),
     prospectType: 'Pension Fund',
+    clientTier: 'Emerging',
+    segment: 'Founder-led',
+    totalWealth: 8500000,
+    walletShare: 8,
   },
   {
     id: '5',
@@ -214,6 +230,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-05-12'),
     updatedAt: new Date('2024-12-18'),
     prospectType: 'Family Office',
+    clientTier: 'UHNW',
+    segment: 'Family Office',
+    totalWealth: 250000000,
+    walletShare: 32,
   },
   {
     id: '6',
@@ -247,6 +267,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-06-20'),
     updatedAt: new Date('2024-12-01'),
     prospectType: 'Private Equity Fund',
+    clientTier: 'HNW',
+    segment: 'PE-backed',
+    totalWealth: 38000000,
+    walletShare: 15,
   },
   {
     id: '7',
@@ -280,6 +304,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-07-15'),
     updatedAt: new Date('2024-11-25'),
     prospectType: 'Sovereign Wealth Fund (SWF)',
+    clientTier: 'HNW',
+    segment: 'Founder-led',
+    totalWealth: 55000000,
+    walletShare: 22,
   },
   {
     id: '8',
@@ -313,6 +341,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-08-01'),
     updatedAt: new Date('2024-12-10'),
     prospectType: 'Family Office',
+    clientTier: 'UHNW',
+    segment: 'Family Office',
+    totalWealth: 180000000,
+    walletShare: 28,
   },
   {
     id: '9',
@@ -346,6 +378,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-09-10'),
     updatedAt: new Date('2024-12-20'),
     prospectType: 'Private Equity Fund',
+    clientTier: 'HNW',
+    segment: 'PE-backed',
+    totalWealth: 48000000,
+    walletShare: 20,
   },
   {
     id: '10',
@@ -379,6 +415,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-10-05'),
     updatedAt: new Date('2024-12-12'),
     prospectType: 'Sovereign Wealth Fund (SWF)',
+    clientTier: 'HNW',
+    segment: 'Founder-led',
+    totalWealth: 35000000,
+    walletShare: 14,
   },
   {
     id: '11',
@@ -412,6 +452,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-11-01'),
     updatedAt: new Date('2024-11-30'),
     prospectType: 'Family Office',
+    clientTier: 'UHNW',
+    segment: 'Family Office',
+    totalWealth: 95000000,
+    walletShare: 19,
   },
   {
     id: '12',
@@ -445,6 +489,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-11-15'),
     updatedAt: new Date('2024-12-15'),
     prospectType: 'Pension Fund',
+    clientTier: 'HNW',
+    segment: 'PE-backed',
+    totalWealth: 52000000,
+    walletShare: 16,
   },
   {
     id: '13',
@@ -478,6 +526,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-11-20'),
     updatedAt: new Date('2024-11-10'),
     prospectType: 'Private Equity Fund',
+    clientTier: 'Emerging',
+    segment: 'PE-backed',
+    totalWealth: 12000000,
+    walletShare: 10,
   },
   {
     id: '14',
@@ -522,6 +574,10 @@ const mockProspects: Prospect[] = [
     createdAt: new Date('2024-12-01'),
     updatedAt: new Date('2024-12-22'),
     prospectType: 'Sovereign Wealth Fund (SWF)',
+    clientTier: 'UHNW',
+    segment: 'Family Office',
+    totalWealth: 320000000,
+    walletShare: 35,
   },
 ];
 
@@ -571,6 +627,16 @@ export default function ProspectsPage() {
     // Apply prospect type filter
     if (appliedFilters.prospect_types && appliedFilters.prospect_types.length > 0) {
       filtered = filtered.filter((p) => p.prospectType && appliedFilters.prospect_types.includes(p.prospectType));
+    }
+
+    // Apply segment filter
+    if (appliedFilters.segments && appliedFilters.segments.length > 0) {
+      filtered = filtered.filter((p) => p.segment && appliedFilters.segments.includes(p.segment));
+    }
+
+    // Apply tier filter
+    if (appliedFilters.tiers && appliedFilters.tiers.length > 0) {
+      filtered = filtered.filter((p) => p.clientTier && appliedFilters.tiers.includes(p.clientTier));
     }
 
     // For clusters, we'd need cluster_tags on prospects

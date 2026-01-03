@@ -38,7 +38,7 @@ export function FilterPanel({ className = '' }: FilterPanelProps) {
   }, [filterOptions, loadFilterOptions]);
 
   const handleFilterChange = (
-    filterType: 'cities' | 'sectors' | 'network_ids' | 'cluster_ids' | 'prospect_types',
+    filterType: 'cities' | 'sectors' | 'network_ids' | 'cluster_ids' | 'prospect_types' | 'segments' | 'tiers',
     value: string,
     checked: boolean
   ) => {
@@ -69,7 +69,9 @@ export function FilterPanel({ className = '' }: FilterPanelProps) {
     appliedFilters.cities.length > 0 ||
     appliedFilters.sectors.length > 0 ||
     appliedFilters.network_ids.length > 0 ||
-    appliedFilters.cluster_ids.length > 0;
+    appliedFilters.cluster_ids.length > 0 ||
+    appliedFilters.segments.length > 0 ||
+    appliedFilters.tiers.length > 0;
 
   return (
     <div className={`bg-white border-r border-gray-200 ${className}`}>
@@ -152,6 +154,26 @@ export function FilterPanel({ className = '' }: FilterPanelProps) {
           searchQuery={searchQueries.prospectTypes}
           onSearchChange={(query) => setSearchQuery('prospectTypes', query)}
           onChange={(value, checked) => handleFilterChange('prospect_types', value, checked)}
+        />
+
+        {/* Segment Filter */}
+        <FilterSection
+          title="Segment"
+          options={filterOptions?.segments || []}
+          selected={appliedFilters.segments}
+          searchQuery={searchQueries.segments}
+          onSearchChange={(query) => setSearchQuery('segments', query)}
+          onChange={(value, checked) => handleFilterChange('segments', value, checked)}
+        />
+
+        {/* Client Tier Filter */}
+        <FilterSection
+          title="Client Tier"
+          options={filterOptions?.tiers || []}
+          selected={appliedFilters.tiers}
+          searchQuery={searchQueries.tiers}
+          onSearchChange={(query) => setSearchQuery('tiers', query)}
+          onChange={(value, checked) => handleFilterChange('tiers', value, checked)}
         />
       </div>
     </div>

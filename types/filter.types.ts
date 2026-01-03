@@ -7,7 +7,7 @@
 /**
  * Filter type categories
  */
-export type FilterType = 'cities' | 'sectors' | 'network_ids' | 'cluster_ids' | 'prospect_types';
+export type FilterType = 'cities' | 'sectors' | 'network_ids' | 'cluster_ids' | 'prospect_types' | 'segments' | 'tiers';
 
 /**
  * Network represents a professional network or association
@@ -41,6 +41,8 @@ export interface FilterOptions {
   networks: Network[];
   clusters: Cluster[];
   prospectTypes?: string[];
+  segments?: string[]; // Family Office, PE-backed, Founder-led
+  tiers?: string[]; // UHNW, HNW, Emerging
 }
 
 /**
@@ -52,6 +54,8 @@ export interface AppliedFilters {
   network_ids: string[];
   cluster_ids: string[];
   prospect_types: string[];
+  segments: string[];
+  tiers: string[];
 }
 
 /**
@@ -73,7 +77,9 @@ export interface FilterState {
     sectors: string;
     networks: string;
     clusters: string;
-      prospectTypes: string;
+    prospectTypes: string;
+    segments: string;
+    tiers: string;
   };
   
   // Results

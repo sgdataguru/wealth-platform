@@ -15,6 +15,8 @@ const initialFilters: AppliedFilters = {
   network_ids: [],
   cluster_ids: [],
   prospect_types: [],
+  segments: [],
+  tiers: [],
 };
 
 /**
@@ -33,6 +35,8 @@ export const useFilterStore = create<FilterState>((set, get) => ({
     networks: '',
     clusters: '',
     prospectTypes: '',
+    segments: '',
+    tiers: '',
   },
   filteredCount: 0,
 
@@ -158,6 +162,8 @@ export const useFilterStore = create<FilterState>((set, get) => ({
       network_ids: searchParams.getAll('network_ids'),
       cluster_ids: searchParams.getAll('cluster_ids'),
       prospect_types: searchParams.getAll('prospect_types'),
+      segments: searchParams.getAll('segments'),
+      tiers: searchParams.getAll('tiers'),
     };
     set({ appliedFilters: filters });
   },
@@ -183,6 +189,8 @@ export const useFilterStore = create<FilterState>((set, get) => ({
           network_ids: filters.network_ids || [],
           cluster_ids: filters.cluster_ids || [],
           prospect_types: filters.prospect_types || [],
+          segments: filters.segments || [],
+          tiers: filters.tiers || [],
         };
         set({ appliedFilters: merged });
       }
