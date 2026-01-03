@@ -217,7 +217,7 @@ export const mockDataSources: DataSource[] = [
   {
     id: 'manual',
     name: 'Manual Intelligence',
-    type: 'manual',
+    type: 'api',
     status: 'online',
     lastSync: new Date(Date.now() - 30 * 60 * 1000), // 30 minutes ago
     nextSync: new Date(Date.now() + 60 * 60 * 1000),
