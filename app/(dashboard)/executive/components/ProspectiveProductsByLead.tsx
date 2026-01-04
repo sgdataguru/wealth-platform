@@ -18,7 +18,7 @@ interface ProspectiveProductsByLeadProps {
 const MOCK_PROSPECTIVE_PRODUCTS: ProspectiveProductMix[] = [
     {
         leadId: 'L001',
-        leadName: 'Arjun Reddy',
+        leadName: 'Omar Al Mubarak',
         estimatedNetWorth: 950000000,
         riskProfile: 'aggressive',
         recommendedProducts: [
@@ -45,11 +45,11 @@ const MOCK_PROSPECTIVE_PRODUCTS: ProspectiveProductMix[] = [
             },
         ],
         totalExpectedAUM: 855000000,
-        assignedRM: 'Rajesh Kumar',
+        assignedRM: 'Ahmad Al Maktoum',
     },
     {
         leadId: 'L002',
-        leadName: 'Deepak Verma',
+        leadName: 'Rashid Al Dhaheri',
         estimatedNetWorth: 420000000,
         riskProfile: 'moderate',
         recommendedProducts: [
@@ -76,7 +76,7 @@ const MOCK_PROSPECTIVE_PRODUCTS: ProspectiveProductMix[] = [
             },
         ],
         totalExpectedAUM: 378000000,
-        assignedRM: 'Anita Patel',
+        assignedRM: 'Layla Al-Mazrouei',
     },
 ];
 

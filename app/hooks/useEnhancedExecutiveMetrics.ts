@@ -19,7 +19,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
     {
         id: 'LT-001',
         clientId: 'HC001',
-        clientName: 'Ramesh Gupta',
+        clientName: 'Sultan Al Nahyan',
         clientCode: '#HC001',
         eventType: 'lock_in_expiry',
         amount: 450000000,
@@ -36,7 +36,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['Structured Products', 'Alternative Investments', 'PMS'],
         assignedRM: 'RM-001',
-        assignedRMName: 'Priya Sharma',
+        assignedRMName: 'Amira Al-Hashimi',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -44,7 +44,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
     {
         id: 'LT-002',
         clientId: 'HC045',
-        clientName: 'Meera Kapoor',
+        clientName: 'Sheikha Al Qasimi',
         clientCode: '#HC045',
         eventType: 'bond_maturity',
         amount: 280000000,
@@ -60,7 +60,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['PMS', 'Fixed Income', 'Structured Products'],
         assignedRM: 'RM-002',
-        assignedRMName: 'Vikram Singh',
+        assignedRMName: 'Khalid Al-Farsi',
         status: 'engaged',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -68,7 +68,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
     {
         id: 'LT-003',
         clientId: 'HC128',
-        clientName: 'Sanjay Malhotra',
+        clientName: 'Mohammed Al Saud',
         clientCode: '#HC128',
         eventType: 'esop_vesting',
         amount: 620000000,
@@ -84,7 +84,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['Alternative Investments', 'Real Estate', 'PMS'],
         assignedRM: 'RM-001',
-        assignedRMName: 'Priya Sharma',
+        assignedRMName: 'Amira Al-Hashimi',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -92,7 +92,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
     {
         id: 'LT-004',
         clientId: 'HC084',
-        clientName: 'Megha Iyer',
+        clientName: 'Noor Al Hamadi',
         clientCode: '#HC084',
         eventType: 'dividend_payout',
         amount: 180000000,
@@ -108,7 +108,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['Mutual Funds', 'PMS', 'Fixed Income'],
         assignedRM: 'RM-003',
-        assignedRMName: 'Anita Patel',
+        assignedRMName: 'Layla Al-Mazrouei',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -116,7 +116,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
     {
         id: 'LT-005',
         clientId: 'HC109',
-        clientName: 'Neelam Chopra',
+        clientName: 'Rashid Al Jaber',
         clientCode: '#HC109',
         eventType: 'business_exit',
         amount: 350000000,
@@ -133,7 +133,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['PMS', 'Alternative Investments', 'Real Estate'],
         assignedRM: 'RM-002',
-        assignedRMName: 'Vikram Singh',
+        assignedRMName: 'Khalid Al-Farsi',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -141,7 +141,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
     {
         id: 'LT-006',
         clientId: 'HC062',
-        clientName: 'Harish Batra',
+        clientName: 'Hamad Al Khaleej',
         clientCode: '#HC062',
         eventType: 'ipo_listing',
         amount: 520000000,
@@ -158,7 +158,7 @@ const MOCK_LIQUIDITY_TRIGGERS: LiquidityTrigger[] = [
         ],
         recommendedProducts: ['PMS', 'Alternative Investments', 'Structured Products'],
         assignedRM: 'RM-001',
-        assignedRMName: 'Priya Sharma',
+        assignedRMName: 'Amira Al-Hashimi',
         status: 'upcoming',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -193,9 +193,9 @@ const MOCK_ENHANCED_METRICS: EnhancedExecutiveMetrics = {
 
     // Trend data
     topPerformingRMs: [
-        { rmId: 'RM-001', rmName: 'Priya Sharma', aum: 850, growth: 24.5, clientCount: 65, revenue: 42, rank: 1 },
-        { rmId: 'RM-002', rmName: 'Vikram Singh', aum: 720, growth: 22.1, clientCount: 58, revenue: 38, rank: 2 },
-        { rmId: 'RM-003', rmName: 'Anita Patel', aum: 680, growth: 21.3, clientCount: 52, revenue: 36, rank: 3 },
+        { rmId: 'RM-001', rmName: 'Amira Al-Hashimi', aum: 850, growth: 24.5, clientCount: 65, revenue: 42, rank: 1 },
+        { rmId: 'RM-002', rmName: 'Khalid Al-Farsi', aum: 720, growth: 22.1, clientCount: 58, revenue: 38, rank: 2 },
+        { rmId: 'RM-003', rmName: 'Layla Al-Mazrouei', aum: 680, growth: 21.3, clientCount: 52, revenue: 36, rank: 3 },
     ],
 
     underperformingRMs: [],

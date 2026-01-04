@@ -14,16 +14,16 @@ const mockSuggestions: EngagementSuggestion[] = [
     rmId: 'rm-1',
     clientId: '1',
     signalId: 's1',
-    title: 'Rajesh Kumar - IPO Filing',
-    context: `Tech Innovations filed DRHP with SEBI yesterday. Rajesh (35% stake) may realize ${formatCroreAmount(298)} in 60-90 days. This represents a significant liquidity event that requires immediate attention.`,
-    recommendedAction: 'Call Rajesh to discuss tax-efficient exit strategies and post-liquidity wealth management plan. Suggest meeting with tax advisor within the next 3 days.',
+    title: 'Ahmad Al Maktoum - IPO Filing',
+    context: `Tech Innovations filed DRHP with SEBI yesterday. Ahmad (35% stake) may realize ${formatCroreAmount(298)} in 60-90 days. This represents a significant liquidity event that requires immediate attention.`,
+    recommendedAction: 'Call Ahmad to discuss tax-efficient exit strategies and post-liquidity wealth management plan. Suggest meeting with tax advisor within the next 3 days.',
     priority: 'critical',
     category: 'liquidity_event',
     generatedAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
     expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days from now
     client: {
       id: '1',
-      name: 'Rajesh Kumar',
+      name: 'Ahmad Al Maktoum',
       company: 'Tech Innovations Pvt Ltd',
       estimatedWealth: 29800000000, // ₹298Cr
       leadScore: 92,
@@ -42,9 +42,9 @@ const mockSuggestions: EngagementSuggestion[] = [
     rmId: 'rm-1',
     clientId: '2',
     signalId: 's4',
-    title: 'Anita Patel - Series C Funding Announced',
-    context: `FinServ Holdings raised ${formatCroreAmount(350)} Series C led by Sequoia Capital. Anita is Founder/CEO and likely to see significant stake dilution but increased company valuation.`,
-    recommendedAction: 'Congratulate Anita on the funding and explore opportunities for diversifying wealth beyond the company. Schedule a portfolio review within 2 weeks.',
+    title: 'Layla Al-Mazrouei - Series C Funding Announced',
+    context: `FinServ Holdings raised ${formatCroreAmount(350)} Series C led by Sequoia Capital. Layla is Founder/CEO and likely to see significant stake dilution but increased company valuation.`,
+    recommendedAction: 'Congratulate Layla on the funding and explore opportunities for diversifying wealth beyond the company. Schedule a portfolio review within 2 weeks.',
     priority: 'high',
     category: 'relationship_opportunity',
     generatedAt: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 hours ago

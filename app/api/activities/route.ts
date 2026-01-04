@@ -12,7 +12,7 @@ const mockActivities: Activity[] = [
     id: 'act-1',
     userId: 'rm-1',
     actionType: 'lead_contacted',
-    description: 'Called Rajesh Kumar regarding IPO liquidity options',
+    description: 'Called Ahmad Al Maktoum regarding IPO liquidity options',
     leadId: 'lead-1',
     createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
   },
@@ -29,7 +29,7 @@ const mockActivities: Activity[] = [
     id: 'act-3',
     userId: 'rm-1',
     actionType: 'follow_up_completed',
-    description: 'Completed follow-up: Send investment proposal to Vikram',
+    description: 'Completed follow-up: Send investment proposal to Khalid',
     followUpId: 'fu-3',
     leadId: 'lead-3',
     createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 hours ago
@@ -38,7 +38,7 @@ const mockActivities: Activity[] = [
     id: 'act-4',
     userId: 'rm-1',
     actionType: 'follow_up_created',
-    description: 'Created new follow-up for Rajesh Kumar',
+    description: 'Created new follow-up for Ahmad Al Maktoum',
     followUpId: 'fu-4',
     leadId: 'lead-1',
     createdAt: new Date(Date.now() - 6 * 60 * 60 * 1000), // 6 hours ago

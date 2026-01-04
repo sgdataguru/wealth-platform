@@ -20,12 +20,12 @@ const RENDER_REFERENCE_TIMESTAMP = Date.now();
 const MOCK_CLIENT_PRODUCT_MIX: ClientProductMix[] = [
     {
         clientId: 'C001',
-        clientName: 'Ramesh Gupta',
+        clientName: 'Sultan Al Nahyan',
         clientCode: '#HC001',
         totalAUM: 450000000,
         region: 'Dubai',
-        assignedRM: 'Priya Sharma',
-        assignedRMEmail: 'priya.sharma@kairoscapital.mu',
+        assignedRM: 'Amira Al-Hashimi',
+        assignedRMEmail: 'amira.alhashimi@kairoscapital.mu',
         products: [
             { category: 'PMS', aum: 180000000, percentage: 40, lastUpdated: new Date() },
             { category: 'Equities', aum: 112500000, percentage: 25, lastUpdated: new Date() },
@@ -36,12 +36,12 @@ const MOCK_CLIENT_PRODUCT_MIX: ClientProductMix[] = [
     },
     {
         clientId: 'C002',
-        clientName: 'Meera Kapoor',
+        clientName: 'Sheikha Al Qasimi',
         clientCode: '#HC045',
         totalAUM: 320000000,
         region: 'Abu Dhabi',
-        assignedRM: 'Vikram Singh',
-        assignedRMEmail: 'vikram.singh@kairoscapital.mu',
+        assignedRM: 'Khalid Al-Farsi',
+        assignedRMEmail: 'khalid.alfarsi@kairoscapital.mu',
         products: [
             { category: 'Fixed Income', aum: 128000000, percentage: 40, lastUpdated: new Date() },
             { category: 'PMS', aum: 96000000, percentage: 30, lastUpdated: new Date() },
@@ -52,12 +52,12 @@ const MOCK_CLIENT_PRODUCT_MIX: ClientProductMix[] = [
     },
     {
         clientId: 'C003',
-        clientName: 'Sanjay Malhotra',
+        clientName: 'Mohammed Al Saud',
         clientCode: '#HC128',
         totalAUM: 850000000,
-        region: 'Jaipur',
-        assignedRM: 'Priya Sharma',
-        assignedRMEmail: 'priya.sharma@kairoscapital.mu',
+        region: 'Riyadh',
+        assignedRM: 'Amira Al-Hashimi',
+        assignedRMEmail: 'amira.alhashimi@kairoscapital.mu',
         products: [
             { category: 'Equities', aum: 340000000, percentage: 40, lastUpdated: new Date() },
             { category: 'Alternative Investments', aum: 255000000, percentage: 30, lastUpdated: new Date() },

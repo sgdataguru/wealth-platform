@@ -26,12 +26,12 @@ const mockRMInsights: AIInsight[] = [
     {
         id: 'rm-1',
         category: 'client',
-        title: 'Rajesh Kumar - High Conversion Probability',
+        title: 'Ahmad Al Maktoum - High Conversion Probability',
         description: 'AI model predicts 87% probability of conversion within 14 days based on engagement patterns, signal strength (IPO filing), and communication frequency. Estimated wallet capture: $180 Million.',
         priority: 'urgent',
         confidence: 87,
         actionable: true,
-        clientName: 'Rajesh Kumar',
+        clientName: 'Ahmad Al Maktoum',
         estimatedValue: '$180 Million',
         suggestedAction: 'Schedule in-person meeting within 48 hours. Prepare customized PMS proposal focusing on post-IPO wealth management. Highlight tax optimization strategies.',
         dataPoints: [
@@ -45,12 +45,12 @@ const mockRMInsights: AIInsight[] = [
     {
         id: 'rm-2',
         category: 'timing',
-        title: 'Optimal Contact Time: Priya Sharma',
-        description: 'Historical analysis shows Priya Sharma has 3.2x higher response rate when contacted between 2-4 PM on Tuesdays or Thursdays. Last successful engagement: Thursday 3:15 PM.',
+        title: 'Optimal Contact Time: Amal Al Sabah',
+        description: 'Historical analysis shows Amal Al Sabah has 3.2x higher response rate when contacted between 2-4 PM on Tuesdays or Thursdays. Last successful engagement: Thursday 3:15 PM.',
         priority: 'high',
         confidence: 91,
         actionable: true,
-        clientName: 'Priya Sharma',
+        clientName: 'Amal Al Sabah',
         estimatedValue: '$240 Million',
         suggestedAction: 'Schedule call for this Thursday at 3:00 PM. Discuss alternative investment opportunities - client showed 78% interest in PE/VC funds during last interaction.',
         dataPoints: [
@@ -64,12 +64,12 @@ const mockRMInsights: AIInsight[] = [
     {
         id: 'rm-3',
         category: 'engagement',
-        title: 'Re-engagement Opportunity: Ankit Verma',
+        title: 'Re-engagement Opportunity: Omar Al Khatib',
         description: 'Client engagement dropped 68% in last 30 days. AI detects early churn signals. However, recent LinkedIn activity shows interest in structured products - potential re-engagement angle.',
         priority: 'urgent',
         confidence: 84,
         actionable: true,
-        clientName: 'Ankit Verma',
+        clientName: 'Omar Al Khatib',
         estimatedValue: '$95 Million',
         suggestedAction: 'Send personalized email about new structured product offerings within 24 hours. Follow up with voice note explaining tax benefits. Schedule coffee meeting.',
         dataPoints: [

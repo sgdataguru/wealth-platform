@@ -27,7 +27,7 @@ const mockRMTasks: RMTask[] = [
         assignedTo: 'rm-001',
         assignedToName: 'Amira Al-Hashimi',
         assignedBy: 'exec-001',
-        assignedByName: 'Amritan Shua Garwal',
+        assignedByName: 'Amritaanshu',
         prospectId: 'p-123',
         prospectName: 'Tech Innovations Pvt Ltd',
         taskType: 'followup',
@@ -43,7 +43,7 @@ const mockRMTasks: RMTask[] = [
         assignedTo: 'rm-002',
         assignedToName: 'Khalid Al-Farsi',
         assignedBy: 'exec-001',
-        assignedByName: 'Amritan Shua Garwal',
+        assignedByName: 'Amritaanshu',
         taskType: 'proposal',
         priority: 'high',
         dueDate: new Date('2024-12-20'),
@@ -57,7 +57,7 @@ const mockRMTasks: RMTask[] = [
         assignedTo: 'rm-003',
         assignedToName: 'Layla Al-Mazrouei',
         assignedBy: 'exec-001',
-        assignedByName: 'Amritan Shua Garwal',
+        assignedByName: 'Amritaanshu',
         taskType: 'review',
         priority: 'medium',
         dueDate: new Date('2024-12-15'),
@@ -71,7 +71,7 @@ const mockRMTasks: RMTask[] = [
         assignedTo: 'rm-001',
         assignedToName: 'Amira Al-Hashimi',
         assignedBy: 'exec-001',
-        assignedByName: 'Amritan Shua Garwal',
+        assignedByName: 'Amritaanshu',
         taskType: 'cross_sell',
         priority: 'medium',
         dueDate: new Date('2024-12-25'),
@@ -85,7 +85,7 @@ const mockRMTasks: RMTask[] = [
         assignedTo: 'rm-004',
         assignedToName: 'Ahmad Al Maktoum',
         assignedBy: 'exec-001',
-        assignedByName: 'Amit Saxena',
+        assignedByName: 'Amritaanshu',
         taskType: 'prospect_call',
         priority: 'low',
         dueDate: new Date('2024-12-28'),
@@ -125,7 +125,7 @@ export default function ExecutiveDashboard() {
                             Managing Director - Artificial Intelligence Hub
                         </h1>
                         <p className="text-[#5A6C7D] mt-1">
-                            Amit Saxena • Northern Region Performance & Strategic Insights
+                            Amritaanshu • Northern Region Performance & Strategic Insights
                         </p>
                     </div>
 

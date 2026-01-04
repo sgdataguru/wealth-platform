@@ -149,12 +149,12 @@ export default function ClientReportsPanel() {
 
     // Mock client list
     const clients = [
-        { id: 'UHNW-001', name: 'Rajesh Kumar', netWorth: formatCroreToUSD(450) },
-        { id: 'UHNW-002', name: 'Priya Sharma', netWorth: formatCroreToUSD(680) },
-        { id: 'UHNW-003', name: 'Vikram Singh', netWorth: formatCroreToUSD(320) },
-        { id: 'UHNW-004', name: 'Anita Patel', netWorth: formatCroreToUSD(540) },
-        { id: 'UHNW-005', name: 'Sanjay Gupta', netWorth: formatCroreToUSD(890) },
-        { id: 'UHNW-006', name: 'Neha Kapoor', netWorth: formatCroreToUSD(275) }
+        { id: 'UHNW-001', name: 'Ahmad Al Maktoum', netWorth: formatCroreToUSD(450) },
+        { id: 'UHNW-002', name: 'Amal Al Sabah', netWorth: formatCroreToUSD(680) },
+        { id: 'UHNW-003', name: 'Ali Al Saud', netWorth: formatCroreToUSD(320) },
+        { id: 'UHNW-004', name: 'Latifa Al Qasimi', netWorth: formatCroreToUSD(540) },
+        { id: 'UHNW-005', name: 'Mohammed Al Nahyan', netWorth: formatCroreToUSD(890) },
+        { id: 'UHNW-006', name: 'Sheikha Al Mubarak', netWorth: formatCroreToUSD(275) }
     ];
 
     const handleGenerateReport = () => {

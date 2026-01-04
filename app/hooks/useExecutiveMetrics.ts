@@ -38,16 +38,16 @@ const MOCK_EXECUTIVE_METRICS: ExecutiveMetrics = {
 
     // Top performers
     topPerformingRMs: [
-        { rmId: 'RM-001', rmName: 'Priya Sharma', aum: 850, growth: 24.5, clientCount: 65, revenue: 42, rank: 1 },
-        { rmId: 'RM-002', rmName: 'Vikram Singh', aum: 720, growth: 22.1, clientCount: 58, revenue: 38, rank: 2 },
-        { rmId: 'RM-003', rmName: 'Anita Patel', aum: 680, growth: 21.3, clientCount: 52, revenue: 36, rank: 3 },
-        { rmId: 'RM-004', rmName: 'Rajesh Kumar', aum: 650, growth: 19.8, clientCount: 47, revenue: 34, rank: 4 },
-        { rmId: 'RM-005', rmName: 'Meera Reddy', aum: 620, growth: 18.5, clientCount: 45, revenue: 32, rank: 5 },
+        { rmId: 'RM-001', rmName: 'Amira Al-Hashimi', aum: 850, growth: 24.5, clientCount: 65, revenue: 42, rank: 1 },
+        { rmId: 'RM-002', rmName: 'Khalid Al-Farsi', aum: 720, growth: 22.1, clientCount: 58, revenue: 38, rank: 2 },
+        { rmId: 'RM-003', rmName: 'Layla Al-Mazrouei', aum: 680, growth: 21.3, clientCount: 52, revenue: 36, rank: 3 },
+        { rmId: 'RM-004', rmName: 'Ahmad Al Maktoum', aum: 650, growth: 19.8, clientCount: 47, revenue: 34, rank: 4 },
+        { rmId: 'RM-005', rmName: 'Fatima Al Mubarak', aum: 620, growth: 18.5, clientCount: 45, revenue: 32, rank: 5 },
     ],
 
     underperformingRMs: [
-        { rmId: 'RM-100', rmName: 'Amit Joshi', aum: 120, growth: -2.5, clientCount: 18, revenue: 8, rank: 1243 },
-        { rmId: 'RM-101', rmName: 'Kavita Nair', aum: 135, growth: 1.2, clientCount: 22, revenue: 9, rank: 1244 },
+        { rmId: 'RM-100', rmName: 'Ali Al Zaabi', aum: 120, growth: -2.5, clientCount: 18, revenue: 8, rank: 1243 },
+        { rmId: 'RM-101', rmName: 'Mariam Al Hassan', aum: 135, growth: 1.2, clientCount: 22, revenue: 9, rank: 1244 },
     ],
 
     // Regional breakdown

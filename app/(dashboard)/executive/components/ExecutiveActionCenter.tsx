@@ -98,11 +98,11 @@ export default function ExecutiveActionCenter({ recentTasks }: ExecutiveActionCe
                                     Select RM
                                 </label>
                                 <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E85D54]">
-                                    <option>Priya Sharma</option>
-                                    <option>Vikram Singh</option>
-                                    <option>Anita Patel</option>
-                                    <option>Rajesh Kumar</option>
-                                    <option>Meera Reddy</option>
+                                    <option>Amira Al-Hashimi</option>
+                                    <option>Khalid Al-Farsi</option>
+                                    <option>Layla Al-Mazrouei</option>
+                                    <option>Ahmad Al Maktoum</option>
+                                    <option>Fatima Al Mubarak</option>
                                 </select>
                             </div>
 

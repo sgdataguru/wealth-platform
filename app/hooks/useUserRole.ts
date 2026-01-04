@@ -12,7 +12,7 @@ import type { UserRole, UserProfile } from '@/types';
 // Mock user profiles for POC
 const MOCK_RM_PROFILE: UserProfile = {
     id: 'rm-001',
-    name: 'Rajesh Kumar',
+    name: 'Amira Al-Hashimi',
     email: 'rm_user@kairoscapital.mu',
     role: 'rm',
     rmId: 'RM-MUM-001',
@@ -21,7 +21,7 @@ const MOCK_RM_PROFILE: UserProfile = {
 
 const MOCK_EXECUTIVE_PROFILE: UserProfile = {
     id: 'exec-001',
-    name: 'Amit Saxena',
+    name: 'Amritaanshu',
     email: 'exec_user@kairoscapital.mu',
     role: 'executive',
     territories: ['Dubai', 'Abu Dhabi', 'Riyadh'],
